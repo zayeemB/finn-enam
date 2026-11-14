@@ -162,6 +162,39 @@ for(const mode of ['success','outage','restart'])test('adaptive research saves i
   assert.equal(saved.result.adaptive.added_findings,mode==='outage'?0:1);
   assert.equal(saved.result.adaptive.passes,mode==='outage'?1:2);
   assert.equal(saved.result.sections.length,mode==='outage'?1:2);
+  assert.ok(saved.result.limitations.find(l=>l.startsWith('Selected passages from')).includes(String(saved.result.coverage.selected_pages)));
   assert.ok(saved.result.coverage.selected_pages>8);
   assert.equal(saved.research_state.calls,mode==='restart'?3:2);
+});
+test('research quality strips internal markers before numeric checks and classifies capital distributions',()=>{
+  const page={id:'b',document:{title:'Annual'}};
+  const sources=new Map([['p1.1',{text:'Operating cash flow was INR 100 crore in FY2025-26. A bonus NCRPS distribution is proposed.',page}]]);
+  const result=validateBrief({title:'Quality',sections:[
+    {topic:'cash_quality',findings:[{statement:'Operating cash flow was INR 100 crore in FY2025-26 [p1.1].',citations:[{source_id:'p1.1',quote:''}]}]},
+    {topic:'guidance',findings:[{statement:'A bonus NCRPS distribution is proposed.',citations:[{source_id:'p1.1',quote:''}]}]},
+  ],limitations:[]},sources);
+  assert.equal(result.dropped.length,0);
+  assert.ok(!result.facts[0].fact.includes('[p1'));
+  assert.ok(result.sections.some(s=>s.topic==='capital_allocation'));
+  assert.ok(!result.sections.some(s=>s.topic==='guidance'));
+});
+test('unsupported section interpretations become evidence gaps while supported facts remain visible',()=>{
+  const page={id:'b',document:{title:'Annual'}};
+  const sources=new Map([['p1.1',{text:'The company has lean inventory. Management discussed commodity prices. EBCO inventory challenges persisted. Revenue was 100.',page}]]);
+  const finding=statement=>({statement,citations:[{source_id:'p1.1',quote:''}]});
+  const result=validateBrief({title:'Quality',sections:[
+    {topic:'cash_quality',findings:[finding('The company uses lean inventory practices.')]},
+    {topic:'narrative_vs_numbers',findings:[finding('Management discussed commodity prices.')]},
+    {topic:'bull_vs_bear',findings:[finding('The EBCO subsidiary has inventory challenges.')]},
+    {topic:'financial_snapshot',findings:[finding('Revenue was 100.')]},
+  ],limitations:[]},sources);
+  assert.ok(!result.sections.some(s=>s.topic==='cash_quality'||s.topic==='narrative_vs_numbers'||s.topic==='bull_vs_bear'));
+  assert.ok(result.gaps.length>=3);
+});
+
+test('GDP forecasts and commentary without numerical outcomes do not pass as company guidance or analysis',async()=>{
+ const {sectionQuality,cleanStatement}=await import('../research/quality.js');
+ assert.equal(sectionQuality('guidance','GDP growth is expected to reach 6%.',[]).topic,undefined);
+ assert.equal(sectionQuality('narrative_vs_numbers','Management expects demand in FY2025-26, which aligns with cash generation.',[]).topic,undefined);
+ assert.equal(cleanStatement('A supported fact [p3.visual, p2.1].'),'A supported fact.');
 });

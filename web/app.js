@@ -11,7 +11,7 @@ const url=value=>{try{const u=new URL(value);return u.protocol==='https:'?u.href
 const sourceLink=(href,label='Open source ↗')=>url(href)?`<a class="source-link" href="${esc(url(href))}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`:'';
 const labels={portfolio:'Portfolio',research:'Research',digests:'Digests',alerts:'Alerts'};
 const categories=['results','M&A','fund_raise','management_change','litigation','insider_trading','earnings_call','investor_meetings','credit_rating','dividend','bonus_split','capex','press_release','postal_ballot','agm_egm','pledging','annual_report','guidance','routine','unclassified'];
-const topicLabels={business_snapshot:'Business snapshot',financial_snapshot:'Financial snapshot',trajectory:'Trajectory',balance_sheet:'Balance sheet',cash_quality:'Cash quality',narrative_vs_numbers:'Narrative vs. numbers',guidance:'Management guidance',bull_vs_bear:'Bull & bear considerations'};
+const topicLabels={capital_allocation:'Capital allocation',business_snapshot:'Business snapshot',financial_snapshot:'Financial snapshot',trajectory:'Trajectory',balance_sheet:'Balance sheet',cash_quality:'Cash quality',narrative_vs_numbers:'Narrative vs. numbers',guidance:'Management guidance',bull_vs_bear:'Bull & bear considerations'};
 const state={authenticated:false,portfolio:null,settings:null,status:null,alerts:[],notifications:[],research:[],digests:[],digest:null,job:null,
   selectedJob:null,view:'portfolio',window:null,loading:false,loadedAt:null,error:null,tickerDraft:'',starting:false,
   draft:{symbol:'',question:'',annual_reports:1,transcripts:1},pendingPaint:false,refreshing:false,selectedDigest:null};

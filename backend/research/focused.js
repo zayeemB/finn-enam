@@ -222,7 +222,14 @@ export async function focusedResearch(db,files,job,documents,{clock,model:inject
         if(!model.routed)request.timeoutMs=await onAttempt();
         const response=await model.generate(request);
         const actual=response.sourceIds?new Map(response.sourceIds.map(id=>[id,extraSources.get(id)])):extraSources;
-        const additional=validateBrief(response.data,actual);
+        await db.transaction(async tx=>{
+          await owner(tx,job,clock());
+          await tx.query("UPDATE research_jobs SET research_state=research_state || $2::jsonb WHERE id=$1",[job.id,JSON.stringify({expansion_response:response.data})]);
+        });
+        const known=new Set(checked.facts.map(f=>f.fact.toLowerCase().replace(/\W/g,'')));
+        const additionalData={...response.data,sections:response.data.sections?.map(section=>({...section,
+          findings:section.findings.filter(f=>!known.has(f.statement.toLowerCase().replace(/\W/g,'')))}))};
+        const additional=validateBrief(additionalData,actual);
         expansionReviewed=true;
         checked=mergeBriefs(checked,additional);expansionAdded=checked.added;
         models.add(response.model || model.model);
@@ -244,6 +251,7 @@ export async function focusedResearch(db,files,job,documents,{clock,model:inject
   if(!checked){
     // A provider outage still leaves a readable, explicitly extractive evidence view.
     reportType='source_excerpts';
+    stopReason='model_unavailable';
     limitations.push('The model could not complete a validated brief within the request budget. Showing selected source excerpts.');
     checked={title:job.nse_symbol+' · Selected source evidence',sections:[{topic:'financial_snapshot',status:'available',findings:[]}],facts:[],limitations:[],dropped:[]};
     const excerpts=selected.map(p=>[...sourceMap.values()].find(s=>!s.visual&&s.page.id===p.id&&s.text.trim().length>80)).filter(Boolean).slice(0,6);
@@ -269,7 +277,10 @@ export async function focusedResearch(db,files,job,documents,{clock,model:inject
           [id,job.id,p.document.disclosure_id,p.asset.id,p.id,p.document.source_url,JSON.stringify(p.location),JSON.stringify(snapshot),citation.modality==='visual'?p.temporary_image_path:null]);
         evidence.push({id,fact_index:index,source_url:p.document.source_url,page:p.sequence,quote:citation.quote,modality:citation.modality});
       }
-      const result={title:checked.title,sections:checked.sections,limitations:[...new Set([...limitations,...checked.limitations])],
+      const result={title:checked.title,sections:checked.sections,limitations:[...new Set([
+          'Selected passages from '+selected.length+' pages out of '+pages.length+' indexed pages. Full-document AI coverage is incomplete.',
+          ...limitations.filter(l=>!/^Selected passages from/.test(l)),
+          ...checked.limitations.filter(l=>!/^Selected passages from/.test(l))])],
         evidence,report_type:reportType,models_used:responseModel?[...models]:[],
         missing_topics:[],
         coverage:{indexed_pages:pages.length,selected_pages:selected.length,reviewed_pages:responseModel?reviewed.length:0,

@@ -3,7 +3,7 @@ import {providerSchema} from '../analysis/schema.js';
 import {normalise} from '../analysis/validation.js';
 import {numericTokens as numbers} from './numbers.js';
 
-export const topics=['business_snapshot','financial_snapshot','trajectory','balance_sheet','cash_quality','narrative_vs_numbers','guidance','bull_vs_bear'];
+export const topics=['business_snapshot','financial_snapshot','trajectory','balance_sheet','cash_quality','narrative_vs_numbers','guidance','bull_vs_bear','capital_allocation'];
 const evidence=z.object({block_id:z.string(),modality:z.enum(['text','visual']),quote:z.string().max(2000),
   source_passages:z.array(z.number().int().positive()).max(3).optional()}).strict();
 const finding=z.object({topic:z.enum(topics),fact:z.string().min(1).max(1500),evidence:z.array(evidence).min(1).max(5)}).strict();

@@ -133,3 +133,13 @@ Expansion stops when no material gap is identified, no relevant new evidence is 
 Each successful pass is checkpointed in research_state.adaptive. A restarted worker resumes from this checkpoint after its lease expires and does not rerun the initial successful model call. A failed expansion preserves the initial result. Source indexes remain reusable across jobs; validated finding checkpoints belong to the current research job.
 
 The result reports successful evidence passes, additional findings, unresolved questions and a stop reason. Source coverage refers to passages from pages, not full-document AI reading.
+
+## Research quality checks
+
+The brief distinguishes capital allocation from explicit operating guidance. Macroeconomic forecasts are excluded from company guidance. Narrative-versus-numbers findings require a quantitative outcome and comparison. Inventory practices alone prompt a search for operating cash flow, PAT, capex and working-capital movements.
+
+Retrieval reserves cash-flow statement headers and operating/investing rows together and includes profit-statement evidence. Gap retrieval can reserve finance-subsidiary context before consolidated debt is interpreted. Missing manufacturing/financing splits remain open questions.
+
+Internal citation markers are stripped from statement text before numerical validation. Original text passages and table headers remain the evidence for numerical claims. Findings with unsupported figures or unknown references remain excluded. Expansion ignores exact repeats of already validated findings before treating old citation references as failures.
+
+Final source-coverage notes are rebuilt after expansion. Capital allocation is an additional report section where supported. Subsidiary bear-case findings require evidence of scale or group impact rather than an incidental operating anecdote.
