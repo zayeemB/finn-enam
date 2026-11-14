@@ -119,3 +119,17 @@ The UI is in `web/index.html`, `web/app.js` and `web/styles.css`, with no framew
 Views poll the backend while the tab is visible. Focused input fields are preserved, and unchanged data does not rebuild the content on every poll. A browser sync timestamp indicates the last successful API read, not the freshness of an upstream price or filing. Saved price sessions and analysis timestamps remain explicit. Desktop and mobile layouts were checked in a browser. Report/citation/retry states were also checked using an isolated, clearly labelled fixture database; fixture reports were not inserted into the real catalogue. A real TCS research request was queued through the UI; model-provider availability and the server's background runner still govern completion.
 
 Evidence-budget comparisons and their limits are recorded in output/RESEARCH-selection-findings.md.
+
+## Adaptive research
+
+The initial evidence pass has no page-count ceiling. Its size is controlled by an 18,000-character input budget and one rendered image. All source text is indexed locally. Exact passages are ranked across topics and reserved for coverage.
+
+The initial model response includes the brief and up to four specific evidence gaps. The worker persists the validated findings, citations and selection before attempting expansion. The API exposes that initial result while the job is running. The UI labels it as an initial brief.
+
+One targeted expansion searches the full index for new passages matching material gaps, excludes previously submitted passages and sends the new evidence with a compact list of saved findings. The backend merges supported additional findings and retains original citations. The expansion has the same per-request resource allowance. The existing three actual request attempts and three-minute processing budget remain shared across the job.
+
+Expansion stops when no material gap is identified, no relevant new evidence is found, the budget is exhausted, or the targeted pass adds no findings. Missing historical sources remain explicit gaps. This worker does not automatically download additional historical transcripts beyond the requested source counts.
+
+Each successful pass is checkpointed in research_state.adaptive. A restarted worker resumes from this checkpoint after its lease expires and does not rerun the initial successful model call. A failed expansion preserves the initial result. Source indexes remain reusable across jobs; validated finding checkpoints belong to the current research job.
+
+The result reports successful evidence passes, additional findings, unresolved questions and a stop reason. Source coverage refers to passages from pages, not full-document AI reading.

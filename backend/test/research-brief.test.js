@@ -9,7 +9,7 @@ import {localFiles} from '../files.js';
 import {initialiseApp} from '../app-state.js';
 import {createResearch,researchJob} from '../research/jobs.js';
 import {research} from '../research/worker.js';
-import {selectPages,validateBrief,limits} from '../research/brief.js';
+import {selectPages,validateBrief,limits,profiles} from '../research/brief.js';
 import {numericTokens} from '../research/numbers.js';
 import {ModelError} from '../analysis/gemini.js';
 
@@ -35,11 +35,11 @@ test('the default entry point indexes a whole PDF and produces a cited brief in 
     return {model:'test-model',data:{title:'Cash conversion',sections:[{topic:'cash_quality',findings:[{statement:'Cash from operations was INR 100 crore in FY2025-2026.',citations:[{source_id:page.passages[0].id,quote:''}]}]}],limitations:[]}};
   }};
   const result=await research(db,files,{...options,model});
-  assert.equal(result.status,'completed');assert.equal(calls,1);
+  assert.equal(result.status,'completed',result.error);assert.equal(calls,1);
   const saved=await researchJob(db,job.id);
   assert.equal(saved.result.report_type,'focused_brief');
   assert.equal(saved.result.coverage.indexed_pages,32);
-  assert.ok(saved.result.coverage.selected_pages<=24);
+  assert.ok(saved.result.coverage.source_characters<=limits.characters);
   assert.equal(saved.documents[0].prepared_pages,32);
   assert.equal(saved.documents[0].reviewed_pages,saved.result.coverage.selected_pages);
   assert.equal(saved.research_state.calls,1);
@@ -83,7 +83,7 @@ test('retrieval finds cash statements near the end and reserves evidence from ea
   const pages=Array.from({length:150},(_,i)=>({id:'a'+i,sequence:i+1,text:i===140?'Consolidated statement of cash flows. Cash generated from operations and net debt.':'Corporate operations and governance.',document:{id:'annual'}}));
   pages.push({id:'t1',sequence:1,text:'Management explained cash flow and working capital.',document:{id:'transcript'}});
   const selected=selectPages(pages,'Do profits turn into cash?');
-  assert.ok(selected.some(p=>p.id==='a140'));assert.ok(selected.some(p=>p.id==='t1'));assert.ok(selected.length<=limits.pages);
+  assert.ok(selected.some(p=>p.id==='a140'));assert.ok(selected.some(p=>p.id==='t1'));assert.ok(selected.length<=profiles.compact.pages);
 });
 test('the research transport sends schema and images through generateContent and rejects truncated replies',async()=>{
   const {GeminiClient}=await import('../analysis/gemini.js');
@@ -118,4 +118,50 @@ test('passage selection preserves exact quotations while spreading a fixed budge
   const passages=selected.flatMap((p,i)=>passagesFor(p,'p'+i));
   assert.ok(passages.reduce((n,p)=>n+p.text.length,0)<=profiles.balanced.characters);
   assert.ok(passages.every(p=>p.page.text.includes(p.text)));
+});
+for(const mode of ['success','outage','restart'])test('adaptive research saves initial work and handles expansion '+mode,async()=>{
+  const pdf=await PDFDocument.create(),font=await pdf.embedFont(StandardFonts.Helvetica);
+  for(let n=1;n<=40;n++){
+    const text=n===40?'Cobalt settlement guarantees are disclosed in the lease note. ':('Company operations and services described for this financial period. ');
+    pdf.addPage([500,600]).drawText(text.repeat(18),{font,x:10,y:560,size:9,maxWidth:480});
+  }
+  const job=await createResearch(db,{symbol:'ADAPT',question:'Explain company services.'});
+  const body=Buffer.from(await pdf.save());
+  const options={budgetMs:120000,discoverSources:async()=>({documents:[{kind:'annual_report',title:'Annual',source_url:'https://www.bseindia.com/adapt.pdf',discovery_url:'https://www.screener.in/company/ADAPT/'}],allowedHosts:[]}),clientFactory:()=>({get:async()=>({body})})};
+  await research(db,files,options);await research(db,files,options);
+  const requests=[];
+  const model={model:'test',async generate(request){
+    const input=JSON.parse(request.prompt);requests.push(input);
+    const expansion=request.stage==='research_expansion';
+    if(expansion){
+      const saved=await researchJob(db,job.id);
+      assert.ok(saved.result);assert.equal(saved.status,'running');
+      assert.ok(input.prior_findings.length);assert.ok(!JSON.stringify(input.evidence).includes('"id":"p1.'));
+    }
+    if(expansion&&mode==='outage')throw new ModelError('Busy',{status:503});
+    if(expansion&&mode==='restart'&&requests.length===2){
+      await db.query("UPDATE research_jobs SET lease_expires_at=$2 WHERE id=$1",[job.id,new Date(0)]);
+      throw new Error('Research lease lost');
+    }
+    const page=expansion?input.evidence.find(p=>p.passages.some(s=>s.text.includes('Cobalt'))):input.evidence[0];
+    assert.ok(page);
+    return {data:{title:'Services',sections:[{topic:expansion?'balance_sheet':'business_snapshot',findings:[{
+      statement:expansion?'Cobalt settlement guarantees are disclosed.':'The company describes its services.',
+      citations:[{source_id:page.passages[0].id,quote:''}]}]}],limitations:[],
+      gaps:expansion?[]:[{topic:'balance_sheet',question:'What are the cobalt settlement guarantees?'}]}};
+  }};
+  let done=await research(db,files,{...options,model});
+  if(mode==='restart'){
+    assert.equal(done.status,'lease_lost');
+    done=await research(db,files,{...options,model});
+    assert.equal(requests.length,3);
+    assert.equal(requests.filter(r=>!r.prior_findings).length,1);
+  }else assert.equal(requests.length,2);
+  assert.equal(done.status,'completed',done.error);
+  const saved=await researchJob(db,job.id);
+  assert.equal(saved.result.adaptive.added_findings,mode==='outage'?0:1);
+  assert.equal(saved.result.adaptive.passes,mode==='outage'?1:2);
+  assert.equal(saved.result.sections.length,mode==='outage'?1:2);
+  assert.ok(saved.result.coverage.selected_pages>8);
+  assert.equal(saved.research_state.calls,mode==='restart'?3:2);
 });

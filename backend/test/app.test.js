@@ -120,7 +120,12 @@ test('explicit research retry requeues unavailable downloads without discarding 
   await db.query("UPDATE research_jobs SET status='failed',error_kind='configuration' WHERE id=$1",[created.body.id]);
   await db.query(`INSERT INTO research_documents(id,research_job_id,kind,title,source_url,discovery_url,status,error)
     VALUES ($1,$2,'annual_report','Report','https://nsearchives.nseindia.com/a.pdf','https://www.screener.in/company/TEST/','failed','HTTP 503')`,[randomUUID(),created.body.id]);
+  await db.query('UPDATE research_jobs SET research_state=$2 WHERE id=$1',[created.body.id,JSON.stringify({calls:3,brief_started_at:NOW.toISOString(),adaptive:{checked:{title:'Saved findings'}}})]);
   assert.equal((await request('research-retry','POST',{id:created.body.id})).body.status,'queued');
+  const checkpoint=(await db.query('SELECT research_state FROM research_jobs WHERE id=$1',[created.body.id])).rows[0].research_state;
+  assert.equal(checkpoint.adaptive.checked.title,'Saved findings');
+  assert.equal(checkpoint.calls,undefined);
+  assert.equal(checkpoint.brief_started_at,undefined);
   assert.equal((await db.query('SELECT status FROM research_documents')).rows[0].status,'pending');
   assert.equal((await db.query('SELECT error_kind FROM research_jobs')).rows[0].error_kind,null);
 });

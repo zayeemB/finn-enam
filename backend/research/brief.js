@@ -3,14 +3,14 @@ import {providerSchema} from '../analysis/schema.js';
 import {topics} from './schema.js';
 import {numericTokens} from './numbers.js';
 
-export const BRIEF_VERSION='focused-brief-v2';
+export const BRIEF_VERSION='adaptive-brief-v1';
 export const INDEX_VERSION='research-text-v1';
 export const profiles={
   compact:{pages:8,characters:18000,images:1},
   balanced:{pages:16,characters:40000,images:2},
   extended:{pages:24,characters:72000,images:3},
 };
-export const limits={...profiles.compact,attempts:3,requestMs:30000,totalMs:180000};
+export const limits={characters:profiles.compact.characters,images:profiles.compact.images,attempts:3,requestMs:30000,totalMs:180000};
 export const OVERVIEW_QUESTION='Provide a broad company research overview covering the business and revenue mix; financial snapshot and trajectory; balance sheet, debt and working capital; operating cash flow and cash conversion; management narrative versus reported numbers; explicit guidance and capital allocation; and a concise bull and bear case. Include material governance concerns, auditor qualifications, contingent liabilities and related-party risks where supported. State source periods and consolidated versus standalone scope. Identify missing evidence without inventing a four-quarter or multi-year comparison.';
 export const coverageThemes=[
   {name:'business',pattern:/business overview|principal activities|segment (?:revenue|results|performance)|products and services|industry vertical/i},
@@ -51,7 +51,7 @@ export function selectPages(pages,question,{strategy='passages',profile=profiles
   let chars=0;
   const take=candidate=>{
     let page=candidate;
-    if(page&&strategy==='passages'&&page.text.length>Math.min(4000,Math.floor(profile.characters/8000)*1000)){
+    if(page&&['passages','adaptive'].includes(strategy)&&page.text.length>Math.min(4000,Math.floor(profile.characters/8000)*1000)){
       const chunks=page.text.match(/[\s\S]{1,1000}/gu)||[];
       const ranked=chunks.map((text,index)=>({text,index,score:[...query].reduce((n,t)=>n+(text.toLowerCase().includes(t)?1:0),0)}))
         .sort((a,b)=>b.score-a.score||a.index-b.index).slice(0,Math.max(2,Math.min(4,Math.floor(profile.characters/8000)))).sort((a,b)=>a.index-b.index);
@@ -74,7 +74,7 @@ export function selectPages(pages,question,{strategy='passages',profile=profiles
   }
   for(const id of documents)for(const page of scored.filter(p=>p.document.id===id).slice(0,Math.min(3,Math.floor(profile.pages/documents.length))))take(page);
   for(const page of scored){
-    if(strategy!=='ranked'){
+    if(strategy!=='ranked'&&strategy!=='adaptive'){
       const words=new Set(terms(page.text.slice(0,1500)));
       const duplicate=selected.some(p=>{
         const other=new Set(terms(p.text.slice(0,1500)));
@@ -108,6 +108,7 @@ export const briefSchema=z.object({
   title:z.string().min(1).max(180),
   sections:z.array(z.object({topic:z.enum(topics),findings:z.array(statement).max(4)}).strict()).min(1).max(8),
   limitations:z.array(z.string().max(500)).max(6),
+  gaps:z.array(z.object({topic:z.enum(topics),question:z.string().min(10).max(300)}).strict()).max(4).optional(),
 }).strict();
 export const briefGrammar=providerSchema(z.toJSONSchema(briefSchema));
 export const BRIEF_SYSTEM=`Write a concise company research brief answering the user's question using ONLY supplied annual-report and earnings-call evidence.
@@ -122,6 +123,8 @@ Do not turn absence on selected pages into a claim about an entire document or c
 Return [] for a topic without evidence and explain missing evidence once in limitations.
 Avoid facts about a document's existence or its title. Focus on the business answer, cash conversion, risks or guidance requested.
 This is a focused selection of pages from larger documents. It is never an exhaustive review. Do not provide investment recommendations.
+Include up to four material unresolved questions in gaps, with a topic and a specific search question. Return an empty gaps array when more evidence is unlikely to change the answer. Never request outside commentary. A missing historical period may require an unavailable source.
+If prior_findings are supplied, return only new supported findings or explicit corrections, and avoid repeating them.
 Return the requested JSON. Keep the entire answer below 900 words.`;
 
 export function validateBrief(value,sources){
@@ -158,5 +161,5 @@ export function validateBrief(value,sources){
     if(findings.length)sections.push({topic:section.topic,status:'available',findings});
   }
   if(!facts.length)throw new Error('The report contained no findings with valid evidence');
-  return {title:output.title,sections,facts,limitations:output.limitations,dropped};
+  return {title:output.title,sections,facts,limitations:output.limitations,gaps:output.gaps || [],dropped};
 }
