@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172f28">
+  <meta name="description" content="FINN — a portfolio watcher and primary-source company research workspace.">
+  <title>FINN — Portfolio & Research</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23172f28'/%3E%3Cpath d='M12 29V12h17M12 21h13' stroke='%23b9ec88' stroke-width='4' fill='none'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <section id="auth" class="auth-page">
+    <div class="auth-art" aria-hidden="true"><div class="orbit one"></div><div class="orbit two"></div><div class="orbit three"></div><span class="art-caption">LESS NOISE.<br>MORE PERSPECTIVE.</span></div>
+    <div class="auth-panel">
+      <div class="brand"><span class="brand-mark">f</span>finn<span class="brand-dot">.</span></div>
+      <div class="eyebrow">YOUR INVESTMENT WORKSPACE</div>
+      <h1>Keep the signal.<br>Leave the noise.</h1>
+      <p>Watch your companies, catch important changes, and research the fundamentals.</p>
+      <div id="auth-check" class="loading-line" role="status"><span class="spinner"></span> Connecting to your backend…</div>
+      <form id="login-form" hidden>
+        <label for="access-code">Demo access code</label>
+        <div class="input-row"><input id="access-code" type="password" autocomplete="current-password" required maxlength="256" placeholder="Enter your access code"><button class="button primary" type="submit">Open workspace <span aria-hidden="true">↗</span></button></div>
+        <p class="help">Use the code shown in your server terminal when you start the app.</p>
+      </form>
+      <p id="auth-error" class="form-error" role="alert" hidden></p>
+      <button id="connection-retry" class="button secondary" type="button" hidden>Try connecting again</button>
+      <div class="auth-foot">PRIMARY SOURCES. A CLEARER PICTURE.</div>
+    </div>
+  </section>
+  <div id="workspace" class="workspace" hidden>
+    <aside class="sidebar">
+      <a href="#portfolio" class="brand" aria-label="FINN home"><span class="brand-mark">f</span>finn<span class="brand-dot">.</span></a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav aria-label="Main navigation">
+        <a href="#portfolio" data-nav="portfolio"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span> Portfolio <span id="company-count" class="nav-count">0</span></a>
+        <a href="#research" data-nav="research"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 5 5"/></svg></span> Research</a>
+        <a href="#digests" data-nav="digests"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span> Digests</a>
+        <a href="#alerts" data-nav="alerts"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM9 21h6"/></svg></span> Alerts <span id="unread-count" class="nav-count" hidden></span></a>
+      </nav>
+      <div class="sidebar-bottom"><div class="monitor-label"><span id="connection-dot" class="status-dot"></span><span id="connection-label">Connecting</span></div><button class="nav-button" data-action="settings"><span aria-hidden="true">⚙</span> Watcher settings</button><button class="nav-button muted" data-action="logout">Sign out <span aria-hidden="true">↗</span></button><p class="sidebar-foot">Built around what matters.</p></div>
+    </aside>
+    <div class="main-shell">
+      <header class="topbar"><div><span class="breadcrumb">Workspace</span><span class="crumb-slash">/</span><span id="breadcrumb-current">Portfolio</span></div><div class="topbar-right"><span id="sync-label" class="muted small">Connecting…</span><span class="avatar" title="Demo workspace">D</span></div></header>
+      <div id="offline-banner" class="offline-banner" role="status" hidden></div>
+      <main id="main" tabindex="-1"><div class="page-loading"><span class="spinner"></span> Loading your workspace…</div></main>
+      <footer class="page-footer">FINN <span>Prices are saved end-of-day sessions. Research is grounded in cited company documents.</span></footer>
+    </div>
+  </div>
+  <dialog id="modal" aria-labelledby="modal-title"><div id="modal-body"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

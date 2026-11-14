@@ -1,0 +1,2636 @@
+{
+  "question": "Provide a broad company research overview covering the business and revenue mix; financial snapshot and trajectory; balance sheet, debt and working capital; operating cash flow and cash conversion; management narrative versus reported numbers; explicit guidance and capital allocation; and a concise bull and bear case. Include material governance concerns, auditor qualifications, contingent liabilities and related-party risks where supported. State source periods and consolidated versus standalone scope. Identify missing evidence without inventing a four-quarter or multi-year comparison.",
+  "offline": [
+    {
+      "company": "TCS",
+      "strategy": "ranked",
+      "profile": "compact",
+      "pages": 8,
+      "characters": 17716,
+      "sourceDocuments": 2,
+      "themes": [
+        "balance_sheet",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 154,
+      "pageNumbers": [
+        [
+          "annual_report",
+          270
+        ],
+        [
+          "annual_report",
+          361
+        ],
+        [
+          "annual_report",
+          61
+        ],
+        [
+          "transcript",
+          3
+        ],
+        [
+          "transcript",
+          23
+        ],
+        [
+          "transcript",
+          28
+        ],
+        [
+          "annual_report",
+          196
+        ],
+        [
+          "annual_report",
+          3
+        ]
+      ]
+    },
+    {
+      "company": "TCS",
+      "strategy": "ranked",
+      "profile": "balanced",
+      "pages": 13,
+      "characters": 39961,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 103,
+      "pageNumbers": [
+        [
+          "annual_report",
+          270
+        ],
+        [
+          "annual_report",
+          361
+        ],
+        [
+          "annual_report",
+          61
+        ],
+        [
+          "transcript",
+          3
+        ],
+        [
+          "transcript",
+          23
+        ],
+        [
+          "transcript",
+          28
+        ],
+        [
+          "annual_report",
+          165
+        ],
+        [
+          "annual_report",
+          196
+        ],
+        [
+          "annual_report",
+          251
+        ],
+        [
+          "annual_report",
+          25
+        ],
+        [
+          "annual_report",
+          60
+        ],
+        [
+          "annual_report",
+          4
+        ],
+        [
+          "annual_report",
+          178
+        ]
+      ]
+    },
+    {
+      "company": "TCS",
+      "strategy": "ranked",
+      "profile": "extended",
+      "pages": 23,
+      "characters": 71964,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 87,
+      "pageNumbers": [
+        [
+          "annual_report",
+          270
+        ],
+        [
+          "annual_report",
+          361
+        ],
+        [
+          "annual_report",
+          61
+        ],
+        [
+          "transcript",
+          3
+        ],
+        [
+          "transcript",
+          23
+        ],
+        [
+          "transcript",
+          28
+        ],
+        [
+          "annual_report",
+          165
+        ],
+        [
+          "annual_report",
+          196
+        ],
+        [
+          "annual_report",
+          251
+        ],
+        [
+          "annual_report",
+          25
+        ],
+        [
+          "annual_report",
+          60
+        ],
+        [
+          "annual_report",
+          4
+        ],
+        [
+          "annual_report",
+          178
+        ],
+        [
+          "annual_report",
+          160
+        ],
+        [
+          "annual_report",
+          54
+        ],
+        [
+          "annual_report",
+          279
+        ],
+        [
+          "annual_report",
+          42
+        ],
+        [
+          "annual_report",
+          257
+        ],
+        [
+          "annual_report",
+          225
+        ],
+        [
+          "annual_report",
+          5
+        ],
+        [
+          "annual_report",
+          59
+        ],
+        [
+          "annual_report",
+          187
+        ],
+        [
+          "annual_report",
+          3
+        ]
+      ]
+    },
+    {
+      "company": "TCS",
+      "strategy": "diverse",
+      "profile": "compact",
+      "pages": 8,
+      "characters": 17983,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 299,
+      "pageNumbers": [
+        [
+          "annual_report",
+          60
+        ],
+        [
+          "annual_report",
+          25
+        ],
+        [
+          "annual_report",
+          270
+        ],
+        [
+          "annual_report",
+          4
+        ],
+        [
+          "annual_report",
+          361
+        ],
+        [
+          "annual_report",
+          196
+        ],
+        [
+          "transcript",
+          3
+        ],
+        [
+          "annual_report",
+          169
+        ]
+      ]
+    },
+    {
+      "company": "TCS",
+      "strategy": "diverse",
+      "profile": "balanced",
+      "pages": 13,
+      "characters": 39961,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 380,
+      "pageNumbers": [
+        [
+          "annual_report",
+          60
+        ],
+        [
+          "annual_report",
+          25
+        ],
+        [
+          "annual_report",
+          270
+        ],
+        [
+          "annual_report",
+          4
+        ],
+        [
+          "annual_report",
+          361
+        ],
+        [
+          "annual_report",
+          61
+        ],
+        [
+          "annual_report",
+          196
+        ],
+        [
+          "transcript",
+          3
+        ],
+        [
+          "transcript",
+          23
+        ],
+        [
+          "transcript",
+          28
+        ],
+        [
+          "annual_report",
+          165
+        ],
+        [
+          "annual_report",
+          251
+        ],
+        [
+          "annual_report",
+          178
+        ]
+      ]
+    },
+    {
+      "company": "TCS",
+      "strategy": "diverse",
+      "profile": "extended",
+      "pages": 23,
+      "characters": 71964,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 477,
+      "pageNumbers": [
+        [
+          "annual_report",
+          60
+        ],
+        [
+          "annual_report",
+          25
+        ],
+        [
+          "annual_report",
+          270
+        ],
+        [
+          "annual_report",
+          4
+        ],
+        [
+          "annual_report",
+          361
+        ],
+        [
+          "annual_report",
+          61
+        ],
+        [
+          "annual_report",
+          196
+        ],
+        [
+          "transcript",
+          3
+        ],
+        [
+          "transcript",
+          23
+        ],
+        [
+          "transcript",
+          28
+        ],
+        [
+          "annual_report",
+          165
+        ],
+        [
+          "annual_report",
+          251
+        ],
+        [
+          "annual_report",
+          178
+        ],
+        [
+          "annual_report",
+          160
+        ],
+        [
+          "annual_report",
+          54
+        ],
+        [
+          "annual_report",
+          279
+        ],
+        [
+          "annual_report",
+          42
+        ],
+        [
+          "annual_report",
+          257
+        ],
+        [
+          "annual_report",
+          225
+        ],
+        [
+          "annual_report",
+          5
+        ],
+        [
+          "annual_report",
+          59
+        ],
+        [
+          "annual_report",
+          187
+        ],
+        [
+          "annual_report",
+          3
+        ]
+      ]
+    },
+    {
+      "company": "TCS",
+      "strategy": "neighbours",
+      "profile": "compact",
+      "pages": 7,
+      "characters": 17918,
+      "sourceDocuments": 1,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "risks"
+      ],
+      "selectionMs": 286,
+      "pageNumbers": [
+        [
+          "annual_report",
+          60
+        ],
+        [
+          "annual_report",
+          25
+        ],
+        [
+          "annual_report",
+          26
+        ],
+        [
+          "annual_report",
+          270
+        ],
+        [
+          "annual_report",
+          271
+        ],
+        [
+          "annual_report",
+          4
+        ],
+        [
+          "annual_report",
+          236
+        ]
+      ]
+    },
+    {
+      "company": "TCS",
+      "strategy": "neighbours",
+      "profile": "balanced",
+      "pages": 14,
+      "characters": 39953,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 379,
+      "pageNumbers": [
+        [
+          "annual_report",
+          60
+        ],
+        [
+          "annual_report",
+          25
+        ],
+        [
+          "annual_report",
+          26
+        ],
+        [
+          "annual_report",
+          270
+        ],
+        [
+          "annual_report",
+          271
+        ],
+        [
+          "annual_report",
+          4
+        ],
+        [
+          "annual_report",
+          5
+        ],
+        [
+          "annual_report",
+          361
+        ],
+        [
+          "annual_report",
+          61
+        ],
+        [
+          "annual_report",
+          196
+        ],
+        [
+          "transcript",
+          3
+        ],
+        [
+          "transcript",
+          23
+        ],
+        [
+          "transcript",
+          28
+        ],
+        [
+          "annual_report",
+          165
+        ]
+      ]
+    },
+    {
+      "company": "TCS",
+      "strategy": "neighbours",
+      "profile": "extended",
+      "pages": 23,
+      "characters": 71953,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 481,
+      "pageNumbers": [
+        [
+          "annual_report",
+          60
+        ],
+        [
+          "annual_report",
+          25
+        ],
+        [
+          "annual_report",
+          26
+        ],
+        [
+          "annual_report",
+          270
+        ],
+        [
+          "annual_report",
+          271
+        ],
+        [
+          "annual_report",
+          4
+        ],
+        [
+          "annual_report",
+          5
+        ],
+        [
+          "annual_report",
+          361
+        ],
+        [
+          "annual_report",
+          61
+        ],
+        [
+          "annual_report",
+          196
+        ],
+        [
+          "transcript",
+          3
+        ],
+        [
+          "transcript",
+          23
+        ],
+        [
+          "transcript",
+          28
+        ],
+        [
+          "annual_report",
+          165
+        ],
+        [
+          "annual_report",
+          251
+        ],
+        [
+          "annual_report",
+          178
+        ],
+        [
+          "annual_report",
+          160
+        ],
+        [
+          "annual_report",
+          54
+        ],
+        [
+          "annual_report",
+          279
+        ],
+        [
+          "annual_report",
+          42
+        ],
+        [
+          "annual_report",
+          257
+        ],
+        [
+          "annual_report",
+          225
+        ],
+        [
+          "transcript",
+          5
+        ]
+      ]
+    },
+    {
+      "company": "RELIANCE",
+      "strategy": "ranked",
+      "profile": "compact",
+      "pages": 3,
+      "characters": 17985,
+      "sourceDocuments": 1,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance"
+      ],
+      "selectionMs": 81,
+      "pageNumbers": [
+        [
+          "annual_report",
+          142
+        ],
+        [
+          "annual_report",
+          100
+        ],
+        [
+          "annual_report",
+          45
+        ]
+      ]
+    },
+    {
+      "company": "RELIANCE",
+      "strategy": "ranked",
+      "profile": "balanced",
+      "pages": 8,
+      "characters": 39842,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 81,
+      "pageNumbers": [
+        [
+          "annual_report",
+          142
+        ],
+        [
+          "annual_report",
+          100
+        ],
+        [
+          "annual_report",
+          45
+        ],
+        [
+          "transcript",
+          26
+        ],
+        [
+          "transcript",
+          5
+        ],
+        [
+          "transcript",
+          4
+        ],
+        [
+          "annual_report",
+          46
+        ],
+        [
+          "annual_report",
+          27
+        ]
+      ]
+    },
+    {
+      "company": "RELIANCE",
+      "strategy": "ranked",
+      "profile": "extended",
+      "pages": 14,
+      "characters": 71901,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance"
+      ],
+      "selectionMs": 79,
+      "pageNumbers": [
+        [
+          "annual_report",
+          142
+        ],
+        [
+          "annual_report",
+          100
+        ],
+        [
+          "annual_report",
+          45
+        ],
+        [
+          "transcript",
+          26
+        ],
+        [
+          "transcript",
+          5
+        ],
+        [
+          "transcript",
+          4
+        ],
+        [
+          "annual_report",
+          46
+        ],
+        [
+          "annual_report",
+          52
+        ],
+        [
+          "annual_report",
+          48
+        ],
+        [
+          "annual_report",
+          54
+        ],
+        [
+          "annual_report",
+          50
+        ],
+        [
+          "transcript",
+          1
+        ],
+        [
+          "transcript",
+          29
+        ],
+        [
+          "annual_report",
+          186
+        ]
+      ]
+    },
+    {
+      "company": "RELIANCE",
+      "strategy": "diverse",
+      "profile": "compact",
+      "pages": 3,
+      "characters": 17985,
+      "sourceDocuments": 1,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance"
+      ],
+      "selectionMs": 230,
+      "pageNumbers": [
+        [
+          "annual_report",
+          45
+        ],
+        [
+          "annual_report",
+          142
+        ],
+        [
+          "annual_report",
+          100
+        ]
+      ]
+    },
+    {
+      "company": "RELIANCE",
+      "strategy": "diverse",
+      "profile": "balanced",
+      "pages": 8,
+      "characters": 39947,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance"
+      ],
+      "selectionMs": 250,
+      "pageNumbers": [
+        [
+          "annual_report",
+          45
+        ],
+        [
+          "annual_report",
+          142
+        ],
+        [
+          "annual_report",
+          100
+        ],
+        [
+          "annual_report",
+          133
+        ],
+        [
+          "annual_report",
+          46
+        ],
+        [
+          "transcript",
+          26
+        ],
+        [
+          "transcript",
+          1
+        ],
+        [
+          "annual_report",
+          2
+        ]
+      ]
+    },
+    {
+      "company": "RELIANCE",
+      "strategy": "diverse",
+      "profile": "extended",
+      "pages": 13,
+      "characters": 71972,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 283,
+      "pageNumbers": [
+        [
+          "annual_report",
+          45
+        ],
+        [
+          "annual_report",
+          142
+        ],
+        [
+          "annual_report",
+          100
+        ],
+        [
+          "annual_report",
+          133
+        ],
+        [
+          "annual_report",
+          46
+        ],
+        [
+          "annual_report",
+          169
+        ],
+        [
+          "annual_report",
+          144
+        ],
+        [
+          "transcript",
+          26
+        ],
+        [
+          "transcript",
+          5
+        ],
+        [
+          "transcript",
+          4
+        ],
+        [
+          "annual_report",
+          52
+        ],
+        [
+          "transcript",
+          1
+        ],
+        [
+          "annual_report",
+          2
+        ]
+      ]
+    },
+    {
+      "company": "RELIANCE",
+      "strategy": "neighbours",
+      "profile": "compact",
+      "pages": 3,
+      "characters": 17985,
+      "sourceDocuments": 1,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance"
+      ],
+      "selectionMs": 242,
+      "pageNumbers": [
+        [
+          "annual_report",
+          45
+        ],
+        [
+          "annual_report",
+          142
+        ],
+        [
+          "annual_report",
+          100
+        ]
+      ]
+    },
+    {
+      "company": "RELIANCE",
+      "strategy": "neighbours",
+      "profile": "balanced",
+      "pages": 8,
+      "characters": 39739,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance"
+      ],
+      "selectionMs": 250,
+      "pageNumbers": [
+        [
+          "annual_report",
+          45
+        ],
+        [
+          "annual_report",
+          142
+        ],
+        [
+          "annual_report",
+          143
+        ],
+        [
+          "annual_report",
+          100
+        ],
+        [
+          "annual_report",
+          101
+        ],
+        [
+          "transcript",
+          26
+        ],
+        [
+          "transcript",
+          29
+        ],
+        [
+          "annual_report",
+          186
+        ]
+      ]
+    },
+    {
+      "company": "RELIANCE",
+      "strategy": "neighbours",
+      "profile": "extended",
+      "pages": 11,
+      "characters": 71678,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance"
+      ],
+      "selectionMs": 274,
+      "pageNumbers": [
+        [
+          "annual_report",
+          45
+        ],
+        [
+          "annual_report",
+          142
+        ],
+        [
+          "annual_report",
+          143
+        ],
+        [
+          "annual_report",
+          100
+        ],
+        [
+          "annual_report",
+          101
+        ],
+        [
+          "annual_report",
+          133
+        ],
+        [
+          "annual_report",
+          134
+        ],
+        [
+          "annual_report",
+          46
+        ],
+        [
+          "annual_report",
+          169
+        ],
+        [
+          "transcript",
+          26
+        ],
+        [
+          "transcript",
+          29
+        ]
+      ]
+    }
+  ],
+  "live": [
+    {
+      "company": "TCS",
+      "profile": "compact",
+      "pages": 8,
+      "characters": 17983,
+      "images": 1,
+      "seconds": 32.96,
+      "status": "failed",
+      "error": "Gemini request timed out after 30 seconds"
+    },
+    {
+      "company": "RELIANCE",
+      "profile": "compact",
+      "pages": 3,
+      "characters": 17985,
+      "images": 1,
+      "seconds": 6.7,
+      "status": "validated",
+      "topics": [
+        "business_snapshot",
+        "financial_snapshot",
+        "trajectory",
+        "balance_sheet",
+        "cash_quality",
+        "narrative_vs_numbers",
+        "guidance",
+        "bull_vs_bear"
+      ],
+      "findings": 14,
+      "dropped": 0,
+      "usage": null,
+      "report": {
+        "title": "Reliance Industries Limited Research Brief",
+        "sections": [
+          {
+            "topic": "business_snapshot",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Reliance Retail is the largest and most profitable retailer in India, operating an integrated ecosystem with physical stores, digital commerce, and distribution platforms.",
+                "evidence_indexes": [
+                  0
+                ]
+              },
+              {
+                "statement": "During FY 2025-26, Reliance Retail recorded Gross Revenue of ₹ 3,71,085 crore, representing a 12.1% growth over the previous year, with an EBITDA of ₹ 27,034 crore translating to an EBITDA margin of 8.2%.",
+                "evidence_indexes": [
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "financial_snapshot",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "For the consolidated entity in FY 2025-26, net profit before share of profit / (loss) of associates / joint ventures and tax was ₹ 1,23,162 crore, compared to ₹ 1,06,017 crore in FY 2024-25.",
+                "evidence_indexes": [
+                  2
+                ]
+              },
+              {
+                "statement": "Consolidated Net Cash Flow from Operating Activities was ₹ 1,92,113 crore in FY 2025-26 compared to ₹ 1,78,703 crore in FY 2024-25.",
+                "evidence_indexes": [
+                  3
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "trajectory",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "The Net Profit Margin for the consolidated entity increased from 6.3% in FY 2024-25 to 8.0% in FY 2025-26 due to higher net profit.",
+                "evidence_indexes": [
+                  4
+                ]
+              },
+              {
+                "statement": "Return on Capital Employed increased from 14.6% in FY 2024-25 to 20.7% in FY 2025-26, driven by higher profit and reduction in capital employed.",
+                "evidence_indexes": [
+                  5
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "balance_sheet",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Total consolidated borrowings stood at ₹ 3,74,421 crore as of 31st March, 2026, up from ₹ 3,47,530 crore as of 1st April, 2025.",
+                "evidence_indexes": [
+                  6
+                ]
+              },
+              {
+                "statement": "Carrying amounts of financial liabilities part of supplier finance arrangements stood at ₹ 76,377 crore consolidated as of 31st March, 2026.",
+                "evidence_indexes": [
+                  7
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "cash_quality",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Consolidated cash generated from operations was ₹ 2,01,721 crore in FY 2025-26, following working capital adjustments of ₹ 12,497 crore.",
+                "evidence_indexes": [
+                  8
+                ]
+              },
+              {
+                "statement": "Consolidated closing cash and cash equivalents were ₹ 1,45,977 crore as of 31st March, 2026, up from ₹ 1,06,502 crore a year prior.",
+                "evidence_indexes": [
+                  9
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "narrative_vs_numbers",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Management highlights an increase in the Debt Service Coverage Ratio to 4.03 in FY 2025-26 from 2.06 in FY 2024-25, attributed to lower finance costs and principal loan repayments.",
+                "evidence_indexes": [
+                  10
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "guidance",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "RIL stated it will continue to explore sophisticated financing structures to support expansion across both emerging and established verticals.",
+                "evidence_indexes": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "bull_vs_bear",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Bull case elements include S&P raising RIL's rating to A- in December 2025 due to rising contributions from less cyclical, consumer-facing businesses, alongside robust cash flows.",
+                "evidence_indexes": [
+                  12
+                ]
+              },
+              {
+                "statement": "Bear case factors include heightened volatility in financial markets amid tariff uncertainty, global geopolitics, FPI outflows, rising trade deficits, and pressures on the Rupee.",
+                "evidence_indexes": [
+                  13
+                ]
+              }
+            ]
+          }
+        ],
+        "facts": [
+          {
+            "topic": "business_snapshot",
+            "fact": "Reliance Retail is the largest and most profitable retailer in India, operating an integrated ecosystem with physical stores, digital commerce, and distribution platforms.",
+            "evidence": [
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "timal balance sheet structure. \n-   Financial Performance and Review \nRetail \nReliance Retail is the largest and the most profitable\nretailer in India, operating in an integrated retail\necosystem that combines physical stores, digital\ncommerce and distribution platforms. Today,\nReliance Retail is positioned as India’s largest omni-\nchannel retailer with the scale and capabilities to\nserve customers seamlessly across touchpoints.\nReliance Retail's operating model prioritises\naccessibility, affordability and availability, while\nfulfilling the daily needs of millions across every\nconsumption basket. \nStrategic\nObjective \nStrengthen Reliance Retail's\nposition as India's largest\nand most trusted retailer by\ndemocratizing access to quality\nproducts and experiences for\nevery Indian. Reliance Retail\nwould harness technology\nand innovation to redefine the\nfuture of Indian retail, creating\nlasting value for consumers,\ncommunities, and the nation. \nIndustry Overview \nIndia is one of the world’s f",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "business_snapshot",
+            "fact": "During FY 2025-26, Reliance Retail recorded Gross Revenue of ₹ 3,71,085 crore, representing a 12.1% growth over the previous year, with an EBITDA of ₹ 27,034 crore translating to an EBITDA margin of 8.2%.",
+            "evidence": [
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "ories.\nFast fashion is reshaping demand\npatterns, with shorter trend cycles\nand faster inventory turns driving\napparel consumption. Social media and\nplatform-led discovery are accelerating\nimpulse purchases and increasing\nwardrobe turnover frequency. \nBusiness\nPerformance \nDuring the year, Reliance Retail\nrecorded Gross Revenue of   H   3,71,085\ncrore, reflecting a growth of 12.1%\nover the previous year. EBITDA for the\nyear stood at   H   27,034 crore, translating\ninto an EBITDA margin of 8.2%, slight\nmoderation due to growing contribution\nof hyper-local commerce. \n20,160 \nRETAIL STORES \n78.3 Million sq. ft. \nRETAIL AREA \n387 Million \nREGISTERED CUSTOMER BASE \n~1.9 Billion \nTRANSACTIONS \n2,90,293 \nPEOPLE",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "Reliance Industries Limited   Integrated Annual Report 2025-26 8   9 Management Discussion and Analysis   -   Business Overview Management Discussion and Analysis \nMovement in Key\nFinancial Ratios \nThe Debt Service Coverage Ratio\nincreased from 2.06 in FY 2024-25\nto 4.03 in FY 2025-26, due to lower\nfinance cost and principal repayments\nof loans during the year.\nThe Net Profit Margin increased\nfrom 6.3% in FY 2024-25 to 8.0% in\nFY 2025-26, due to higher net profit.\nReturn on Capital Employed increased\nfrom 14.6% in FY 2024-25 to 20.7% in\nFY 2025-26, due to higher profit and\nreduction in capital employed.\nLong Term Debt to Working Capital\nincreased from 7.53 in FY 2024 - 25\nto 17.12 in FY 2025-26, due to\nhigher debt and efficient working\ncapital management.\nInterest Coverage Ratio increased\nfrom 5.59 in FY 2024-25 to 8.83 in\nFY 2025 - 26, due to higher operating\nprofit along with lower finance costs.\nThe Return on Net Worth* improved to\n10.1% in FY 2025-26 as against 8.2%\nin previous yea",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "financial_snapshot",
+            "fact": "For the consolidated entity in FY 2025-26, net profit before share of profit / (loss) of associates / joint ventures and tax was ₹ 1,23,162 crore, compared to ₹ 1,06,017 crore in FY 2024-25.",
+            "evidence": [
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": "Consolidated Financial Statements Reliance Industries Limited   Integrated Annual Report 2025-26 202   203 \n( I   in crore) \n2025-26   2024-25 \nA.   Cash   Flow   from   Operating   Activities\nNet   Profit   Before   Share   of   Profit   /   (Loss)   of   Associates   /   Joint   Ventures   and   Tax   as   per \nStatement   of   Profit   and   Loss\n1,23,162   1,06,017\nAdjusted   for: \nLoss on Sale / Discard of Property, Plant and Equipment and Other Intangible Assets   (Net)   143   135\nDepreciation / Amortisation and Depletion Expense   57,688   53,136\nEffect of Exchange Rate Change   6,518   (2,182)\nNet Gain on Financial Assets   (2,946)   (1,557)\nDividend Income   (9,100)   (504)\nInterest Income   (13,302)   (12,410)\nFinance Costs   27,061   24,269 \nSub-Total   66,062   60,887\nOperating   Profit   before   Working   Capital   Changes   1,89,224   1,66,904\nAdjusted   for: \nTrade and Other Receivables   (53,322)   (17,837)\nInventories   (20,790)   3,134\nTrade and Other Payables   86,",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "financial_snapshot",
+            "fact": "Consolidated Net Cash Flow from Operating Activities was ₹ 1,92,113 crore in FY 2025-26 compared to ₹ 1,78,703 crore in FY 2024-25.",
+            "evidence": [
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": "609   38,427 \nSub-Total   12,497   23,724\nCash   Generated   from   Operations   2,01,721   1,90,628 \nTaxes Paid (Net)   (9,608)   (11,925) \nNet   Cash   Flow   from   Operating   Activities   *   1,92,113   1,78,703 \nB.   Cash Flow from Investing Activities \nExpenditure for Property, Plant and Equipment, Spectrum and Other Intangible Assets   (1,22,916)   (1,39,967)\nProceeds from disposal of Property, Plant and Equipment and Other Intangible Assets   826   2,343\nPurchase of Investments   (9,88,777)   (6,84,340)\nProceeds from Sale of Financial Assets   9,91,876   6,72,558\nPayment of Deferred Payment Liabilities   (4,736)   (4,574)\nInterest Income   13,538   15,833\nDividend Income from Associates   49   49\nDividend Income from Others   9,051   563 \nNet   Cash   Used   in   Investing   Activities   (1,01,089)   (1,37,535) \nC.   Cash Flow From Financing Activities \nProceeds from Issue of Equity Share Capital  @   -   -\nNet Proceeds from Rights Issue   -   22\nPayment of Lease Liabilities  ",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": "Consolidated Financial Statements Reliance Industries Limited   Integrated Annual Report 2025-26 202   203 \n( I   in crore) \n2025-26   2024-25 \nA.   Cash   Flow   from   Operating   Activities\nNet   Profit   Before   Share   of   Profit   /   (Loss)   of   Associates   /   Joint   Ventures   and   Tax   as   per \nStatement   of   Profit   and   Loss\n1,23,162   1,06,017\nAdjusted   for: \nLoss on Sale / Discard of Property, Plant and Equipment and Other Intangible Assets   (Net)   143   135\nDepreciation / Amortisation and Depletion Expense   57,688   53,136\nEffect of Exchange Rate Change   6,518   (2,182)\nNet Gain on Financial Assets   (2,946)   (1,557)\nDividend Income   (9,100)   (504)\nInterest Income   (13,302)   (12,410)\nFinance Costs   27,061   24,269 \nSub-Total   66,062   60,887\nOperating   Profit   before   Working   Capital   Changes   1,89,224   1,66,904\nAdjusted   for: \nTrade and Other Receivables   (53,322)   (17,837)\nInventories   (20,790)   3,134\nTrade and Other Payables   86,",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "trajectory",
+            "fact": "The Net Profit Margin for the consolidated entity increased from 6.3% in FY 2024-25 to 8.0% in FY 2025-26 due to higher net profit.",
+            "evidence": [
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "Reliance Industries Limited   Integrated Annual Report 2025-26 8   9 Management Discussion and Analysis   -   Business Overview Management Discussion and Analysis \nMovement in Key\nFinancial Ratios \nThe Debt Service Coverage Ratio\nincreased from 2.06 in FY 2024-25\nto 4.03 in FY 2025-26, due to lower\nfinance cost and principal repayments\nof loans during the year.\nThe Net Profit Margin increased\nfrom 6.3% in FY 2024-25 to 8.0% in\nFY 2025-26, due to higher net profit.\nReturn on Capital Employed increased\nfrom 14.6% in FY 2024-25 to 20.7% in\nFY 2025-26, due to higher profit and\nreduction in capital employed.\nLong Term Debt to Working Capital\nincreased from 7.53 in FY 2024 - 25\nto 17.12 in FY 2025-26, due to\nhigher debt and efficient working\ncapital management.\nInterest Coverage Ratio increased\nfrom 5.59 in FY 2024-25 to 8.83 in\nFY 2025 - 26, due to higher operating\nprofit along with lower finance costs.\nThe Return on Net Worth* improved to\n10.1% in FY 2025-26 as against 8.2%\nin previous yea",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "trajectory",
+            "fact": "Return on Capital Employed increased from 14.6% in FY 2024-25 to 20.7% in FY 2025-26, driven by higher profit and reduction in capital employed.",
+            "evidence": [
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "Reliance Industries Limited   Integrated Annual Report 2025-26 8   9 Management Discussion and Analysis   -   Business Overview Management Discussion and Analysis \nMovement in Key\nFinancial Ratios \nThe Debt Service Coverage Ratio\nincreased from 2.06 in FY 2024-25\nto 4.03 in FY 2025-26, due to lower\nfinance cost and principal repayments\nof loans during the year.\nThe Net Profit Margin increased\nfrom 6.3% in FY 2024-25 to 8.0% in\nFY 2025-26, due to higher net profit.\nReturn on Capital Employed increased\nfrom 14.6% in FY 2024-25 to 20.7% in\nFY 2025-26, due to higher profit and\nreduction in capital employed.\nLong Term Debt to Working Capital\nincreased from 7.53 in FY 2024 - 25\nto 17.12 in FY 2025-26, due to\nhigher debt and efficient working\ncapital management.\nInterest Coverage Ratio increased\nfrom 5.59 in FY 2024-25 to 8.83 in\nFY 2025 - 26, due to higher operating\nprofit along with lower finance costs.\nThe Return on Net Worth* improved to\n10.1% in FY 2025-26 as against 8.2%\nin previous yea",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "balance_sheet",
+            "fact": "Total consolidated borrowings stood at ₹ 3,74,421 crore as of 31st March, 2026, up from ₹ 3,47,530 crore as of 1st April, 2025.",
+            "evidence": [
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": " 2026 \nChange in Liability Arising from Financing Activities \n( I   in crore) \nParticulars   1 st   April, \n2025   Cash   flow   Foreign   exchange \nmovement/Others \n31 st   March, \n2026 \nBorrowings - Non-current (including Current Maturities)\n(Refer   Note 16)\n2,66,222   7,990   22,504   2,96,716\nBorrowings   ‑   Current (Refer Note 20)   81,308   (5,171)   1,568   77,705 \nTotal   3,47,530   2,819   24,072   3,74,421 \n( I   in crore) \nParticulars   1 st   April, \n2024   Cash   flow   Foreign   exchange \nmovement/Others \n31 st   March, \n2025 \nBorrowings - Non-current (including Current Maturities)\n(Refer   Note 16)\n2,67,980   (5,377)   3,619   2,66,222\nBorrowings   ‑   Current (Refer Note 20)   56,642   24,624   42   81,308 \nTotal   3,24,622   19,247   3,661   3,47,530\nCash   flow   from   Supplier   Financing   Arrangement   (Refer   Note   44) \n( I   in crore) \nParticulars   1 st   April, \n2025   Cash   flow   Foreign   exchange \nmovement/Others \n31 st   March, \n2026 \nCarrying amount",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "balance_sheet",
+            "fact": "Carrying amounts of financial liabilities part of supplier finance arrangements stood at ₹ 76,377 crore consolidated as of 31st March, 2026.",
+            "evidence": [
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": " of financial liabilities that are part of a supplier\nfinance arrangement \n‑   Presented in Trade and Other Payables   92,223   (53,969)   8,867   47,121 \n‑   Presented in Other Financial Liability   11,493   17,198   565   29,256 \nTotal   1,03,716   (36,771)   9,432   76,377 \nAs per our Report of even date\nFor   Deloitte Haskins & Sells LLP \nChartered Accountants\n(Registration No.\n117366W/W ‑ 100018)\nFor   Chaturvedi & Shah LLP \nChartered Accountants\n(Registration No.\n101720W/W ‑ 100355) \nSrikanth Venkatachari \nChief Financial Officer \nAbhijit A. Damle \nPartner\nMembership No. 102912 \nSandesh Ladha \nPartner\nMembership No. 047841 \nSavithri Parekh \nCompany Secretary\nDate: April 24, 2026\nFor and on behalf of the Board \nM.D. Ambani \nDIN: 00001695 \nN.R. Meswani \nDIN: 00001620 \nH.R. Meswani \nDIN: 00001623 \nP.M.S. Prasad \nDIN: 00012144 \nAnant M. Ambani \nDIN: 07945702 \nAkash M. Ambani \nDIN: 06984194 \nIsha M. Ambani \nDIN: 06984175 \nDr. Shumeet Banerji \nDIN: 02787784 \nArundhati Bhattacharya \nDIN",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": " (6,508)   (2,956)\nProceeds from Borrowings - Non-current (including Current Maturities)   38,871   26,378\nRepayment of Borrowings - Non-current (including Current Maturities)   (30,881)   (31,755)\nBorrowings - Current (Net)   (5,171)   24,624\nPayment of Dividend to Equity Holders of the Company   (7,443)   (6,766)\nPayment of Dividend to Non-Controlling Interest   (436)   (414)\nInterest Paid   (39,981)   (41,024) \nNet   Cash   Flow   from   /   (used   in)   Financing   Activities   (51,549)   (31,891)\nNet   Increase   in   Cash   and   Cash   Equivalents   39,475   9,277\nOpening   Balance   of   Cash   and   Cash   Equivalents   1,06,502   97,225\nClosing   Balance   of   Cash   and   Cash   Equivalents   (Refer   Note   10)   1,45,977   1,06,502 \n* Includes amount spent towards Corporate Social Responsibility of   I   2,248 crore (Previous Year   I   2,156 crore). \n@   I   9,97,360 (Previous Year   I   22,00,000). \nConsolidated Statement of Cash Flows For the year ended 31 st   March,",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "cash_quality",
+            "fact": "Consolidated cash generated from operations was ₹ 2,01,721 crore in FY 2025-26, following working capital adjustments of ₹ 12,497 crore.",
+            "evidence": [
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": "Consolidated Financial Statements Reliance Industries Limited   Integrated Annual Report 2025-26 202   203 \n( I   in crore) \n2025-26   2024-25 \nA.   Cash   Flow   from   Operating   Activities\nNet   Profit   Before   Share   of   Profit   /   (Loss)   of   Associates   /   Joint   Ventures   and   Tax   as   per \nStatement   of   Profit   and   Loss\n1,23,162   1,06,017\nAdjusted   for: \nLoss on Sale / Discard of Property, Plant and Equipment and Other Intangible Assets   (Net)   143   135\nDepreciation / Amortisation and Depletion Expense   57,688   53,136\nEffect of Exchange Rate Change   6,518   (2,182)\nNet Gain on Financial Assets   (2,946)   (1,557)\nDividend Income   (9,100)   (504)\nInterest Income   (13,302)   (12,410)\nFinance Costs   27,061   24,269 \nSub-Total   66,062   60,887\nOperating   Profit   before   Working   Capital   Changes   1,89,224   1,66,904\nAdjusted   for: \nTrade and Other Receivables   (53,322)   (17,837)\nInventories   (20,790)   3,134\nTrade and Other Payables   86,",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": "609   38,427 \nSub-Total   12,497   23,724\nCash   Generated   from   Operations   2,01,721   1,90,628 \nTaxes Paid (Net)   (9,608)   (11,925) \nNet   Cash   Flow   from   Operating   Activities   *   1,92,113   1,78,703 \nB.   Cash Flow from Investing Activities \nExpenditure for Property, Plant and Equipment, Spectrum and Other Intangible Assets   (1,22,916)   (1,39,967)\nProceeds from disposal of Property, Plant and Equipment and Other Intangible Assets   826   2,343\nPurchase of Investments   (9,88,777)   (6,84,340)\nProceeds from Sale of Financial Assets   9,91,876   6,72,558\nPayment of Deferred Payment Liabilities   (4,736)   (4,574)\nInterest Income   13,538   15,833\nDividend Income from Associates   49   49\nDividend Income from Others   9,051   563 \nNet   Cash   Used   in   Investing   Activities   (1,01,089)   (1,37,535) \nC.   Cash Flow From Financing Activities \nProceeds from Issue of Equity Share Capital  @   -   -\nNet Proceeds from Rights Issue   -   22\nPayment of Lease Liabilities  ",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "cash_quality",
+            "fact": "Consolidated closing cash and cash equivalents were ₹ 1,45,977 crore as of 31st March, 2026, up from ₹ 1,06,502 crore a year prior.",
+            "evidence": [
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": " (6,508)   (2,956)\nProceeds from Borrowings - Non-current (including Current Maturities)   38,871   26,378\nRepayment of Borrowings - Non-current (including Current Maturities)   (30,881)   (31,755)\nBorrowings - Current (Net)   (5,171)   24,624\nPayment of Dividend to Equity Holders of the Company   (7,443)   (6,766)\nPayment of Dividend to Non-Controlling Interest   (436)   (414)\nInterest Paid   (39,981)   (41,024) \nNet   Cash   Flow   from   /   (used   in)   Financing   Activities   (51,549)   (31,891)\nNet   Increase   in   Cash   and   Cash   Equivalents   39,475   9,277\nOpening   Balance   of   Cash   and   Cash   Equivalents   1,06,502   97,225\nClosing   Balance   of   Cash   and   Cash   Equivalents   (Refer   Note   10)   1,45,977   1,06,502 \n* Includes amount spent towards Corporate Social Responsibility of   I   2,248 crore (Previous Year   I   2,156 crore). \n@   I   9,97,360 (Previous Year   I   22,00,000). \nConsolidated Statement of Cash Flows For the year ended 31 st   March,",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": "Consolidated Financial Statements Reliance Industries Limited   Integrated Annual Report 2025-26 202   203 \n( I   in crore) \n2025-26   2024-25 \nA.   Cash   Flow   from   Operating   Activities\nNet   Profit   Before   Share   of   Profit   /   (Loss)   of   Associates   /   Joint   Ventures   and   Tax   as   per \nStatement   of   Profit   and   Loss\n1,23,162   1,06,017\nAdjusted   for: \nLoss on Sale / Discard of Property, Plant and Equipment and Other Intangible Assets   (Net)   143   135\nDepreciation / Amortisation and Depletion Expense   57,688   53,136\nEffect of Exchange Rate Change   6,518   (2,182)\nNet Gain on Financial Assets   (2,946)   (1,557)\nDividend Income   (9,100)   (504)\nInterest Income   (13,302)   (12,410)\nFinance Costs   27,061   24,269 \nSub-Total   66,062   60,887\nOperating   Profit   before   Working   Capital   Changes   1,89,224   1,66,904\nAdjusted   for: \nTrade and Other Receivables   (53,322)   (17,837)\nInventories   (20,790)   3,134\nTrade and Other Payables   86,",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "narrative_vs_numbers",
+            "fact": "Management highlights an increase in the Debt Service Coverage Ratio to 4.03 in FY 2025-26 from 2.06 in FY 2024-25, attributed to lower finance costs and principal loan repayments.",
+            "evidence": [
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "Reliance Industries Limited   Integrated Annual Report 2025-26 8   9 Management Discussion and Analysis   -   Business Overview Management Discussion and Analysis \nMovement in Key\nFinancial Ratios \nThe Debt Service Coverage Ratio\nincreased from 2.06 in FY 2024-25\nto 4.03 in FY 2025-26, due to lower\nfinance cost and principal repayments\nof loans during the year.\nThe Net Profit Margin increased\nfrom 6.3% in FY 2024-25 to 8.0% in\nFY 2025-26, due to higher net profit.\nReturn on Capital Employed increased\nfrom 14.6% in FY 2024-25 to 20.7% in\nFY 2025-26, due to higher profit and\nreduction in capital employed.\nLong Term Debt to Working Capital\nincreased from 7.53 in FY 2024 - 25\nto 17.12 in FY 2025-26, due to\nhigher debt and efficient working\ncapital management.\nInterest Coverage Ratio increased\nfrom 5.59 in FY 2024-25 to 8.83 in\nFY 2025 - 26, due to higher operating\nprofit along with lower finance costs.\nThe Return on Net Worth* improved to\n10.1% in FY 2025-26 as against 8.2%\nin previous yea",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "guidance",
+            "fact": "RIL stated it will continue to explore sophisticated financing structures to support expansion across both emerging and established verticals.",
+            "evidence": [
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "  Two notches above India's sovereign rating\nInternational Debt   Moody's   Baa2   One notch above India's sovereign rating\nLong-term Debt   CRISIL   AAA (Stable)   Highest rating by CRISIL\nLong-term Debt   CARE   AAA (Stable)   Highest rating by CARE\nLong-term Debt   ICRA   AAA (Stable)   Highest rating by ICRA\nLong-term Debt   India Ratings   AAA (Stable)   Highest rating by India Ratings \nWay Forward \nRIL’s commitment to enhancing shareholder value is anchored in its diversified\nbusiness portfolio, resilient cash flows and a robust balance sheet. The\nCompany's financial architecture is defined by active monitoring of market\ntrends and swift response to shifting macroeconomic conditions. RIL will\ncontinue to explore sophisticated financing structures to support expansion\nacross both emerging and established verticals. Integral to this trajectory is a\nresolute adherence to capital allocation rigour, ensuring that financial strategy is\nreinforced by comprehensive risk mitigation and op",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "bull_vs_bear",
+            "fact": "Bull case elements include S&P raising RIL's rating to A- in December 2025 due to rising contributions from less cyclical, consumer-facing businesses, alongside robust cash flows.",
+            "evidence": [
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "irst untied facility for any corporate\nglobally. The facility has the longest\naverage tenor for any Export Credit\nAgency supported facility globally. \nLiquidity Management \nReliance prioritises liquidity\nmanagement by maintaining a strong\ncash reserve to safeguard operations\nagainst sudden market volatility.\nFurther, by maintaining sufficient\nundrawn credit lines, the Group ensures\nit can consistently meet its short-term\nobligations. RIL utilises diverse trade\nfinancing and structured products\nto optimise its working capital. RIL’s\ninvestment strategy is continuously\nrefined to balance stable returns with\nimmediate fund accessibility. \nCredit Rating \nS&P raised RIL's rating from BBB+\nto A- in December 2025 reflecting\nrising contribution from less cyclical,\nconsumer-facing businesses resulting\nin improved earnings stability. The\nrating upgrade will provide RIL access\nto new pools of capital at finer spreads. \nInstrument   Rating Agency   Ratings   Remarks \nInternational Debt   S&P   A- ",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "  Two notches above India's sovereign rating\nInternational Debt   Moody's   Baa2   One notch above India's sovereign rating\nLong-term Debt   CRISIL   AAA (Stable)   Highest rating by CRISIL\nLong-term Debt   CARE   AAA (Stable)   Highest rating by CARE\nLong-term Debt   ICRA   AAA (Stable)   Highest rating by ICRA\nLong-term Debt   India Ratings   AAA (Stable)   Highest rating by India Ratings \nWay Forward \nRIL’s commitment to enhancing shareholder value is anchored in its diversified\nbusiness portfolio, resilient cash flows and a robust balance sheet. The\nCompany's financial architecture is defined by active monitoring of market\ntrends and swift response to shifting macroeconomic conditions. RIL will\ncontinue to explore sophisticated financing structures to support expansion\nacross both emerging and established verticals. Integral to this trajectory is a\nresolute adherence to capital allocation rigour, ensuring that financial strategy is\nreinforced by comprehensive risk mitigation and op",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "bull_vs_bear",
+            "fact": "Bear case factors include heightened volatility in financial markets amid tariff uncertainty, global geopolitics, FPI outflows, rising trade deficits, and pressures on the Rupee.",
+            "evidence": [
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "r due to increase in net\nprofit during the year. \n*Adjusted for CWIP and revaluation \nLiquidity and Capital\nResources\nMacro Environment \nFY 2025-26 saw heightened volatility\nin financial markets amid tariff\nuncertainty and global geopolitics.\nIn India, the first half of the financial\nyear saw RBI easing monetary policy\nleading to an environment of softening\ndomestic yields with 10y G-sec yields\neasing towards 6.25%. The second\nhalf of the year saw yields reversing\nupwards as RBI shifted its stance from\naccommodative to neutral, causing\n10y G-sec yields to harden towards\n7%. Rupee came under downward\npressure on account of FPI outflows,\nrising trade deficit and fresh tensions in\nMiddle East. \nFund Raising \nThe year 2025 unfolded against\na backdrop of heightened market\nfluctuations. Trade dynamics shifted\nas US tariff moves realigned global\nsupply chains. Despite this turbulent\nmarket environment, the Company\nwas able to raise financing across\ncurrencies and products at competitive\ncost ",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          "Evidence is limited to selected pages of the Reliance Industries Limited Integrated Annual Report 2025-26 covering consolidated and standalone disclosures; certain comprehensive multi-year operational metrics and segment details outside these pages are not present."
+        ],
+        "dropped": []
+      }
+    },
+    {
+      "company": "TCS",
+      "profile": "balanced",
+      "pages": 13,
+      "characters": 39961,
+      "images": 2,
+      "seconds": 31.558,
+      "status": "failed",
+      "error": "Gemini request timed out after 30 seconds"
+    },
+    {
+      "company": "RELIANCE",
+      "profile": "balanced",
+      "pages": 8,
+      "characters": 39947,
+      "images": 2,
+      "seconds": 7.12,
+      "status": "validated",
+      "topics": [
+        "business_snapshot",
+        "financial_snapshot",
+        "trajectory",
+        "balance_sheet",
+        "cash_quality",
+        "guidance",
+        "bull_vs_bear"
+      ],
+      "findings": 10,
+      "dropped": 1,
+      "usage": null,
+      "report": {
+        "title": "Reliance Industries Limited Research Brief",
+        "sections": [
+          {
+            "topic": "business_snapshot",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Reliance Retail operates an integrated retail ecosystem encompassing physical stores, digital commerce, and distribution platforms across segments like consumer electronics, fashion and lifestyle, grocery, and connectivity.",
+                "evidence_indexes": [
+                  0
+                ]
+              },
+              {
+                "statement": "Reliance Retail recorded Gross Revenue of H 3,71,085 crore, reflecting a 12.1% growth over the previous year, with an EBITDA of H 27,034 crore for FY 2025-26.",
+                "evidence_indexes": [
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "financial_snapshot",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "On a consolidated basis for FY 2025-26, Net Profit Margin increased to 8.0% from 6.3% in FY 2024-25, and Return on Capital Employed (ROCE) rose to 20.7% from 14.6%.",
+                "evidence_indexes": [
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "trajectory",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "S&P raised RIL's international debt rating from BBB+ to A- in December 2025 due to rising contributions from less cyclical, consumer-facing businesses.",
+                "evidence_indexes": [
+                  3
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "balance_sheet",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Consolidated borrowings as of 31st March, 2026 stood at H 2,96,716 crore for non-current borrowings and H 77,705 crore for current borrowings.",
+                "evidence_indexes": [
+                  4
+                ]
+              },
+              {
+                "statement": "Carrying amount of financial liabilities part of supplier finance arrangements stood at H 76,377 crore on a consolidated basis as of 31st March, 2026.",
+                "evidence_indexes": [
+                  5
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "cash_quality",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Consolidated net cash flow from operating activities was H 1,92,113 crore for FY 2025-26, compared to H 1,78,703 crore for FY 2024-25.",
+                "evidence_indexes": [
+                  6
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "guidance",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Management expects benefits from margin investments in hyper-local commerce to start accruing in absolute EBITDA from next year onwards.",
+                "evidence_indexes": [
+                  7
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "bull_vs_bear",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "The bull case is anchored by leadership in Indian retail, robust omni-channel scale, and a ratings upgrade by S&P reflecting stable consumer-facing earnings.",
+                "evidence_indexes": [
+                  8
+                ]
+              },
+              {
+                "statement": "The bear case features potential risks from ongoing complex oil and gas litigation with the Government of India, SEBI disputes, and macroeconomic volatility affecting discretionary spending.",
+                "evidence_indexes": [
+                  9
+                ]
+              }
+            ]
+          }
+        ],
+        "facts": [
+          {
+            "topic": "business_snapshot",
+            "fact": "Reliance Retail operates an integrated retail ecosystem encompassing physical stores, digital commerce, and distribution platforms across segments like consumer electronics, fashion and lifestyle, grocery, and connectivity.",
+            "evidence": [
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "timal balance sheet structure. \n-   Financial Performance and Review \nRetail \nReliance Retail is the largest and the most profitable\nretailer in India, operating in an integrated retail\necosystem that combines physical stores, digital\ncommerce and distribution platforms. Today,\nReliance Retail is positioned as India’s largest omni-\nchannel retailer with the scale and capabilities to\nserve customers seamlessly across touchpoints.\nReliance Retail's operating model prioritises\naccessibility, affordability and availability, while\nfulfilling the daily needs of millions across every\nconsumption basket. \nStrategic\nObjective \nStrengthen Reliance Retail's\nposition as India's largest\nand most trusted retailer by\ndemocratizing access to quality\nproducts and experiences for\nevery Indian. Reliance Retail\nwould harness technology\nand innovation to redefine the\nfuture of Indian retail, creating\nlasting value for consumers,\ncommunities, and the nation. \nIndustry Overview \nIndia is one of the world’s f",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "business_snapshot",
+            "fact": "Reliance Retail recorded Gross Revenue of H 3,71,085 crore, reflecting a 12.1% growth over the previous year, with an EBITDA of H 27,034 crore for FY 2025-26.",
+            "evidence": [
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "ories.\nFast fashion is reshaping demand\npatterns, with shorter trend cycles\nand faster inventory turns driving\napparel consumption. Social media and\nplatform-led discovery are accelerating\nimpulse purchases and increasing\nwardrobe turnover frequency. \nBusiness\nPerformance \nDuring the year, Reliance Retail\nrecorded Gross Revenue of   H   3,71,085\ncrore, reflecting a growth of 12.1%\nover the previous year. EBITDA for the\nyear stood at   H   27,034 crore, translating\ninto an EBITDA margin of 8.2%, slight\nmoderation due to growing contribution\nof hyper-local commerce. \n20,160 \nRETAIL STORES \n78.3 Million sq. ft. \nRETAIL AREA \n387 Million \nREGISTERED CUSTOMER BASE \n~1.9 Billion \nTRANSACTIONS \n2,90,293 \nPEOPLE",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "Reliance Industries Limited   Integrated Annual Report 2025-26 8   9 Management Discussion and Analysis   -   Business Overview Management Discussion and Analysis \nMovement in Key\nFinancial Ratios \nThe Debt Service Coverage Ratio\nincreased from 2.06 in FY 2024-25\nto 4.03 in FY 2025-26, due to lower\nfinance cost and principal repayments\nof loans during the year.\nThe Net Profit Margin increased\nfrom 6.3% in FY 2024-25 to 8.0% in\nFY 2025-26, due to higher net profit.\nReturn on Capital Employed increased\nfrom 14.6% in FY 2024-25 to 20.7% in\nFY 2025-26, due to higher profit and\nreduction in capital employed.\nLong Term Debt to Working Capital\nincreased from 7.53 in FY 2024 - 25\nto 17.12 in FY 2025-26, due to\nhigher debt and efficient working\ncapital management.\nInterest Coverage Ratio increased\nfrom 5.59 in FY 2024-25 to 8.83 in\nFY 2025 - 26, due to higher operating\nprofit along with lower finance costs.\nThe Return on Net Worth* improved to\n10.1% in FY 2025-26 as against 8.2%\nin previous yea",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "financial_snapshot",
+            "fact": "On a consolidated basis for FY 2025-26, Net Profit Margin increased to 8.0% from 6.3% in FY 2024-25, and Return on Capital Employed (ROCE) rose to 20.7% from 14.6%.",
+            "evidence": [
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "Reliance Industries Limited   Integrated Annual Report 2025-26 8   9 Management Discussion and Analysis   -   Business Overview Management Discussion and Analysis \nMovement in Key\nFinancial Ratios \nThe Debt Service Coverage Ratio\nincreased from 2.06 in FY 2024-25\nto 4.03 in FY 2025-26, due to lower\nfinance cost and principal repayments\nof loans during the year.\nThe Net Profit Margin increased\nfrom 6.3% in FY 2024-25 to 8.0% in\nFY 2025-26, due to higher net profit.\nReturn on Capital Employed increased\nfrom 14.6% in FY 2024-25 to 20.7% in\nFY 2025-26, due to higher profit and\nreduction in capital employed.\nLong Term Debt to Working Capital\nincreased from 7.53 in FY 2024 - 25\nto 17.12 in FY 2025-26, due to\nhigher debt and efficient working\ncapital management.\nInterest Coverage Ratio increased\nfrom 5.59 in FY 2024-25 to 8.83 in\nFY 2025 - 26, due to higher operating\nprofit along with lower finance costs.\nThe Return on Net Worth* improved to\n10.1% in FY 2025-26 as against 8.2%\nin previous yea",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "trajectory",
+            "fact": "S&P raised RIL's international debt rating from BBB+ to A- in December 2025 due to rising contributions from less cyclical, consumer-facing businesses.",
+            "evidence": [
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "irst untied facility for any corporate\nglobally. The facility has the longest\naverage tenor for any Export Credit\nAgency supported facility globally. \nLiquidity Management \nReliance prioritises liquidity\nmanagement by maintaining a strong\ncash reserve to safeguard operations\nagainst sudden market volatility.\nFurther, by maintaining sufficient\nundrawn credit lines, the Group ensures\nit can consistently meet its short-term\nobligations. RIL utilises diverse trade\nfinancing and structured products\nto optimise its working capital. RIL’s\ninvestment strategy is continuously\nrefined to balance stable returns with\nimmediate fund accessibility. \nCredit Rating \nS&P raised RIL's rating from BBB+\nto A- in December 2025 reflecting\nrising contribution from less cyclical,\nconsumer-facing businesses resulting\nin improved earnings stability. The\nrating upgrade will provide RIL access\nto new pools of capital at finer spreads. \nInstrument   Rating Agency   Ratings   Remarks \nInternational Debt   S&P   A- ",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "balance_sheet",
+            "fact": "Consolidated borrowings as of 31st March, 2026 stood at H 2,96,716 crore for non-current borrowings and H 77,705 crore for current borrowings.",
+            "evidence": [
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": " 2026 \nChange in Liability Arising from Financing Activities \n( I   in crore) \nParticulars   1 st   April, \n2025   Cash   flow   Foreign   exchange \nmovement/Others \n31 st   March, \n2026 \nBorrowings - Non-current (including Current Maturities)\n(Refer   Note 16)\n2,66,222   7,990   22,504   2,96,716\nBorrowings   ‑   Current (Refer Note 20)   81,308   (5,171)   1,568   77,705 \nTotal   3,47,530   2,819   24,072   3,74,421 \n( I   in crore) \nParticulars   1 st   April, \n2024   Cash   flow   Foreign   exchange \nmovement/Others \n31 st   March, \n2025 \nBorrowings - Non-current (including Current Maturities)\n(Refer   Note 16)\n2,67,980   (5,377)   3,619   2,66,222\nBorrowings   ‑   Current (Refer Note 20)   56,642   24,624   42   81,308 \nTotal   3,24,622   19,247   3,661   3,47,530\nCash   flow   from   Supplier   Financing   Arrangement   (Refer   Note   44) \n( I   in crore) \nParticulars   1 st   April, \n2025   Cash   flow   Foreign   exchange \nmovement/Others \n31 st   March, \n2026 \nCarrying amount",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "balance_sheet",
+            "fact": "Carrying amount of financial liabilities part of supplier finance arrangements stood at H 76,377 crore on a consolidated basis as of 31st March, 2026.",
+            "evidence": [
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": " of financial liabilities that are part of a supplier\nfinance arrangement \n‑   Presented in Trade and Other Payables   92,223   (53,969)   8,867   47,121 \n‑   Presented in Other Financial Liability   11,493   17,198   565   29,256 \nTotal   1,03,716   (36,771)   9,432   76,377 \nAs per our Report of even date\nFor   Deloitte Haskins & Sells LLP \nChartered Accountants\n(Registration No.\n117366W/W ‑ 100018)\nFor   Chaturvedi & Shah LLP \nChartered Accountants\n(Registration No.\n101720W/W ‑ 100355) \nSrikanth Venkatachari \nChief Financial Officer \nAbhijit A. Damle \nPartner\nMembership No. 102912 \nSandesh Ladha \nPartner\nMembership No. 047841 \nSavithri Parekh \nCompany Secretary\nDate: April 24, 2026\nFor and on behalf of the Board \nM.D. Ambani \nDIN: 00001695 \nN.R. Meswani \nDIN: 00001620 \nH.R. Meswani \nDIN: 00001623 \nP.M.S. Prasad \nDIN: 00012144 \nAnant M. Ambani \nDIN: 07945702 \nAkash M. Ambani \nDIN: 06984194 \nIsha M. Ambani \nDIN: 06984175 \nDr. Shumeet Banerji \nDIN: 02787784 \nArundhati Bhattacharya \nDIN",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": " (6,508)   (2,956)\nProceeds from Borrowings - Non-current (including Current Maturities)   38,871   26,378\nRepayment of Borrowings - Non-current (including Current Maturities)   (30,881)   (31,755)\nBorrowings - Current (Net)   (5,171)   24,624\nPayment of Dividend to Equity Holders of the Company   (7,443)   (6,766)\nPayment of Dividend to Non-Controlling Interest   (436)   (414)\nInterest Paid   (39,981)   (41,024) \nNet   Cash   Flow   from   /   (used   in)   Financing   Activities   (51,549)   (31,891)\nNet   Increase   in   Cash   and   Cash   Equivalents   39,475   9,277\nOpening   Balance   of   Cash   and   Cash   Equivalents   1,06,502   97,225\nClosing   Balance   of   Cash   and   Cash   Equivalents   (Refer   Note   10)   1,45,977   1,06,502 \n* Includes amount spent towards Corporate Social Responsibility of   I   2,248 crore (Previous Year   I   2,156 crore). \n@   I   9,97,360 (Previous Year   I   22,00,000). \nConsolidated Statement of Cash Flows For the year ended 31 st   March,",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "cash_quality",
+            "fact": "Consolidated net cash flow from operating activities was H 1,92,113 crore for FY 2025-26, compared to H 1,78,703 crore for FY 2024-25.",
+            "evidence": [
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": "609   38,427 \nSub-Total   12,497   23,724\nCash   Generated   from   Operations   2,01,721   1,90,628 \nTaxes Paid (Net)   (9,608)   (11,925) \nNet   Cash   Flow   from   Operating   Activities   *   1,92,113   1,78,703 \nB.   Cash Flow from Investing Activities \nExpenditure for Property, Plant and Equipment, Spectrum and Other Intangible Assets   (1,22,916)   (1,39,967)\nProceeds from disposal of Property, Plant and Equipment and Other Intangible Assets   826   2,343\nPurchase of Investments   (9,88,777)   (6,84,340)\nProceeds from Sale of Financial Assets   9,91,876   6,72,558\nPayment of Deferred Payment Liabilities   (4,736)   (4,574)\nInterest Income   13,538   15,833\nDividend Income from Associates   49   49\nDividend Income from Others   9,051   563 \nNet   Cash   Used   in   Investing   Activities   (1,01,089)   (1,37,535) \nC.   Cash Flow From Financing Activities \nProceeds from Issue of Equity Share Capital  @   -   -\nNet Proceeds from Rights Issue   -   22\nPayment of Lease Liabilities  ",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": "Consolidated Financial Statements Reliance Industries Limited   Integrated Annual Report 2025-26 202   203 \n( I   in crore) \n2025-26   2024-25 \nA.   Cash   Flow   from   Operating   Activities\nNet   Profit   Before   Share   of   Profit   /   (Loss)   of   Associates   /   Joint   Ventures   and   Tax   as   per \nStatement   of   Profit   and   Loss\n1,23,162   1,06,017\nAdjusted   for: \nLoss on Sale / Discard of Property, Plant and Equipment and Other Intangible Assets   (Net)   143   135\nDepreciation / Amortisation and Depletion Expense   57,688   53,136\nEffect of Exchange Rate Change   6,518   (2,182)\nNet Gain on Financial Assets   (2,946)   (1,557)\nDividend Income   (9,100)   (504)\nInterest Income   (13,302)   (12,410)\nFinance Costs   27,061   24,269 \nSub-Total   66,062   60,887\nOperating   Profit   before   Working   Capital   Changes   1,89,224   1,66,904\nAdjusted   for: \nTrade and Other Receivables   (53,322)   (17,837)\nInventories   (20,790)   3,134\nTrade and Other Payables   86,",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "guidance",
+            "fact": "Management expects benefits from margin investments in hyper-local commerce to start accruing in absolute EBITDA from next year onwards.",
+            "evidence": [
+              {
+                "block_id": "2d7547cc-b0d5-4b16-b8c2-2fec191ad854",
+                "modality": "text",
+                "quote": "25 © Reliance Industries Limited 2020 \nWhen I say margin accretive absolute and we expect we have outlined in the framework that\nwe have put in from next year onwards we expect the benefits to start accruing in absolute\nEBITDA. I would say margin flow, it depends on what is the share because inherently it is\nlower margin, if it is 20:80 versus 30:70 the margins will look very different, but remember\nfrom an ROCE perspective it is okay because of online has lower capital investment required\nto an offline business where you have to set up the full store and everything. So, it depends\non how the mix evolves and secondly how the competitive dynamics really plays out is how\nlong the margin investments continue because not just as other people are players are also\ninvesting in margins and customer acquisition. \nQuestioner (Sachin Salgaonkar   –   Bank of America) \nFollow up when you talk about your dark stores, is it mainly into urban areas or also going\ninto Tier-2 and Tier-3 cities? \nCompa",
+                "source_title": "RELIANCE earnings-call transcript Nov 2026"
+              }
+            ]
+          },
+          {
+            "topic": "bull_vs_bear",
+            "fact": "The bull case is anchored by leadership in Indian retail, robust omni-channel scale, and a ratings upgrade by S&P reflecting stable consumer-facing earnings.",
+            "evidence": [
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "irst untied facility for any corporate\nglobally. The facility has the longest\naverage tenor for any Export Credit\nAgency supported facility globally. \nLiquidity Management \nReliance prioritises liquidity\nmanagement by maintaining a strong\ncash reserve to safeguard operations\nagainst sudden market volatility.\nFurther, by maintaining sufficient\nundrawn credit lines, the Group ensures\nit can consistently meet its short-term\nobligations. RIL utilises diverse trade\nfinancing and structured products\nto optimise its working capital. RIL’s\ninvestment strategy is continuously\nrefined to balance stable returns with\nimmediate fund accessibility. \nCredit Rating \nS&P raised RIL's rating from BBB+\nto A- in December 2025 reflecting\nrising contribution from less cyclical,\nconsumer-facing businesses resulting\nin improved earnings stability. The\nrating upgrade will provide RIL access\nto new pools of capital at finer spreads. \nInstrument   Rating Agency   Ratings   Remarks \nInternational Debt   S&P   A- ",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "timal balance sheet structure. \n-   Financial Performance and Review \nRetail \nReliance Retail is the largest and the most profitable\nretailer in India, operating in an integrated retail\necosystem that combines physical stores, digital\ncommerce and distribution platforms. Today,\nReliance Retail is positioned as India’s largest omni-\nchannel retailer with the scale and capabilities to\nserve customers seamlessly across touchpoints.\nReliance Retail's operating model prioritises\naccessibility, affordability and availability, while\nfulfilling the daily needs of millions across every\nconsumption basket. \nStrategic\nObjective \nStrengthen Reliance Retail's\nposition as India's largest\nand most trusted retailer by\ndemocratizing access to quality\nproducts and experiences for\nevery Indian. Reliance Retail\nwould harness technology\nand innovation to redefine the\nfuture of Indian retail, creating\nlasting value for consumers,\ncommunities, and the nation. \nIndustry Overview \nIndia is one of the world’s f",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "bull_vs_bear",
+            "fact": "The bear case features potential risks from ongoing complex oil and gas litigation with the Government of India, SEBI disputes, and macroeconomic volatility affecting discretionary spending.",
+            "evidence": [
+              {
+                "block_id": "ab6e0e28-8283-4234-9b57-1a3779c3c12f",
+                "modality": "text",
+                "quote": ") and (b) of the Other Matters section below,\nis sufficient and appropriate to provide a basis for our audit\nopinion on the Consolidated Financial Statements. \nKey Audit Matters \nKey audit matters are those matters that, in our professional\njudgment, were of most significance in our audit of the\nConsolidated Financial Statements of the current period. These\nmatters were addressed in the context of our audit of the\nConsolidated Financial Statements as a whole, and in forming\nour opinion thereon, and we do not provide a separate opinion\non these matters. We have determined the matters described\nbelow to be the key audit matters to be communicated in\nour report. \nSr.\nNo.   Key Audit Matter   Auditor’s Response \n1.   Litigation matters \nThe Parent has certain significant ongoing legal proceedings for\nvarious complex matters with the Government of India and other\nparties, continuing from earlier years, which are as under: \n1.   Matters   in   relation   to   Oil   and   Gas: \n(a)   Disallow",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "ff66e270-6d3c-40c1-9c4d-7e02e17ca5ac",
+                "modality": "text",
+                "quote": "r service. \nSCOT Analysis\nStrengths \n•   Largest integrated omni-channel retailer in India.\n•   Large and growing customer franchise supported by\nextensive network coverage.\n•   Uniquely positioned across value, mid-market and\npremium segments to serve diverse customer cohorts.\n•   Hyper-local commerce scale leveraging the store\nnetwork for fulfilment with strong unit economics.\n•   Adoption of AI and advanced analytics across the value\nchain to drive efficiency and smarter decision-making.\n•   Superior execution and partner ecosystem for scaling\ndomestic and global brands. \nChallenges \n•   Limited supply of quality malls and high-street real\nestate suitable for stores.\n•   Continued need to attract, train and retain specialised\nand frontline talent to support expansion, productivity,\nand service levels. \nThreats \n•   Macroeconomic volatility affecting consumer\nsentiment, discretionary spending and trading patterns.\n•   Geopolitical disruptions and global supply chain\nvolatility may im",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          "This research brief relies solely on a focused selection of pages from Reliance Industries Limited Annual Report 2026 and earnings transcripts, and does not represent an exhaustive review of all operational segments."
+        ],
+        "dropped": [
+          {
+            "reason": "Unsupported numerical claim",
+            "statement": "Management highlighted robust retail store additions and digital expansion, while reported segment EBITDA margin moderated by 40 bps to 8.2% due to hyper-local commerce growth contributions."
+          }
+        ]
+      }
+    },
+    {
+      "company": "TCS",
+      "profile": "extended",
+      "pages": 23,
+      "characters": 71964,
+      "images": 3,
+      "seconds": 29.541,
+      "status": "validated",
+      "topics": [
+        "business_snapshot",
+        "financial_snapshot",
+        "trajectory",
+        "balance_sheet",
+        "cash_quality",
+        "narrative_vs_numbers",
+        "guidance",
+        "bull_vs_bear"
+      ],
+      "findings": 14,
+      "dropped": 1,
+      "usage": null,
+      "report": {
+        "title": "TCS Company Research Brief",
+        "sections": [
+          {
+            "topic": "business_snapshot",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "In FY 2026, TCS consolidated revenue reached ₹267,021 crore, breaking down by industry vertical as Banking, Financial Services and Insurance at 38.7%, Consumer Business at 15.9%, Communication, Media and Technology at 14.8%, Life Sciences and Healthcare at 10.4%, Manufacturing at 10.0%, and Others at 10.2%.",
+                "evidence_indexes": [
+                  0
+                ]
+              },
+              {
+                "statement": "Geographically, consolidated revenue concentration for FY 2026 was led by North America at 48.6%, United Kingdom at 17.4%, Continental Europe at 15.4%, APAC at 8.3%, India at 5.9%, and others including Latin America and MEA.",
+                "evidence_indexes": [
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "financial_snapshot",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "For the year ended March 31, 2026, TCS reported consolidated revenue from operations of ₹267,021 crore, representing a 4.6% increase over FY 2025, while constant currency revenue declined by 2.4%.",
+                "evidence_indexes": [
+                  2
+                ]
+              },
+              {
+                "statement": "Operating profit (EBIT before other income) for FY 2026 was ₹66,838 crore with an operating margin of 25.0%, representing a 70 basis point improvement over FY 2025.",
+                "evidence_indexes": [
+                  3
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "trajectory",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Over the past five financial years, TCS recorded a compound annual growth rate (CAGR) of 10.2% in revenue, scaling from ₹191,754 crore in FY 2022 to ₹267,021 crore in FY 2026.",
+                "evidence_indexes": [
+                  4
+                ]
+              },
+              {
+                "statement": "Earnings per share grew at a 10.3% CAGR over the past five fiscal years, reaching ₹145.99 in FY 2026 compared to ₹103.62 in FY 2022.",
+                "evidence_indexes": [
+                  5
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "balance_sheet",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Contractual maturities of consolidated financial liabilities as at March 31, 2026 included trade payables of ₹14,808 crore due in the first year, lease liabilities totaling ₹13,218 crore, and other financial liabilities totaling ₹11,227 crore.",
+                "evidence_indexes": [
+                  6
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "cash_quality",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "TCS demonstrated high cash conversion, with shareholder payouts and cash metrics reflecting robust operational cash generation, including standalone net cash flows generated from operating activities of ₹45,597 crore for the year ended March 31, 2026.",
+                "evidence_indexes": [
+                  7
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "narrative_vs_numbers",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Management highlighted a 4.6% reported revenue growth rate for FY 2026, while the underlying constant currency growth rate was a decline of 2.4% due to macroeconomic uncertainty, geopolitical tensions, and the completion of a large domestic transformation program.",
+                "evidence_indexes": [
+                  8
+                ]
+              },
+              {
+                "statement": "Certain non-recurring items such as restructuring charges, legal claim provisions, and Labour Code impacts were excluded from reported management commentary metrics to present underlying performance.",
+                "evidence_indexes": [
+                  9
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "guidance",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Management noted that the company does not provide any specific revenue or earnings guidance.",
+                "evidence_indexes": [
+                  10
+                ]
+              },
+              {
+                "statement": "Total shareholder payouts for FY 2026 included three interim dividends of ₹11 each, a special dividend of ₹46, and a recommended final dividend of ₹31, summing to ₹110 per share.",
+                "evidence_indexes": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "bull_vs_bear",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "The bull case highlights industry-leading return on equity, strong order books with significant multi-year TCV momentum, and growing leadership in AI-led enterprise transformation services.",
+                "evidence_indexes": [
+                  12
+                ]
+              },
+              {
+                "statement": "The bear case points to macro uncertainty, customer discretionary spending scrutiny, litigation and regulatory exposures such as US$ 112 million provided for a legal claim, and potential pricing deflation from emerging deep-tech AI competitors.",
+                "evidence_indexes": [
+                  13
+                ]
+              }
+            ]
+          }
+        ],
+        "facts": [
+          {
+            "topic": "business_snapshot",
+            "fact": "In FY 2026, TCS consolidated revenue reached ₹267,021 crore, breaking down by industry vertical as Banking, Financial Services and Insurance at 38.7%, Consumer Business at 15.9%, Communication, Media and Technology at 14.8%, Life Sciences and Healthcare at 10.4%, Manufacturing at 10.0%, and Others at 10.2%.",
+            "evidence": [
+              {
+                "block_id": "b4587459-51e3-4792-9371-c864a449f935",
+                "modality": "text",
+                "quote": "nking, Financial\nServices and Insurance\nCommunication,\nMedia and Technology   Consumer Business\nLife Sciences\nand Healthcare\nOthers\nManufacturing\n15.9%\n14.8%\n10.4%\n10.2%\n10.0% \nRevenue by Industry Vertical   Revenue by Geography \n48.6%\n17.4%\n15.4%\n1.9%\nNorth America\nUnited Kingdom\nContinental\nEurope\nAPAC 8.3%\nIndia 5.9%\nLatin America\nMEA 2.5% \nIndustry Vertical   Segment Revenue ( J   crore)   YoY Revenue\nGrowth %\nSegment Margin (%) \nFY 2026   FY 2025   FY 2026   FY 2025 \nBanking, Financial Services and Insurance   103,363   94,597   9.3   26.1   26.6\nConsumer Business   42,432   40,197   5.6   28.5   27.9\nCommunication, Media and Technology   39,474   45,893   (14.0)   29.1   20.9\nLife Sciences and Healthcare   27,745   26,456   4.9   27.0   28.2\nManufacturing   26,614   25,170   5.7   30.3   32.7\nOthers   27,393   23,011   19.0   22.9   25.2 \nTotal   267,021   255,324   4.6   25.0   24.3 \nOverview of Funds Invested \nTCS’ investment strategy focuses on selecting a balanced mix of long",
+                "source_title": "TCS Annual Report 2026"
+              },
+              {
+                "block_id": "b4587459-51e3-4792-9371-c864a449f935",
+                "modality": "text",
+                "quote": "nking, Financial\nServices and Insurance\nCommunication,\nMedia and Technology   Consumer Business\nLife Sciences\nand Healthcare\nOthers\nManufacturing\n15.9%\n14.8%\n10.4%\n10.2%\n10.0% \nRevenue by Industry Vertical   Revenue by Geography \n48.6%\n17.4%\n15.4%\n1.9%\nNorth America\nUnited Kingdom\nContinental\nEurope\nAPAC 8.3%\nIndia 5.9%\nLatin America\nMEA 2.5% \nIndustry Vertical   Segment Revenue ( J   crore)   YoY Revenue\nGrowth %\nSegment Margin (%) \nFY 2026   FY 2025   FY 2026   FY 2025 \nBanking, Financial Services and Insurance   103,363   94,597   9.3   26.1   26.6\nConsumer Business   42,432   40,197   5.6   28.5   27.9\nCommunication, Media and Technology   39,474   45,893   (14.0)   29.1   20.9\nLife Sciences and Healthcare   27,745   26,456   4.9   27.0   28.2\nManufacturing   26,614   25,170   5.7   30.3   32.7\nOthers   27,393   23,011   19.0   22.9   25.2 \nTotal   267,021   255,324   4.6   25.0   24.3 \nOverview of Funds Invested \nTCS’ investment strategy focuses on selecting a balanced mix of long",
+                "source_title": "TCS Annual Report 2026"
+              },
+              {
+                "block_id": "b4587459-51e3-4792-9371-c864a449f935",
+                "modality": "text",
+                "quote": "Statutory Reports Corporate Overview   Financial Statements \nManagement Discussion and Analysis 89 \nPursuant to a lawsuit filed by Computer Sciences\nCorporation (CSC) alleging the Company of misappropriation\nof trade secrets, the appeals court confirmed the verdict of\ntrial court and ordered the Company to pay US$ 56 million\nin compensatory damages and US$ 112 million in exemplary\ndamages. On the basis of facts and legal precedence, the\nCompany has provided US$ 112 million towards this claim. \nPursuant to the reskilling and redeployment initiatives\nundertaken by the Company to make it future ‑ ready, some\nassociates were released from the organisation whose\ndeployment may not be feasible. Termination benefits \namounting to ₹ 1,388 crore have been provided as per policy \ndevised for this purpose. \nSegmental Performance \nTCS has identified business segments (‘Industry vertical’) as reportable segments. The revenue break ‑ up by Industry Vertical and\nGeography is provided below: \n38.7%\nBa",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "business_snapshot",
+            "fact": "Geographically, consolidated revenue concentration for FY 2026 was led by North America at 48.6%, United Kingdom at 17.4%, Continental Europe at 15.4%, APAC at 8.3%, India at 5.9%, and others including Latin America and MEA.",
+            "evidence": [
+              {
+                "block_id": "b4587459-51e3-4792-9371-c864a449f935",
+                "modality": "text",
+                "quote": "nking, Financial\nServices and Insurance\nCommunication,\nMedia and Technology   Consumer Business\nLife Sciences\nand Healthcare\nOthers\nManufacturing\n15.9%\n14.8%\n10.4%\n10.2%\n10.0% \nRevenue by Industry Vertical   Revenue by Geography \n48.6%\n17.4%\n15.4%\n1.9%\nNorth America\nUnited Kingdom\nContinental\nEurope\nAPAC 8.3%\nIndia 5.9%\nLatin America\nMEA 2.5% \nIndustry Vertical   Segment Revenue ( J   crore)   YoY Revenue\nGrowth %\nSegment Margin (%) \nFY 2026   FY 2025   FY 2026   FY 2025 \nBanking, Financial Services and Insurance   103,363   94,597   9.3   26.1   26.6\nConsumer Business   42,432   40,197   5.6   28.5   27.9\nCommunication, Media and Technology   39,474   45,893   (14.0)   29.1   20.9\nLife Sciences and Healthcare   27,745   26,456   4.9   27.0   28.2\nManufacturing   26,614   25,170   5.7   30.3   32.7\nOthers   27,393   23,011   19.0   22.9   25.2 \nTotal   267,021   255,324   4.6   25.0   24.3 \nOverview of Funds Invested \nTCS’ investment strategy focuses on selecting a balanced mix of long",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "financial_snapshot",
+            "fact": "For the year ended March 31, 2026, TCS reported consolidated revenue from operations of ₹267,021 crore, representing a 4.6% increase over FY 2025, while constant currency revenue declined by 2.4%.",
+            "evidence": [
+              {
+                "block_id": "06b2dcd0-66c3-4e6d-a21e-ca305740f4a2",
+                "modality": "text",
+                "quote": "Integrated Annual Report   2025-26 88 \nThe following table gives an overview of the consolidated financial results of the Company:   ( H   crore) \nFY 2026   FY 2025 \nAmount   % of\nRevenue   % Growth   Amount   % of\nRevenue \nRevenue from operations   267,021   100.0   4.6   255,324   100.0\nEarnings before interest and tax (EBIT) (Before other income)   66,838   25.0   7.5   62,165   24.3\nProfit after tax attributable to shareholders of the Company   52,820   19.8   8.8   48,553   19.0 \nEarnings per share (in ₹)   145.99   8.8   134.19 \nFinancial Performance Overview \nThe discussions in this section relate to the consolidated, Rupee ‑ denominated financial results pertaining to the year that ended\nMarch 31, 2026. The financial statements of Tata Consultancy Services Limited and its subsidiaries (collectively referred to as ‘TCS’ or\n‘the Company’) are prepared in accordance with the Indian Accounting Standards (referred to as `Ind AS’) prescribed under Section\n133 of the Companies Act, 20",
+                "source_title": "TCS Annual Report 2026"
+              },
+              {
+                "block_id": "06b2dcd0-66c3-4e6d-a21e-ca305740f4a2",
+                "modality": "text",
+                "quote": "owth\nstripped of the currency impact, was a decline of 2.4%.\nGrowth was impacted by completion of a large domestic deal,\nheightened macroeconomic uncertainty and geopolitical\ntensions continuing during the year. Against this backdrop, clients\nremained focused on initiatives centred around cost optimisation,\nvendor consolidation and technology modernisation, including\nlegacy and mainframe transformation. Cloud and data\nmodernisation was another major theme as clients focused on\nthe prerequisites for deploying AI at scale. However, TCS closed\nthe year with a strong and resilient order book of US$ 40.7 billion.\nEBIT margins reached 25.0% in FY 2026, up from 24.3% the\nprevious year, marking the highest operating margin in four years.\nThrough its investments in ‘Build ‑ Acquire ‑ Partner’, TCS reinvested\nmost of the operating gains back in business to strengthen\ncapabilities and support growth.\nMargins saw support from greater productivity and realisation,\npyramid restructuring, and favorab",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "financial_snapshot",
+            "fact": "Operating profit (EBIT before other income) for FY 2026 was ₹66,838 crore with an operating margin of 25.0%, representing a 70 basis point improvement over FY 2025.",
+            "evidence": [
+              {
+                "block_id": "06b2dcd0-66c3-4e6d-a21e-ca305740f4a2",
+                "modality": "text",
+                "quote": "Integrated Annual Report   2025-26 88 \nThe following table gives an overview of the consolidated financial results of the Company:   ( H   crore) \nFY 2026   FY 2025 \nAmount   % of\nRevenue   % Growth   Amount   % of\nRevenue \nRevenue from operations   267,021   100.0   4.6   255,324   100.0\nEarnings before interest and tax (EBIT) (Before other income)   66,838   25.0   7.5   62,165   24.3\nProfit after tax attributable to shareholders of the Company   52,820   19.8   8.8   48,553   19.0 \nEarnings per share (in ₹)   145.99   8.8   134.19 \nFinancial Performance Overview \nThe discussions in this section relate to the consolidated, Rupee ‑ denominated financial results pertaining to the year that ended\nMarch 31, 2026. The financial statements of Tata Consultancy Services Limited and its subsidiaries (collectively referred to as ‘TCS’ or\n‘the Company’) are prepared in accordance with the Indian Accounting Standards (referred to as `Ind AS’) prescribed under Section\n133 of the Companies Act, 20",
+                "source_title": "TCS Annual Report 2026"
+              },
+              {
+                "block_id": "1d68d076-4d71-4368-8253-420bfa668700",
+                "modality": "text",
+                "quote": "atios \nKey outcomes \nRevenue Trend   ( H   crore)\nIn FY 2026, TCS achieved a year-over year revenue growth of 4.6%, led\nby focused and effective execution.\nOn a constant currency basis, revenue declined by 2.4%. The decline\nwas largely a result of one of the Company’s large transformation\nprogrammes in India coming to an end this year.\nOver the past five financial years, the company recorded a compound\nannual growth rate (CAGR) of 10.2%, highlighting the resilience and\nscalability of its business model. \n10.2% \nCAGR \nFY 2022 \n191,754 \nFY 2024 \n240,893 \nFY 2023 \n225,458 \nFY 2025 \n255,324 \nFY 2026 \n267,021 \nIn FY 2026, TCS reported an operating margin of 25.0%, an improvement of 70\nbasis points compared to FY 2025, and was at a 4-year high.\nImprovement of business mix, productivity and realisation, rebalancing of\npyramid along with favourable currency movements helped the expansion\nof margins.\nThese were offset by investments in talent and capability building,\nand other investments for s",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "trajectory",
+            "fact": "Over the past five financial years, TCS recorded a compound annual growth rate (CAGR) of 10.2% in revenue, scaling from ₹191,754 crore in FY 2022 to ₹267,021 crore in FY 2026.",
+            "evidence": [
+              {
+                "block_id": "1d68d076-4d71-4368-8253-420bfa668700",
+                "modality": "text",
+                "quote": "atios \nKey outcomes \nRevenue Trend   ( H   crore)\nIn FY 2026, TCS achieved a year-over year revenue growth of 4.6%, led\nby focused and effective execution.\nOn a constant currency basis, revenue declined by 2.4%. The decline\nwas largely a result of one of the Company’s large transformation\nprogrammes in India coming to an end this year.\nOver the past five financial years, the company recorded a compound\nannual growth rate (CAGR) of 10.2%, highlighting the resilience and\nscalability of its business model. \n10.2% \nCAGR \nFY 2022 \n191,754 \nFY 2024 \n240,893 \nFY 2023 \n225,458 \nFY 2025 \n255,324 \nFY 2026 \n267,021 \nIn FY 2026, TCS reported an operating margin of 25.0%, an improvement of 70\nbasis points compared to FY 2025, and was at a 4-year high.\nImprovement of business mix, productivity and realisation, rebalancing of\npyramid along with favourable currency movements helped the expansion\nof margins.\nThese were offset by investments in talent and capability building,\nand other investments for s",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "trajectory",
+            "fact": "Earnings per share grew at a 10.3% CAGR over the past five fiscal years, reaching ₹145.99 in FY 2026 compared to ₹103.62 in FY 2022.",
+            "evidence": [
+              {
+                "block_id": "1d68d076-4d71-4368-8253-420bfa668700",
+                "modality": "text",
+                "quote": "trengthening ecosystem partnerships and\nincreasing Go-to-Market pipeline. \nOperating Profit Trend   ( H   crore) \nFY 2022 \n48,453 \nFY 2024 \n59,311 \nFY 2023 \n54,237 \nFY 2025 \n62,165 \nFY 2026 \n66,838\n25.3%   25.0%\n24.3% 24.6%\n24.1%\nOperating Profit\nOperating Margin \nOver the past five fiscal years, TCS has steadily increased its Earnings\nPer Share (EPS), recording a compound annual growth rate of 10.3%.\nThis consistent upward trend demonstrates not only the company’s\nstrengthening profits but also its dedication to providing sustained value\nfor shareholders. \nEarnings per share   (Amount in   H ) \n10.3% \nCAGR \nFY 2022 \n103.62 \nFY 2024 \n127.74 \nFY 2023 \n115.19 \nFY 2025 \n134.19 \nFY 2026 \n145.99 \nTCS has demonstrated a strong cash conversion ratio, which reflects its solid\nfinancial position and effective generation of operational cash.\nA robust cash balance allows TCS to invest and broaden TCS play across\nbuilding capabilities, partnering with ecosystem players and acquiring\ncapabilities; ",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "balance_sheet",
+            "fact": "Contractual maturities of consolidated financial liabilities as at March 31, 2026 included trade payables of ₹14,808 crore due in the first year, lease liabilities totaling ₹13,218 crore, and other financial liabilities totaling ₹11,227 crore.",
+            "evidence": [
+              {
+                "block_id": "c4821cc7-e0fa-4a67-a93b-6cb3dcbc87ae",
+                "modality": "text",
+                "quote": " th\nyear\nTotal\nNon-derivative financial liabilities \nTrade payables   14,808   -   -   -   14,808\nLease liabilities   2,074   1,862   4,316   4,966   13,218\nClass B compulsorily convertible preference shares   -   -   -   126   126\nOther financial liabilities   10,639   203   355   30   11,227 \n27,521   2,065   4,671   5,122   39,379\nDerivative financial liabilities   555   -   -   -   555 \n28,076   2,065   4,671   5,122   39,934 \nThe allowance for lifetime expected credit losses on trade receivables for the year ended March 31, 2026 and 2025 was \nH 163 crore and   H 112 crore respectively. The reconciliation of allowance for expected credit losses is as follows: \nLiquidity risk \nLiquidity risk refers to the risk that the Group cannot meet its financial obligations. The objective of liquidity risk management is\nto maintain sufficient liquidity and ensure that funds are available for use as per requirements. The Group consistently generated\nsufficient cash flows from operations to meet ",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "cash_quality",
+            "fact": "TCS demonstrated high cash conversion, with shareholder payouts and cash metrics reflecting robust operational cash generation, including standalone net cash flows generated from operating activities of ₹45,597 crore for the year ended March 31, 2026.",
+            "evidence": [
+              {
+                "block_id": "1d68d076-4d71-4368-8253-420bfa668700",
+                "modality": "text",
+                "quote": "at speed and scale.\nTCS will continue its investments to maximise growth. \nOperating Cash Flow and Cash Conversion   ( H   crore) \nFY 2022   FY 2024 FY 2023   FY 2025   FY 2026 \nOperating\nCash Flow\nCash Conversion \nTCS remains firmly committed to shareholders through a consistent and\nshareholder friendly dividend policy, while prudently expanding investments\nunder the ‘Build-Partner-Acquire’ framework to strengthen long-term growth.\nBased on the company’s performance, the Board of Directors have \ndeclared three interim dividends of ₹11 each, a special dividend of ₹46, and\nrecommended a final dividend of ₹31 (pending shareholders’ approval at\nthis AGM), for a total of ₹110 per share for FY 2026. TCS has consistently \ndeclared dividend every quarter since its listing, complemented by three\nbonus issues and five buyback offers. \nShareholder Payouts   ( H   crore) \nShareholder Payout\n(including Dividend,\nSpecial Dividend,\nBuyback and Taxes)\nShareholder Payout\nratio (Including\nspecial divid",
+                "source_title": "TCS Annual Report 2026"
+              },
+              {
+                "block_id": "7e0d5487-034b-4b6c-8692-44c37c77c2d2",
+                "modality": "text",
+                "quote": "t change in \nInventories   (9)   7\nTrade receivables \nBilled   (4,668)   (5,828) \nUnbilled   (767)   123\nLoans and other financial assets   549   (732)\nOther assets   523   (2,238)\nTrade payables   616   2,884\nUnearned and deferred revenue   402   829\nOther financial liabilities   2,176   (17)\nOther liabilities and provisions   (75)   1,002 \nCash flows generated from operations   57,719   54,408 \nTaxes paid (net of refunds)   (12,122)   (13,592) \nNet cash flows generated from operating activities   45,597   40,816\nCASH FLOWS FROM INVESTING ACTIVITIES \nBank deposits placed   (5,768)   (8,842)\nInter-corporate deposits placed   (1,511)   (36)\nPurchase of investments (including reverse repo (net))   (1,14,465)   (1,32,458)\nPayment for purchase of property, plant and equipment   (3,081)   (2,388)\nPayment including advances for acquiring right-of-use assets   (105)   (94)\nPayment for purchase of intangible assets   (348)   (902)\nAcquisition of subsidiaries (Refer note 6(a))   (1,128)   (1,03",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "narrative_vs_numbers",
+            "fact": "Management highlighted a 4.6% reported revenue growth rate for FY 2026, while the underlying constant currency growth rate was a decline of 2.4% due to macroeconomic uncertainty, geopolitical tensions, and the completion of a large domestic transformation program.",
+            "evidence": [
+              {
+                "block_id": "06b2dcd0-66c3-4e6d-a21e-ca305740f4a2",
+                "modality": "text",
+                "quote": "owth\nstripped of the currency impact, was a decline of 2.4%.\nGrowth was impacted by completion of a large domestic deal,\nheightened macroeconomic uncertainty and geopolitical\ntensions continuing during the year. Against this backdrop, clients\nremained focused on initiatives centred around cost optimisation,\nvendor consolidation and technology modernisation, including\nlegacy and mainframe transformation. Cloud and data\nmodernisation was another major theme as clients focused on\nthe prerequisites for deploying AI at scale. However, TCS closed\nthe year with a strong and resilient order book of US$ 40.7 billion.\nEBIT margins reached 25.0% in FY 2026, up from 24.3% the\nprevious year, marking the highest operating margin in four years.\nThrough its investments in ‘Build ‑ Acquire ‑ Partner’, TCS reinvested\nmost of the operating gains back in business to strengthen\ncapabilities and support growth.\nMargins saw support from greater productivity and realisation,\npyramid restructuring, and favorab",
+                "source_title": "TCS Annual Report 2026"
+              },
+              {
+                "block_id": "1d68d076-4d71-4368-8253-420bfa668700",
+                "modality": "text",
+                "quote": "atios \nKey outcomes \nRevenue Trend   ( H   crore)\nIn FY 2026, TCS achieved a year-over year revenue growth of 4.6%, led\nby focused and effective execution.\nOn a constant currency basis, revenue declined by 2.4%. The decline\nwas largely a result of one of the Company’s large transformation\nprogrammes in India coming to an end this year.\nOver the past five financial years, the company recorded a compound\nannual growth rate (CAGR) of 10.2%, highlighting the resilience and\nscalability of its business model. \n10.2% \nCAGR \nFY 2022 \n191,754 \nFY 2024 \n240,893 \nFY 2023 \n225,458 \nFY 2025 \n255,324 \nFY 2026 \n267,021 \nIn FY 2026, TCS reported an operating margin of 25.0%, an improvement of 70\nbasis points compared to FY 2025, and was at a 4-year high.\nImprovement of business mix, productivity and realisation, rebalancing of\npyramid along with favourable currency movements helped the expansion\nof margins.\nThese were offset by investments in talent and capability building,\nand other investments for s",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "narrative_vs_numbers",
+            "fact": "Certain non-recurring items such as restructuring charges, legal claim provisions, and Labour Code impacts were excluded from reported management commentary metrics to present underlying performance.",
+            "evidence": [
+              {
+                "block_id": "18e1e192-9adb-421a-ba6c-500706c3942a",
+                "modality": "text",
+                "quote": "our feedback on this report\nat: investor.relations@tcs.com \nFinancial\nCapital\nIntellectual\nCapital\nSocial\nCapital\nHuman\nCapital \nREPORTING FRAMEWORKS \nNatural\nCapital \nExclusions \nAll financial figures and metrics presented\nin this report are stated after excluding\nexceptional items. In FY 2026, the\nCompany incurred certain non-recurring\nitems, comprising of restructuring\ncharges, provision towards a legal claim,\nand the impact of the new Labour\nCode in India. These have been treated\nas exceptional items and have been\nexcluded from financial information and\nrelated explanations in management\ncommentary and other non-statutory\nsections to provide a clearer view of\nunderlying business performance, unless\notherwise indicated in those sections. The\nConsolidated and Standalone Financial\nStatements continue to be reported\nin accordance with applicable Indian\nAccounting Standards.",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "guidance",
+            "fact": "Management noted that the company does not provide any specific revenue or earnings guidance.",
+            "evidence": [
+              {
+                "block_id": "3478e54c-e7e0-45a9-b316-97e56a28f8eb",
+                "modality": "text",
+                "quote": "Page 2 of 28 \nSudeep Kunnumal:   Hello everyone. \nNehal Shah:   Our management team will give a brief overview of the company's\nperformance followed by a Q&A session. As you are aware, we don't\nprovide any speciﬁc revenue or earnings guidance, and anything said on\nthis call, which reﬂects our outlook for the future or which could be\nconstrued   as   a   forward-looking   statement,   must   be   reviewed   in\nconjunction with the risk that the company faces. \nWe have outlined these risks in the second slide of the quarterly fact sheet\navailable on our website and emailed them out to those who have\nsubscribed to our mailing list. With that, I would like to turn the call over\nto Krithi. \nK Krithivasan:   Thank you, Nehal. Good day everyone and thank you for joining us. I would\nlike   to   begin   by   calling   out   the   key   takeaways   from   our   Q2FY27\nperformance. \nFirst ,   we sustained our growth momentum this quarter,   despite an\nenvironment that remains selective and uneven",
+                "source_title": "TCS earnings-call transcript Oct 2026"
+              }
+            ]
+          },
+          {
+            "topic": "guidance",
+            "fact": "Total shareholder payouts for FY 2026 included three interim dividends of ₹11 each, a special dividend of ₹46, and a recommended final dividend of ₹31, summing to ₹110 per share.",
+            "evidence": [
+              {
+                "block_id": "1d68d076-4d71-4368-8253-420bfa668700",
+                "modality": "text",
+                "quote": "at speed and scale.\nTCS will continue its investments to maximise growth. \nOperating Cash Flow and Cash Conversion   ( H   crore) \nFY 2022   FY 2024 FY 2023   FY 2025   FY 2026 \nOperating\nCash Flow\nCash Conversion \nTCS remains firmly committed to shareholders through a consistent and\nshareholder friendly dividend policy, while prudently expanding investments\nunder the ‘Build-Partner-Acquire’ framework to strengthen long-term growth.\nBased on the company’s performance, the Board of Directors have \ndeclared three interim dividends of ₹11 each, a special dividend of ₹46, and\nrecommended a final dividend of ₹31 (pending shareholders’ approval at\nthis AGM), for a total of ₹110 per share for FY 2026. TCS has consistently \ndeclared dividend every quarter since its listing, complemented by three\nbonus issues and five buyback offers. \nShareholder Payouts   ( H   crore) \nShareholder Payout\n(including Dividend,\nSpecial Dividend,\nBuyback and Taxes)\nShareholder Payout\nratio (Including\nspecial divid",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "bull_vs_bear",
+            "fact": "The bull case highlights industry-leading return on equity, strong order books with significant multi-year TCV momentum, and growing leadership in AI-led enterprise transformation services.",
+            "evidence": [
+              {
+                "block_id": "1d68d076-4d71-4368-8253-420bfa668700",
+                "modality": "text",
+                "quote": "end) \nFY 2022 \n38,010 \nFY 2024 \n47,445 \nFY 2023 \n42,079 \nFY 2025 \n45,588 \nFY 2026 \n39,799\n99.2%\n80.9%\n93.9%\n103.3%\n99.8% \nTCS’s consistent, industry-leading Return on Equity demonstrates\nits strong profitability and efficient resource management. This\nperformance underscores the company’s financial discipline, operational\nexcellence, and prudent allocation of shareholder capital. Moving\nforward, TCS remains committed to making strategic investments while\nsustaining its leading return ratios. \nReturn on Equity   (%) \nTCS Value Creation and Distribution (FY 2022 to FY 2026) \nFY 2022 \n43.4% \nFY 2024 \n51.3% \nFY 2023 \n46.9% \nFY 2025 \n52.2% \nFY 2026 \n51.4%\nBest in\nclass   RoE \n39,949   44,338 41,965\n48,908   52,094\n104.2%   105.9%\n100.7%\n96.6% 99.6% Integrated Annual Report   2025-26 \n45 44 Statutory Reports Corporate Overview   Financial Statements   Financial Capital",
+                "source_title": "TCS Annual Report 2026"
+              },
+              {
+                "block_id": "1d68d076-4d71-4368-8253-420bfa668700",
+                "modality": "text",
+                "quote": "Financial\nCapital 1 \nFinancial capital remains a key enabler of TCS’ strategy, providing resilience and flexibility\nto fund innovation, invest ahead of demand, and support stakeholders through cycles.\nStrong profitability, disciplined allocation, and prudent cash management underpin the\nCompany’s ability to scale capabilities and create long-term value. \n1  GRI 201-1 \nSustained   investments in AI-led\nengineering, a highly skilled and scalable\ntalent base, differentiated solutions, and a\nstrong partner ecosystem \nPrudent   working capital\nmanagement leading to\nconsistently high cash conversion \nBroad   based client additions across\nrevenue bands \nStrong   TCV and continued momentum in large deals, with clients\nincreasingly committing to long term, multi-year, multi-million dollar\npartnerships that reflect the trust they place in TCS to deliver certainty\nand value at scale over extended transformation journeys. \nOperational   excellence resulting in industry\nleading margins and return r",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "bull_vs_bear",
+            "fact": "The bear case points to macro uncertainty, customer discretionary spending scrutiny, litigation and regulatory exposures such as US$ 112 million provided for a legal claim, and potential pricing deflation from emerging deep-tech AI competitors.",
+            "evidence": [
+              {
+                "block_id": "b4587459-51e3-4792-9371-c864a449f935",
+                "modality": "text",
+                "quote": "Statutory Reports Corporate Overview   Financial Statements \nManagement Discussion and Analysis 89 \nPursuant to a lawsuit filed by Computer Sciences\nCorporation (CSC) alleging the Company of misappropriation\nof trade secrets, the appeals court confirmed the verdict of\ntrial court and ordered the Company to pay US$ 56 million\nin compensatory damages and US$ 112 million in exemplary\ndamages. On the basis of facts and legal precedence, the\nCompany has provided US$ 112 million towards this claim. \nPursuant to the reskilling and redeployment initiatives\nundertaken by the Company to make it future ‑ ready, some\nassociates were released from the organisation whose\ndeployment may not be feasible. Termination benefits \namounting to ₹ 1,388 crore have been provided as per policy \ndevised for this purpose. \nSegmental Performance \nTCS has identified business segments (‘Industry vertical’) as reportable segments. The revenue break ‑ up by Industry Vertical and\nGeography is provided below: \n38.7%\nBa",
+                "source_title": "TCS Annual Report 2026"
+              },
+              {
+                "block_id": "c597cce8-c856-4c73-9b95-ede65fd8d843",
+                "modality": "text",
+                "quote": "t the same time,\ncontinued AI adoption, easing trade frictions, and timely policy\nactions focused on stability, fiscal resilience, and structural\nreforms could support more long ‑ term growth.\nIn recent months, the global technology landscape experienced a\nstructural shift with the rapid emergence of deep‑tech AI companies\noffering platform‑led, product‑centric solutions. These players,\nleveraging advances in foundation models, agentic workflows and\ndeveloper tools, have demonstrated meaningful efficiency gains\nin selected activities, raising expectations around faster delivery\ncycles and incremental deflation in parts of the value chain. While\nthis expanded the overall AI opportunity, it also introduced new\ncompetitive dynamics for traditional technology services models.\nHowever, a gap often exists between performance demonstrated\nin controlled environments and outcomes realized at scale\nwithin large enterprises. Most organisations typically operate\nin a complex and deeply embedded te",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          "Financial figures are stated for the consolidated Group and standalone parent company for FY 2026 and FY 2025 as supplied in the text and tables."
+        ],
+        "dropped": [
+          {
+            "reason": "Unsupported numerical claim",
+            "statement": "As of March 31, 2026, consolidated total funds invested stood at ₹50,020 crore, comprising investments in mutual funds, Government securities and others of ₹34,887 crore, bank deposits of ₹10,433 crore, inter-corporate deposits of ₹1,500 crore, and cash and bank balances of ₹3,200 crore."
+          }
+        ]
+      }
+    },
+    {
+      "company": "RELIANCE",
+      "profile": "extended",
+      "pages": 13,
+      "characters": 71972,
+      "images": 3,
+      "seconds": 27.156,
+      "status": "validated",
+      "topics": [
+        "business_snapshot",
+        "financial_snapshot",
+        "trajectory",
+        "balance_sheet",
+        "cash_quality",
+        "narrative_vs_numbers",
+        "guidance",
+        "bull_vs_bear"
+      ],
+      "findings": 14,
+      "dropped": 1,
+      "usage": null,
+      "report": {
+        "title": "Reliance Industries Limited Research Brief",
+        "sections": [
+          {
+            "topic": "business_snapshot",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Reliance operates an integrated retail ecosystem spanning physical stores, digital commerce, and distribution platforms, recording Gross Revenue of H 3,71,085 crore and EBITDA of H 27,034 crore in FY 2025-26.",
+                "evidence_indexes": [
+                  0
+                ]
+              },
+              {
+                "statement": "The Oil to Chemicals (O2C) segment generated revenue of H 6,62,401 crore and EBITDA of H 60,546 crore for FY 2025-26, supported by transportation fuel cracks and efficient feedstock sourcing.",
+                "evidence_indexes": [
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "financial_snapshot",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "For the consolidated entity in FY 2025-26, Net Profit Before Share of Profit/(Loss) of Associates/Joint Ventures and Tax was H 1,23,162 crore, compared to H 1,06,017 crore in FY 2024-25.",
+                "evidence_indexes": [
+                  2
+                ]
+              },
+              {
+                "statement": "Standalone Net Profit Before Tax for FY 2025-26 was H 54,076 crore, up from H 46,128 crore in FY 2024-25.",
+                "evidence_indexes": [
+                  3
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "trajectory",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "S&P raised RIL's rating from BBB+ to A- in December 2025 due to the rising contribution of less cyclical, consumer-facing businesses.",
+                "evidence_indexes": [
+                  4
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "balance_sheet",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Consolidated borrowings as of March 31, 2026 stood at H 2,96,716 crore for non-current borrowings (including current maturities) and H 77,705 crore for current borrowings.",
+                "evidence_indexes": [
+                  5
+                ]
+              },
+              {
+                "statement": "Consolidated financial liabilities part of supplier finance arrangements stood at H 76,377 crore as of March 31, 2026.",
+                "evidence_indexes": [
+                  6
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "cash_quality",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Net cash flow from consolidated operating activities for FY 2025-26 was H 1,92,113 crore, compared to H 1,78,703 crore in FY 2024-25.",
+                "evidence_indexes": [
+                  7
+                ]
+              },
+              {
+                "statement": "Consolidated cash generated from operations reached H 2,01,721 crore in FY 2025-26 after net working capital adjustments of H 12,497 crore.",
+                "evidence_indexes": [
+                  8
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "narrative_vs_numbers",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Management highlighted strong retail store performance and expansion, while reported segment financials noted that retail EBITDA margins experienced a slight moderation due to the growing contribution of hyper-local commerce.",
+                "evidence_indexes": [
+                  9
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "guidance",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Management expects retail online transition scale benefits to translate into value through FY 2028 and FY 2029.",
+                "evidence_indexes": [
+                  10
+                ]
+              },
+              {
+                "statement": "Management noted that the FY 2026-27 O2C outlook remains extremely vulnerable to geopolitical, macroeconomic, and policy risks such as SAED and feedstock directives.",
+                "evidence_indexes": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "bull_vs_bear",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "The bull case features strong omni-channel retail scale, robust consumer and digital subscriber growth, flexibility in refining operations, and an S&P credit rating upgrade to A-.",
+                "evidence_indexes": [
+                  12
+                ]
+              },
+              {
+                "statement": "The bear case encompasses geopolitical volatility, regulatory and tax risks like SAED directives, downstream chemical overcapacity, and margin dilution from hyper-local commerce expansion.",
+                "evidence_indexes": [
+                  13
+                ]
+              }
+            ]
+          }
+        ],
+        "facts": [
+          {
+            "topic": "business_snapshot",
+            "fact": "Reliance operates an integrated retail ecosystem spanning physical stores, digital commerce, and distribution platforms, recording Gross Revenue of H 3,71,085 crore and EBITDA of H 27,034 crore in FY 2025-26.",
+            "evidence": [
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "timal balance sheet structure. \n-   Financial Performance and Review \nRetail \nReliance Retail is the largest and the most profitable\nretailer in India, operating in an integrated retail\necosystem that combines physical stores, digital\ncommerce and distribution platforms. Today,\nReliance Retail is positioned as India’s largest omni-\nchannel retailer with the scale and capabilities to\nserve customers seamlessly across touchpoints.\nReliance Retail's operating model prioritises\naccessibility, affordability and availability, while\nfulfilling the daily needs of millions across every\nconsumption basket. \nStrategic\nObjective \nStrengthen Reliance Retail's\nposition as India's largest\nand most trusted retailer by\ndemocratizing access to quality\nproducts and experiences for\nevery Indian. Reliance Retail\nwould harness technology\nand innovation to redefine the\nfuture of Indian retail, creating\nlasting value for consumers,\ncommunities, and the nation. \nIndustry Overview \nIndia is one of the world’s f",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "ories.\nFast fashion is reshaping demand\npatterns, with shorter trend cycles\nand faster inventory turns driving\napparel consumption. Social media and\nplatform-led discovery are accelerating\nimpulse purchases and increasing\nwardrobe turnover frequency. \nBusiness\nPerformance \nDuring the year, Reliance Retail\nrecorded Gross Revenue of   H   3,71,085\ncrore, reflecting a growth of 12.1%\nover the previous year. EBITDA for the\nyear stood at   H   27,034 crore, translating\ninto an EBITDA margin of 8.2%, slight\nmoderation due to growing contribution\nof hyper-local commerce. \n20,160 \nRETAIL STORES \n78.3 Million sq. ft. \nRETAIL AREA \n387 Million \nREGISTERED CUSTOMER BASE \n~1.9 Billion \nTRANSACTIONS \n2,90,293 \nPEOPLE",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "Reliance Industries Limited   Integrated Annual Report 2025-26 8   9 Management Discussion and Analysis   -   Business Overview Management Discussion and Analysis \nMovement in Key\nFinancial Ratios \nThe Debt Service Coverage Ratio\nincreased from 2.06 in FY 2024-25\nto 4.03 in FY 2025-26, due to lower\nfinance cost and principal repayments\nof loans during the year.\nThe Net Profit Margin increased\nfrom 6.3% in FY 2024-25 to 8.0% in\nFY 2025-26, due to higher net profit.\nReturn on Capital Employed increased\nfrom 14.6% in FY 2024-25 to 20.7% in\nFY 2025-26, due to higher profit and\nreduction in capital employed.\nLong Term Debt to Working Capital\nincreased from 7.53 in FY 2024 - 25\nto 17.12 in FY 2025-26, due to\nhigher debt and efficient working\ncapital management.\nInterest Coverage Ratio increased\nfrom 5.59 in FY 2024-25 to 8.83 in\nFY 2025 - 26, due to higher operating\nprofit along with lower finance costs.\nThe Return on Net Worth* improved to\n10.1% in FY 2025-26 as against 8.2%\nin previous yea",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "business_snapshot",
+            "fact": "The Oil to Chemicals (O2C) segment generated revenue of H 6,62,401 crore and EBITDA of H 60,546 crore for FY 2025-26, supported by transportation fuel cracks and efficient feedstock sourcing.",
+            "evidence": [
+              {
+                "block_id": "5047bb62-cc8d-4143-9d5f-450b22308d05",
+                "modality": "text",
+                "quote": "\nin downstream operations and GST\nrationalisation. However, PET domestic\ndemand declined by 6.5% on account of\nextended monsoon and EPR mandate to\nuse recycled PET. \nBusiness Performance\nFinancial Performance \n( J   Crore)   FY 2025-26   FY 2024-25   Y-o-Y Change \nRevenue   6,62,401   6,26,921   5.7%\nEBITDA   60,546   54,988   10.1%\nEBITDA margin   9.1%   8.8%   30 bps\nO2C Revenue for FY 2025-26 increased by 5.7% Y-o-Y to   H   6,62,401 crore\n(US$ 69.9 billion) primarily on account of higher domestic product placement and\nbetter price realisation.\nO2C EBITDA for FY 2025-26 was at   H   60,546 crore (US$ 6.4 billion) led by stronger\ntransportation fuel cracks, efficient feedstock sourcing and higher domestic product\nplacement. Earnings were constrained by weak downstream chemical margins and\ndisruptions caused by Middle East conflict towards the year-end. \nProduction Meant for Sale   (In MMT) \nParticulars   Products   FY 2025-26   FY 2024-25 \nTransportation\nFuels\nGasoil   26.8   25.7\nGa",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "5047bb62-cc8d-4143-9d5f-450b22308d05",
+                "modality": "text",
+                "quote": "\nin downstream operations and GST\nrationalisation. However, PET domestic\ndemand declined by 6.5% on account of\nextended monsoon and EPR mandate to\nuse recycled PET. \nBusiness Performance\nFinancial Performance \n( J   Crore)   FY 2025-26   FY 2024-25   Y-o-Y Change \nRevenue   6,62,401   6,26,921   5.7%\nEBITDA   60,546   54,988   10.1%\nEBITDA margin   9.1%   8.8%   30 bps\nO2C Revenue for FY 2025-26 increased by 5.7% Y-o-Y to   H   6,62,401 crore\n(US$ 69.9 billion) primarily on account of higher domestic product placement and\nbetter price realisation.\nO2C EBITDA for FY 2025-26 was at   H   60,546 crore (US$ 6.4 billion) led by stronger\ntransportation fuel cracks, efficient feedstock sourcing and higher domestic product\nplacement. Earnings were constrained by weak downstream chemical margins and\ndisruptions caused by Middle East conflict towards the year-end. \nProduction Meant for Sale   (In MMT) \nParticulars   Products   FY 2025-26   FY 2024-25 \nTransportation\nFuels\nGasoil   26.8   25.7\nGa",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "financial_snapshot",
+            "fact": "For the consolidated entity in FY 2025-26, Net Profit Before Share of Profit/(Loss) of Associates/Joint Ventures and Tax was H 1,23,162 crore, compared to H 1,06,017 crore in FY 2024-25.",
+            "evidence": [
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": "Consolidated Financial Statements Reliance Industries Limited   Integrated Annual Report 2025-26 202   203 \n( I   in crore) \n2025-26   2024-25 \nA.   Cash   Flow   from   Operating   Activities\nNet   Profit   Before   Share   of   Profit   /   (Loss)   of   Associates   /   Joint   Ventures   and   Tax   as   per \nStatement   of   Profit   and   Loss\n1,23,162   1,06,017\nAdjusted   for: \nLoss on Sale / Discard of Property, Plant and Equipment and Other Intangible Assets   (Net)   143   135\nDepreciation / Amortisation and Depletion Expense   57,688   53,136\nEffect of Exchange Rate Change   6,518   (2,182)\nNet Gain on Financial Assets   (2,946)   (1,557)\nDividend Income   (9,100)   (504)\nInterest Income   (13,302)   (12,410)\nFinance Costs   27,061   24,269 \nSub-Total   66,062   60,887\nOperating   Profit   before   Working   Capital   Changes   1,89,224   1,66,904\nAdjusted   for: \nTrade and Other Receivables   (53,322)   (17,837)\nInventories   (20,790)   3,134\nTrade and Other Payables   86,",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "financial_snapshot",
+            "fact": "Standalone Net Profit Before Tax for FY 2025-26 was H 54,076 crore, up from H 46,128 crore in FY 2024-25.",
+            "evidence": [
+              {
+                "block_id": "0f5ded12-3995-4069-ac92-e3dd0bca7e96",
+                "modality": "text",
+                "quote": "Reliance Industries Limited   Integrated Annual Report 2025-26 118   119 Standalone Financial Statements \n( H   in crore) \n2025-26   2024-25 \nA.   Cash   Flow   from   Operating   Activities\nNet   Profit   Before   Tax   as   per   Statement   of   Profit   and   Loss   54,076   46,128 \nAdjusted   for: \nLoss on Sale / Discard of Property, Plant and Equipment and Intangible Assets (Net)   38   14\nDepreciation / Amortisation and Depletion Expense   17,105   17,981\nEffect of Exchange Rate Change   5,047   (1,877)\nNet Gain on Financial Assets   (965)   (433)\nDividend Income   (9,454)   (1,763)\nInterest Income   (10,718)   (11,180)\nFinance costs   6,904   10,054 \nOperating   Profit   before   Working   Capital   Changes   62,033   58,924\nAdjusted   for: \nTrade and Other Receivables   (28,196)   3,209\nInventories   (15,709)   (4,116)\nTrade and Other Payables   69,234   30,536 \nCash   Generated   from   Operations   87,362   88,553 \nTaxes Paid (Net)   (8,303)   (9,161) \nNet   Cash   Flow   fr",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "trajectory",
+            "fact": "S&P raised RIL's rating from BBB+ to A- in December 2025 due to the rising contribution of less cyclical, consumer-facing businesses.",
+            "evidence": [
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "irst untied facility for any corporate\nglobally. The facility has the longest\naverage tenor for any Export Credit\nAgency supported facility globally. \nLiquidity Management \nReliance prioritises liquidity\nmanagement by maintaining a strong\ncash reserve to safeguard operations\nagainst sudden market volatility.\nFurther, by maintaining sufficient\nundrawn credit lines, the Group ensures\nit can consistently meet its short-term\nobligations. RIL utilises diverse trade\nfinancing and structured products\nto optimise its working capital. RIL’s\ninvestment strategy is continuously\nrefined to balance stable returns with\nimmediate fund accessibility. \nCredit Rating \nS&P raised RIL's rating from BBB+\nto A- in December 2025 reflecting\nrising contribution from less cyclical,\nconsumer-facing businesses resulting\nin improved earnings stability. The\nrating upgrade will provide RIL access\nto new pools of capital at finer spreads. \nInstrument   Rating Agency   Ratings   Remarks \nInternational Debt   S&P   A- ",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "balance_sheet",
+            "fact": "Consolidated borrowings as of March 31, 2026 stood at H 2,96,716 crore for non-current borrowings (including current maturities) and H 77,705 crore for current borrowings.",
+            "evidence": [
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": " 2026 \nChange in Liability Arising from Financing Activities \n( I   in crore) \nParticulars   1 st   April, \n2025   Cash   flow   Foreign   exchange \nmovement/Others \n31 st   March, \n2026 \nBorrowings - Non-current (including Current Maturities)\n(Refer   Note 16)\n2,66,222   7,990   22,504   2,96,716\nBorrowings   ‑   Current (Refer Note 20)   81,308   (5,171)   1,568   77,705 \nTotal   3,47,530   2,819   24,072   3,74,421 \n( I   in crore) \nParticulars   1 st   April, \n2024   Cash   flow   Foreign   exchange \nmovement/Others \n31 st   March, \n2025 \nBorrowings - Non-current (including Current Maturities)\n(Refer   Note 16)\n2,67,980   (5,377)   3,619   2,66,222\nBorrowings   ‑   Current (Refer Note 20)   56,642   24,624   42   81,308 \nTotal   3,24,622   19,247   3,661   3,47,530\nCash   flow   from   Supplier   Financing   Arrangement   (Refer   Note   44) \n( I   in crore) \nParticulars   1 st   April, \n2025   Cash   flow   Foreign   exchange \nmovement/Others \n31 st   March, \n2026 \nCarrying amount",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": " 2026 \nChange in Liability Arising from Financing Activities \n( I   in crore) \nParticulars   1 st   April, \n2025   Cash   flow   Foreign   exchange \nmovement/Others \n31 st   March, \n2026 \nBorrowings - Non-current (including Current Maturities)\n(Refer   Note 16)\n2,66,222   7,990   22,504   2,96,716\nBorrowings   ‑   Current (Refer Note 20)   81,308   (5,171)   1,568   77,705 \nTotal   3,47,530   2,819   24,072   3,74,421 \n( I   in crore) \nParticulars   1 st   April, \n2024   Cash   flow   Foreign   exchange \nmovement/Others \n31 st   March, \n2025 \nBorrowings - Non-current (including Current Maturities)\n(Refer   Note 16)\n2,67,980   (5,377)   3,619   2,66,222\nBorrowings   ‑   Current (Refer Note 20)   56,642   24,624   42   81,308 \nTotal   3,24,622   19,247   3,661   3,47,530\nCash   flow   from   Supplier   Financing   Arrangement   (Refer   Note   44) \n( I   in crore) \nParticulars   1 st   April, \n2025   Cash   flow   Foreign   exchange \nmovement/Others \n31 st   March, \n2026 \nCarrying amount",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "balance_sheet",
+            "fact": "Consolidated financial liabilities part of supplier finance arrangements stood at H 76,377 crore as of March 31, 2026.",
+            "evidence": [
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": " 2026 \nChange in Liability Arising from Financing Activities \n( I   in crore) \nParticulars   1 st   April, \n2025   Cash   flow   Foreign   exchange \nmovement/Others \n31 st   March, \n2026 \nBorrowings - Non-current (including Current Maturities)\n(Refer   Note 16)\n2,66,222   7,990   22,504   2,96,716\nBorrowings   ‑   Current (Refer Note 20)   81,308   (5,171)   1,568   77,705 \nTotal   3,47,530   2,819   24,072   3,74,421 \n( I   in crore) \nParticulars   1 st   April, \n2024   Cash   flow   Foreign   exchange \nmovement/Others \n31 st   March, \n2025 \nBorrowings - Non-current (including Current Maturities)\n(Refer   Note 16)\n2,67,980   (5,377)   3,619   2,66,222\nBorrowings   ‑   Current (Refer Note 20)   56,642   24,624   42   81,308 \nTotal   3,24,622   19,247   3,661   3,47,530\nCash   flow   from   Supplier   Financing   Arrangement   (Refer   Note   44) \n( I   in crore) \nParticulars   1 st   April, \n2025   Cash   flow   Foreign   exchange \nmovement/Others \n31 st   March, \n2026 \nCarrying amount",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": " of financial liabilities that are part of a supplier\nfinance arrangement \n‑   Presented in Trade and Other Payables   92,223   (53,969)   8,867   47,121 \n‑   Presented in Other Financial Liability   11,493   17,198   565   29,256 \nTotal   1,03,716   (36,771)   9,432   76,377 \nAs per our Report of even date\nFor   Deloitte Haskins & Sells LLP \nChartered Accountants\n(Registration No.\n117366W/W ‑ 100018)\nFor   Chaturvedi & Shah LLP \nChartered Accountants\n(Registration No.\n101720W/W ‑ 100355) \nSrikanth Venkatachari \nChief Financial Officer \nAbhijit A. Damle \nPartner\nMembership No. 102912 \nSandesh Ladha \nPartner\nMembership No. 047841 \nSavithri Parekh \nCompany Secretary\nDate: April 24, 2026\nFor and on behalf of the Board \nM.D. Ambani \nDIN: 00001695 \nN.R. Meswani \nDIN: 00001620 \nH.R. Meswani \nDIN: 00001623 \nP.M.S. Prasad \nDIN: 00012144 \nAnant M. Ambani \nDIN: 07945702 \nAkash M. Ambani \nDIN: 06984194 \nIsha M. Ambani \nDIN: 06984175 \nDr. Shumeet Banerji \nDIN: 02787784 \nArundhati Bhattacharya \nDIN",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "cash_quality",
+            "fact": "Net cash flow from consolidated operating activities for FY 2025-26 was H 1,92,113 crore, compared to H 1,78,703 crore in FY 2024-25.",
+            "evidence": [
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": "609   38,427 \nSub-Total   12,497   23,724\nCash   Generated   from   Operations   2,01,721   1,90,628 \nTaxes Paid (Net)   (9,608)   (11,925) \nNet   Cash   Flow   from   Operating   Activities   *   1,92,113   1,78,703 \nB.   Cash Flow from Investing Activities \nExpenditure for Property, Plant and Equipment, Spectrum and Other Intangible Assets   (1,22,916)   (1,39,967)\nProceeds from disposal of Property, Plant and Equipment and Other Intangible Assets   826   2,343\nPurchase of Investments   (9,88,777)   (6,84,340)\nProceeds from Sale of Financial Assets   9,91,876   6,72,558\nPayment of Deferred Payment Liabilities   (4,736)   (4,574)\nInterest Income   13,538   15,833\nDividend Income from Associates   49   49\nDividend Income from Others   9,051   563 \nNet   Cash   Used   in   Investing   Activities   (1,01,089)   (1,37,535) \nC.   Cash Flow From Financing Activities \nProceeds from Issue of Equity Share Capital  @   -   -\nNet Proceeds from Rights Issue   -   22\nPayment of Lease Liabilities  ",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": "Consolidated Financial Statements Reliance Industries Limited   Integrated Annual Report 2025-26 202   203 \n( I   in crore) \n2025-26   2024-25 \nA.   Cash   Flow   from   Operating   Activities\nNet   Profit   Before   Share   of   Profit   /   (Loss)   of   Associates   /   Joint   Ventures   and   Tax   as   per \nStatement   of   Profit   and   Loss\n1,23,162   1,06,017\nAdjusted   for: \nLoss on Sale / Discard of Property, Plant and Equipment and Other Intangible Assets   (Net)   143   135\nDepreciation / Amortisation and Depletion Expense   57,688   53,136\nEffect of Exchange Rate Change   6,518   (2,182)\nNet Gain on Financial Assets   (2,946)   (1,557)\nDividend Income   (9,100)   (504)\nInterest Income   (13,302)   (12,410)\nFinance Costs   27,061   24,269 \nSub-Total   66,062   60,887\nOperating   Profit   before   Working   Capital   Changes   1,89,224   1,66,904\nAdjusted   for: \nTrade and Other Receivables   (53,322)   (17,837)\nInventories   (20,790)   3,134\nTrade and Other Payables   86,",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "cash_quality",
+            "fact": "Consolidated cash generated from operations reached H 2,01,721 crore in FY 2025-26 after net working capital adjustments of H 12,497 crore.",
+            "evidence": [
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": "Consolidated Financial Statements Reliance Industries Limited   Integrated Annual Report 2025-26 202   203 \n( I   in crore) \n2025-26   2024-25 \nA.   Cash   Flow   from   Operating   Activities\nNet   Profit   Before   Share   of   Profit   /   (Loss)   of   Associates   /   Joint   Ventures   and   Tax   as   per \nStatement   of   Profit   and   Loss\n1,23,162   1,06,017\nAdjusted   for: \nLoss on Sale / Discard of Property, Plant and Equipment and Other Intangible Assets   (Net)   143   135\nDepreciation / Amortisation and Depletion Expense   57,688   53,136\nEffect of Exchange Rate Change   6,518   (2,182)\nNet Gain on Financial Assets   (2,946)   (1,557)\nDividend Income   (9,100)   (504)\nInterest Income   (13,302)   (12,410)\nFinance Costs   27,061   24,269 \nSub-Total   66,062   60,887\nOperating   Profit   before   Working   Capital   Changes   1,89,224   1,66,904\nAdjusted   for: \nTrade and Other Receivables   (53,322)   (17,837)\nInventories   (20,790)   3,134\nTrade and Other Payables   86,",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "ca65aa0d-bb3f-42b9-873e-61c48e2117ec",
+                "modality": "text",
+                "quote": "609   38,427 \nSub-Total   12,497   23,724\nCash   Generated   from   Operations   2,01,721   1,90,628 \nTaxes Paid (Net)   (9,608)   (11,925) \nNet   Cash   Flow   from   Operating   Activities   *   1,92,113   1,78,703 \nB.   Cash Flow from Investing Activities \nExpenditure for Property, Plant and Equipment, Spectrum and Other Intangible Assets   (1,22,916)   (1,39,967)\nProceeds from disposal of Property, Plant and Equipment and Other Intangible Assets   826   2,343\nPurchase of Investments   (9,88,777)   (6,84,340)\nProceeds from Sale of Financial Assets   9,91,876   6,72,558\nPayment of Deferred Payment Liabilities   (4,736)   (4,574)\nInterest Income   13,538   15,833\nDividend Income from Associates   49   49\nDividend Income from Others   9,051   563 \nNet   Cash   Used   in   Investing   Activities   (1,01,089)   (1,37,535) \nC.   Cash Flow From Financing Activities \nProceeds from Issue of Equity Share Capital  @   -   -\nNet Proceeds from Rights Issue   -   22\nPayment of Lease Liabilities  ",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "narrative_vs_numbers",
+            "fact": "Management highlighted strong retail store performance and expansion, while reported segment financials noted that retail EBITDA margins experienced a slight moderation due to the growing contribution of hyper-local commerce.",
+            "evidence": [
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "ories.\nFast fashion is reshaping demand\npatterns, with shorter trend cycles\nand faster inventory turns driving\napparel consumption. Social media and\nplatform-led discovery are accelerating\nimpulse purchases and increasing\nwardrobe turnover frequency. \nBusiness\nPerformance \nDuring the year, Reliance Retail\nrecorded Gross Revenue of   H   3,71,085\ncrore, reflecting a growth of 12.1%\nover the previous year. EBITDA for the\nyear stood at   H   27,034 crore, translating\ninto an EBITDA margin of 8.2%, slight\nmoderation due to growing contribution\nof hyper-local commerce. \n20,160 \nRETAIL STORES \n78.3 Million sq. ft. \nRETAIL AREA \n387 Million \nREGISTERED CUSTOMER BASE \n~1.9 Billion \nTRANSACTIONS \n2,90,293 \nPEOPLE",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "guidance",
+            "fact": "Management expects retail online transition scale benefits to translate into value through FY 2028 and FY 2029.",
+            "evidence": [
+              {
+                "block_id": "d9bf7be4-797a-4f78-b0b5-c71e14471250",
+                "modality": "text",
+                "quote": "esence. It has been coming on the back of a lot of discipline. We have been trading off\nshort term earnings growth to build a very scalable digital commerce platform. And the cash\nflow from our store business, in a way, is funding digital commerce growth. And the benefit\nof all this will be seen through FY 2028 and FY 2029 when this conversion of this scale will\ntranslate in terms of value. What is good is that we are seeing the early signs of progress are\npretty good when you look at online scale, especially on grocery B2C, that number is up 42%,\nvery impressive set of numbers. Also, the online share of digital, both in grocery and apparel\nand footwear, there have been also very sharp increases. We like that kind of percentage\nincrease. And we will see this transition happening over the next few quarters. \nIn RCPL, the focus remains on building the manufacturing capability and the distribution\nthere. And media, as you know, we have the widest reach when you look at it from both linear",
+                "source_title": "RELIANCE earnings-call transcript Nov 2026"
+              }
+            ]
+          },
+          {
+            "topic": "guidance",
+            "fact": "Management noted that the FY 2026-27 O2C outlook remains extremely vulnerable to geopolitical, macroeconomic, and policy risks such as SAED and feedstock directives.",
+            "evidence": [
+              {
+                "block_id": "5047bb62-cc8d-4143-9d5f-450b22308d05",
+                "modality": "text",
+                "quote": "ial growth\ndriving fuel and downstream chemical demand.\n•   Stable non-OECD oil demand growth and increasing\nfuel market deficit.\n•   Trade deals and GST rationalisation aiding domestic\ndemand growth in polyester and downstream sectors. \nThreats \n•   Geopolitical tensions, sanctions and tariff pressures\ncausing price and trade volatility.\n•   Rising Chinese exports and global overcapacity\naffecting downstream chemical product margins.\n•   Energy transition, EV growth, and carbon regulations\nreducing long-term fossil fuel demand. \nOutlook \nGlobal oil demand growth is expected to be sluggish due to higher oil prices and economic slowdown in FY 2026 - 27\namid Middle East conflict. Refinery and oil infrastructure damages which caused product supply losses are likely\nto take a longer period to recover, resulting in continual volatility in the market. The FY 2026-27 outlook remains\nextremely vulnerable to geopolitical, macro-economic and policy risks.\nIn FY 2026-27, volatile product and feed",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "5047bb62-cc8d-4143-9d5f-450b22308d05",
+                "modality": "text",
+                "quote": "stock prices, supply disruptions from the Middle East, Government of India\ndirectives on SAED, petrochemical feedstock usage and duty exemption on key petrochemical products may weigh\non domestic demand and margins.",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "5047bb62-cc8d-4143-9d5f-450b22308d05",
+                "modality": "text",
+                "quote": "Reliance Industries Limited   Integrated Annual Report 2025-26 22   23 Management Discussion and Analysis   -   Business Overview   Management Discussion and Analysis   -   Business Overview \ndemand with long-term climate goals\nby building capacity for renewables and\ndeveloping circular economy. A policy\npush has helped build charging network\npresence close to 70,000 charging\nstations and 8,500 gas stations with a\nrapidly increasing 7.5 to 8 million EV parc\nand 9 million CNG-CBG vehicle parc. \nPolymers and\nElastomers \nGlobal ethylene demand increased by\n1.7% Y-o-Y to 189.0 MMT in CY25 with\ncapacity addition of 6.6 MMT resulting in\nmarginal decrease in operating rate by\n13 bps to 81.5%.\nGlobal Polymer demand increased to\n259.0 MMT in CY25, compared to 253.6\nMMT in CY24. In CY25, Global PE, PP,\nand PVC demand grew by 2.0%, 2.6%\nand 1.7%, respectively.\nIn FY 2025-26, Domestic Polymer\ndemand grew by 2.3%. PP domestic\ndemand grew by 6.7%, driven\nby packaging, cement, furniture,\nhouseholds’ ",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "bull_vs_bear",
+            "fact": "The bull case features strong omni-channel retail scale, robust consumer and digital subscriber growth, flexibility in refining operations, and an S&P credit rating upgrade to A-.",
+            "evidence": [
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "irst untied facility for any corporate\nglobally. The facility has the longest\naverage tenor for any Export Credit\nAgency supported facility globally. \nLiquidity Management \nReliance prioritises liquidity\nmanagement by maintaining a strong\ncash reserve to safeguard operations\nagainst sudden market volatility.\nFurther, by maintaining sufficient\nundrawn credit lines, the Group ensures\nit can consistently meet its short-term\nobligations. RIL utilises diverse trade\nfinancing and structured products\nto optimise its working capital. RIL’s\ninvestment strategy is continuously\nrefined to balance stable returns with\nimmediate fund accessibility. \nCredit Rating \nS&P raised RIL's rating from BBB+\nto A- in December 2025 reflecting\nrising contribution from less cyclical,\nconsumer-facing businesses resulting\nin improved earnings stability. The\nrating upgrade will provide RIL access\nto new pools of capital at finer spreads. \nInstrument   Rating Agency   Ratings   Remarks \nInternational Debt   S&P   A- ",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "ff66e270-6d3c-40c1-9c4d-7e02e17ca5ac",
+                "modality": "text",
+                "quote": "r service. \nSCOT Analysis\nStrengths \n•   Largest integrated omni-channel retailer in India.\n•   Large and growing customer franchise supported by\nextensive network coverage.\n•   Uniquely positioned across value, mid-market and\npremium segments to serve diverse customer cohorts.\n•   Hyper-local commerce scale leveraging the store\nnetwork for fulfilment with strong unit economics.\n•   Adoption of AI and advanced analytics across the value\nchain to drive efficiency and smarter decision-making.\n•   Superior execution and partner ecosystem for scaling\ndomestic and global brands. \nChallenges \n•   Limited supply of quality malls and high-street real\nestate suitable for stores.\n•   Continued need to attract, train and retain specialised\nand frontline talent to support expansion, productivity,\nand service levels. \nThreats \n•   Macroeconomic volatility affecting consumer\nsentiment, discretionary spending and trading patterns.\n•   Geopolitical disruptions and global supply chain\nvolatility may im",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "bull_vs_bear",
+            "fact": "The bear case encompasses geopolitical volatility, regulatory and tax risks like SAED directives, downstream chemical overcapacity, and margin dilution from hyper-local commerce expansion.",
+            "evidence": [
+              {
+                "block_id": "eb4bd214-1bcf-4e1a-955d-c1a70b308443",
+                "modality": "text",
+                "quote": "ories.\nFast fashion is reshaping demand\npatterns, with shorter trend cycles\nand faster inventory turns driving\napparel consumption. Social media and\nplatform-led discovery are accelerating\nimpulse purchases and increasing\nwardrobe turnover frequency. \nBusiness\nPerformance \nDuring the year, Reliance Retail\nrecorded Gross Revenue of   H   3,71,085\ncrore, reflecting a growth of 12.1%\nover the previous year. EBITDA for the\nyear stood at   H   27,034 crore, translating\ninto an EBITDA margin of 8.2%, slight\nmoderation due to growing contribution\nof hyper-local commerce. \n20,160 \nRETAIL STORES \n78.3 Million sq. ft. \nRETAIL AREA \n387 Million \nREGISTERED CUSTOMER BASE \n~1.9 Billion \nTRANSACTIONS \n2,90,293 \nPEOPLE",
+                "source_title": "RELIANCE Annual Report 2026"
+              },
+              {
+                "block_id": "5047bb62-cc8d-4143-9d5f-450b22308d05",
+                "modality": "text",
+                "quote": "stock prices, supply disruptions from the Middle East, Government of India\ndirectives on SAED, petrochemical feedstock usage and duty exemption on key petrochemical products may weigh\non domestic demand and margins.",
+                "source_title": "RELIANCE Annual Report 2026"
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          "Selected evidence covers FY 2025-26 annual reports and November 2026 earnings transcripts without providing exhaustive multi-year comparative data for every single business parameter."
+        ],
+        "dropped": [
+          {
+            "reason": "Unsupported numerical claim",
+            "statement": "Jio Platforms reported operating revenues of Rs. 40,475 Crores and EBITDA of Rs. 21,879 Crores for the quarter ending September 2026, benefiting from a subscriber base of 542 million."
+          }
+        ]
+      }
+    }
+  ]
+}

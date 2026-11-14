@@ -1,0 +1,32 @@
+[
+  {
+    "company": "TCS",
+    "status": "completed",
+    "seconds": 14,
+    "calls": 1,
+    "model": [
+      "gemini-3.5-flash-lite"
+    ],
+    "selected": 12,
+    "indexed": 390,
+    "findings": 7,
+    "textCitations": 12,
+    "visualCitations": 1,
+    "exclusions": 0
+  },
+  {
+    "company": "RELIANCE",
+    "status": "partial",
+    "seconds": 11,
+    "calls": 1,
+    "model": [
+      "gemini-3.5-flash-lite"
+    ],
+    "selected": 8,
+    "indexed": 216,
+    "findings": 6,
+    "textCitations": 8,
+    "visualCitations": 0,
+    "exclusions": 1
+  }
+]

@@ -1,0 +1,2015 @@
+{
+  "question": "Provide a broad company research overview covering the business and revenue mix; financial snapshot and trajectory; balance sheet, debt and working capital; operating cash flow and cash conversion; management narrative versus reported numbers; explicit guidance and capital allocation; and a concise bull and bear case. Include material governance concerns, auditor qualifications, contingent liabilities and related-party risks where supported. State source periods and consolidated versus standalone scope. Identify missing evidence without inventing a four-quarter or multi-year comparison.",
+  "offline": [
+    {
+      "company": "TCS",
+      "strategy": "ranked",
+      "profile": "compact",
+      "pages": 8,
+      "characters": 17716,
+      "sourceDocuments": 2,
+      "themes": [
+        "balance_sheet",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 119,
+      "pageNumbers": [
+        [
+          "annual_report",
+          270
+        ],
+        [
+          "annual_report",
+          361
+        ],
+        [
+          "annual_report",
+          61
+        ],
+        [
+          "transcript",
+          3
+        ],
+        [
+          "transcript",
+          23
+        ],
+        [
+          "transcript",
+          28
+        ],
+        [
+          "annual_report",
+          196
+        ],
+        [
+          "annual_report",
+          3
+        ]
+      ]
+    },
+    {
+      "company": "TCS",
+      "strategy": "ranked",
+      "profile": "balanced",
+      "pages": 13,
+      "characters": 39961,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 88,
+      "pageNumbers": [
+        [
+          "annual_report",
+          270
+        ],
+        [
+          "annual_report",
+          361
+        ],
+        [
+          "annual_report",
+          61
+        ],
+        [
+          "transcript",
+          3
+        ],
+        [
+          "transcript",
+          23
+        ],
+        [
+          "transcript",
+          28
+        ],
+        [
+          "annual_report",
+          165
+        ],
+        [
+          "annual_report",
+          196
+        ],
+        [
+          "annual_report",
+          251
+        ],
+        [
+          "annual_report",
+          25
+        ],
+        [
+          "annual_report",
+          60
+        ],
+        [
+          "annual_report",
+          4
+        ],
+        [
+          "annual_report",
+          178
+        ]
+      ]
+    },
+    {
+      "company": "TCS",
+      "strategy": "ranked",
+      "profile": "extended",
+      "pages": 23,
+      "characters": 71964,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 86,
+      "pageNumbers": [
+        [
+          "annual_report",
+          270
+        ],
+        [
+          "annual_report",
+          361
+        ],
+        [
+          "annual_report",
+          61
+        ],
+        [
+          "transcript",
+          3
+        ],
+        [
+          "transcript",
+          23
+        ],
+        [
+          "transcript",
+          28
+        ],
+        [
+          "annual_report",
+          165
+        ],
+        [
+          "annual_report",
+          196
+        ],
+        [
+          "annual_report",
+          251
+        ],
+        [
+          "annual_report",
+          25
+        ],
+        [
+          "annual_report",
+          60
+        ],
+        [
+          "annual_report",
+          4
+        ],
+        [
+          "annual_report",
+          178
+        ],
+        [
+          "annual_report",
+          160
+        ],
+        [
+          "annual_report",
+          54
+        ],
+        [
+          "annual_report",
+          279
+        ],
+        [
+          "annual_report",
+          42
+        ],
+        [
+          "annual_report",
+          257
+        ],
+        [
+          "annual_report",
+          225
+        ],
+        [
+          "annual_report",
+          5
+        ],
+        [
+          "annual_report",
+          59
+        ],
+        [
+          "annual_report",
+          187
+        ],
+        [
+          "annual_report",
+          3
+        ]
+      ]
+    },
+    {
+      "company": "TCS",
+      "strategy": "diverse",
+      "profile": "compact",
+      "pages": 8,
+      "characters": 17983,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 305,
+      "pageNumbers": [
+        [
+          "annual_report",
+          60
+        ],
+        [
+          "annual_report",
+          25
+        ],
+        [
+          "annual_report",
+          270
+        ],
+        [
+          "annual_report",
+          4
+        ],
+        [
+          "annual_report",
+          361
+        ],
+        [
+          "annual_report",
+          196
+        ],
+        [
+          "transcript",
+          3
+        ],
+        [
+          "annual_report",
+          169
+        ]
+      ]
+    },
+    {
+      "company": "TCS",
+      "strategy": "diverse",
+      "profile": "balanced",
+      "pages": 13,
+      "characters": 39961,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 377,
+      "pageNumbers": [
+        [
+          "annual_report",
+          60
+        ],
+        [
+          "annual_report",
+          25
+        ],
+        [
+          "annual_report",
+          270
+        ],
+        [
+          "annual_report",
+          4
+        ],
+        [
+          "annual_report",
+          361
+        ],
+        [
+          "annual_report",
+          61
+        ],
+        [
+          "annual_report",
+          196
+        ],
+        [
+          "transcript",
+          3
+        ],
+        [
+          "transcript",
+          23
+        ],
+        [
+          "transcript",
+          28
+        ],
+        [
+          "annual_report",
+          165
+        ],
+        [
+          "annual_report",
+          251
+        ],
+        [
+          "annual_report",
+          178
+        ]
+      ]
+    },
+    {
+      "company": "TCS",
+      "strategy": "diverse",
+      "profile": "extended",
+      "pages": 23,
+      "characters": 71964,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 477,
+      "pageNumbers": [
+        [
+          "annual_report",
+          60
+        ],
+        [
+          "annual_report",
+          25
+        ],
+        [
+          "annual_report",
+          270
+        ],
+        [
+          "annual_report",
+          4
+        ],
+        [
+          "annual_report",
+          361
+        ],
+        [
+          "annual_report",
+          61
+        ],
+        [
+          "annual_report",
+          196
+        ],
+        [
+          "transcript",
+          3
+        ],
+        [
+          "transcript",
+          23
+        ],
+        [
+          "transcript",
+          28
+        ],
+        [
+          "annual_report",
+          165
+        ],
+        [
+          "annual_report",
+          251
+        ],
+        [
+          "annual_report",
+          178
+        ],
+        [
+          "annual_report",
+          160
+        ],
+        [
+          "annual_report",
+          54
+        ],
+        [
+          "annual_report",
+          279
+        ],
+        [
+          "annual_report",
+          42
+        ],
+        [
+          "annual_report",
+          257
+        ],
+        [
+          "annual_report",
+          225
+        ],
+        [
+          "annual_report",
+          5
+        ],
+        [
+          "annual_report",
+          59
+        ],
+        [
+          "annual_report",
+          187
+        ],
+        [
+          "annual_report",
+          3
+        ]
+      ]
+    },
+    {
+      "company": "TCS",
+      "strategy": "neighbours",
+      "profile": "compact",
+      "pages": 7,
+      "characters": 17918,
+      "sourceDocuments": 1,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "risks"
+      ],
+      "selectionMs": 286,
+      "pageNumbers": [
+        [
+          "annual_report",
+          60
+        ],
+        [
+          "annual_report",
+          25
+        ],
+        [
+          "annual_report",
+          26
+        ],
+        [
+          "annual_report",
+          270
+        ],
+        [
+          "annual_report",
+          271
+        ],
+        [
+          "annual_report",
+          4
+        ],
+        [
+          "annual_report",
+          236
+        ]
+      ]
+    },
+    {
+      "company": "TCS",
+      "strategy": "neighbours",
+      "profile": "balanced",
+      "pages": 14,
+      "characters": 39953,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 377,
+      "pageNumbers": [
+        [
+          "annual_report",
+          60
+        ],
+        [
+          "annual_report",
+          25
+        ],
+        [
+          "annual_report",
+          26
+        ],
+        [
+          "annual_report",
+          270
+        ],
+        [
+          "annual_report",
+          271
+        ],
+        [
+          "annual_report",
+          4
+        ],
+        [
+          "annual_report",
+          5
+        ],
+        [
+          "annual_report",
+          361
+        ],
+        [
+          "annual_report",
+          61
+        ],
+        [
+          "annual_report",
+          196
+        ],
+        [
+          "transcript",
+          3
+        ],
+        [
+          "transcript",
+          23
+        ],
+        [
+          "transcript",
+          28
+        ],
+        [
+          "annual_report",
+          165
+        ]
+      ]
+    },
+    {
+      "company": "TCS",
+      "strategy": "neighbours",
+      "profile": "extended",
+      "pages": 23,
+      "characters": 71953,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 478,
+      "pageNumbers": [
+        [
+          "annual_report",
+          60
+        ],
+        [
+          "annual_report",
+          25
+        ],
+        [
+          "annual_report",
+          26
+        ],
+        [
+          "annual_report",
+          270
+        ],
+        [
+          "annual_report",
+          271
+        ],
+        [
+          "annual_report",
+          4
+        ],
+        [
+          "annual_report",
+          5
+        ],
+        [
+          "annual_report",
+          361
+        ],
+        [
+          "annual_report",
+          61
+        ],
+        [
+          "annual_report",
+          196
+        ],
+        [
+          "transcript",
+          3
+        ],
+        [
+          "transcript",
+          23
+        ],
+        [
+          "transcript",
+          28
+        ],
+        [
+          "annual_report",
+          165
+        ],
+        [
+          "annual_report",
+          251
+        ],
+        [
+          "annual_report",
+          178
+        ],
+        [
+          "annual_report",
+          160
+        ],
+        [
+          "annual_report",
+          54
+        ],
+        [
+          "annual_report",
+          279
+        ],
+        [
+          "annual_report",
+          42
+        ],
+        [
+          "annual_report",
+          257
+        ],
+        [
+          "annual_report",
+          225
+        ],
+        [
+          "transcript",
+          5
+        ]
+      ]
+    },
+    {
+      "company": "TCS",
+      "strategy": "passages",
+      "profile": "compact",
+      "pages": 7,
+      "characters": 17969,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance"
+      ],
+      "selectionMs": 384,
+      "pageNumbers": [
+        [
+          "annual_report",
+          60
+        ],
+        [
+          "annual_report",
+          25
+        ],
+        [
+          "annual_report",
+          270
+        ],
+        [
+          "annual_report",
+          4
+        ],
+        [
+          "annual_report",
+          361
+        ],
+        [
+          "annual_report",
+          61
+        ],
+        [
+          "transcript",
+          5
+        ]
+      ]
+    },
+    {
+      "company": "TCS",
+      "strategy": "passages",
+      "profile": "balanced",
+      "pages": 14,
+      "characters": 39977,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 480,
+      "pageNumbers": [
+        [
+          "annual_report",
+          60
+        ],
+        [
+          "annual_report",
+          25
+        ],
+        [
+          "annual_report",
+          270
+        ],
+        [
+          "annual_report",
+          4
+        ],
+        [
+          "annual_report",
+          361
+        ],
+        [
+          "annual_report",
+          61
+        ],
+        [
+          "annual_report",
+          196
+        ],
+        [
+          "transcript",
+          3
+        ],
+        [
+          "transcript",
+          23
+        ],
+        [
+          "transcript",
+          28
+        ],
+        [
+          "annual_report",
+          165
+        ],
+        [
+          "annual_report",
+          251
+        ],
+        [
+          "annual_report",
+          178
+        ],
+        [
+          "annual_report",
+          160
+        ]
+      ]
+    },
+    {
+      "company": "TCS",
+      "strategy": "passages",
+      "profile": "extended",
+      "pages": 24,
+      "characters": 71512,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 573,
+      "pageNumbers": [
+        [
+          "annual_report",
+          60
+        ],
+        [
+          "annual_report",
+          25
+        ],
+        [
+          "annual_report",
+          270
+        ],
+        [
+          "annual_report",
+          4
+        ],
+        [
+          "annual_report",
+          361
+        ],
+        [
+          "annual_report",
+          61
+        ],
+        [
+          "annual_report",
+          196
+        ],
+        [
+          "transcript",
+          3
+        ],
+        [
+          "transcript",
+          23
+        ],
+        [
+          "transcript",
+          28
+        ],
+        [
+          "annual_report",
+          165
+        ],
+        [
+          "annual_report",
+          251
+        ],
+        [
+          "annual_report",
+          178
+        ],
+        [
+          "annual_report",
+          160
+        ],
+        [
+          "annual_report",
+          54
+        ],
+        [
+          "annual_report",
+          279
+        ],
+        [
+          "annual_report",
+          42
+        ],
+        [
+          "annual_report",
+          257
+        ],
+        [
+          "annual_report",
+          225
+        ],
+        [
+          "annual_report",
+          5
+        ],
+        [
+          "annual_report",
+          59
+        ],
+        [
+          "annual_report",
+          161
+        ],
+        [
+          "annual_report",
+          158
+        ],
+        [
+          "annual_report",
+          187
+        ]
+      ]
+    },
+    {
+      "company": "RELIANCE",
+      "strategy": "ranked",
+      "profile": "compact",
+      "pages": 3,
+      "characters": 17985,
+      "sourceDocuments": 1,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance"
+      ],
+      "selectionMs": 92,
+      "pageNumbers": [
+        [
+          "annual_report",
+          142
+        ],
+        [
+          "annual_report",
+          100
+        ],
+        [
+          "annual_report",
+          45
+        ]
+      ]
+    },
+    {
+      "company": "RELIANCE",
+      "strategy": "ranked",
+      "profile": "balanced",
+      "pages": 8,
+      "characters": 39842,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 85,
+      "pageNumbers": [
+        [
+          "annual_report",
+          142
+        ],
+        [
+          "annual_report",
+          100
+        ],
+        [
+          "annual_report",
+          45
+        ],
+        [
+          "transcript",
+          26
+        ],
+        [
+          "transcript",
+          5
+        ],
+        [
+          "transcript",
+          4
+        ],
+        [
+          "annual_report",
+          46
+        ],
+        [
+          "annual_report",
+          27
+        ]
+      ]
+    },
+    {
+      "company": "RELIANCE",
+      "strategy": "ranked",
+      "profile": "extended",
+      "pages": 14,
+      "characters": 71901,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance"
+      ],
+      "selectionMs": 84,
+      "pageNumbers": [
+        [
+          "annual_report",
+          142
+        ],
+        [
+          "annual_report",
+          100
+        ],
+        [
+          "annual_report",
+          45
+        ],
+        [
+          "transcript",
+          26
+        ],
+        [
+          "transcript",
+          5
+        ],
+        [
+          "transcript",
+          4
+        ],
+        [
+          "annual_report",
+          46
+        ],
+        [
+          "annual_report",
+          52
+        ],
+        [
+          "annual_report",
+          48
+        ],
+        [
+          "annual_report",
+          54
+        ],
+        [
+          "annual_report",
+          50
+        ],
+        [
+          "transcript",
+          1
+        ],
+        [
+          "transcript",
+          29
+        ],
+        [
+          "annual_report",
+          186
+        ]
+      ]
+    },
+    {
+      "company": "RELIANCE",
+      "strategy": "diverse",
+      "profile": "compact",
+      "pages": 3,
+      "characters": 17985,
+      "sourceDocuments": 1,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance"
+      ],
+      "selectionMs": 243,
+      "pageNumbers": [
+        [
+          "annual_report",
+          45
+        ],
+        [
+          "annual_report",
+          142
+        ],
+        [
+          "annual_report",
+          100
+        ]
+      ]
+    },
+    {
+      "company": "RELIANCE",
+      "strategy": "diverse",
+      "profile": "balanced",
+      "pages": 8,
+      "characters": 39947,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance"
+      ],
+      "selectionMs": 256,
+      "pageNumbers": [
+        [
+          "annual_report",
+          45
+        ],
+        [
+          "annual_report",
+          142
+        ],
+        [
+          "annual_report",
+          100
+        ],
+        [
+          "annual_report",
+          133
+        ],
+        [
+          "annual_report",
+          46
+        ],
+        [
+          "transcript",
+          26
+        ],
+        [
+          "transcript",
+          1
+        ],
+        [
+          "annual_report",
+          2
+        ]
+      ]
+    },
+    {
+      "company": "RELIANCE",
+      "strategy": "diverse",
+      "profile": "extended",
+      "pages": 13,
+      "characters": 71972,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 289,
+      "pageNumbers": [
+        [
+          "annual_report",
+          45
+        ],
+        [
+          "annual_report",
+          142
+        ],
+        [
+          "annual_report",
+          100
+        ],
+        [
+          "annual_report",
+          133
+        ],
+        [
+          "annual_report",
+          46
+        ],
+        [
+          "annual_report",
+          169
+        ],
+        [
+          "annual_report",
+          144
+        ],
+        [
+          "transcript",
+          26
+        ],
+        [
+          "transcript",
+          5
+        ],
+        [
+          "transcript",
+          4
+        ],
+        [
+          "annual_report",
+          52
+        ],
+        [
+          "transcript",
+          1
+        ],
+        [
+          "annual_report",
+          2
+        ]
+      ]
+    },
+    {
+      "company": "RELIANCE",
+      "strategy": "neighbours",
+      "profile": "compact",
+      "pages": 3,
+      "characters": 17985,
+      "sourceDocuments": 1,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance"
+      ],
+      "selectionMs": 245,
+      "pageNumbers": [
+        [
+          "annual_report",
+          45
+        ],
+        [
+          "annual_report",
+          142
+        ],
+        [
+          "annual_report",
+          100
+        ]
+      ]
+    },
+    {
+      "company": "RELIANCE",
+      "strategy": "neighbours",
+      "profile": "balanced",
+      "pages": 8,
+      "characters": 39739,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance"
+      ],
+      "selectionMs": 257,
+      "pageNumbers": [
+        [
+          "annual_report",
+          45
+        ],
+        [
+          "annual_report",
+          142
+        ],
+        [
+          "annual_report",
+          143
+        ],
+        [
+          "annual_report",
+          100
+        ],
+        [
+          "annual_report",
+          101
+        ],
+        [
+          "transcript",
+          26
+        ],
+        [
+          "transcript",
+          29
+        ],
+        [
+          "annual_report",
+          186
+        ]
+      ]
+    },
+    {
+      "company": "RELIANCE",
+      "strategy": "neighbours",
+      "profile": "extended",
+      "pages": 11,
+      "characters": 71678,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance"
+      ],
+      "selectionMs": 280,
+      "pageNumbers": [
+        [
+          "annual_report",
+          45
+        ],
+        [
+          "annual_report",
+          142
+        ],
+        [
+          "annual_report",
+          143
+        ],
+        [
+          "annual_report",
+          100
+        ],
+        [
+          "annual_report",
+          101
+        ],
+        [
+          "annual_report",
+          133
+        ],
+        [
+          "annual_report",
+          134
+        ],
+        [
+          "annual_report",
+          46
+        ],
+        [
+          "annual_report",
+          169
+        ],
+        [
+          "transcript",
+          26
+        ],
+        [
+          "transcript",
+          29
+        ]
+      ]
+    },
+    {
+      "company": "RELIANCE",
+      "strategy": "passages",
+      "profile": "compact",
+      "pages": 6,
+      "characters": 17757,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance"
+      ],
+      "selectionMs": 513,
+      "pageNumbers": [
+        [
+          "annual_report",
+          45
+        ],
+        [
+          "annual_report",
+          142
+        ],
+        [
+          "annual_report",
+          100
+        ],
+        [
+          "annual_report",
+          133
+        ],
+        [
+          "transcript",
+          1
+        ],
+        [
+          "transcript",
+          29
+        ]
+      ]
+    },
+    {
+      "company": "RELIANCE",
+      "strategy": "passages",
+      "profile": "balanced",
+      "pages": 12,
+      "characters": 39761,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 551,
+      "pageNumbers": [
+        [
+          "annual_report",
+          45
+        ],
+        [
+          "annual_report",
+          142
+        ],
+        [
+          "annual_report",
+          100
+        ],
+        [
+          "annual_report",
+          133
+        ],
+        [
+          "annual_report",
+          46
+        ],
+        [
+          "annual_report",
+          169
+        ],
+        [
+          "annual_report",
+          144
+        ],
+        [
+          "transcript",
+          26
+        ],
+        [
+          "transcript",
+          5
+        ],
+        [
+          "transcript",
+          4
+        ],
+        [
+          "transcript",
+          1
+        ],
+        [
+          "transcript",
+          29
+        ]
+      ]
+    },
+    {
+      "company": "RELIANCE",
+      "strategy": "passages",
+      "profile": "extended",
+      "pages": 21,
+      "characters": 71883,
+      "sourceDocuments": 2,
+      "themes": [
+        "business",
+        "financials",
+        "balance_sheet",
+        "cash_quality",
+        "trajectory",
+        "guidance",
+        "risks"
+      ],
+      "selectionMs": 601,
+      "pageNumbers": [
+        [
+          "annual_report",
+          45
+        ],
+        [
+          "annual_report",
+          142
+        ],
+        [
+          "annual_report",
+          100
+        ],
+        [
+          "annual_report",
+          133
+        ],
+        [
+          "annual_report",
+          46
+        ],
+        [
+          "annual_report",
+          169
+        ],
+        [
+          "annual_report",
+          144
+        ],
+        [
+          "transcript",
+          26
+        ],
+        [
+          "transcript",
+          5
+        ],
+        [
+          "transcript",
+          4
+        ],
+        [
+          "annual_report",
+          52
+        ],
+        [
+          "annual_report",
+          48
+        ],
+        [
+          "annual_report",
+          54
+        ],
+        [
+          "annual_report",
+          50
+        ],
+        [
+          "annual_report",
+          53
+        ],
+        [
+          "annual_report",
+          47
+        ],
+        [
+          "annual_report",
+          55
+        ],
+        [
+          "annual_report",
+          166
+        ],
+        [
+          "transcript",
+          1
+        ],
+        [
+          "transcript",
+          29
+        ],
+        [
+          "annual_report",
+          186
+        ]
+      ]
+    }
+  ],
+  "live": [
+    {
+      "company": "TCS",
+      "profile": "compact",
+      "pages": 7,
+      "characters": 17969,
+      "images": 1,
+      "seconds": 8.413,
+      "status": "validated",
+      "topics": [
+        "business_snapshot",
+        "financial_snapshot",
+        "trajectory",
+        "balance_sheet",
+        "cash_quality",
+        "narrative_vs_numbers",
+        "guidance",
+        "bull_vs_bear"
+      ],
+      "findings": 13,
+      "dropped": 0,
+      "usage": null,
+      "report": {
+        "title": "TCS Company Research Brief",
+        "sections": [
+          {
+            "topic": "business_snapshot",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "TCS generates revenue across multiple industry verticals led by Banking, Financial Services and Insurance at 38.7%, followed by Consumer Business at 15.9%, Communication, Media and Technology at 14.8%, Life Sciences and Healthcare at 10.4%, Manufacturing at 10.0%, and Others at 10.2% for FY 2026.",
+                "evidence_indexes": [
+                  0
+                ]
+              },
+              {
+                "statement": "Geographically, North America represents 48.6% of revenue, United Kingdom 17.4%, and Continental Europe 15.4% in FY 2026.",
+                "evidence_indexes": [
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "financial_snapshot",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "In FY 2026, TCS achieved revenue of ₹ 267,021 crore, representing a year-over-year growth of 4.6% (a 2.4% decline on a constant currency basis due to a large India transformation program ending).",
+                "evidence_indexes": [
+                  2
+                ]
+              },
+              {
+                "statement": "Operating profit for FY 2026 reached ₹ 66,838 crore with an operating margin of 25.0%, representing a 70 basis point improvement over FY 2025.",
+                "evidence_indexes": [
+                  3
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "trajectory",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Over the past five financial years, TCS recorded a revenue CAGR of 10.2% and an EPS CAGR of 10.3%.",
+                "evidence_indexes": [
+                  4
+                ]
+              },
+              {
+                "statement": "Earnings per share stood at ₹ 145.99 in FY 2026 compared to ₹ 134.19 in FY 2025.",
+                "evidence_indexes": [
+                  5
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "balance_sheet",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Total funds invested stood at ₹ 50,020 crore as of FY 2026, comprising ₹ 34,887 crore in mutual funds, Government securities and others, ₹ 10,433 crore in bank deposits, ₹ 1,500 crore in inter-corporate deposits, and ₹ 3,200 crore in cash and bank balances.",
+                "evidence_indexes": [
+                  6
+                ]
+              },
+              {
+                "statement": "Standalone related party transactions include inter-corporate deposits for working capital of ₹ 6 crore to TRIL Bengaluru Real Estate Five Limited and ₹ 44 crore to TRIL Bengaluru Real Estate Six Limited as at March 31, 2026, alongside ₹ 1,000 crore to Tata Capital Limited and ₹ 500 crore to Tata Capital Housing Finance Limited.",
+                "evidence_indexes": [
+                  7
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "cash_quality",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "TCS reported cash conversion ratios of 99.8% in FY 2026 and 96.6% in FY 2025.",
+                "evidence_indexes": [
+                  8
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "narrative_vs_numbers",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Management highlights resilient constant-currency dynamics and strong TCV, while reported numbers reflect a 4.6% nominal revenue increase alongside a 2.4% constant currency decline driven by the conclusion of a large Indian transformation program.",
+                "evidence_indexes": [
+                  9
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "guidance",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "Management expects to benefit from enhanced scale efficiency as growth improves, while continuing to optimize cost structures and maintain disciplined execution.",
+                "evidence_indexes": [
+                  10
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "bull_vs_bear",
+            "status": "available",
+            "findings": [
+              {
+                "statement": "The bull case is supported by industry-leading return on equity (51.4% in FY 2026), robust cash conversion, and sustained large deal wins in AI and digital transformation.",
+                "evidence_indexes": [
+                  11
+                ]
+              },
+              {
+                "statement": "The bear case features headwinds from legal contingencies, such as a lawsuit from Computer Sciences Corporation resulting in a provision of US$ 112 million, and severance expenses of ₹ 1,388 crore for workforce restructuring.",
+                "evidence_indexes": [
+                  12
+                ]
+              }
+            ]
+          }
+        ],
+        "facts": [
+          {
+            "topic": "business_snapshot",
+            "fact": "TCS generates revenue across multiple industry verticals led by Banking, Financial Services and Insurance at 38.7%, followed by Consumer Business at 15.9%, Communication, Media and Technology at 14.8%, Life Sciences and Healthcare at 10.4%, Manufacturing at 10.0%, and Others at 10.2% for FY 2026.",
+            "evidence": [
+              {
+                "block_id": "b4587459-51e3-4792-9371-c864a449f935",
+                "modality": "text",
+                "quote": "Statutory Reports Corporate Overview   Financial Statements \nManagement Discussion and Analysis 89 \nPursuant to a lawsuit filed by Computer Sciences\nCorporation (CSC) alleging the Company of misappropriation\nof trade secrets, the appeals court confirmed the verdict of\ntrial court and ordered the Company to pay US$ 56 million\nin compensatory damages and US$ 112 million in exemplary\ndamages. On the basis of facts and legal precedence, the\nCompany has provided US$ 112 million towards this claim. \nPursuant to the reskilling and redeployment initiatives\nundertaken by the Company to make it future ‑ ready, some\nassociates were released from the organisation whose\ndeployment may not be feasible. Termination benefits \namounting to ₹ 1,388 crore have been provided as per policy \ndevised for this purpose. \nSegmental Performance \nTCS has identified business segments (‘Industry vertical’) as reportable segments. The revenue break ‑ up by Industry Vertical and\nGeography is provided below: \n38.7%\nBa",
+                "source_title": "TCS Annual Report 2026"
+              },
+              {
+                "block_id": "b4587459-51e3-4792-9371-c864a449f935",
+                "modality": "text",
+                "quote": "nking, Financial\nServices and Insurance\nCommunication,\nMedia and Technology   Consumer Business\nLife Sciences\nand Healthcare\nOthers\nManufacturing\n15.9%\n14.8%\n10.4%\n10.2%\n10.0% \nRevenue by Industry Vertical   Revenue by Geography \n48.6%\n17.4%\n15.4%\n1.9%\nNorth America\nUnited Kingdom\nContinental\nEurope\nAPAC 8.3%\nIndia 5.9%\nLatin America\nMEA 2.5% \nIndustry Vertical   Segment Revenue ( J   crore)   YoY Revenue\nGrowth %\nSegment Margin (%) \nFY 2026   FY 2025   FY 2026   FY 2025 \nBanking, Financial Services and Insurance   103,363   94,597   9.3   26.1   26.6\nConsumer Business   42,432   40,197   5.6   28.5   27.9\nCommunication, Media and Technology   39,474   45,893   (14.0)   29.1   20.9\nLife Sciences and Healthcare   27,745   26,456   4.9   27.0   28.2\nManufacturing   26,614   25,170   5.7   30.3   32.7\nOthers   27,393   23,011   19.0   22.9   25.2 \nTotal   267,021   255,324   4.6   25.0   24.3 \nOverview of Funds Invested \nTCS’ investment strategy focuses on selecting a balanced mix of long",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "business_snapshot",
+            "fact": "Geographically, North America represents 48.6% of revenue, United Kingdom 17.4%, and Continental Europe 15.4% in FY 2026.",
+            "evidence": [
+              {
+                "block_id": "b4587459-51e3-4792-9371-c864a449f935",
+                "modality": "text",
+                "quote": "nking, Financial\nServices and Insurance\nCommunication,\nMedia and Technology   Consumer Business\nLife Sciences\nand Healthcare\nOthers\nManufacturing\n15.9%\n14.8%\n10.4%\n10.2%\n10.0% \nRevenue by Industry Vertical   Revenue by Geography \n48.6%\n17.4%\n15.4%\n1.9%\nNorth America\nUnited Kingdom\nContinental\nEurope\nAPAC 8.3%\nIndia 5.9%\nLatin America\nMEA 2.5% \nIndustry Vertical   Segment Revenue ( J   crore)   YoY Revenue\nGrowth %\nSegment Margin (%) \nFY 2026   FY 2025   FY 2026   FY 2025 \nBanking, Financial Services and Insurance   103,363   94,597   9.3   26.1   26.6\nConsumer Business   42,432   40,197   5.6   28.5   27.9\nCommunication, Media and Technology   39,474   45,893   (14.0)   29.1   20.9\nLife Sciences and Healthcare   27,745   26,456   4.9   27.0   28.2\nManufacturing   26,614   25,170   5.7   30.3   32.7\nOthers   27,393   23,011   19.0   22.9   25.2 \nTotal   267,021   255,324   4.6   25.0   24.3 \nOverview of Funds Invested \nTCS’ investment strategy focuses on selecting a balanced mix of long",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "financial_snapshot",
+            "fact": "In FY 2026, TCS achieved revenue of ₹ 267,021 crore, representing a year-over-year growth of 4.6% (a 2.4% decline on a constant currency basis due to a large India transformation program ending).",
+            "evidence": [
+              {
+                "block_id": "b4587459-51e3-4792-9371-c864a449f935",
+                "modality": "text",
+                "quote": "nking, Financial\nServices and Insurance\nCommunication,\nMedia and Technology   Consumer Business\nLife Sciences\nand Healthcare\nOthers\nManufacturing\n15.9%\n14.8%\n10.4%\n10.2%\n10.0% \nRevenue by Industry Vertical   Revenue by Geography \n48.6%\n17.4%\n15.4%\n1.9%\nNorth America\nUnited Kingdom\nContinental\nEurope\nAPAC 8.3%\nIndia 5.9%\nLatin America\nMEA 2.5% \nIndustry Vertical   Segment Revenue ( J   crore)   YoY Revenue\nGrowth %\nSegment Margin (%) \nFY 2026   FY 2025   FY 2026   FY 2025 \nBanking, Financial Services and Insurance   103,363   94,597   9.3   26.1   26.6\nConsumer Business   42,432   40,197   5.6   28.5   27.9\nCommunication, Media and Technology   39,474   45,893   (14.0)   29.1   20.9\nLife Sciences and Healthcare   27,745   26,456   4.9   27.0   28.2\nManufacturing   26,614   25,170   5.7   30.3   32.7\nOthers   27,393   23,011   19.0   22.9   25.2 \nTotal   267,021   255,324   4.6   25.0   24.3 \nOverview of Funds Invested \nTCS’ investment strategy focuses on selecting a balanced mix of long",
+                "source_title": "TCS Annual Report 2026"
+              },
+              {
+                "block_id": "1d68d076-4d71-4368-8253-420bfa668700",
+                "modality": "text",
+                "quote": "atios \nKey outcomes \nRevenue Trend   ( H   crore)\nIn FY 2026, TCS achieved a year-over year revenue growth of 4.6%, led\nby focused and effective execution.\nOn a constant currency basis, revenue declined by 2.4%. The decline\nwas largely a result of one of the Company’s large transformation\nprogrammes in India coming to an end this year.\nOver the past five financial years, the company recorded a compound\nannual growth rate (CAGR) of 10.2%, highlighting the resilience and\nscalability of its business model. \n10.2% \nCAGR \nFY 2022 \n191,754 \nFY 2024 \n240,893 \nFY 2023 \n225,458 \nFY 2025 \n255,324 \nFY 2026 \n267,021 \nIn FY 2026, TCS reported an operating margin of 25.0%, an improvement of 70\nbasis points compared to FY 2025, and was at a 4-year high.\nImprovement of business mix, productivity and realisation, rebalancing of\npyramid along with favourable currency movements helped the expansion\nof margins.\nThese were offset by investments in talent and capability building,\nand other investments for s",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "financial_snapshot",
+            "fact": "Operating profit for FY 2026 reached ₹ 66,838 crore with an operating margin of 25.0%, representing a 70 basis point improvement over FY 2025.",
+            "evidence": [
+              {
+                "block_id": "1d68d076-4d71-4368-8253-420bfa668700",
+                "modality": "text",
+                "quote": "atios \nKey outcomes \nRevenue Trend   ( H   crore)\nIn FY 2026, TCS achieved a year-over year revenue growth of 4.6%, led\nby focused and effective execution.\nOn a constant currency basis, revenue declined by 2.4%. The decline\nwas largely a result of one of the Company’s large transformation\nprogrammes in India coming to an end this year.\nOver the past five financial years, the company recorded a compound\nannual growth rate (CAGR) of 10.2%, highlighting the resilience and\nscalability of its business model. \n10.2% \nCAGR \nFY 2022 \n191,754 \nFY 2024 \n240,893 \nFY 2023 \n225,458 \nFY 2025 \n255,324 \nFY 2026 \n267,021 \nIn FY 2026, TCS reported an operating margin of 25.0%, an improvement of 70\nbasis points compared to FY 2025, and was at a 4-year high.\nImprovement of business mix, productivity and realisation, rebalancing of\npyramid along with favourable currency movements helped the expansion\nof margins.\nThese were offset by investments in talent and capability building,\nand other investments for s",
+                "source_title": "TCS Annual Report 2026"
+              },
+              {
+                "block_id": "1d68d076-4d71-4368-8253-420bfa668700",
+                "modality": "text",
+                "quote": "trengthening ecosystem partnerships and\nincreasing Go-to-Market pipeline. \nOperating Profit Trend   ( H   crore) \nFY 2022 \n48,453 \nFY 2024 \n59,311 \nFY 2023 \n54,237 \nFY 2025 \n62,165 \nFY 2026 \n66,838\n25.3%   25.0%\n24.3% 24.6%\n24.1%\nOperating Profit\nOperating Margin \nOver the past five fiscal years, TCS has steadily increased its Earnings\nPer Share (EPS), recording a compound annual growth rate of 10.3%.\nThis consistent upward trend demonstrates not only the company’s\nstrengthening profits but also its dedication to providing sustained value\nfor shareholders. \nEarnings per share   (Amount in   H ) \n10.3% \nCAGR \nFY 2022 \n103.62 \nFY 2024 \n127.74 \nFY 2023 \n115.19 \nFY 2025 \n134.19 \nFY 2026 \n145.99 \nTCS has demonstrated a strong cash conversion ratio, which reflects its solid\nfinancial position and effective generation of operational cash.\nA robust cash balance allows TCS to invest and broaden TCS play across\nbuilding capabilities, partnering with ecosystem players and acquiring\ncapabilities; ",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "trajectory",
+            "fact": "Over the past five financial years, TCS recorded a revenue CAGR of 10.2% and an EPS CAGR of 10.3%.",
+            "evidence": [
+              {
+                "block_id": "1d68d076-4d71-4368-8253-420bfa668700",
+                "modality": "text",
+                "quote": "atios \nKey outcomes \nRevenue Trend   ( H   crore)\nIn FY 2026, TCS achieved a year-over year revenue growth of 4.6%, led\nby focused and effective execution.\nOn a constant currency basis, revenue declined by 2.4%. The decline\nwas largely a result of one of the Company’s large transformation\nprogrammes in India coming to an end this year.\nOver the past five financial years, the company recorded a compound\nannual growth rate (CAGR) of 10.2%, highlighting the resilience and\nscalability of its business model. \n10.2% \nCAGR \nFY 2022 \n191,754 \nFY 2024 \n240,893 \nFY 2023 \n225,458 \nFY 2025 \n255,324 \nFY 2026 \n267,021 \nIn FY 2026, TCS reported an operating margin of 25.0%, an improvement of 70\nbasis points compared to FY 2025, and was at a 4-year high.\nImprovement of business mix, productivity and realisation, rebalancing of\npyramid along with favourable currency movements helped the expansion\nof margins.\nThese were offset by investments in talent and capability building,\nand other investments for s",
+                "source_title": "TCS Annual Report 2026"
+              },
+              {
+                "block_id": "1d68d076-4d71-4368-8253-420bfa668700",
+                "modality": "text",
+                "quote": "trengthening ecosystem partnerships and\nincreasing Go-to-Market pipeline. \nOperating Profit Trend   ( H   crore) \nFY 2022 \n48,453 \nFY 2024 \n59,311 \nFY 2023 \n54,237 \nFY 2025 \n62,165 \nFY 2026 \n66,838\n25.3%   25.0%\n24.3% 24.6%\n24.1%\nOperating Profit\nOperating Margin \nOver the past five fiscal years, TCS has steadily increased its Earnings\nPer Share (EPS), recording a compound annual growth rate of 10.3%.\nThis consistent upward trend demonstrates not only the company’s\nstrengthening profits but also its dedication to providing sustained value\nfor shareholders. \nEarnings per share   (Amount in   H ) \n10.3% \nCAGR \nFY 2022 \n103.62 \nFY 2024 \n127.74 \nFY 2023 \n115.19 \nFY 2025 \n134.19 \nFY 2026 \n145.99 \nTCS has demonstrated a strong cash conversion ratio, which reflects its solid\nfinancial position and effective generation of operational cash.\nA robust cash balance allows TCS to invest and broaden TCS play across\nbuilding capabilities, partnering with ecosystem players and acquiring\ncapabilities; ",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "trajectory",
+            "fact": "Earnings per share stood at ₹ 145.99 in FY 2026 compared to ₹ 134.19 in FY 2025.",
+            "evidence": [
+              {
+                "block_id": "1d68d076-4d71-4368-8253-420bfa668700",
+                "modality": "text",
+                "quote": "trengthening ecosystem partnerships and\nincreasing Go-to-Market pipeline. \nOperating Profit Trend   ( H   crore) \nFY 2022 \n48,453 \nFY 2024 \n59,311 \nFY 2023 \n54,237 \nFY 2025 \n62,165 \nFY 2026 \n66,838\n25.3%   25.0%\n24.3% 24.6%\n24.1%\nOperating Profit\nOperating Margin \nOver the past five fiscal years, TCS has steadily increased its Earnings\nPer Share (EPS), recording a compound annual growth rate of 10.3%.\nThis consistent upward trend demonstrates not only the company’s\nstrengthening profits but also its dedication to providing sustained value\nfor shareholders. \nEarnings per share   (Amount in   H ) \n10.3% \nCAGR \nFY 2022 \n103.62 \nFY 2024 \n127.74 \nFY 2023 \n115.19 \nFY 2025 \n134.19 \nFY 2026 \n145.99 \nTCS has demonstrated a strong cash conversion ratio, which reflects its solid\nfinancial position and effective generation of operational cash.\nA robust cash balance allows TCS to invest and broaden TCS play across\nbuilding capabilities, partnering with ecosystem players and acquiring\ncapabilities; ",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "balance_sheet",
+            "fact": "Total funds invested stood at ₹ 50,020 crore as of FY 2026, comprising ₹ 34,887 crore in mutual funds, Government securities and others, ₹ 10,433 crore in bank deposits, ₹ 1,500 crore in inter-corporate deposits, and ₹ 3,200 crore in cash and bank balances.",
+            "evidence": [
+              {
+                "block_id": "b4587459-51e3-4792-9371-c864a449f935",
+                "modality": "text",
+                "quote": " ‑ term and short ‑ term instruments to seize market opportunities and\nachieve higher yields. By optimising working capital, TCS enhances efficiency, resulting in improved overall returns.   ( H   crore) \nFY 2026   FY 2025 \nInvestments in mutual funds, Government securities and others   34,887   30,956\nDeposits with banks   10,433   12,831\nInter ‑ corporate deposits   1,500   ‑ \nCash and bank balances   3,200   3,435 \nTotal   50,020   47,222",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "balance_sheet",
+            "fact": "Standalone related party transactions include inter-corporate deposits for working capital of ₹ 6 crore to TRIL Bengaluru Real Estate Five Limited and ₹ 44 crore to TRIL Bengaluru Real Estate Six Limited as at March 31, 2026, alongside ₹ 1,000 crore to Tata Capital Limited and ₹ 500 crore to Tata Capital Housing Finance Limited.",
+            "evidence": [
+              {
+                "block_id": "754a309d-8365-409b-8725-6cdec33f0467",
+                "modality": "text",
+                "quote": "arch 31, 2026\nAs at\nMarch 31, 2025 \nInter-corporate deposits\nTRIL Bengaluru Real Estate Five\nLimited\nFor managing working capital\nrequirements\n6   5\nTRIL Bengaluru Real Estate Six\nLimited\nFor managing working capital\nrequirements\n44   31\nTata Capital Limited   For managing working capital\nrequirements\n1,000   -\nTata Capital Housing Finance\nLimited\nFor managing working capital\nrequirements\n500   - \nDetails of investment made is provided in “carrying value of investment in equity instruments” table (Refer note 6(a)). \n(f)   Other financial assets \nOther financial assets consist of the following: \nOther financial assets – Non-current \n( H   crore) \nAs at\nMarch 31, 2026\nAs at\nMarch 31, 2025 \nSecurity deposits   803   617\nLong-term bank deposits   12   12\nInterest receivable   43   1\nAdvance towards acquisition of investment   250   -\nFair value of call option   17   -\nOthers   35   27 \n1,160   657 \nDisclosures pursuant to Regulation 34(3) of Securities and Exchange Board of India (Listing ",
+                "source_title": "TCS Annual Report 2026"
+              },
+              {
+                "block_id": "754a309d-8365-409b-8725-6cdec33f0467",
+                "modality": "text",
+                "quote": "arch 31, 2026\nAs at\nMarch 31, 2025 \nInter-corporate deposits\nTRIL Bengaluru Real Estate Five\nLimited\nFor managing working capital\nrequirements\n6   5\nTRIL Bengaluru Real Estate Six\nLimited\nFor managing working capital\nrequirements\n44   31\nTata Capital Limited   For managing working capital\nrequirements\n1,000   -\nTata Capital Housing Finance\nLimited\nFor managing working capital\nrequirements\n500   - \nDetails of investment made is provided in “carrying value of investment in equity instruments” table (Refer note 6(a)). \n(f)   Other financial assets \nOther financial assets consist of the following: \nOther financial assets – Non-current \n( H   crore) \nAs at\nMarch 31, 2026\nAs at\nMarch 31, 2025 \nSecurity deposits   803   617\nLong-term bank deposits   12   12\nInterest receivable   43   1\nAdvance towards acquisition of investment   250   -\nFair value of call option   17   -\nOthers   35   27 \n1,160   657 \nDisclosures pursuant to Regulation 34(3) of Securities and Exchange Board of India (Listing ",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "cash_quality",
+            "fact": "TCS reported cash conversion ratios of 99.8% in FY 2026 and 96.6% in FY 2025.",
+            "evidence": [
+              {
+                "block_id": "1d68d076-4d71-4368-8253-420bfa668700",
+                "modality": "text",
+                "quote": "end) \nFY 2022 \n38,010 \nFY 2024 \n47,445 \nFY 2023 \n42,079 \nFY 2025 \n45,588 \nFY 2026 \n39,799\n99.2%\n80.9%\n93.9%\n103.3%\n99.8% \nTCS’s consistent, industry-leading Return on Equity demonstrates\nits strong profitability and efficient resource management. This\nperformance underscores the company’s financial discipline, operational\nexcellence, and prudent allocation of shareholder capital. Moving\nforward, TCS remains committed to making strategic investments while\nsustaining its leading return ratios. \nReturn on Equity   (%) \nTCS Value Creation and Distribution (FY 2022 to FY 2026) \nFY 2022 \n43.4% \nFY 2024 \n51.3% \nFY 2023 \n46.9% \nFY 2025 \n52.2% \nFY 2026 \n51.4%\nBest in\nclass   RoE \n39,949   44,338 41,965\n48,908   52,094\n104.2%   105.9%\n100.7%\n96.6% 99.6% Integrated Annual Report   2025-26 \n45 44 Statutory Reports Corporate Overview   Financial Statements   Financial Capital",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "narrative_vs_numbers",
+            "fact": "Management highlights resilient constant-currency dynamics and strong TCV, while reported numbers reflect a 4.6% nominal revenue increase alongside a 2.4% constant currency decline driven by the conclusion of a large Indian transformation program.",
+            "evidence": [
+              {
+                "block_id": "1d68d076-4d71-4368-8253-420bfa668700",
+                "modality": "text",
+                "quote": "Financial\nCapital 1 \nFinancial capital remains a key enabler of TCS’ strategy, providing resilience and flexibility\nto fund innovation, invest ahead of demand, and support stakeholders through cycles.\nStrong profitability, disciplined allocation, and prudent cash management underpin the\nCompany’s ability to scale capabilities and create long-term value. \n1  GRI 201-1 \nSustained   investments in AI-led\nengineering, a highly skilled and scalable\ntalent base, differentiated solutions, and a\nstrong partner ecosystem \nPrudent   working capital\nmanagement leading to\nconsistently high cash conversion \nBroad   based client additions across\nrevenue bands \nStrong   TCV and continued momentum in large deals, with clients\nincreasingly committing to long term, multi-year, multi-million dollar\npartnerships that reflect the trust they place in TCS to deliver certainty\nand value at scale over extended transformation journeys. \nOperational   excellence resulting in industry\nleading margins and return r",
+                "source_title": "TCS Annual Report 2026"
+              },
+              {
+                "block_id": "1d68d076-4d71-4368-8253-420bfa668700",
+                "modality": "text",
+                "quote": "atios \nKey outcomes \nRevenue Trend   ( H   crore)\nIn FY 2026, TCS achieved a year-over year revenue growth of 4.6%, led\nby focused and effective execution.\nOn a constant currency basis, revenue declined by 2.4%. The decline\nwas largely a result of one of the Company’s large transformation\nprogrammes in India coming to an end this year.\nOver the past five financial years, the company recorded a compound\nannual growth rate (CAGR) of 10.2%, highlighting the resilience and\nscalability of its business model. \n10.2% \nCAGR \nFY 2022 \n191,754 \nFY 2024 \n240,893 \nFY 2023 \n225,458 \nFY 2025 \n255,324 \nFY 2026 \n267,021 \nIn FY 2026, TCS reported an operating margin of 25.0%, an improvement of 70\nbasis points compared to FY 2025, and was at a 4-year high.\nImprovement of business mix, productivity and realisation, rebalancing of\npyramid along with favourable currency movements helped the expansion\nof margins.\nThese were offset by investments in talent and capability building,\nand other investments for s",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "guidance",
+            "fact": "Management expects to benefit from enhanced scale efficiency as growth improves, while continuing to optimize cost structures and maintain disciplined execution.",
+            "evidence": [
+              {
+                "block_id": "a2cd722f-eccd-4ba1-a1f3-359e08bfa074",
+                "modality": "text",
+                "quote": "Page 4 of 28 \nIn constant currency terms, our growth was   50   basis points QoQ and   2.8% \nYoY.\nOur operating margins remained stable sequentially at   24% . Consistent\nwith our philosophy to drive long-term proﬁtable growth, we continued to\nprioritize investments for growth.\nIn Q2, we made investments in strategic partnerships, M&A-related\ninitiatives, and hiring of niche talent. As we build future capacity and\nnavigate demand transitions, we have invested in a higher bench and\nincreased hiring of subcontractors to meet near-term skills and delivery\nrequirements. This quarter, we were able to mitigate these headwinds\npartly by currency gains and operating leverage.\nMany of these investments are strategic in nature and are focused on long-\nterm value creation. Our disciplined approach to margin management\nremains unchanged. As growth improves, we expect to beneﬁt from\nenhanced   scale   eƯiciency   while   continuing   to   optimize   our   cost\nstructures, align capacity with demand",
+                "source_title": "TCS earnings-call transcript Oct 2026"
+              }
+            ]
+          },
+          {
+            "topic": "bull_vs_bear",
+            "fact": "The bull case is supported by industry-leading return on equity (51.4% in FY 2026), robust cash conversion, and sustained large deal wins in AI and digital transformation.",
+            "evidence": [
+              {
+                "block_id": "1d68d076-4d71-4368-8253-420bfa668700",
+                "modality": "text",
+                "quote": "Financial\nCapital 1 \nFinancial capital remains a key enabler of TCS’ strategy, providing resilience and flexibility\nto fund innovation, invest ahead of demand, and support stakeholders through cycles.\nStrong profitability, disciplined allocation, and prudent cash management underpin the\nCompany’s ability to scale capabilities and create long-term value. \n1  GRI 201-1 \nSustained   investments in AI-led\nengineering, a highly skilled and scalable\ntalent base, differentiated solutions, and a\nstrong partner ecosystem \nPrudent   working capital\nmanagement leading to\nconsistently high cash conversion \nBroad   based client additions across\nrevenue bands \nStrong   TCV and continued momentum in large deals, with clients\nincreasingly committing to long term, multi-year, multi-million dollar\npartnerships that reflect the trust they place in TCS to deliver certainty\nand value at scale over extended transformation journeys. \nOperational   excellence resulting in industry\nleading margins and return r",
+                "source_title": "TCS Annual Report 2026"
+              },
+              {
+                "block_id": "1d68d076-4d71-4368-8253-420bfa668700",
+                "modality": "text",
+                "quote": "end) \nFY 2022 \n38,010 \nFY 2024 \n47,445 \nFY 2023 \n42,079 \nFY 2025 \n45,588 \nFY 2026 \n39,799\n99.2%\n80.9%\n93.9%\n103.3%\n99.8% \nTCS’s consistent, industry-leading Return on Equity demonstrates\nits strong profitability and efficient resource management. This\nperformance underscores the company’s financial discipline, operational\nexcellence, and prudent allocation of shareholder capital. Moving\nforward, TCS remains committed to making strategic investments while\nsustaining its leading return ratios. \nReturn on Equity   (%) \nTCS Value Creation and Distribution (FY 2022 to FY 2026) \nFY 2022 \n43.4% \nFY 2024 \n51.3% \nFY 2023 \n46.9% \nFY 2025 \n52.2% \nFY 2026 \n51.4%\nBest in\nclass   RoE \n39,949   44,338 41,965\n48,908   52,094\n104.2%   105.9%\n100.7%\n96.6% 99.6% Integrated Annual Report   2025-26 \n45 44 Statutory Reports Corporate Overview   Financial Statements   Financial Capital",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          },
+          {
+            "topic": "bull_vs_bear",
+            "fact": "The bear case features headwinds from legal contingencies, such as a lawsuit from Computer Sciences Corporation resulting in a provision of US$ 112 million, and severance expenses of ₹ 1,388 crore for workforce restructuring.",
+            "evidence": [
+              {
+                "block_id": "b4587459-51e3-4792-9371-c864a449f935",
+                "modality": "text",
+                "quote": "Statutory Reports Corporate Overview   Financial Statements \nManagement Discussion and Analysis 89 \nPursuant to a lawsuit filed by Computer Sciences\nCorporation (CSC) alleging the Company of misappropriation\nof trade secrets, the appeals court confirmed the verdict of\ntrial court and ordered the Company to pay US$ 56 million\nin compensatory damages and US$ 112 million in exemplary\ndamages. On the basis of facts and legal precedence, the\nCompany has provided US$ 112 million towards this claim. \nPursuant to the reskilling and redeployment initiatives\nundertaken by the Company to make it future ‑ ready, some\nassociates were released from the organisation whose\ndeployment may not be feasible. Termination benefits \namounting to ₹ 1,388 crore have been provided as per policy \ndevised for this purpose. \nSegmental Performance \nTCS has identified business segments (‘Industry vertical’) as reportable segments. The revenue break ‑ up by Industry Vertical and\nGeography is provided below: \n38.7%\nBa",
+                "source_title": "TCS Annual Report 2026"
+              },
+              {
+                "block_id": "b4587459-51e3-4792-9371-c864a449f935",
+                "modality": "text",
+                "quote": "Statutory Reports Corporate Overview   Financial Statements \nManagement Discussion and Analysis 89 \nPursuant to a lawsuit filed by Computer Sciences\nCorporation (CSC) alleging the Company of misappropriation\nof trade secrets, the appeals court confirmed the verdict of\ntrial court and ordered the Company to pay US$ 56 million\nin compensatory damages and US$ 112 million in exemplary\ndamages. On the basis of facts and legal precedence, the\nCompany has provided US$ 112 million towards this claim. \nPursuant to the reskilling and redeployment initiatives\nundertaken by the Company to make it future ‑ ready, some\nassociates were released from the organisation whose\ndeployment may not be feasible. Termination benefits \namounting to ₹ 1,388 crore have been provided as per policy \ndevised for this purpose. \nSegmental Performance \nTCS has identified business segments (‘Industry vertical’) as reportable segments. The revenue break ‑ up by Industry Vertical and\nGeography is provided below: \n38.7%\nBa",
+                "source_title": "TCS Annual Report 2026"
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          "Evidence is drawn from selected excerpts of the TCS Annual Report 2026 and an earnings call transcript from October 2026, representing consolidated and standalone scopes where explicitly indicated without providing an exhaustive multi-year review."
+        ],
+        "dropped": []
+      }
+    },
+    {
+      "company": "RELIANCE",
+      "profile": "compact",
+      "pages": 6,
+      "characters": 17757,
+      "images": 1,
+      "seconds": 6.827,
+      "status": "failed",
+      "error": "Gemini request failed (HTTP 503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+    },
+    {
+      "company": "TCS",
+      "profile": "balanced",
+      "pages": 14,
+      "characters": 39977,
+      "images": 2,
+      "seconds": 4.824,
+      "status": "failed",
+      "error": "Gemini request failed (HTTP 503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+    },
+    {
+      "company": "RELIANCE",
+      "profile": "balanced",
+      "pages": 12,
+      "characters": 39761,
+      "images": 2,
+      "seconds": 5.524,
+      "status": "failed",
+      "error": "Gemini request failed (HTTP 503): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+    }
+  ]
+}

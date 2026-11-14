@@ -1,0 +1,510 @@
+# RELIANCE · Source findings
+
+Do the reported profits turn into cash? Explain cash from operations, debt, working capital, and any explicit concerns in the primary sources.
+
+## Run details
+
+- The job reviewed 187 of 187 annual report pages and 29 of 29 transcript pages.
+- Saved status is partial. Report type is source findings.
+- Models used were gemini-3.1-flash-lite.
+- This run used the two complete PDFs already collected by the local demo.
+
+## Business snapshot
+
+- The company manages liquidity by centralizing cash, where operating units forecast requirements and treasury pools surpluses to fund net deficits or invest in short-dated, secure, and liquid instruments like bank deposits, money market funds, and reverse repos. [Annual filing, PDF p. 130](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=130)
+- The provided document is a list of subsidiary and associate entities for Reliance Industries Limited as of March 31, 2026, but it does not contain financial data regarding cash flows, debt, or working capital. [Annual filing, PDF p. 170](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=170)
+- The provided document is a list of enterprise names, their countries of incorporation, and ownership percentages as of 31st March, 2026, for the Reliance Industries Limited Integrated Annual Report 2025-26. [Annual filing, PDF p. 171](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=171)
+- The company manages inventory using a scientific approach based on rate of sale to optimize replenishment and drive productivity. [Call transcript, PDF p. 10](https://www.bseindia.com/xml-data/corpfiling/AttachHis/8e997741-4d35-4188-933a-cf020fb9c816.pdf#page=10)
+
+## Financial snapshot
+
+- The company reported a consolidated turnover of 10,75,675 crore as of March 31, 2026. [Annual filing, PDF p. 16](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=16)
+- The provided primary source documentation does not contain information regarding cash flow from operations, debt, or working capital. [Annual filing, PDF p. 17](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=17)
+- Information regarding cash from operations, debt, and working capital is unavailable in the provided document pages. [Annual filing, PDF p. 19](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=19)
+- The provided primary source documentation does not contain information regarding cash from operations, debt, working capital, or explicit concerns related to the conversion of profits into cash. [Annual filing, PDF p. 29](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=29)
+- Information regarding cash from operations, debt, and working capital is unavailable in the provided document. [Annual filing, PDF p. 30](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=30)
+- The provided source material does not contain financial statements or cash flow data to assess the conversion of profits to cash. [Annual filing, PDF p. 31](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=31)
+- The provided primary source document does not contain information regarding cash flow from operations, debt levels, or working capital. [Annual filing, PDF p. 32](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=32)
+- The provided source material does not contain data on cash from operations, debt, working capital, or profitability conversion to cash. [Annual filing, PDF p. 34](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=34)
+- In FY 2025-26, the company paid 43,152 Crore to providers of debt, an increase from 42,552 Crore in FY 2024-25. [Annual filing, PDF p. 42](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=42)
+- The company's Debt Service Coverage Ratio improved from 2.06 in FY 2024-25 to 4.03 in FY 2025-26, and the Interest Coverage Ratio increased from 5.59 to 8.83 in the same period, attributed to higher operating profit and lower finance costs. [Annual filing, PDF p. 45](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=45)
+- Information regarding cash flow, debt, and working capital is not disclosed in the provided annual report pages. [Annual filing, PDF p. 49](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=49)
+- Jio Studios has been consistently profitable since inception. [Annual filing, PDF p. 51](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=51)
+- In the Oil and Gas business, revenues decreased 5.4% and EBITDA decreased 10.1% year-over-year in FY 2025-26, compared to FY 2024-25. [Annual filing, PDF p. 53](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=53)
+- The provided primary source, a Secretarial Audit Report, explicitly states that auditors have not verified the correctness and appropriateness of the financial records and books of accounts. [Annual filing, PDF p. 77](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=77)
+- The provided document is an Auditor's Report regarding Corporate Governance compliance, not the financial statements. [Annual filing, PDF p. 79](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=79)
+- The provided primary sources from the Reliance Industries Limited Integrated Annual Report 2025-26 contain information regarding social initiatives (RF Scholarships and Rural Transformation programs) and impact assessments of livelihood initiatives. They do not contain company-level financial statements, profit figures, cash flow data, or debt information. [Annual filing, PDF p. 86](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=86)
+- The provided document does not contain information regarding consolidated or standalone profits, cash flow from operations, debt, or working capital of Reliance Industries Limited. [Annual filing, PDF p. 87](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=87)
+- The provided document does not contain information regarding cash flow from operations, debt, working capital, or profit-to-cash conversion for the company. [Annual filing, PDF p. 90](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=90)
+- The provided standalone financial statements for the year ended 31st March, 2026, include a Statement of Cash Flows, but the actual figures for cash from operations, debt, and working capital are not disclosed in the provided text. [Annual filing, PDF p. 91](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=91)
+- The provided primary sources do not contain financial statements, cash flow data, balance sheet figures, or details regarding debt and working capital. [Annual filing, PDF p. 92](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=92)
+- The provided primary source document does not contain information regarding cash flow from operations, debt levels, working capital, or specific profitability-to-cash conversion metrics. [Annual filing, PDF p. 94](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=94)
+- The Company prepares its Statement of Cash Flows using the indirect method as prescribed in Ind AS 7. [Annual filing, PDF p. 101](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=101)
+- The primary sources provided do not disclose financial statements, cash flow details, debt levels, or working capital metrics. [Annual filing, PDF p. 102](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=102)
+- The provided primary source, an excerpt from the 'Notes To the Standalone Financial Statements' of the Reliance Industries Limited Integrated Annual Report 2025-26, details specific investment balances as of March 31, 2026, and March 31, 2025. [Annual filing, PDF p. 105](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=105)
+- The company reported a Profit Before Tax of ₹54,076 crore for the year ended 31st March 2026, compared to ₹46,128 crore in the previous year. [Annual filing, PDF p. 110](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=110)
+- The provided primary source document contains a list of subsidiary companies and notes for the standalone financial statements for the year ended 31st March, 2026, but does not contain data on profits, cash flow, debt, or working capital. [Annual filing, PDF p. 119](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=119)
+- The provided primary source consists of notes to the standalone financial statements for the year ended 31st March, 2026, which list specific professional fees, general expenses, traveling expenses, and donations, but do not provide a cash flow statement, debt figures, or working capital details. [Annual filing, PDF p. 125](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=125)
+- The consolidated financial statements include a Consolidated Statement of Cash Flows for the year ended 31st March 2026. [Annual filing, PDF p. 133](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=133)
+- The auditor acknowledges the responsibility of management to prepare consolidated financial statements, which include consolidated cash flows. [Annual filing, PDF p. 134](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=134)
+- The provided documents do not contain information regarding cash flow from operations, debt, or working capital. [Annual filing, PDF p. 137](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=137)
+- The provided source material does not contain financial data regarding cash from operations, debt, or working capital. [Annual filing, PDF p. 138](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=138)
+- The Group uses the indirect method prescribed in Ind AS 7 – Statement of Cash Flows for the presentation of its cash flows. [Annual filing, PDF p. 143](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=143)
+- The provided primary sources do not contain information regarding cash flow from operations, debt levels, or working capital. [Annual filing, PDF p. 145](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=145)
+- The information regarding cash flow from operations, debt, working capital, and explicit concerns is unavailable in the provided document, which only contains notes related to fixed assets and intangible assets. [Annual filing, PDF p. 146](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=146)
+- The provided primary sources from the 2026 Annual Report contain notes on actuarial assumptions, defined benefit plan risks, and employee stock option schemes but do not include cash flow statements, debt disclosures, or working capital data. [Annual filing, PDF p. 156](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=156)
+- The provided primary sources are limited to notes on related party transactions and do not contain information regarding cash flow from operations, debt, or working capital. [Annual filing, PDF p. 159](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=159)
+- The primary sources provided comprise notes to the consolidated financial statements focused on related party transactions, and do not contain information regarding cash flow from operations, debt levels, working capital, or explicit management concerns about cash conversion. [Annual filing, PDF p. 160](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=160)
+- The provided primary sources consist solely of notes to the consolidated financial statements regarding related party transactions, employee benefit funds, and executive compensation; they do not contain the consolidated cash flow statement, balance sheet, or profit and loss account required to determine if profits turn into cash, nor do they disclose debt or working capital figures. [Annual filing, PDF p. 161](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=161)
+- In the fiscal year 2025-26, Jio Platforms Limited reported a profit after tax of ₹30,049 crore and a net cash inflow of ₹8,546 crore. During the same period, Reliance Retail Ventures Limited reported a profit after tax of ₹13,838 crore but experienced a net cash outflow of ₹14,684 crore. [Annual filing, PDF p. 172](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=172)
+- The provided primary source documentation, which includes a list of consolidated subsidiaries with their respective financial details, does not contain consolidated cash flow statement data, information on working capital, or explicit statements regarding debt levels for the Reliance Industries Limited group as a whole. [Annual filing, PDF p. 178](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=178)
+- The primary source provides a list of Reliance Industries Limited's subsidiaries and their respective consolidated financial performance metrics for the reporting period, including total assets, liabilities, income, and profit after taxation, but does not contain company-wide consolidated cash flow data. [Annual filing, PDF p. 179](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=179)
+- The provided primary source documentation is limited to a consolidated table of subsidiary financial data (assets, liabilities, and income) and does not contain information regarding cash flow from operations, debt levels, or working capital for Reliance Industries Limited. [Annual filing, PDF p. 180](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=180)
+- The provided primary sources are limited to a list of subsidiaries, associates, and joint ventures and do not contain cash flow statements, profit figures, or operational data. [Annual filing, PDF p. 182](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=182)
+- The company reported consolidated EBITDA of Rs. 62,409 Crores and PAT close to Rs. 30,000 Crores for the quarter. [Call transcript, PDF p. 3](https://www.bseindia.com/xml-data/corpfiling/AttachHis/8e997741-4d35-4188-933a-cf020fb9c816.pdf#page=3)
+- The electronics business is prioritizing high-value customer acquisition as a strategic investment, even if it temporarily involves lower margins in some categories. [Call transcript, PDF p. 11](https://www.bseindia.com/xml-data/corpfiling/AttachHis/8e997741-4d35-4188-933a-cf020fb9c816.pdf#page=11)
+- The company reported its strongest ever quarterly performance in its O2C business, aiming for Rs. 80,000 Crores for the year. [Call transcript, PDF p. 15](https://www.bseindia.com/xml-data/corpfiling/AttachHis/8e997741-4d35-4188-933a-cf020fb9c816.pdf#page=15)
+- The provided transcript does not contain information regarding cash flow from operations, debt, or working capital. [Call transcript, PDF p. 23](https://www.bseindia.com/xml-data/corpfiling/AttachHis/8e997741-4d35-4188-933a-cf020fb9c816.pdf#page=23)
+
+## Balance sheet
+
+- As of March 31, 2026, the Company holds unpaid and unclaimed dividends. [Annual filing, PDF p. 11](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=11)
+- There was no default in any obligation undertaken by the listed related parties during FY 2025-26. [Annual filing, PDF p. 39](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=39)
+- As of March 31, 2026, the company reported a gross debt of ₹3,74,421 crore and a net debt of ₹1,24,717 crore. [Annual filing, PDF p. 44](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=44)
+- Long Term Debt to Working Capital increased from 7.53 in FY 2024-25 to 17.12 in FY 2025-26, which is attributed to higher debt and efficient working capital management. [Annual filing, PDF p. 45](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=45)
+- The company faces foreign exchange, liquidity, interest rate, and credit risks in its investment portfolio, which are mitigated by hedging strategies, high cash balances, and a mix of fixed and floating rate liabilities. [Annual filing, PDF p. 55](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=55)
+- Reliance has committed to invest ₹ 75,000 Crore in clean energy projects. [Annual filing, PDF p. 59](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=59)
+- The company maintains financial discipline and prudence, which is reflected in strong credit ratings. [Annual filing, PDF p. 71](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=71)
+- Reliance Jio Infocomm Limited redeemed 100,00,00,000 Non-Cumulative Optionally Convertible Preference Shares (OCPS) Series V, totaling ₹ 5,000 Crore, on December 23, 2025. [Annual filing, PDF p. 76](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=76)
+- The Company confirmed there are no proceedings pending under the Insolvency and Bankruptcy Code, 2016, and no instances of one-time settlement with any bank or financial institution. [Annual filing, PDF p. 83](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=83)
+- The Company has been sanctioned working capital limits exceeding 5 crore based on the security of current assets, with quarterly statements provided to banks aligning with internal books of account. [Annual filing, PDF p. 95](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=95)
+- The company has not defaulted on loan repayments or interest payments to any lender, nor has it been declared a wilful defaulter. [Annual filing, PDF p. 96](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=96)
+- As of March 31, 2026, the company's total borrowings (non-current and current) amounted to ₹2,31,381 crore. [Annual filing, PDF p. 100](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=100)
+- The company reported non-current investments of ₹ 3,64,073 crore as at 31st March, 2026, compared to ₹ 3,33,258 crore as at 31st March, 2025. Non-current loans to related parties amounted to ₹ 8,789 crore as at 31st March, 2026, up from ₹ 4,941 crore in the previous year. [Annual filing, PDF p. 107](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=107)
+- As of 31st March 2026, the company reported cash and cash equivalents of ₹ 1,08,179 crore, compared to ₹ 82,471 crore as of 31st March 2025. [Annual filing, PDF p. 109](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=109)
+- The company holds inventories of ₹ 1,04,925 crore as of 31st March 2026, up from ₹ 89,216 crore in the previous year, and trade receivables of ₹ 16,641 crore as of 31st March 2026. [Annual filing, PDF p. 109](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=109)
+- The company maintains non-current other financial liabilities amounting to ₹ 35,573 crore as of March 31, 2026, which includes creditors for capital expenditure. [Annual filing, PDF p. 112](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=112)
+- As of 31st March, 2026, the company reported current borrowings of ₹43,311 crore, comprising ₹12,351 crore in secured working capital loans, ₹17,000 crore in unsecured other loans, and ₹13,960 crore in current maturities of non-current borrowings. [Annual filing, PDF p. 113](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=113)
+- The company's working capital loans from banks are secured by the hypothecation of current assets, including present and future stocks, book debts, receivables, and bills, excluding the Oil & Gas segment. [Annual filing, PDF p. 113](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=113)
+- The company engages in supplier financing arrangements with liabilities totaling 27,829 crore as of March 31, 2026, where suppliers have already received payments from finance providers. [Annual filing, PDF p. 114](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=114)
+- As of 31st March 2026, the company reported Gross Debt of 2,31,381 crore and Cash and Marketable Securities of 1,58,719 crore, resulting in a Net Debt of 72,662 crore and a Net Gearing Ratio of 0.13. [Annual filing, PDF p. 128](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=128)
+- The company manages credit risk related to trade receivables through mechanisms such as Letters of Credit, Bank Guarantees, Parent Company Guarantees, advance payments, and factoring/forfaiting without recourse. [Annual filing, PDF p. 129](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=129)
+- As of 31st March 2026, the company reported borrowings of ₹1,32,353 crore in foreign currency risk components for borrowings, with additional non-current borrowings identified in hedged items. [Annual filing, PDF p. 131](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=131)
+- The Debt-Equity Ratio for the year 2025-26 is 0.41, compared to 0.37 in 2024-25. [Annual filing, PDF p. 132](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=132)
+- The Debt Service Coverage Ratio increased to 4.03 in 2025-26 from 2.06 in 2024-25, attributed to lower finance costs and principal repayments of loans. [Annual filing, PDF p. 132](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=132)
+- The Parent company reported an amount of 2 crore held in abeyance in relation to the Investor Education and Protection Fund due to pending legal cases. [Annual filing, PDF p. 136](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=136)
+- The Group classifies assets and liabilities in the Balance Sheet as Current or Non-Current based on an operating cycle of 12 months. [Annual filing, PDF p. 143](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=143)
+- The company reported other current assets including prepaid expenses, advances to vendors, and claims receivable amounting to 62,613 crore as of 31st March 2026. [Annual filing, PDF p. 150](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=150)
+- The Group maintains various security arrangements for working capital loans, including hypothecation of current assets and charges over property, plant, and equipment. [Annual filing, PDF p. 153](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=153)
+- As at 31st March 2026, the company reported gross debt of ₹ 3,74,421 crore and cash and marketable securities of ₹ 2,49,704 crore, resulting in a net debt of ₹ 1,24,717 crore and a net gearing ratio of 0.14. [Annual filing, PDF p. 164](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=164)
+- As of 31st March 2026, the Group's total borrowings amounted to 3,76,229 crore, consisting of non-current floating debt (2,09,281 crore), non-current fixed debt (89,103 crore), and current borrowings (77,845 crore). [Annual filing, PDF p. 165](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=165)
+- The company maintains non-current borrowings that are subject to interest rate risk hedging and foreign currency risk hedging. [Annual filing, PDF p. 167](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=167)
+- As of 31st March 2026, Jio Platforms Limited had current liabilities of ₹67,181 crore and non-current liabilities of ₹2,11,337 crore. As of the same date, Reliance Retail Ventures Limited reported current liabilities of ₹64,675 crore and non-current liabilities of ₹36,852 crore. [Annual filing, PDF p. 172](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=172)
+- The company maintains trade payables and receivables balances with companies that have been struck off under section 248 of the Companies Act, 2013. [Annual filing, PDF p. 176](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=176)
+- The payment due dates for liabilities under supplier financing arrangements range from 45 to 1,083 days after the invoice date, compared to 1 to 624 days for liabilities not part of such arrangements. [Annual filing, PDF p. 177](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=177)
+- The company reported a debt-to-equity ratio of approximately 0.47 for the period ended September 2026. [Call transcript, PDF p. 4](https://www.bseindia.com/xml-data/corpfiling/AttachHis/8e997741-4d35-4188-933a-cf020fb9c816.pdf#page=4)
+- For the retail segment, finance costs have increased due to a rise in debt and asset base, contributing to a 24% decline in profit after tax. [Call transcript, PDF p. 7](https://www.bseindia.com/xml-data/corpfiling/AttachHis/8e997741-4d35-4188-933a-cf020fb9c816.pdf#page=7)
+
+## Cash quality
+
+- The provided primary source document does not contain information regarding cash from operations, working capital, or debt balances. [Annual filing, PDF p. 18](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=18)
+- The company engages in transactions with related party Reliance BP Mobility Limited (RBML) for the sale and purchase of petroleum products, where trade advances are not applicable. [Annual filing, PDF p. 22](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=22)
+- Transactions with related party Reliance Jio Infocomm Limited (RJIL) involve service exchanges where trade advances are not applicable. [Annual filing, PDF p. 23](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=23)
+- The provided primary source documentation does not contain information regarding cash flow from operations, debt, working capital, or profit-to-cash conversion metrics. [Annual filing, PDF p. 35](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=35)
+- Reliance funds its ambitions through internal accruals and maintains a robust balance sheet. [Annual filing, PDF p. 43](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=43)
+- Management states that capital expenditure requirements were adequately funded by cash profits. [Annual filing, PDF p. 44](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=44)
+- The company maintains liquidity through cash reserves and undrawn credit lines, while utilizing diverse trade financing and structured products to optimize working capital. [Annual filing, PDF p. 45](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=45)
+- In FY 2025-26, Reliance spent ₹2,248 Crore towards CSR. [Annual filing, PDF p. 62](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=62)
+- The CEO and CFO certified that they reviewed the financial statements and the cash flow statement for the year ended March 31, 2026, and confirmed these statements present a true and fair view of the Company’s affairs and are in compliance with accounting standards. [Annual filing, PDF p. 74](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=74)
+- The provided documents do not contain a cash flow statement or consolidated data to determine if profits are converted into cash. [Annual filing, PDF p. 121](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=121)
+- The Consolidated Financial Statements report net cash outflows for certain subsidiary groups for the year ended 31st March, 2026. Specifically, a group of 235 subsidiaries reported net cash outflows of ₹6,321 crore, and a separate group of 84 subsidiaries reported net cash outflows of ₹160 crore. [Annual filing, PDF p. 135](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=135)
+- The provided source material does not contain financial data regarding cash from operations, debt, or working capital. [Annual filing, PDF p. 186](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=186)
+- Cash flow from the retail store business is being utilized to fund digital commerce growth. [Call transcript, PDF p. 4](https://www.bseindia.com/xml-data/corpfiling/AttachHis/8e997741-4d35-4188-933a-cf020fb9c816.pdf#page=4)
+- Management expects healthy cash flow generation for Jio Platforms over the upcoming quarters following the completion of major capital expenditure. [Call transcript, PDF p. 6](https://www.bseindia.com/xml-data/corpfiling/AttachHis/8e997741-4d35-4188-933a-cf020fb9c816.pdf#page=6)
+- The company states it has a 'profitable core' which it uses to fund growth engines like online commerce, distinguishing itself from loss-making competitors. [Call transcript, PDF p. 9](https://www.bseindia.com/xml-data/corpfiling/AttachHis/8e997741-4d35-4188-933a-cf020fb9c816.pdf#page=9)
+- Management states that they are currently in an investment phase for online grocery where cash is burned on customer acquisition and infrastructure; they expect economics to improve from next year. [Call transcript, PDF p. 27](https://www.bseindia.com/xml-data/corpfiling/AttachHis/8e997741-4d35-4188-933a-cf020fb9c816.pdf#page=27)
+- The company characterizes its online retail strategy as measured to ensure return over time (LTV over CAC), leveraging existing assets rather than aggressive, high-burn customer acquisition. [Call transcript, PDF p. 28](https://www.bseindia.com/xml-data/corpfiling/AttachHis/8e997741-4d35-4188-933a-cf020fb9c816.pdf#page=28)
+
+## Narrative vs numbers
+
+- The company acknowledges that reported revenues, expenses, assets, and liabilities are subject to management judgements and estimates, which are inherently uncertain and may require material adjustments in future periods. [Annual filing, PDF p. 103](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=103)
+- Management states that the Group has satisfied all prescribed borrowing covenants and that quarterly current asset returns filed with banks agree with the books of account. [Annual filing, PDF p. 153](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=153)
+- Management describes margin pressure as a conscious, planned investment in digital commerce and a decision to absorb some inflation rather than passing it fully to consumers. [Call transcript, PDF p. 12](https://www.bseindia.com/xml-data/corpfiling/AttachHis/8e997741-4d35-4188-933a-cf020fb9c816.pdf#page=12)
+
+## Bull vs bear
+
+- The auditor identifies significant ongoing legal proceedings as a key audit matter due to the inherent uncertainty in management's judgment regarding the recognition, measurement, and disclosure of provisions. [Annual filing, PDF p. 91](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=91)
+- The company faces several significant ongoing legal disputes and financial claims, including a $2.81 billion gas migration demand (RIL share $1.87 billion) from the Government of India, ongoing arbitrations for the Panna-Mukta and Tapti blocks, a long-standing NTPC contract suit, and SEBI-related penalties involving a disgorgement order of ₹447.27 crore plus interest. [Annual filing, PDF p. 127](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=127)
+- The company faces legal and regulatory challenges including a potential disgorgement of ₹ 447.27 crore plus 12% interest, license fee demands against Hathway Cable and Datacom Limited of ₹ 3,202 crore, and license fee demands against Den Networks Limited of up to ₹ 2,157 crore. [Annual filing, PDF p. 164](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf#page=164)
+
+## Coverage and limitations
+
+- The provided primary source material is limited to the notice of the 49th Annual General Meeting and does not contain the financial statements, cash flow statements, balance sheet details, or management discussions required to evaluate cash conversion, working capital, debt, or cash flow performance.
+- The provided document is limited to the Notice of the Annual General Meeting (AGM) for the financial year 2025-26 and does not contain financial statements, cash flow details, debt disclosures, or working capital analysis.
+- Information regarding whether profits turn into cash, operating cash flow, debt levels, and working capital is entirely unavailable in the supplied material.
+- The provided documents are limited to an Annual General Meeting notice and contain no financial statements, cash flow statements, balance sheet details regarding debt, or working capital disclosures.
+- The provided documents do not contain information regarding cash flow from operations, debt levels, working capital, or specific discussions on profit-to-cash conversion.
+- The provided documents are limited to tax notification notices and auditor appointment notices, which do not include financial statements or cash flow analysis.
+- The provided document is limited to a notice seeking shareholder approval for related party transactions and does not contain financial statements, cash flow data, or balance sheet information.
+- The primary source provided consists of a notice regarding related party transactions and does not contain financial statements, cash flow statements, or balance sheet data.
+- Information regarding cash from operations, debt, and working capital is unavailable in the provided document.
+- The provided document is limited to disclosures regarding related party transactions and does not contain financial statements, cash flow details, balance sheet data, or debt information.
+- The provided document is a Notice of a meeting and does not contain comprehensive financial statements such as a cash flow statement, income statement, or full balance sheet.
+- Information regarding cash from operations, total debt, and working capital dynamics for the consolidated company is unavailable in the provided text.
+- No explicit concerns regarding the conversion of profits to cash are stated in the provided document.
+- RELIANCE Annual Report 2026, page 20: a finding was excluded because its evidence could not be validated.
+- The supplied documentation is a notice of Annual General Meeting and statement of material facts regarding related party transactions, not a full set of financial statements.
+- Data regarding cash flow from operations, debt levels, working capital trends, and the conversion of profit to cash is unavailable in the provided pages.
+- There is no information on explicit concerns regarding cash conversion or liquidity.
+- The provided source documents consist only of disclosures regarding related party transactions and do not contain comprehensive financial statements such as cash flow statements, balance sheets, or profit and loss accounts necessary to assess cash conversion, debt levels, or working capital.
+- Information regarding whether reported profits convert to cash, total debt, total working capital, and explicit management concerns regarding cash flows is unavailable.
+- The supplied annual report pages are focused on related party transaction disclosures and do not include financial statements, cash flow data, or balance sheet details.
+- Information regarding cash conversion, debt levels, and working capital is unavailable in the provided documentation.
+- The provided document is a Notice to shareholders regarding related party transactions and does not contain cash flow statements, balance sheet data, or explicit financial metrics concerning cash conversion, debt, or working capital.
+- The provided document is limited to disclosures regarding related party transactions and does not include an income statement, balance sheet, or cash flow statement.
+- Information regarding cash from operations, debt levels, and working capital is unavailable.
+- No explicit concerns regarding cash conversion are mentioned in the provided pages.
+- The provided document only contains details on related party transactions between Reliance Retail Limited and Reliance Retail Ventures Limited.
+- Data regarding cash flow from operations, debt, and working capital is unavailable in the supplied source material.
+- The provided document only contains information regarding related party transactions and does not disclose cash flow from operations, total debt figures, or working capital details.
+- Information regarding whether profits turn into cash is unavailable in the provided pages.
+- RELIANCE Annual Report 2026, page 33: a finding was excluded because its evidence could not be validated.
+- The supplied annual report excerpt only covers details of related party transactions and does not contain financial statements, cash flow data, debt schedules, or working capital analysis.
+- Information regarding whether profits turn into cash is unavailable in the provided document.
+- The provided document is an excerpt from an Annual Report regarding related party transactions and does not contain financial statements, cash flow data, or balance sheet information.
+- Information regarding cash flow from operations, debt levels, and working capital is unavailable in the supplied source material.
+- The provided document (page 36 of the Reliance Annual Report 2026) only contains biographical and directorship details of Shri Akash M. Ambani.
+- The document contains no financial statements, cash flow information, debt details, or working capital data required to answer the user's question.
+- Information regarding whether profits turn into cash is unavailable in the supplied source material.
+- The provided documents contain information regarding related party transactions and director profiles but do not provide financial statements such as a cash flow statement, balance sheet (beyond net worth figures for related parties), or details on debt, working capital, or cash from operations for the consolidated company.
+- The provided document is an introductory overview and table of contents for the Reliance Annual Report 2026; it does not contain the financial statements, cash flow data, or detailed commentary necessary to answer questions regarding cash conversion, operations, debt, or working capital.
+- RELIANCE Annual Report 2026, page 41: a finding was excluded because its evidence could not be validated.
+- The provided document does not contain information regarding cash from operations, working capital, or explicit concerns regarding the conversion of profits to cash.
+- The primary source does not provide numerical figures for cash from operations, specific debt amounts, or working capital details.
+- The primary source does not explicitly discuss or raise concerns regarding the conversion of profits into cash.
+- The provided sources do not explicitly contain a Statement of Cash Flows; therefore, details regarding specific cash from operations, working capital movements, or reconciliation of profits to cash are unavailable.
+- There are no explicit concerns raised in the provided primary source text regarding the quality of earnings or cash conversion.
+- RELIANCE Annual Report 2026, page 44: a finding was excluded because its evidence could not be validated.
+- The provided documents describe operational EBITDA and gross revenues for segments but do not provide a consolidated Cash Flow Statement to directly reconcile net profit to cash flow from operations.
+- The primary sources do not explicitly state if net profits are fully realized as cash flows from operations; they describe debt management, liquidity, and working capital optimization strategies.
+- The provided document is limited to the 'Business Overview' and 'SCOT Analysis' sections of the Management Discussion and Analysis. It does not contain financial statements, cash flow details, debt positions, or working capital metrics.
+- The primary sources do not contain information regarding cash flow from operations, debt levels, or working capital for the company.
+- The primary sources do not disclose whether the reported profits for the Media and Entertainment segment turn into cash.
+- There is no information in the provided text concerning explicit financial risks or concerns related to liquidity, debt, or working capital management.
+- RELIANCE Annual Report 2026, page 50: a finding was excluded because its evidence could not be validated.
+- The supplied document does not provide information regarding cash flow from operations, debt levels, or working capital for the company.
+- No explicit concerns regarding the conversion of profits into cash are mentioned in the provided source text.
+- The primary source documents provided do not contain information regarding cash flow from operations, debt levels, working capital, or explicit management commentary on the conversion of reported profits into cash.
+- The scope of the provided data is restricted to the Oil to Chemicals (O2C) segment business overview and performance, not the consolidated company financials.
+- RELIANCE Annual Report 2026, page 52: a finding was excluded because its evidence could not be validated.
+- Primary sources do not provide a cash flow statement or explicit reconciliation of profits to cash from operations.
+- No specific quantitative data on working capital or total debt levels is provided in the supplied pages.
+- The supplied pages do not explicitly state if the reported profits for the Oil and Gas business are being converted into cash, other than mentioning liquidity risk management strategies.
+- The provided annual report pages do not contain cash flow statements, debt disclosures, or specific working capital figures required to evaluate whether reported profits turn into cash.
+- There is no information regarding the conversion of accounting profits to cash from operations in the provided source material.
+- No details on total debt, debt repayment, or working capital management are available in the provided text.
+- No explicit concerns regarding cash flow or financial liquidity were identified in the provided pages.
+- The provided pages do not contain financial statements or specific details regarding cash flow from operations, debt, or working capital.
+- No explicit concerns regarding the conversion of profits into cash are mentioned in the provided primary source documents.
+- The provided document (Reliance Industries Limited Integrated Annual Report 2025-26, pages 65-68) is limited to Corporate Governance information, including board structure, director profiles, and compensation.
+- The document contains no financial statements, cash flow data, balance sheet figures, or details on working capital and debt, making it impossible to address the user's question regarding whether profits turn into cash or explain operational cash flow.
+- The primary sources provided do not contain the Statement of Cash Flows or specific numerical data regarding cash from operations, debt, or working capital.
+- The primary sources provided do not contain information linking reported profits to cash generation.
+- There is no explicit mention of concerns regarding cash flow or working capital in the provided pages.
+- The primary sources consist of corporate governance reports and secretarial audit reports which explicitly state they have not verified the correctness and appropriateness of financial records, books of accounts, or cash flow statements.
+- No explicit details regarding net working capital, total debt balances, or a breakdown of cash from operations are provided in the supplied documents.
+- The provided document is a Secretarial Audit Report which explicitly disclaims verification of financial records, therefore data regarding cash from operations, debt, working capital, and profit-to-cash conversion is unavailable.
+- The provided documentation is restricted to a Secretarial Audit Report and related corporate governance disclosures. It contains no financial statements, cash flow data, working capital details, or profitability metrics, rendering an assessment of cash conversion or operational cash flow impossible.
+- The source explicitly states that the auditors 'have not verified the correctness and appropriateness of financial records and Books of Accounts of the Company'.
+- RELIANCE Annual Report 2026, page 78: a finding was excluded because its evidence could not be validated.
+- The provided page contains an Independent Auditor’s Report on Corporate Governance compliance and does not contain information on cash flow from operations, debt, working capital, or profit conversion to cash.
+- The primary sources provided do not contain information regarding cash flow from operations, total debt, working capital, or explicit management concerns regarding the conversion of profits into cash.
+- RELIANCE Annual Report 2026, page 80: a finding was excluded because its evidence could not be validated.
+- The provided documents do not contain a cash flow statement, information on cash from operations, details on current debt levels, or working capital metrics.
+- The provided documents do not explicitly discuss the conversion of reported profits into cash beyond referencing standard audit reports and internal control effectiveness.
+- The provided document is limited to the Annual Report on Corporate Social Responsibility (CSR) Activities for FY 2025-26 and does not contain information regarding cash flow from operations, debt, working capital, or explicit concerns regarding the conversion of profits into cash.
+- RELIANCE Annual Report 2026, page 85: a finding was excluded because its evidence could not be validated.
+- The supplied primary source documents do not provide financial statements, consolidated or standalone profit figures, cash flow from operations, debt levels, or working capital metrics for Reliance Industries Limited.
+- Information regarding whether profits turn into cash or explicit management concerns about liquidity or leverage is unavailable in the provided pages.
+- The supplied document is an excerpt from the Board’s Report focused on corporate social responsibility and impact studies for agricultural and water management programs; it contains no financial statements, profit and loss data, or balance sheet details.
+- Data regarding cash from operations, debt, and working capital is unavailable in the provided pages.
+- The supplied document is limited to a Board's Report section detailing social impact assessment findings (VCRI framework, Swayamshree, SWADESH, and Reliance Foundation Sports program).
+- No financial statements, cash flow disclosures, debt schedules, or working capital analysis are present in the provided source material.
+- RELIANCE Annual Report 2026, page 88: a finding was excluded because its evidence could not be validated.
+- Information regarding cash from operations, working capital, and the conversion of profits to cash is unavailable as the provided Secretarial Audit Report explicitly states that the auditor did not verify financial records or books of accounts.
+- RELIANCE Annual Report 2026, page 89: a finding was excluded because its evidence could not be validated.
+- The provided document is limited to Annexure V of the Board's Report (conservation of energy, technology absorption, and foreign exchange earnings/outgo) and contains no financial statements, cash flow data, or balance sheet details.
+- The provided text does not contain numerical data regarding cash from operations, debt levels, or working capital metrics.
+- The primary source only contains the Independent Auditor's Report, which describes audit procedures and key audit matters, but lacks the actual financial statements or tables containing quantitative values.
+- The provided document only contains the Independent Auditor's Report section of the 2026 Annual Report.
+- Financial figures, cash flow statements, balance sheet details, debt, and working capital information are not present in the supplied source material.
+- The provided document is an Auditor's Report that confirms the existence of financial statements, but it does not contain the actual figures for cash from operations, debt, or working capital.
+- Information regarding whether profits turn into cash or specific concerns about working capital is unavailable in the provided text.
+- RELIANCE Annual Report 2026, page 93: a finding was excluded because its evidence could not be validated.
+- The provided page contains only the auditor's report on internal financial controls and does not include the balance sheet, cash flow statement, or financial performance tables required to assess cash conversion, debt, or working capital.
+- The primary source provided consists of the Independent Auditor's 'Annexure B' report and does not contain the Cash Flow Statement or P&L statements required to determine if profits are converted to cash or to provide details on cash from operations.
+- Debt-related information is limited to the existence of working capital limits and specific loan/guarantee data, but overall debt obligations are not disclosed.
+- The primary source does not contain an explicit discussion or management assessment concerning cash flow quality or concerns.
+- The provided documents do not contain explicit figures for cash flow from operations or working capital.
+- The provided documents do not discuss the conversion of profits into cash beyond stating no cash losses occurred.
+- The documents do not provide a detailed breakdown of total debt, only confirming that no defaults on loan repayments occurred.
+- RELIANCE Annual Report 2026, page 96: a finding was excluded because its evidence could not be validated.
+- Information regarding cash from operations is unavailable in the provided document pages.
+- Details concerning working capital dynamics are limited to balance sheet line items (inventories, receivables, and payables) with no operational flow explanation.
+- No explicit concerns regarding cash conversion are stated in the provided primary sources.
+- RELIANCE Annual Report 2026, page 97: a finding was excluded because its evidence could not be validated.
+- The provided document is limited to the Statement of Profit and Loss; it does not contain the Cash Flow Statement, Balance Sheet, or detailed notes necessary to reconcile profits to cash flow from operations, analyze working capital, or quantify debt levels.
+- Information regarding cash from operations, debt, working capital, and explicit management concerns related to cash conversion is unavailable in the supplied source material.
+- RELIANCE Annual Report 2026, page 98: a finding was excluded because its evidence could not be validated.
+- The provided document is limited to the 'Statement of Changes in Equity' section of the standalone financial statements for the year ended 31st March 2026. It does not contain a Statement of Cash Flows, details on debt, working capital, or explicit management concerns regarding cash conversion.
+- Information regarding operational cash flow, debt position, and working capital is unavailable in the supplied source material.
+- RELIANCE Annual Report 2026, page 99: a finding was excluded because its evidence could not be validated.
+- The provided documents do not state explicit management concerns regarding cash flow or debt sustainability.
+- The provided documents do not define whether specific cash flow variances are considered positive or negative by management beyond the numerical figures.
+- RELIANCE Annual Report 2026, page 100: a finding was excluded because its evidence could not be validated.
+- The provided document contains only accounting policy notes and does not include the Statement of Cash Flows, Balance Sheet, or Profit and Loss statements necessary to evaluate cash conversion, actual debt levels, or working capital metrics.
+- There is no explicit information regarding the company's performance or management's concerns about liquidity, profitability conversion to cash, or debt in the provided pages.
+- The provided document is limited to accounting policy notes and does not contain the numerical Statement of Profit and Loss, Balance Sheet, or Cash Flow Statement required to assess whether profits convert to cash.
+- Data regarding debt amounts, working capital balances, or specific cash flow from operations is unavailable in the provided pages.
+- No explicit concerns regarding cash conversion are documented in the provided text.
+- The provided document is limited to a single page containing standalone accounting notes and a table for property, plant, and equipment, providing no information on cash flow from operations, debt levels, or working capital.
+- No explicit findings regarding whether reported profits convert to cash could be generated from the available text.
+- The primary sources do not contain information regarding cash flow from operations, total debt figures, or working capital metrics.
+- The primary sources do not provide an explicit assessment of whether profits convert into cash.
+- There are no explicit concerns regarding liquidity or financial management stated in the provided pages.
+- RELIANCE Annual Report 2026, page 104: a finding was excluded because its evidence could not be validated.
+- The primary source document provided consists only of notes to the standalone financial statements detailing specific investment categories and balances.
+- Data regarding cash flow from operations, total debt, working capital, and explicit management concerns regarding cash conversion is not present in the provided source pages.
+- The provided evidence is insufficient to determine whether reported profits are converted into cash.
+- The provided document contains notes to the standalone financial statements regarding investments but does not include a Cash Flow Statement or P&L Statement, making it impossible to determine if profits turn into cash or to explain cash from operations, debt, or working capital.
+- No explicit concerns regarding cash, debt, or working capital are mentioned in the provided text.
+- RELIANCE Annual Report 2026, page 106: a finding was excluded because its evidence could not be validated.
+- The provided document is limited to standalone financial notes regarding investments and non-current loans; it does not contain cash flow statements, profit and loss statements, or disclosures regarding debt and working capital necessary to determine cash conversion.
+- No information is available regarding explicit management concerns about cash flows or liquidity within the supplied pages.
+- The provided document is limited to notes on investment and selected asset line items; it does not contain a Statement of Cash Flows, consolidated debt figures, or comprehensive working capital details, making it impossible to determine if profits are converted to cash or provide a full assessment of liquidity and debt.
+- RELIANCE Annual Report 2026, page 108: a finding was excluded because its evidence could not be validated.
+- The supplied primary sources do not contain a Cash Flow Statement, making it impossible to determine the conversion of profits into cash from operations.
+- The primary sources do not provide a comprehensive figure for total debt or explicit details on working capital beyond selected line items.
+- No explicit management concerns regarding cash liquidity or collection risks were stated in the provided documents.
+- RELIANCE Annual Report 2026, page 109: a finding was excluded because its evidence could not be validated.
+- The provided document pages do not contain a Cash Flow Statement.
+- Information regarding cash from operations, working capital changes, and debt obligations is unavailable in the supplied source material.
+- The supplied documents provide only notes to the standalone financial statements, specifically regarding equity and reserves. There is no information provided on cash flow from operations, debt levels, working capital, or explicit management concerns regarding cash conversion.
+- RELIANCE Annual Report 2026, page 111: a finding was excluded because its evidence could not be validated.
+- The supplied documents do not provide a Statement of Cash Flows or operating profit figures, making it impossible to determine if profits turn into cash or to analyze cash from operations.
+- The documents do not contain comprehensive working capital data, only selected non-current liability and debt figures.
+- Management has not provided explicit concerns regarding cash flow or debt liquidity in the provided text.
+- RELIANCE Annual Report 2026, page 112: a finding was excluded because its evidence could not be validated.
+- The supplied primary sources do not contain a Cash Flow Statement; therefore, the conversion of profits into cash cannot be determined.
+- There is no explicit information provided regarding cash from operations.
+- RELIANCE Annual Report 2026, page 113: a finding was excluded because its evidence could not be validated.
+- The supplied pages do not contain a Cash Flow Statement, preventing a direct assessment of how reported profits translate into cash flow from operations.
+- The supplied pages do not contain a comprehensive breakdown of total debt, only supplier financing arrangements.
+- Information regarding overall working capital management beyond specific liability line items is unavailable.
+- RELIANCE Annual Report 2026, page 114: a finding was excluded because its evidence could not be validated.
+- The provided document is limited to employee benefit notes and does not contain the cash flow statement, total debt, or working capital disclosures.
+- Information regarding cash from operations and total debt is unavailable in the supplied source material.
+- RELIANCE Annual Report 2026, page 115: a finding was excluded because its evidence could not be validated.
+- The provided document does not contain cash flow statements, balance sheet asset/liability totals, or information regarding working capital, making it unavailable to assess whether profits turn into cash.
+- RELIANCE Annual Report 2026, page 116: a finding was excluded because its evidence could not be validated.
+- The primary source documents provided do not contain the statement of cash flows, balance sheet details regarding debt or working capital, or explicit management commentary on cash conversion.
+- RELIANCE Annual Report 2026, page 117: a finding was excluded because its evidence could not be validated.
+- The provided document pages contain only a list of subsidiary companies and notes related to corporate structure.
+- The document contains no financial statements, cash flow data, debt figures, working capital information, or management commentary on profitability and cash conversion.
+- The primary source document provided is a list of subsidiary companies and does not contain any financial figures, cash flow statements, debt details, or working capital data necessary to evaluate the conversion of profits to cash.
+- The supplied document does not contain a cash flow statement, information on operating cash flows, or specific details regarding debt obligations, making it unavailable to assess how profits translate into cash or the company's debt position.
+- The supplied document provides only related-party transaction and balance details, not comprehensive financial statements required to analyze working capital efficiency or explicit management concerns regarding cash flows.
+- RELIANCE Annual Report 2026, page 120: a finding was excluded because its evidence could not be validated.
+- The primary source documents provided (standalone financial notes) do not include a Statement of Cash Flows, nor do they provide aggregate figures for cash from operations, total debt, or working capital.
+- The documents only provide detailed breakdowns of related party transactions and specific P&L items, which are insufficient to analyze the conversion of profits into cash or assess debt and working capital positions.
+- The provided document only contains notes to the standalone financial statements regarding specific expense categories (professional fees, general expenses, travelling expenses, and donations).
+- Information regarding cash from operations, debt levels, and working capital is unavailable in the provided pages.
+- No information is provided to determine whether reported profits turn into cash.
+- The provided document is limited to notes to the standalone financial statements and does not contain the cash flow statement, balance sheet totals for debt, or details on working capital movements.
+- Data regarding operational cash conversion is unavailable in the provided excerpt.
+- Information concerning total debt levels is unavailable in the provided excerpt.
+- RELIANCE Annual Report 2026, page 126: a finding was excluded because its evidence could not be validated.
+- The provided document is limited to standalone financial statement notes and does not contain cash flow statements or comprehensive profit and loss accounts necessary to determine if reported profits turn into cash.
+- Information regarding specific working capital items and cash from operations is unavailable in the provided excerpt.
+- The company classifies identified legal demands and disputes as remote or sub-judice, providing no numerical impact on actual liquidity.
+- RELIANCE Annual Report 2026, page 127: a finding was excluded because its evidence could not be validated.
+- The provided document is limited to Standalone Financial Statement notes and does not contain a Cash Flow Statement or P&L statement to verify the conversion of profits into operating cash.
+- Information regarding working capital (beyond trade payables and trade receivables balance) is unavailable.
+- Explicit management concerns regarding cash flows or liquidity are not present in the provided text.
+- The primary sources do not contain information on cash flow from operations, the conversion of profits into cash, or specific working capital figures.
+- The primary sources provide no statement regarding whether current profits translate into cash flow.
+- RELIANCE Annual Report 2026, page 129: a finding was excluded because its evidence could not be validated.
+- Primary sources provided do not contain a Cash Flow Statement or specific data regarding cash generated from operations.
+- Primary sources do not provide information on working capital beyond mentioning current trade payables.
+- The documents do not contain explicit qualitative concerns regarding the company's ability to convert profits into cash.
+- RELIANCE Annual Report 2026, page 130: a finding was excluded because its evidence could not be validated.
+- Information regarding cash from operations and working capital is unavailable in the provided source material.
+- The provided standalone financial notes do not explicitly state whether reported profits are converted to cash.
+- RELIANCE Annual Report 2026, page 131: a finding was excluded because its evidence could not be validated.
+- The primary sources do not explicitly state cash flow from operations, making it unavailable to determine if reported profits turn into cash.
+- There is no explicit mention of concerns regarding the quality of earnings in the provided documentation.
+- RELIANCE Annual Report 2026, page 132: a finding was excluded because its evidence could not be validated.
+- The provided document is an Independent Auditor's Report and does not contain the actual Consolidated Statement of Cash Flows, numerical data on cash from operations, debt, or working capital.
+- The document lists ongoing litigation matters as key audit matters, but does not provide quantitative impact on cash conversion or liquidity.
+- The provided document is an excerpt from an auditor's report focusing on key audit matters such as revenue recognition, IT controls, and impairment of brand/goodwill. It does not contain the cash flow statement, balance sheet figures, details on debt, or working capital management.
+- Data regarding cash conversion, specific operational cash flows, debt levels, and working capital is unavailable in the supplied source material.
+- The provided document is an Auditor's Report and does not contain the consolidated Statement of Cash Flows, consolidated Balance Sheet, or detailed notes regarding debt and working capital.
+- Information regarding the group-level consolidated cash from operations, total debt, and working capital position is unavailable.
+- The provided document is an auditor's report and does not contain the consolidated cash flow statement, specific data on cash from operations, total debt figures, or working capital metrics.
+- Information regarding whether profits turn into cash is unavailable in the supplied text.
+- The provided source material is limited to the Independent Auditor's Report for the year ended 31st March 2026 and does not include cash flow statements, balance sheets, or financial tables.
+- Data regarding cash flow from operations, debt, and working capital is unavailable in the supplied documents.
+- The provided document only contains the auditor's report and statements regarding internal financial controls; it does not contain the actual financial statements, cash flow statements, balance sheets, or numerical data required to answer the questions about profit-to-cash conversion, debt, or working capital.
+- The provided document is a consolidated balance sheet and does not contain a cash flow statement, therefore, cash from operations and the conversion of profits into cash cannot be determined.
+- No explicit management concerns regarding cash flows or working capital are mentioned in the provided excerpts.
+- RELIANCE Annual Report 2026, page 139: a finding was excluded because its evidence could not be validated.
+- The supplied document is limited to the Consolidated Statement of Profit and Loss and does not contain the Consolidated Cash Flow Statement, Balance Sheet, or detailed notes regarding debt and working capital.
+- Information regarding cash from operations, debt levels, and working capital is unavailable in the provided source.
+- RELIANCE Annual Report 2026, page 140: a finding was excluded because its evidence could not be validated.
+- The provided document is limited to the Consolidated Statement of Changes in Equity, which does not contain the cash flow statement, balance sheet totals for debt, or details on working capital.
+- Information regarding cash from operations, debt levels, working capital, and explicit management concerns related to cash conversion is unavailable in the supplied source material.
+- RELIANCE Annual Report 2026, page 141: a finding was excluded because its evidence could not be validated.
+- The provided documents do not contain explicit qualitative concerns regarding cash flow or debt sustainability.
+- RELIANCE Annual Report 2026, page 142: a finding was excluded because its evidence could not be validated.
+- The provided document is limited to accounting policies and definitions; it does not contain numerical cash flow statements, debt figures, or specific working capital balances for the period.
+- No data is available regarding explicit concerns, management commentary on cash generation, or reconciliation between profits and cash for the period.
+- The provided document only contains notes to the consolidated financial statements for the year ended 31st March 2026 and does not include the primary financial statements (Statement of Profit and Loss, Cash Flow Statement, Balance Sheet) or specific numerical values for operating cash flow, debt, or working capital.
+- No information is available regarding explicit management concerns or explicit guidance in the provided text.
+- RELIANCE Annual Report 2026, page 144: a finding was excluded because its evidence could not be validated.
+- The provided annual report pages contain accounting notes regarding oil and gas activities, hedge accounting, and impairment testing but lack a cash flow statement, balance sheet, or profit and loss summary, making it impossible to determine if profits turn into cash or to report on debt and working capital.
+- The provided source material is limited to Note 1 of the Consolidated Financial Statements, which focuses exclusively on Property, Plant and Equipment and Intangible Assets.
+- Data regarding cash flow from operations, debt, working capital, and management concerns is not available in the provided document segment.
+- The provided document is limited to specific notes on the consolidated financial statements and does not contain a cash flow statement, income statement, or details on debt, working capital, or management concerns regarding cash conversion.
+- No information is available in the provided text to determine if reported profits turn into cash.
+- RELIANCE Annual Report 2026, page 147: a finding was excluded because its evidence could not be validated.
+- The primary sources provided contain notes to the consolidated financial statements but do not include the Consolidated Cash Flow Statement or the Consolidated Profit and Loss Account.
+- Information regarding cash from operations, specific debt levels, and explicit management concerns regarding cash conversion is unavailable in the provided documentation.
+- RELIANCE Annual Report 2026, page 148: a finding was excluded because its evidence could not be validated.
+- The primary sources provided do not contain the Statement of Cash Flows or information regarding Cash from Operations, therefore it is unavailable to confirm if profits turn into cash.
+- Debt figures are not explicitly presented in the provided notes, though the existence of collateralized borrowings is mentioned.
+- Working capital analysis is limited as the sources only provide current asset components (receivables, cash, investments) without corresponding current liabilities.
+- RELIANCE Annual Report 2026, page 149: a finding was excluded because its evidence could not be validated.
+- The supplied primary sources do not contain a Cash Flow Statement or specific data regarding cash from operations, total debt, or working capital beyond the itemization of other current assets.
+- No explicit concerns regarding cash conversion or liquidity are mentioned in the provided excerpts.
+- RELIANCE Annual Report 2026, page 150: a finding was excluded because its evidence could not be validated.
+- The provided document is limited to the Notes to the Consolidated Financial Statements regarding share capital and other equity reserves.
+- The document does not contain the Cash Flow Statement, Balance Sheet items beyond specific equity reserves, or details regarding debt and working capital.
+- It is unavailable to determine if reported profits turn into cash or to provide explicit management concerns based solely on the supplied page.
+- RELIANCE Annual Report 2026, page 151: a finding was excluded because its evidence could not be validated.
+- The provided documents do not contain the Statement of Cash Flows; therefore, cash from operations, working capital changes, and the conversion of profit into cash cannot be determined.
+- The provided documents contain only notes to the consolidated financial statements, not the comprehensive income statement or cash flow statement.
+- RELIANCE Annual Report 2026, page 152: a finding was excluded because its evidence could not be validated.
+- The primary sources do not provide a Cash Flow Statement, preventing a direct analysis of how profits translate into cash or an explicit breakdown of cash from operations.
+- The primary sources do not provide an explicit analysis of working capital management or cash flow performance beyond stating that current asset filings match the books.
+- RELIANCE Annual Report 2026, page 153: a finding was excluded because its evidence could not be validated.
+- The provided document does not contain a Statement of Cash Flows; therefore, information regarding Cash from Operations is unavailable.
+- The provided document does not disclose total debt figures, only specific current financial liability components.
+- The provided document does not contain a comprehensive working capital analysis beyond specific liability line items.
+- RELIANCE Annual Report 2026, page 154: a finding was excluded because its evidence could not be validated.
+- The provided pages contain notes to consolidated financial statements but do not include the statement of cash flows, which is required to assess cash from operations.
+- The provided pages do not disclose total debt figures.
+- Working capital cannot be fully calculated as total current assets and liabilities are not provided.
+- There is no explicit mention of cash flow concerns in the provided pages.
+- RELIANCE Annual Report 2026, page 155: a finding was excluded because its evidence could not be validated.
+- The provided document pages do not contain cash flow statements, debt schedules, or working capital analysis; therefore, it is impossible to determine if profits turn into cash or to explain the requested metrics from the primary sources.
+- The provided document only contains notes to the consolidated financial statements. Information regarding cash from operations, total debt, working capital components, and explicit management concerns regarding cash conversion is unavailable in this extract.
+- RELIANCE Annual Report 2026, page 157: a finding was excluded because its evidence could not be validated.
+- The provided document contains notes to the consolidated financial statements regarding related party transactions and balances, but does not include the primary Statement of Cash Flows, consolidated profit and loss statement, or detailed schedules for total debt, working capital components, or cash from operations.
+- RELIANCE Annual Report 2026, page 158: a finding was excluded because its evidence could not be validated.
+- The provided primary sources consist exclusively of notes to the consolidated financial statements regarding related party transactions; consequently, information on cash from operations, debt, working capital, and profit-to-cash conversion is unavailable.
+- The provided document only contains notes to the consolidated financial statements concerning related party transactions (income, purchases, power/fuel expenses, and employee benefits).
+- Information regarding cash flow from operations, debt, working capital, and management concerns is unavailable in the supplied primary sources.
+- The primary sources provided only contain notes regarding related party transactions and employee benefit funds, lacking the consolidated cash flow statement, balance sheet, and income statement necessary to answer the user's specific financial questions.
+- The provided pages contain only notes to the consolidated financial statements regarding related party transactions and key managerial compensation; they do not include the cash flow statement, income statement, or a summary of working capital to assess the conversion of profit to cash.
+- RELIANCE Annual Report 2026, page 162: a finding was excluded because its evidence could not be validated.
+- The provided document is limited to notes on consolidated financial statements and does not contain the cash flow statement, income statement, or working capital disclosures.
+- Information regarding cash from operations and changes in working capital is unavailable in the provided pages.
+- RELIANCE Annual Report 2026, page 163: a finding was excluded because its evidence could not be validated.
+- Primary sources do not provide cash flow statements, therefore it is unavailable if reported profits turn into cash.
+- Primary sources provide no explicit information on working capital management beyond the presence of trade receivables and trade payables on the balance sheet.
+- The information on cash from operations is unavailable.
+- The provided document pages do not contain cash flow statement data, therefore whether reported profits turn into cash, details regarding cash from operations, and specific working capital figures are unavailable.
+- The primary sources do not contain explicit narrative concerns regarding cash or liquidity.
+- The provided documents do not contain the Cash Flow Statement or the Profit and Loss Account; therefore, it is unavailable to determine if profits turn into cash, nor can the cash from operations or working capital changes be calculated.
+- No specific explicit management concerns regarding cash flows or liquidity were provided, other than the standard description of risks.
+- RELIANCE Annual Report 2026, page 166: a finding was excluded because its evidence could not be validated.
+- The provided document pages only contain notes on derivative financial instruments and hedge accounting disclosures. It does not provide the cash flow statement, income statement, or a summary of cash from operations, working capital changes, or explicit management concerns regarding profit-to-cash conversion.
+- The provided documents do not contain a Cash Flow Statement, preventing an analysis of cash from operations or the conversion of profits to cash.
+- The provided documents do not disclose details on working capital balances.
+- No explicit management concerns regarding cash flows or debt sustainability are stated in the provided text.
+- RELIANCE Annual Report 2026, page 168: a finding was excluded because its evidence could not be validated.
+- Cash from operations is unavailable in the provided document pages.
+- Specific details on debt and working capital are unavailable in the provided document pages.
+- Explicit concerns regarding cash flow are unavailable in the provided document pages.
+- RELIANCE Annual Report 2026, page 169: a finding was excluded because its evidence could not be validated.
+- The provided source material only contains a list of subsidiaries and associates for Reliance Industries Limited as of March 31, 2026.
+- There is no financial data available in the provided text to explain cash from operations, debt, working capital, or profit conversion.
+- The provided source material contains only a list of subsidiary and associate entities and their ownership percentages.
+- Financial data such as cash from operations, debt, working capital, and explicit management concerns regarding cash flow are not available in the provided document.
+- The provided document does not explicitly define 'cash from operations' or 'working capital' for the listed entities.
+- The provided document does not offer qualitative narrative regarding the specific reasons for net cash outflows, nor does it list explicit management concerns regarding cash conversion.
+- The provided data is limited to summarized consolidated financial information for specific subsidiaries and does not represent the full consolidated entity of Reliance Industries Limited.
+- The supplied documents consist only of tables detailing the net assets and shares in profit/loss/OCI for various subsidiaries, associates, and joint ventures as of March 31, 2026, and a list of transactions with struck-off companies.
+- The documents do not contain the consolidated cash flow statement, information regarding cash from operations, total debt, or working capital details.
+- No information is provided in the supplied pages to explain whether reported profits turn into cash or to detail explicit management concerns beyond the list of balances with struck-off companies.
+- The supplied document does not provide a statement of cash flows, information on operating cash flows, or direct details regarding how reported profits translate into cash.
+- The supplied document does not contain an explicit discussion or management assessment regarding concerns over working capital or debt levels.
+- RELIANCE Annual Report 2026, page 177: a finding was excluded because its evidence could not be validated.
+- The primary source material provided is limited to an 'Annexure A' schedule of subsidiaries and does not include the full consolidated cash flow statement, balance sheet, or management discussion and analysis required to assess cash conversion, working capital, or total debt.
+- The provided document only lists individual subsidiary financial data and does not disclose the consolidated group-level cash flow statement.
+- Information regarding cash from operations, total group debt, group-wide working capital, and management commentary on cash generation is unavailable in the supplied material.
+- The supplied source pages are restricted to an annexure table listing subsidiary financial statistics (Income, Assets, Liabilities) for Reliance Industries Limited.
+- The provided text does not contain cash flow statements, balance sheets, or management commentary required to evaluate cash conversion, operational cash flow, debt, or working capital.
+- Explicit concerns regarding cash quality or working capital are not found in the supplied excerpts.
+- The primary source only contains an annexure of subsidiary-level financial statements and does not provide consolidated cash flow statements, debt details, working capital schedules, or qualitative management commentary on cash conversion.
+- Information regarding cash from operations, total company debt, and working capital is unavailable in the provided document.
+- RELIANCE Annual Report 2026, page 181: a finding was excluded because its evidence could not be validated.
+- The primary source document provided is a list of subsidiary and associate companies, not a financial report containing cash flow statements, debt levels, working capital calculations, or management commentary on profitability conversion to cash.
+- Data regarding cash from operations, debt, and working capital is unavailable in the supplied material.
+- The provided document is a Consolidated Balance Sheet and does not contain a Cash Flow Statement; therefore, cash from operations cannot be calculated or verified from the primary source.
+- The primary source provides a balance sheet but does not explicitly disclose working capital figures or management concerns regarding cash conversion.
+- RELIANCE Annual Report 2026, page 183: a finding was excluded because its evidence could not be validated.
+- A cash flow statement is not provided in the source documents, making it impossible to determine if profits are converting into cash from operations.
+- Details on working capital changes are not explicitly broken down beyond balance sheet items (inventories, trade receivables, trade payables).
+- No specific explicit concerns or management commentary regarding liquidity or cash flow are provided in the source material.
+- RELIANCE Annual Report 2026, page 184: a finding was excluded because its evidence could not be validated.
+- The supplied document only contains a Consolidated Statement of Profit and Loss, therefore information regarding cash flow from operations, debt levels, and working capital is unavailable.
+- No explicit concerns regarding cash conversion are provided in the supplied material.
+- RELIANCE Annual Report 2026, page 185: a finding was excluded because its evidence could not be validated.
+- The supplied source material only contains contact and administrative information for Reliance Industries Limited.
+- Financial metrics such as cash from operations, debt levels, and working capital are entirely missing from the provided document.
+- The provided document is a notice of an Annual General Meeting and does not contain any financial statements, cash flow information, debt details, or working capital data.
+- The primary sources do not explicitly provide a Cash Flow Statement or specific data on Cash from Operations beyond the mention that store cash flows fund digital commerce growth.
+- The primary sources provide no detailed breakdown of working capital beyond general mentions of O2C operational expenses and retail trade-offs.
+- The primary sources provided do not contain a consolidated statement of cash flows, nor specific data on working capital movements or operational cash flow figures for the reported period.
+- While the transcript references increased debt in the retail segment, it does not provide total debt figures or specific maturity profiles.
+- No specific quantitative data for cash from operations, total debt, or working capital is provided in the source documents.
+- The sources do not explicitly detail the conversion of accounting profits to cash, only mentioning that the business is funded by a 'profitable core'.
+- The provided document is an earnings-call transcript for Reliance Industries Limited focusing on revenue growth, brand performance, and infrastructure investment; it does not disclose financial statements such as cash flow, debt levels, or working capital details.
+- Information regarding whether profits turn into cash, specific cash from operations, debt, working capital, and explicit financial concerns is unavailable in the supplied source material.
+- The provided document is an earnings call transcript focused on operational business updates such as viewership metrics, platform features, and content performance.
+- The document contains no financial statements or data regarding cash flow, operating cash, debt, or working capital.
+- Information regarding whether profits turn into cash or explicit financial concerns is unavailable in the provided source material.
+- The primary source does not contain information regarding cash flow from operations, debt levels, or working capital.
+- The provided document does not explicitly discuss whether reported profits are converted into cash.
+- There are no explicit concerns raised in the provided transcript regarding liquidity or capital structure.
+- The provided document is an earnings-call transcript excerpt focused on operational metrics, refining margins, and product demand and does not contain financial statements or data regarding cash flow, working capital, or debt.
+- The provided earnings-call transcript pages do not contain financial statements, cash flow details, debt levels, or explicit information on working capital conversion for the reported period.
+- The documents focus primarily on operational dynamics, refining margins, market demand, and geopolitical impacts on supply chains rather than quantitative financial reconciliations.
+- No information is available in the provided source material to confirm if reported profits are converted into cash.
+- The provided document is an earnings-call transcript that does not contain financial statements or data regarding cash from operations, debt, or working capital.
+- The document does not address whether reported profits turn into cash.
+- The provided document is an earnings call transcript that discusses supply chain risks, sourcing strategy, and business performance, but it does not disclose financial statements, cash flow details, debt, or working capital figures.
+- RELIANCE earnings-call transcript Nov 2026, page 22: a finding was excluded because its evidence could not be validated.
+- The provided document is an earnings call transcript focused on operational factors affecting margins (refining and petrochemicals) and market demand trends; it does not contain financial statements or data regarding cash flow, debt, or working capital.
+- The provided document is an earnings-call transcript that does not contain financial statements or data regarding cash from operations, debt, working capital, or explicit concerns regarding profit conversion to cash.
+- The primary sources consist only of an earnings call transcript and do not provide financial statements such as a cash flow statement, balance sheet, or income statement.
+- Data regarding debt, specific working capital metrics, and the conversion of accounting profits to operating cash flow is unavailable in the provided text.
+- The provided document only contains excerpts from an earnings call discussing operational improvements in refining and petrochemical margins.
+- There is no financial information provided regarding cash flow from operations, debt levels, working capital, or explicit concerns related to cash conversion in the supplied source material.
+- The generated report did not pass citation checks. Showing validated page findings grouped by topic.
+
+## Documents
+
+- [RELIANCE Annual Report 2026](https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc08294f-ec68-4f15-aaa4-c14a3c4bdfb2.pdf)
+- [RELIANCE earnings-call transcript Nov 2026](https://www.bseindia.com/xml-data/corpfiling/AttachHis/8e997741-4d35-4188-933a-cf020fb9c816.pdf)

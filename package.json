@@ -1,0 +1,39 @@
+{
+  "name": "finn-backend",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env backend/server.js",
+    "monitor": "node --env-file-if-exists=.env backend/cli.js tick",
+    "research": "node --env-file-if-exists=.env backend/cli.js research",
+    "collect": "node --env-file-if-exists=.env backend/cli.js collect",
+    "extract": "node --env-file-if-exists=.env backend/cli.js extract",
+    "analyse": "node --env-file-if-exists=.env backend/cli.js analyse",
+    "analyse:groq": "node --env-file-if-exists=.env backend/cli.js analyse-groq",
+    "diagnose:groq": "node --env-file-if-exists=.env backend/cli.js diagnose-groq",
+    "diagnose:gemini": "node --env-file-if-exists=.env backend/cli.js diagnose-gemini",
+    "digest": "node --env-file-if-exists=.env backend/cli.js digest",
+    "alerts": "node --env-file-if-exists=.env backend/cli.js alerts",
+    "rules": "node --env-file-if-exists=.env backend/cli.js rules",
+    "evaluate-alerts": "node --env-file-if-exists=.env backend/cli.js evaluate-alerts",
+    "portfolio": "node --env-file-if-exists=.env backend/cli.js portfolio",
+    "inspect": "node --env-file-if-exists=.env backend/cli.js inspect",
+    "test": "node --test --test-concurrency=1 backend/test/*.test.js"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.3.0",
+    "@napi-rs/canvas": "^1.1.1",
+    "@vercel/blob": "^2.0.0",
+    "cheerio": "^1.2.0",
+    "pdfjs-dist": "^6.5.438",
+    "pg": "^8.16.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "pdf-lib": "^1.17.1"
+  }
+}
