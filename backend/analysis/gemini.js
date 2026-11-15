@@ -16,10 +16,14 @@ export async function providerError(response,apiKey,now=Date.now(),provider='Gem
   try {body=await response.json();} catch {body={};}
   const value=response.headers.get('retry-after');
   const wait=value ? Number.isFinite(Number(value)) ? Number(value)*1000 : +new Date(value)-now : 60000;
+  const retryInfo=body.error?.details?.find(d=>d['@type']?.endsWith('RetryInfo'))?.retryDelay;
+  const duration=retryInfo || body.error?.message?.match(/retry in ([\dhms.]+)/i)?.[1];
+  let bodyWait=0;
+  for(const match of String(duration || '').matchAll(/(\d+(?:\.\d+)?)(h|m|s)/g))bodyWait+=Number(match[1])*({h:3600000,m:60000,s:1000}[match[2]]);
   const detail=safeProviderMessage(body.error?.message,apiKey);
   return new ModelError(`${provider} request failed (HTTP ${response.status})${detail?`: ${detail}`:''}`,{
     status:response.status,providerCode:safeProviderMessage(typeof body.error?.code==='string'?body.error.code:body.error?.status,apiKey),
-    retryAfterMs:Math.min(7*86400000,Math.max(1000,Number.isFinite(wait)?wait:60000)) });
+    retryAfterMs:Math.min(7*86400000,Math.max(1000,Math.max(Number.isFinite(wait)?wait:60000,bodyWait))) });
 }
 export class GeminiClient {
   provider='gemini';

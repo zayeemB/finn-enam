@@ -58,3 +58,12 @@ test('optional thinking level is explicit and invalid values are rejected',async
   await client.generate({stage:'test',prompt:'synthetic'});
   assert.throws(()=>new GeminiClient({apiKey:'secret-value',thinkingLevel:'minimal'}),/thinking/i);
 });
+
+test('provider cooldown respects daily retry durations from the body',async()=>{
+ const {providerError}=await import('../analysis/gemini.js');
+ const response=Response.json({error:{message:'Daily quota exceeded. Please retry in 10h13m47.2s.',details:[{'@type':'type.googleapis.com/google.rpc.RetryInfo',retryDelay:'36827.2s'}]}},{status:429});
+ const error=await providerError(response,'');
+ assert.equal(error.retryAfterMs,36827200);
+ const messageOnly=await providerError(Response.json({error:{message:'Please retry in 2h30m5s.'}},{status:429}),'');
+ assert.equal(messageOnly.retryAfterMs,9005000);
+});

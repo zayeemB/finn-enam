@@ -143,3 +143,11 @@ Retrieval reserves cash-flow statement headers and operating/investing rows toge
 Internal citation markers are stripped from statement text before numerical validation. Original text passages and table headers remain the evidence for numerical claims. Findings with unsupported figures or unknown references remain excluded. Expansion ignores exact repeats of already validated findings before treating old citation references as failures.
 
 Final source-coverage notes are rebuilt after expansion. Capital allocation is an additional report section where supported. Subsidiary bear-case findings require evidence of scale or group impact rather than an incidental operating anecdote.
+
+## Model quota waits
+
+Temporary model failures before the first validated brief now leave the job waiting with its prepared sources. The next eligible attempt uses the provider's retry window, including RetryInfo durations and daily-limit delays in error bodies. Cooldowns are shared by model across monitoring and research.
+
+A resumed provider wait resets the per-attempt processing clock and call allowance while retaining PDFs, indexes and any validated adaptive checkpoint. Consecutive short outages use increasing delays. An already validated initial brief remains available if a later expansion fails.
+
+Historical source-excerpt fallbacks are suppressed in the research report UI and can be explicitly requeued. Their raw passages remain available in backend records rather than being shown as an AI financial snapshot.

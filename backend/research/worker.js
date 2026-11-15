@@ -17,6 +17,10 @@ async function claim(db,now,budgetMs) {
       ORDER BY coalesce(r.last_claimed_at,r.created_at),r.created_at,r.id LIMIT 1 FOR UPDATE OF r SKIP LOCKED`,[now])).rows[0];
     if(!job)return null;
     const token=randomUUID();
+    if(job.research_state.provider_wait){
+      job.research_state={...job.research_state,brief_started_at:now.toISOString(),calls:0,provider_wait:false};
+      await tx.query('UPDATE research_jobs SET research_state=$2 WHERE id=$1',[job.id,JSON.stringify(job.research_state)]);
+    }
     if(job.options.mode!=='full'&&!job.research_state.brief_started_at){
       job.research_state={...job.research_state,brief_started_at:now.toISOString()};
       await tx.query('UPDATE research_jobs SET research_state=$2 WHERE id=$1',[job.id,JSON.stringify(job.research_state)]);

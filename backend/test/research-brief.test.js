@@ -55,15 +55,14 @@ test('the default entry point indexes a whole PDF and produces a cited brief in 
   assert.equal(Number((await db.query('SELECT count(*) AS n FROM content_blocks')).rows[0].n),32);
 
 });
-test('provider outages finish with labeled source excerpts and no automatic retry loop',async()=>{
+test('provider outages preserve indexed sources and wait for an eligible retry without a raw report',async()=>{
   const {job,options}=await prepared();let calls=0;
-  const result=await research(db,files,{...options,model:{generate(){calls++;throw new ModelError('Busy',{status:503});}}});
+  const result=await research(db,files,{...options,model:{generate(){calls++;throw new ModelError('Daily quota exceeded',{status:429,retryAfterMs:36000000});}}});
   const saved=await researchJob(db,job.id);
-  assert.equal(result.status,'partial');assert.equal(calls,1);assert.equal(saved.result.report_type,'source_excerpts');
-  assert.equal(saved.next_attempt_at,null);
-  assert.deepEqual(saved.result.models_used,[]);
-  assert.equal(saved.documents[0].reviewed_pages,0);
-  assert.ok(saved.result.evidence.length>0);
+  assert.equal(result.status,'waiting');assert.equal(calls,1);
+  assert.equal(saved.result,null);
+  assert.ok(+new Date(saved.next_attempt_at)>Date.now()+35900000);
+  assert.ok(saved.documents[0].prepared_pages>0);
   assert.equal((await research(db,files,{...options,model:{generate(){throw new Error('must not run');}}})).status,'idle');
 });
 test('invalid model replies consume only two corrective attempts before producing source excerpts',async()=>{

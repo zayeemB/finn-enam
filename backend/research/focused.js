@@ -133,7 +133,7 @@ export async function focusedResearch(db,files,job,documents,{clock,model:inject
   limitations.push('Selected passages from '+selected.length+' pages out of '+pages.length+' indexed pages. The model did not review all text on those pages or the remaining document.');
   const sparse=selected.filter(p=>p.text.trim().length<80);
   if(sparse.length)limitations.push('Some pages have little searchable text. Only the listed page images were available for visual review.');
-  let checked=checkpoint?.checked,responseModel=checkpoint?.model,providerError;
+  let checked=checkpoint?.checked,responseModel=checkpoint?.model,providerError,modelFailure;
   let reviewed=checkpoint?selected.filter(p=>checkpoint.reviewed.includes(p.id)):selected;
   const models=new Set(checkpoint?.models || []);
   let expansionReviewed=checkpoint?.expansionReviewed || false;
@@ -183,7 +183,7 @@ export async function focusedResearch(db,files,job,documents,{clock,model:inject
         limitations.push('The fallback model reviewed a smaller selection of text passages to fit its free-tier allowance.');
       }
     }catch(error){
-      providerError=error.message;
+      providerError=error.message;modelFailure=error;
       await db.transaction(async tx=>{
         await owner(tx,job,clock());
         await tx.query("UPDATE research_jobs SET research_state=research_state || $2::jsonb WHERE id=$1",
@@ -247,6 +247,19 @@ export async function focusedResearch(db,files,job,documents,{clock,model:inject
     }
     expanded=true;
     await saveCheckpoint();
+  }
+  if(!checked&&modelFailure?.retryable){
+    const failures=(job.attempts || 0)+1;
+    const wait=Math.max(modelFailure.retryAfterMs || 60000,Math.min(3600000,60000*2**Math.min(failures-1,6)));
+    await db.transaction(async tx=>{
+      await owner(tx,job,clock());
+      await tx.query(`UPDATE research_jobs SET status='waiting',progress='Sources prepared. Waiting for model availability.',
+        error=$3,error_kind='provider_transient',attempts=$4,next_attempt_at=$5,
+        research_state=research_state || '{"provider_wait":true}'::jsonb,
+        lease_token=NULL,lease_expires_at=NULL WHERE id=$1 AND lease_token=$2`,
+        [job.id,job.lease_token,providerError,failures,new Date(+clock()+wait)]);
+    });
+    return {status:'waiting',id:job.id,error:providerError};
   }
   if(!checked){
     // A provider outage still leaves a readable, explicitly extractive evidence view.

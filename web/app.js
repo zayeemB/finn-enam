@@ -136,7 +136,8 @@ function researchView(){const draft=state.draft;return heading('Go beyond the he
 function researchResult(){const job=state.job;
   if(!state.selectedJob)return `<section class="panel">${empty('A clearer view starts with a question.','Choose a company and ask about its growth, financial health, management guidance, or the case on either side.')}<div class="panel-body"><div class="side-rule"></div><p class="muted small">Primary company sources only. No broker notes, news summaries, or company facts from model memory.</p></div></section>`;
   if(!job)return `<section class="panel"><div class="page-loading"><span class="spinner"></span> Loading research…</div></section>`;
-  const result=job.result;
+  const unavailable=job.result?.report_type==='source_excerpts';
+  const result=unavailable?null:job.result;
   const refining=!!result&&['running','waiting','queued'].includes(job.status);
   const focused=job.options?.mode==='focused'||(job.options?.mode!=='full'&&(job.research_state?.mode||result?.coverage));
   const docs=job.documents?.map(d=>({...d,selected_pages:job.research_state?.coverage?.find(c=>c.document_id===d.id)?.selected_pages}));
@@ -150,11 +151,11 @@ function researchResult(){const job=state.job;
     ${result.missing_topics?.length?`<div class="notice neutral">Not covered: ${result.missing_topics.map(t=>esc(topicLabels[t]||human(t))).join(', ')}.</div>`:''}
     ${result.limitations?.length?`<section class="report-section"><h3>Coverage & limitations</h3><ul class="report-limitations">${result.limitations.map(l=>`<li>${esc(l)}</li>`).join('')}</ul></section>`:''}
     <details class="routine"><summary>Source documents & analysis details</summary>${documents(docs,focused)}<p class="help">Models: ${esc(result.models_used?.join(' · ')||'Not recorded')}<br>Sources collected ${when(job.data_as_of?.collected_at,true)} IST. Source publication periods may be earlier.</p></details></div></section>`;}
-  const failed=job.status==='failed',retry=job.status==='waiting'&&job.next_attempt_at;
+  const failed=job.status==='failed'||unavailable,retry=job.status==='waiting'&&job.next_attempt_at;
   const message=retry?`The backend will pick this up automatically on an available research turn after ${when(job.next_attempt_at,true)} IST. Keep the backend running. You can close this tab.`:
     failed?'Check the error details before retrying. Saved page reviews will be reused.':'All document text is indexed locally. The AI reviews selected evidence relevant to your question and saves a cited brief.';
   return `<section class="panel">${header}<div class="report-wait">${!failed&&!retry?'<div class="loading-line"><span class="spinner"></span> Background research in progress</div>':''}<h3>${esc(job.progress||'Waiting for source discovery')}</h3><p>${esc(message)}</p>
-  ${job.error&&(failed||retry)?`<details class="routine"><summary>Error details</summary><p class="error-details">${esc(job.error)}</p></details>`:''}
+  ${(job.error||job.result?.processing_note)&&(failed||retry)?`<details class="routine"><summary>Error details</summary><p class="error-details">${esc(job.error||job.result?.processing_note)}</p></details>`:''}
   ${failed?`<button class="button secondary" data-action="retry-research" data-id="${esc(job.id)}">Retry research</button>`:''}
   ${documents(docs,focused)}${job.documents?.length?'':'<div class="skeleton-line"></div><div class="skeleton-line" style="width:60%"></div>'}<p class="help">Progress updates automatically. Reports only appear after validation.</p></div></section>`;
 }

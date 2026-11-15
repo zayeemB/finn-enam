@@ -91,7 +91,7 @@ export function createAppHandler({db:sharedDb,files:sharedFiles,accessCode=proce
       else if(resource==='research-retry' && req.method==='POST') {
         const body=z.object({id:z.uuid()}).strict().parse(req.body);
         result=await db.transaction(async tx=>{
-          const row=(await tx.query("UPDATE research_jobs SET status='queued',error=NULL,error_kind=NULL,next_attempt_at=NULL,attempts=0,started_at=NULL,research_state=research_state - 'brief_started_at' - 'calls' WHERE id=$1 AND status='failed' RETURNING id,status",[body.id])).rows[0];
+          const row=(await tx.query("UPDATE research_jobs SET status='queued',error=NULL,error_kind=NULL,next_attempt_at=NULL,attempts=0,started_at=NULL,completed_at=NULL,result=CASE WHEN result->>'report_type'='source_excerpts' THEN NULL ELSE result END,research_state=research_state - 'brief_started_at' - 'calls' WHERE id=$1 AND (status='failed' OR (status='partial' AND result->>'report_type'='source_excerpts')) RETURNING id,status",[body.id])).rows[0];
           if(row) {
             await tx.query("UPDATE research_documents SET status='pending',error=NULL WHERE research_job_id=$1 AND status='failed'",[body.id]);
             await tx.query(`UPDATE processing_jobs SET failure_count=0,next_attempt_at=NULL WHERE job_type='extract' AND status='failed'
