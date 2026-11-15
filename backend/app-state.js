@@ -74,6 +74,7 @@ export async function status(db) {
   const state=await snapshot(db);
   state.collection=state.collection.map(({lease_token,...row})=>row);
   return {...state,monitor:(await db.query('SELECT * FROM monitoring_state WHERE portfolio_id=$1',[PORTFOLIO])).rows.map(({lease_token,...row})=>row)[0],
+    deployment_commit:process.env.VERCEL_GIT_COMMIT_SHA?.slice(0,7)||null,
     research:(await db.query('SELECT status,count(*) AS count FROM research_jobs GROUP BY status')).rows,
     scheduler_note:'Updates run locally with npm run dev. On Vercel, an open signed-in app advances monitoring; a scheduler must invoke the protected tick endpoint to continue while the app is closed.'};
 }
