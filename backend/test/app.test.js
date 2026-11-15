@@ -238,3 +238,48 @@ test('manual analysis retry is authenticated and retains cached work',async()=>{
  assert.equal((await db.query('SELECT output FROM processing_jobs WHERE id=$1',[job])).rows[0].output.stage,'cached');
  assert.equal(Number((await db.query('SELECT count(*) AS n FROM analysis_batches WHERE job_id=$1',[job])).rows[0].n),1);
 });
+
+test('first digest is saved immediately, refreshes missing coverage and does not shift the scheduled window',async()=>{
+ await changeCompany(db,'TCS',false,NOW);
+ await saveDueDigest(db,NOW);await saveDueDigest(db,NOW);
+ let rows=(await db.query('SELECT * FROM digest_runs')).rows;
+ assert.equal(rows.length,1);assert.equal(rows[0].result.initial,true);assert.equal(rows[0].result.coverage.companies,1);
+ assert.equal(rows[0].result.coverage.pending_companies,1);assert.equal(rows[0].result.refresh_coverage,true);
+ const company=(await companies(db))[0];
+ await db.query("INSERT INTO collection_state(company_id,source,last_successful_fetch_at) VALUES ($1,'nse',$2)",[company.id,NOW]);
+ await db.query(`INSERT INTO observations(id,company_id,metric,value,unit,period_start,period_end,frequency,scope,source_url,evidence_snapshot,collected_at)
+  VALUES ($1,$2,'close',100,'INR/share','2026-11-12','2026-11-12','daily','market','https://query2.finance.yahoo.com/test','{}',$3)`,[randomUUID(),company.id,NOW]);
+ await saveDueDigest(db,new Date(+NOW+1000));rows=(await db.query('SELECT * FROM digest_runs')).rows;
+ assert.equal(rows[0].result.coverage.companies_with_prices,1);assert.equal(rows[0].result.coverage.pending_companies,0);assert.equal(rows[0].result.refresh_coverage,false);
+ const request=client(()=>new Date(+NOW+3600000));await request('session','POST',{access_code:code});
+ const manual=await request('digest','POST',{});assert.equal(manual.code,200);assert.equal(manual.body.result.on_demand,true);
+ assert.equal((await request('digest','POST',{hours:1})).code,400);
+ await saveDueDigest(db,new Date(+NOW+24*3600000));
+ const scheduled=(await db.query("SELECT * FROM digest_runs WHERE NOT coalesce((result->>'on_demand')::boolean,false)")).rows;
+ assert.equal(scheduled.length,1);assert.equal(+new Date(scheduled[0].window_start),+NOW);assert.equal(+new Date(scheduled[0].window_end),+NOW+24*3600000);
+});
+
+test('50-company monitoring finishes collection batches, creates market alerts once and publishes a saved digest',async()=>{
+ const {setPortfolio}=await import('../repository.js'),{evaluateMarketAlerts,alerts}=await import('../outputs.js');
+ const names=Array.from({length:50},(_,i)=>'DEMO'+String(i).padStart(2,'0'));await setPortfolio(db,names);
+ let batches=0;
+ const services={collect:async()=>{
+  const batch=(await companies(db)).slice(0,5);batches++;
+  for(const c of batch){
+   await db.query("INSERT INTO collection_state(company_id,source,last_attempt_at,last_successful_fetch_at) VALUES ($1,'nse',$2,$2)", [c.id,NOW]);
+   for(let i=0;i<21;i++)for(const metric of ['close','volume']){
+    const day=new Date(+NOW-(20-i)*86400000).toISOString().slice(0,10),value=metric==='close'?(i===20?110:100):(i===20?3000:1000);
+    await db.query(`INSERT INTO observations(id,company_id,metric,value,unit,period_start,period_end,frequency,scope,source_url,evidence_snapshot,collected_at)
+     VALUES ($1,$2,$3,$4,$5,$6,$6,'daily','market','https://query2.finance.yahoo.com/test','{}',$7)`,[randomUUID(),c.id,metric,value,metric==='close'?'INR/share':'shares',day,NOW]);
+   }
+  }return {marketAlertsCreated:await evaluateMarketAlerts(db,NOW)};
+ },extract:async()=>({}),analyse:async()=>({}),research:async()=>({})};
+ for(let i=0;i<10;i++)assert.equal((await runTick(db,{}, {clock:()=>NOW,services})).phase,'collect');
+ assert.equal(batches,10);assert.equal((await companies(db)).length,50);assert.equal((await alerts(db)).length,100);
+ assert.equal(await evaluateMarketAlerts(db,NOW),0);
+ for(let i=0;i<4;i++)await runTick(db,{}, {clock:()=>NOW,services});
+ const saved=(await db.query('SELECT result FROM digest_runs')).rows[0].result;
+ assert.equal(saved.coverage.companies,50);assert.equal(saved.coverage.companies_with_prices,50);assert.equal(saved.coverage.pending_companies,0);
+ assert.equal(saved.latest_market_snapshot.length,100);assert.equal(saved.alerts_created_in_window.length,0); // Half-open window excludes alerts created exactly at its end.
+ assert.equal(Number((await db.query("SELECT count(*) AS n FROM notifications WHERE kind='alert'")).rows[0].n),100);
+});

@@ -1,5 +1,6 @@
 import {hostedResearchTrigger} from './research/hosted.js';
 import {hostedMonitoringTrigger} from './hosted-monitor.js';
+import {saveImmediateDigest} from './monitor.js';
 import {marketContext} from './research/market.js';
 import {randomBytes,createHash,timingSafeEqual} from 'node:crypto';
 import {z} from 'zod';
@@ -75,6 +76,8 @@ export function createAppHandler({db:sharedDb,files:sharedFiles,accessCode=proce
         const window=hours===undefined?(await settings(db)).digest_hours:Number(hours);
         if(!Number.isFinite(window)||window<=0||window>8760) throw fail('Invalid digest hours');
         result=await digest(db,{start:from,end:to || clock(),hours:window});
+      } else if(resource==='digest' && req.method==='POST') {
+        z.object({}).strict().parse(req.body||{});result=await saveImmediateDigest(db,clock());
       } else if(resource==='digests' && req.method==='GET') result=(await db.query('SELECT * FROM digest_runs WHERE portfolio_id=$1 ORDER BY window_end DESC LIMIT 30',[PORTFOLIO])).rows;
       else if(resource==='alerts' && req.method==='GET') result=await alerts(db);
       else if(resource==='notifications' && req.method==='GET') result=(await db.query(`SELECT n.*,a.message,d.window_start,d.window_end FROM notifications n
@@ -121,7 +124,7 @@ export function createAppHandler({db:sharedDb,files:sharedFiles,accessCode=proce
         res.setHeader('Content-Type','image/png');return res.status(200).send(body);
       } else throw fail('Resource or method not supported',404);
       if(resource==='research'&&req.method==='GET'&&req.query.id)triggerResearch(result);
-      if(['portfolio','refresh','status','settings'].includes(resource))await triggerMonitoring(db);
+      if(['portfolio','refresh','status','settings'].includes(resource)||resource==='digest'&&req.method==='POST')await triggerMonitoring(db);
       if(result===null) throw fail('Not found',404);
       return res.status(200).json(result);
     } catch(error) {

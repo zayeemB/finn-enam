@@ -140,6 +140,14 @@ export async function digest(db, { start, end = new Date(), hours = 24, portfoli
     JOIN portfolio_companies p ON p.company_id=c.id WHERE p.portfolio_id=$1 AND o.frequency='daily'
     AND o.scope='market' AND o.is_current AND o.metric IN ('close','volume')
     ORDER BY o.company_id,o.metric,o.period_end DESC`,[portfolioId])).rows;
+  const collection=(await db.query(`SELECT c.nse_symbol,s.last_successful_fetch_at,s.last_error FROM portfolio_companies p
+    JOIN companies c ON c.id=p.company_id LEFT JOIN collection_state s ON s.company_id=c.id AND s.source='nse'
+    WHERE p.portfolio_id=$1`,[portfolioId])).rows;
+  const priced=new Set(marketSnapshot.filter(r=>r.metric==='close').map(r=>r.nse_symbol));
+  const coverage={companies:collection.length,companies_with_prices:priced.size,
+    companies_checked:collection.filter(c=>!c.last_error&&c.last_successful_fetch_at&&+new Date(c.last_successful_fetch_at)>=+start).length,
+    collection_errors:collection.filter(c=>c.last_error).map(c=>({company:c.nse_symbol,error:c.last_error}))};
+  coverage.pending_companies=coverage.companies-coverage.companies_checked;
   // Available even when the selected window contains no completed analysis yet.
   // Explicitly separate saved company context from developments inside the digest window.
   const savedRows=(await db.query(`SELECT DISTINCT ON (d.company_id) j.*,c.nse_symbol,d.title,d.source_url,d.published_at
@@ -160,7 +168,7 @@ export async function digest(db, { start, end = new Date(), hours = 24, portfoli
       input_is_current:await jobInputIsCurrent(db,row),pending_disclosures:companyDisclosures.filter(d=>!currentIds.has(d.id)).length,
       note:'Latest saved analysis at request time, not necessarily inside the digest window; check publication and analysis timestamps.'});
   }
-  return { from:start.toISOString(),to:end.toISOString(),disclosure_count:items.length,
+  return { from:start.toISOString(),to:end.toISOString(),disclosure_count:items.length,coverage,
     saved_company_results:savedCompanyResults,
     items, grouped_developments:[...groups.values()], routine_collapsed:items.filter(i => i.developments.length && i.developments.every(d => d.importance==='routine')).map(i => i.id),
     alerts_created_in_window:recentAlerts,latest_market_snapshot:marketSnapshot,
