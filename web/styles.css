@@ -17,3 +17,5 @@
 .preset{min-height:28px}
 #research-output{scroll-margin-top:25px}
 @media(max-width:680px){#research-output,main{scroll-margin-top:120px}}
+
+.job-history-row{display:flex;align-items:stretch;border-bottom:1px solid #edf0e8}.job-history-row:last-child{border-bottom:0}.job-history-row .job-item{flex:1;min-width:0;border-bottom:0}.job-delete{align-self:center;margin:8px 14px 8px 0;padding:9px 7px;border:0;border-radius:6px;background:transparent;color:var(--negative);font-size:11px}.job-delete:hover{background:#fff5f4}

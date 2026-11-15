@@ -129,6 +129,38 @@ test('explicit research retry requeues unavailable downloads without discarding 
   assert.equal((await db.query('SELECT status FROM research_documents')).rows[0].status,'pending');
   assert.equal((await db.query('SELECT error_kind FROM research_jobs')).rows[0].error_kind,null);
 });
+test('research deletion requires authentication and removes only the chosen job and its dependent records',async()=>{
+  const request=client();
+  assert.equal((await request('research','DELETE',{id:randomUUID()})).code,401);
+  await request('session','POST',{access_code:code});
+  assert.equal((await request('research','DELETE',{id:'invalid'})).code,400);
+  assert.equal((await request('research','DELETE',{id:randomUUID()})).code,404);
+  const first=(await request('research','POST',{symbol:'TEST',question:'Business snapshot'})).body;
+  const second=(await request('research','POST',{symbol:'TEST',question:'Cash quality'})).body;
+  const company=(await db.query('SELECT company_id FROM research_jobs WHERE id=$1',[first.id])).rows[0].company_id;
+  const disclosure=randomUUID(),asset=randomUUID(),url='https://www.bseindia.com/shared.pdf';
+  await db.query(`INSERT INTO disclosures(id,company_id,source,source_key,title,source_url,published_at,first_seen_at,raw_metadata,metadata_hash,updated_at,collection_mode)
+    VALUES ($1,$2,'research_primary','shared','Shared report',$3,$4,$4,'{}','hash',$4,'research')`,[disclosure,company,url,NOW]);
+  await db.query('INSERT INTO assets(id,disclosure_id,source_url,last_seen_at) VALUES ($1,$2,$3,$4)',[asset,disclosure,url,NOW]);
+  for(const job of [first,second]){
+    const source=randomUUID();
+    await db.query("INSERT INTO research_sources(id,research_job_id,kind,title,source_url,discovery_url) VALUES ($1,$2,'annual_report','Report',$3,'https://www.screener.in/company/TEST/')",[source,job.id,url]);
+    await db.query("INSERT INTO research_documents(id,research_job_id,source_id,disclosure_id,kind,title,source_url,discovery_url) VALUES ($1,$2,$3,$4,'annual_report','Report',$5,'https://www.screener.in/company/TEST/')",[randomUUID(),job.id,source,disclosure,url]);
+    await db.query("INSERT INTO research_batches VALUES ($1,'saved','mock','{\"covered_block_ids\":[]}', $2)",[job.id,NOW]);
+    await db.query("INSERT INTO research_evidence(id,research_job_id,disclosure_id,asset_id,source_url,evidence_snapshot) VALUES ($1,$2,$3,$4,$5,'{}')",[randomUUID(),job.id,disclosure,asset,url]);
+    await db.query("UPDATE research_jobs SET status='completed',result='{\"title\":\"Saved report\"}' WHERE id=$1",[job.id]);
+  }
+  const removed=await request('research','DELETE',{id:first.id});
+  assert.equal(removed.code,200);assert.deepEqual(removed.body,{id:first.id,deleted:true});
+  assert.deepEqual((await request('research')).body.map(j=>j.id),[second.id]);
+  for(const [table,column] of [['research_jobs','id'],['research_documents','research_job_id'],['research_sources','research_job_id'],['research_evidence','research_job_id'],['research_batches','job_id']]){
+    assert.equal(Number((await db.query(`SELECT count(*) AS n FROM ${table} WHERE ${column}=$1`,[first.id])).rows[0].n),0);
+    assert.equal(Number((await db.query(`SELECT count(*) AS n FROM ${table} WHERE ${column}=$1`,[second.id])).rows[0].n),1);
+  }
+  assert.equal(Number((await db.query('SELECT count(*) AS n FROM assets WHERE id=$1',[asset])).rows[0].n),1);
+  assert.equal(Number((await db.query('SELECT count(*) AS n FROM disclosures WHERE id=$1',[disclosure])).rows[0].n),1);
+  assert.equal((await request('research','DELETE',{id:first.id})).code,404);
+});
 test('unrelated writes cannot enter or be rolled back with another request transaction',async()=>{
   let enter,release;const entered=new Promise(r=>enter=r),hold=new Promise(r=>release=r);
   const inside=randomUUID(),outside=randomUUID();

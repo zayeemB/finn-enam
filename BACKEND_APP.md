@@ -33,6 +33,7 @@ Use `/api/app?resource=...`. Every mutation includes `X-Finn-Client: web`; JSON 
 | `evidence` | GET | Add `id=uuid`; authenticated retained page image where available |
 | `research` | POST | Start or reuse active research; returns HTTP 202 and job ID |
 | `research` | GET | Latest jobs, or add `id=uuid` for progress/report/documents/evidence |
+| `research` | DELETE | `{ "id": "uuid" }`; permanently remove one research job and its saved report/progress |
 | `research-retry` | POST | `{ "id": "uuid" }`; explicitly retry a failed research job |
 
 Example settings patch:
@@ -171,3 +172,10 @@ Results filings are the first supplementary source priority, followed by present
 Downloaded files, full-text indexes, selected images, reports and checkpoints still have no automatic expiry policy. This change does not delete historical research data. Content-addressed file storage and compatible saved asset/index reuse avoid identical downloads and repeated preparation; validated finding checkpoints remain job-specific.
 
 Verification on 15 November 2026: public TVSMOTOR discovery produced 79 source links and selected current core documents plus a direct NSE results attachment. Its 4.3 MB, 41-page results filing downloaded in 293 ms and indexed locally in 853 ms in one check; these timings are not a service guarantee. No live model calls were made for this change. Mocked integration tests exercise saved initial reports, dynamic older-source retrieval, citations, independent source policies, request budgets, deduplication and quota-pause/resume behaviour.
+
+
+## Deleting research
+
+Research history and the open report have a Delete action with confirmation. The authenticated `DELETE /api/app?resource=research` endpoint accepts `{ "id": "uuid" }`. It removes the chosen job, citations, batches, selected-document records and discovered-source catalogue in one transaction. Other jobs, company/portfolio records, PDFs, cached text indexes and images are retained for reuse. This is job deletion, not file-cache cleanup.
+
+Deletion also works while a job is queued, waiting or running. The transaction locks the job against worker checkpoints; after deletion, a worker cannot publish a late result or retry it. An already-sent model request may finish and consume its provider allowance. Browser history updates immediately and ignores stale polling results for the deleted ID.

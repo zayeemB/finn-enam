@@ -7,7 +7,7 @@ import {PDFDocument,StandardFonts} from 'pdf-lib';
 import {openDatabase} from '../db.js';
 import {localFiles} from '../files.js';
 import {initialiseApp} from '../app-state.js';
-import {createResearch,researchJob} from '../research/jobs.js';
+import {createResearch,researchJob,deleteResearch} from '../research/jobs.js';
 import {research} from '../research/worker.js';
 import {selectPages,validateBrief,limits,profiles} from '../research/brief.js';
 import {numericTokens} from '../research/numbers.js';
@@ -66,6 +66,20 @@ test('quota exhaustion preserves sources and requires a user retry even after re
   assert.ok(+new Date(saved.research_state.quota_retry_at)>Date.now()+35900000);
   assert.ok(saved.documents[0].prepared_pages>0);
   assert.equal((await research(db,files,{...options,clock:()=>new Date(Date.now()+72000000),model:{generate(){throw new Error('must not run');}}})).status,'idle');
+});
+test('deleting a running research job prevents a late model response from restoring it and preserves cached files',async()=>{
+  const {job,options}=await prepared(),entered=Promise.withResolvers(),finish=Promise.withResolvers();
+  const pending=research(db,files,{...options,model:{model:'mock',generate(){entered.resolve();return finish.promise;}}});
+  try{
+    await entered.promise;
+    assert.deepEqual(await deleteResearch(db,job.id),{id:job.id,deleted:true});
+  }finally{finish.resolve({data:{}});}
+  assert.equal((await pending).status,'lease_lost');
+  assert.equal(await researchJob(db,job.id),null);
+  assert.equal((await research(db,files,options)).status,'idle');
+  const asset=(await db.query('SELECT * FROM assets')).rows[0];
+  assert.ok(await files.exists(asset.temporary_file_path));
+  assert.equal(Number((await db.query('SELECT count(*) AS n FROM content_blocks')).rows[0].n),32);
 });
 test('invalid model replies consume only two corrective attempts before producing source excerpts',async()=>{
   const {job,options}=await prepared();let calls=0;

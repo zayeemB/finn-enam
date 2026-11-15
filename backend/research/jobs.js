@@ -41,3 +41,19 @@ export async function researchJob(db,id) {
       FROM research_sources s LEFT JOIN research_documents d ON d.source_id=s.id WHERE s.research_job_id=$1 ORDER BY s.kind,s.title DESC`,[id])).rows,
     evidence:(await db.query('SELECT id,source_url,location,evidence_snapshot,retained_image_path IS NOT NULL AS has_image FROM research_evidence WHERE research_job_id=$1',[id])).rows};
 }
+
+export async function deleteResearch(db,id){
+  return db.transaction(async tx=>{
+    const job=(await tx.query('SELECT id FROM research_jobs WHERE id=$1 FOR UPDATE',[id])).rows[0];
+    if(!job)return null;
+    // The row lock serializes deletion with worker checkpoints. A running worker
+    // loses ownership once this commits and cannot recreate the deleted report.
+    await tx.query('DELETE FROM research_evidence WHERE research_job_id=$1',[id]);
+    await tx.query('DELETE FROM research_batches WHERE job_id=$1',[id]);
+    await tx.query('DELETE FROM research_documents WHERE research_job_id=$1',[id]);
+    await tx.query('DELETE FROM research_sources WHERE research_job_id=$1',[id]);
+    await tx.query('DELETE FROM research_jobs WHERE id=$1',[id]);
+    // PDFs, indexes and companies can be shared with other research or monitoring.
+    return {id,deleted:true};
+  });
+}

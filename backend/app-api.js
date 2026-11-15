@@ -5,7 +5,7 @@ import {openFiles} from './files.js';
 import {PORTFOLIO,companies} from './repository.js';
 import {initialiseApp,settings,updateSettings,changeCompany,status,watchlist} from './app-state.js';
 import {digest,alerts} from './outputs.js';
-import {createResearch,researchJob} from './research/jobs.js';
+import {createResearch,researchJob,deleteResearch} from './research/jobs.js';
 
 const hash=token=>createHash('sha256').update(token).digest('hex');
 const id=value=>z.uuid().parse(value);
@@ -88,7 +88,11 @@ export function createAppHandler({db:sharedDb,files:sharedFiles,accessCode=proce
         result=await createResearch(db,body,clock());return res.status(202).json(result);
       } else if(resource==='research' && req.method==='GET') result=req.query.id?await researchJob(db,id(req.query.id)):
         (await db.query('SELECT r.id,c.nse_symbol,r.question,r.status,r.progress,r.created_at,r.completed_at,r.error,r.next_attempt_at FROM research_jobs r JOIN companies c ON c.id=r.company_id ORDER BY created_at DESC LIMIT 30')).rows;
-      else if(resource==='research-retry' && req.method==='POST') {
+      else if(resource==='research' && req.method==='DELETE') {
+        const body=z.object({id:z.uuid()}).strict().parse(req.body);
+        result=await deleteResearch(db,body.id);
+        if(!result)throw fail('Research job not found',404);
+      } else if(resource==='research-retry' && req.method==='POST') {
         const body=z.object({id:z.uuid()}).strict().parse(req.body);
         result=await db.transaction(async tx=>{
           const row=(await tx.query("UPDATE research_jobs SET status='queued',error=NULL,error_kind=NULL,next_attempt_at=NULL,attempts=0,started_at=NULL,completed_at=NULL,result=CASE WHEN result->>'report_type'='source_excerpts' THEN NULL ELSE result END,research_state=research_state - 'brief_started_at' - 'calls' WHERE id=$1 AND (status='failed' OR (status='partial' AND result->>'report_type'='source_excerpts')) RETURNING id,status",[body.id])).rows[0];
