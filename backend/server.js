@@ -41,7 +41,7 @@ export async function startServer({port=Number(process.env.PORT || 3001),accessC
     const host=req.headers.host || '';
     if(!/^(?:127\.0\.0\.1|localhost)(?::\d+)?$/.test(host)){res.writeHead(403);return res.end();}
     const url=new URL(req.url,`http://${host}`);
-    const assets={'/':['index.html','text/html; charset=utf-8'],'/app.js':['app.js','text/javascript; charset=utf-8'],'/styles.css':['styles.css','text/css; charset=utf-8']};
+    const assets={'/':['index.html','text/html; charset=utf-8'],'/companies.json':['companies.json','application/json; charset=utf-8'],'/app.js':['app.js','text/javascript; charset=utf-8'],'/styles.css':['styles.css','text/css; charset=utf-8']};
     if(assets[url.pathname] && ['GET','HEAD'].includes(req.method)) {
       try {
         const [name,type]=assets[url.pathname],body=await readFile(new URL(`../web/${name}`,import.meta.url));
