@@ -728,6 +728,7 @@ test('monitoring provider grammar constrains text and synthesis quotes to suppli
  assert.equal((await run(model)).jobs[0].status,'completed');
  const choices=call=>call.responseSchema.properties.developments.items.properties.evidence.items.anyOf;
  const page=choices(model.calls[0]);
+ assert.ok(page.filter(b=>b.properties.modality.enum[0]==='metadata').every(b=>b.properties.block_id.type==='null'&&!('enum' in b.properties.block_id)));
  assert.ok(page.filter(b=>b.properties.modality.enum[0]==='text').every(b=>b.properties.quote.enum.every(q=>q.startsWith('finn-text:'))));
  assert.ok(page.filter(b=>b.properties.modality.enum[0]==='visual').every(b=>model.calls[0].images.some(i=>i.blockId===b.properties.block_id.enum[0])));
  assert.ok(choices(model.calls[1]).every(b=>b.properties.quote.enum.every(q=>q.startsWith('finn-evidence:'))));

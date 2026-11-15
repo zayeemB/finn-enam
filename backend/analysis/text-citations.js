@@ -2,7 +2,7 @@ import {normalise} from './validation.js';
 import {RESPONSE_SCHEMA} from './schema.js';
 
 function citationBranch(block,modality,quotes){
-  return {type:'object',properties:{block_id:{type:block===null?'null':'string',enum:[block]},
+  return {type:'object',properties:{block_id:block===null?{type:'null'}:{type:'string',enum:[block]},
     modality:{type:'string',enum:[modality]},quote:{type:'string',...(quotes?{enum:quotes}:{})}},
     required:['block_id','modality','quote'],additionalProperties:false};
 }
