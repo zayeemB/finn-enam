@@ -140,6 +140,11 @@ export async function research(db,files,{budgetMs=45000,batchLimit=4,clock=()=>n
             next=additionalSources(catalogue,documents,{...context,question:job.question,policy:job.options.source_policy})[0]||next;
           }catch(error){if(/lease lost/i.test(error.message))throw error;}
         }
+        if(next.metadata?.resolver){
+          const doc=await selectDocument(db,job,next,clock);
+          await db.transaction(async tx=>{if(!await owned(tx,job,clock()))throw new Error('Research lease lost');await tx.query("UPDATE research_documents SET status='failed',error='Original exchange attachment unavailable; registration-gated resolver was not downloaded' WHERE id=$1",[doc.id]);});
+          doc.status='failed';doc.error='Original exchange attachment unavailable';documents.push(doc);return doc;
+        }
         const doc=await selectDocument(db,job,next,clock);documents.push(doc);
         try{await attachDocument(db,files,job,doc,clientFactory({deadline:Math.min(context.deadline,Date.now()+15000),allowedHosts:job.options.allowed_hosts||[]}),clock);}
         catch(error){

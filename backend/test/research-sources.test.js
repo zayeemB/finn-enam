@@ -156,3 +156,18 @@ test('useful new gaps can grow research across three passes while preserving the
  assert.equal(saved.result.adaptive.passes,3);assert.equal(saved.result.adaptive.stop_reason,'budget_reached');assert.equal(saved.result.adaptive.added_findings,2);
  assert.equal(saved.documents.length,4);assert.equal(saved.result.sections.length,3);
 });
+
+test('a failed latest result does not make a generic guidance gap walk back through historical quarters',()=>{
+ const catalogue=['2026-09-30','2026-06-30','2026-03-31'].map(period=>source('quarterly_result',period,{period_end:period,sort_date:period}));
+ const docs=[{...catalogue[0],status:'failed',error:'Original attachment unavailable'}];
+ assert.ok(!additionalSources(catalogue,docs,{question:'Company overview',gaps:[{topic:'guidance',question:'Find explicit margin guidance.'}]}).some(d=>d.kind==='quarterly_result'));
+ assert.equal(additionalSources(catalogue,docs,{question:'Compare the last three quarters'}).filter(d=>d.kind==='quarterly_result').length,2);
+});
+
+test('financial quality rejects interim-year labels, mismatched CAGR endpoints and unrelated narrative comparisons',async()=>{
+ const {sectionQuality}=await import('../research/quality.js');
+ assert.ok(sectionQuality('cash_quality','For the year ended September 30, 2026, operating cash was 100.',[{quote:'Six months ended September 30, 2026. Operating cash 100.'}]).gap);
+ assert.ok(sectionQuality('trajectory','EPS CAGR was 10.3%, rising from 103.62 in FY2022 to 145.99 in FY2026.',[]).gap);
+ assert.equal(sectionQuality('trajectory','EPS CAGR was 8.95%, rising from 103.62 in FY2022 to 145.99 in FY2026.',[]).topic,'trajectory');
+ assert.ok(sectionQuality('narrative_vs_numbers','Management highlighted robust large deals and TCV momentum, while revenue grew 4.6%.',[]).gap);
+});

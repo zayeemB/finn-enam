@@ -25,7 +25,8 @@ function periodInFinancialEvidence(pages,pattern){
     (p.text.match(/\b\d[\d,.]*\b/g)||[]).length>=4);
 }
 export function additionalSources(catalogue,documents,{question,gaps=[],pages=[],localQuestions=[],policy='primary'}={}){
-  const selected=new Set(documents.map(key)),available=newestFirst(catalogue.filter(d=>allowed(d,policy)&&!selected.has(key(d))));
+  const blocked=new Set(documents.filter(d=>d.status==='failed'&&/registration|login|Not an issuer or exchange source|HTTP (401|403)/i.test(d.error||'')).map(d=>{const u=new URL(d.source_url);return u.origin+(d.metadata?.resolver?'/company/source/quarter/':'');}));
+  const selected=new Set(documents.map(key)),available=newestFirst(catalogue.filter(d=>allowed(d,policy)&&!selected.has(key(d))&&(!blocked.has(new URL(d.source_url).origin)||d.metadata?.resolver)));
   const wanted=[],seen=new Set();
   const add=(doc,reason,priority)=>{if(doc&&!seen.has(key(doc))){seen.add(key(doc));wanted.push({...doc,selection_reason:reason,priority});}};
   const usable=documents.filter(d=>d.status!=='failed');
@@ -60,8 +61,10 @@ export function additionalSources(catalogue,documents,{question,gaps=[],pages=[]
       if(comparativeYears.size<3)add(available.find(d=>d.kind==='annual_report'),'Earlier financial and cash-flow comparisons missing from indexed evidence',70);
     }
     if(/guidance|narrative|promis|outcome/i.test(query)){
-      add(available.find(d=>d.kind==='quarterly_result'),'Reported outcomes to check against management commentary',100);
-      add(available.find(d=>d.kind==='presentation'),'Operating measures and explicitly stated management targets',80);
+      const latestResult=newestFirst(catalogue.filter(d=>d.kind==='quarterly_result'))[0];
+      if(latestResult&&!selected.has(key(latestResult)))add(latestResult,'Latest reported outcomes to check against management commentary',100);
+      const deck=newestFirst(catalogue.filter(d=>d.kind==='presentation'))[0];
+      if(deck&&!selected.has(key(deck)))add(deck,'Operating measures and explicitly stated management targets',80);
       add(available.find(d=>d.kind==='transcript'),'Earlier management expectations for comparison with outcomes',75);
     }
     if(/business|segment|capacity/i.test(query))add(available.find(d=>d.kind==='presentation'),'Business segments, capacity or operating measures not yet established',80);

@@ -103,14 +103,15 @@ export async function focusedResearch(db,files,job,documents,{clock,model:inject
   const jobStart=+new Date(job.research_state.brief_started_at || job.started_at || clock());
   const hardEnd=jobStart+limits.totalMs;
   const end=Math.min(hardEnd,Date.now()+budgetMs-1000);
+  const sourceIssues=[];
   const pages=[],limitations=[...(job.research_state.discovery_warnings||[])];
   const effectiveDoc=doc=>({...doc,source_url:doc.metadata?.primary_url||doc.source_url});
   for(const doc of documents){
-    if(doc.status==='failed'){limitations.push(doc.title+' could not be downloaded.');continue;}
+    if(doc.status==='failed'){sourceIssues.push({title:doc.title,kind:doc.kind,status:'unavailable',reason:doc.error||'Download failed'});continue;}
     try{pages.push(...await indexedPages(db,files,job,effectiveDoc(doc),clock,end));}
     catch(error){
       if(/lease lost/i.test(error.message))throw error;
-      limitations.push(doc.title+' could not be indexed: '+error.message);
+      sourceIssues.push({title:doc.title,kind:doc.kind,status:'unavailable',reason:error.message});
     }
   }
   if(!pages.length)throw new Error('No primary source pages could be indexed');
@@ -213,16 +214,17 @@ export async function focusedResearch(db,files,job,documents,{clock,model:inject
     // Download only to resolve gaps; reserve time for a model answer. The budget is time, not document count.
     const sourceEnd=Math.min(end-10000,Date.now()+Math.min(30000,Math.max(0,(end-Date.now())/3)));
     let retrievalDeferred=false;
-    while(acquireSource&&Date.now()+1000<sourceEnd){
+    while(acquireSource&&Date.now()+12000<sourceEnd){
       const localQuestions=gaps.filter(g=>expansionEvidence(pages,[g],seen).length).map(g=>g.question);
-      const doc=await acquireSource({gaps,pages,localQuestions,deadline:sourceEnd});
+      const doc=await acquireSource({gaps,pages,localQuestions,deadline:sourceEnd-8000});
       if(!doc)break;
-      if(doc.status==='failed'){limitations.push(doc.title+' could not be downloaded.');continue;}
+      if(doc.status==='failed'){sourceIssues.push({title:doc.title,kind:doc.kind,status:'unavailable',reason:doc.error||'Download failed'});continue;}
+      if(Date.now()+8000>=end){sourceIssues.push({title:doc.title,kind:doc.kind,status:'deferred',reason:'Insufficient preparation time remaining'});retrievalDeferred=true;break;}
       await progress(db,job,'Initial brief saved. Preparing additional source: '+doc.title,clock);
-      try{pages.push(...await indexedPages(db,files,job,effectiveDoc(doc),clock,sourceEnd));}
+      try{pages.push(...await indexedPages(db,files,job,effectiveDoc(doc),clock,Math.min(end-5000,Date.now()+45000)));}
       catch(error){
         if(/lease lost/i.test(error.message))throw error;
-        limitations.push(doc.title+' could not be indexed: '+error.message);
+        sourceIssues.push({title:doc.title,kind:doc.kind,status:'unavailable',reason:error.message});
       }
       retrievalDeferred=Date.now()+1000>=sourceEnd;
     }
@@ -341,7 +343,8 @@ export async function focusedResearch(db,files,job,documents,{clock,model:inject
           selected_pages:reviewed.filter(p=>p.document.id===d.id).map(p=>p.sequence)}))},
         source_policy:job.options.source_policy||'assignment',
         source_selection:{catalogue_size:Number((await tx.query('SELECT count(*) AS n FROM research_sources WHERE research_job_id=$1',[job.id])).rows[0].n),selected_documents:documents.length,downloaded_documents:documents.filter(d=>d.status==='downloaded').length},
-        elapsed_seconds:Math.round((+clock()-jobStart)/1000)};
+        source_issues:sourceIssues,
+        elapsed_seconds:Math.round((+clock()-jobStart)/1000),wall_elapsed_seconds:Math.round((+clock()-+new Date(job.created_at))/1000)};
       result.adaptive={passes:responseModel?1+expansionPasses:0,added_findings:expansionAdded,
         stop_reason:stopReason,unresolved_questions:checked?evidenceGaps(checked,job.question):[]};
       if(providerError)result.processing_note=providerError.slice(0,800);
@@ -350,7 +353,7 @@ export async function focusedResearch(db,files,job,documents,{clock,model:inject
       if(responseModel)await tx.query('INSERT INTO research_batches VALUES ($1,$2,$3,$4,$5) ON CONFLICT DO NOTHING',
         [job.id,BRIEF_VERSION+(finalizing?'-final':'-initial'),responseModel,JSON.stringify({covered_block_ids:reviewed.map(p=>p.id),findings:checked.facts,limitations:checked.limitations}),clock()]);
       await tx.query("UPDATE research_jobs SET research_state=research_state || $2::jsonb WHERE id=$1",[job.id,JSON.stringify({coverage,indexed_pages:pages.length,selected_pages:selected.length,source_characters:selectedCharacters})]);
-      status=reportType==='source_excerpts'||checked.dropped.length||coverage.some(d=>!d.total_pages)?'partial':'completed';
+      status=reportType==='source_excerpts'||checked.dropped.length||coverage.some(d=>['annual_report','transcript'].includes(d.kind)&&!d.total_pages)?'partial':'completed';
       if(quotaFailure){
         status='failed';
         await tx.query("UPDATE research_jobs SET error_kind='quota_limit',research_state=research_state || $2::jsonb WHERE id=$1",

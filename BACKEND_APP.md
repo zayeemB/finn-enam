@@ -179,3 +179,12 @@ Verification on 15 November 2026: public TVSMOTOR discovery produced 79 source l
 Research history and the open report have a Delete action with confirmation. The authenticated `DELETE /api/app?resource=research` endpoint accepts `{ "id": "uuid" }`. It removes the chosen job, citations, batches, selected-document records and discovered-source catalogue in one transaction. Other jobs, company/portfolio records, PDFs, cached text indexes and images are retained for reuse. This is job deletion, not file-cache cleanup.
 
 Deletion also works while a job is queued, waiting or running. The transaction locks the job against worker checkpoints; after deletion, a worker cannot publish a late result or retry it. An already-sent model request may finish and consume its provider allowance. Browser history updates immediately and ignores stale polling results for the deleted ID.
+
+
+## Research reliability checks
+
+Generic guidance gaps no longer walk backwards through every quarterly result or presentation after a failure. Explicit historical-period requests still retrieve those periods. Registration-gated results wrappers are not downloaded: the worker looks for legitimate exchange attachments first. Known authentication/permission failures suppress further optional requests to that origin.
+
+Source acquisition reserves preparation time and indexing has its own bounded allowance within the overall research budget. Optional failures are listed separately from core-source gaps. Reports expose elapsed time since creation separately from the current attempt, and selected-page counts represent passages rather than complete page reading.
+
+Conservative financial checks reject obvious interim/full-year duration conflicts, unverifiable or inconsistent CAGR endpoints, and narrative comparisons without numerical expectations and outcomes. These are guardrails, not a complete structured financial accounting validator. Financial source headers, metric associations, scope and units still require representative source-level evaluation. Saved reports are not retroactively rewritten.

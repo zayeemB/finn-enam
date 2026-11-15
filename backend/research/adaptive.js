@@ -51,13 +51,13 @@ export function evidenceGaps(checked,question){
   const required=evidenceRequirements.filter(r=>{
     const t=r.topic==='cash_quality'?text('cash_quality')+' '+text('financial_snapshot'):text(r.topic);
     if(r.topic==='cash_quality')return !/operating|cash from operat/i.test(t)||!/PAT|profit after tax|profit for the year/i.test(t)||!/capex|capital expenditure|plant|equipment/i.test(t)||!/working capital|receivables|inventories|payables/i.test(t);
-    if(r.topic==='balance_sheet')return !t||/consolidated/i.test(t)&&!/financ|credit|NBFC|manufactur/i.test(t);
+    if(r.topic==='balance_sheet')return !t;
     return !t;
   });
   const requested=[...required.slice(0,1),...(checked.gaps || []),...required.slice(1)];
   const missing=question===OVERVIEW_QUESTION?topics.filter(t=>!checked.sections.some(s=>s.topic===t))
     .map(topic=>({topic,question:'Find primary evidence for '+topic.replaceAll('_',' ')})):[];
-  return [...new Map([...requested,...missing].map(g=>[g.topic+' '+g.question.toLowerCase(),g])).values()].slice(0,4);
+  return [...new Map([...requested,...missing].filter(g=>g&&typeof g.topic==='string').map(g=>({...g,question:typeof g.question==='string'&&g.question.trim()?g.question.trim():'Find supporting primary evidence for '+g.topic.replaceAll('_',' ')})).map(g=>[g.topic+' '+g.question.toLowerCase(),g])).values()].slice(0,4);
 }
 export function expansionEvidence(pages,gaps,seen){
   const stop=new Set('what which where find primary evidence full details provided information company financial statement'.split(' '));
