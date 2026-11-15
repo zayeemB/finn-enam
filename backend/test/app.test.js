@@ -12,8 +12,8 @@ let db;const NOW=new Date('2026-11-13T12:00:00Z'),code='test-demo-access-code';
 before(async()=>{db=await openDatabase({memory:true,connectionString:''});});
 after(async()=>db.close());
 beforeEach(async()=>{await db.query('TRUNCATE portfolios,companies,provider_backoff,app_sessions CASCADE');await initialiseApp(db,NOW);});
-function client(clock=()=>NOW) {
-  const handler=createAppHandler({db,accessCode:code,clock});let cookie;
+function client(clock=()=>NOW,options={}) {
+  const handler=createAppHandler({db,accessCode:code,clock,...options});let cookie;
   return async(resource,method='GET',body,extra={})=>{
     const headers={host:'127.0.0.1:3001','x-finn-client':'web',...(cookie?{cookie}:{}),...extra};
     const response={headers:{},setHeader(k,v){this.headers[k]=v;},status(s){this.code=s;return this;},json(v){this.body=v;return this;},send(v){this.body=v;return this;}};
@@ -195,4 +195,18 @@ test('local PDF preparation keeps draining while research and monitoring await s
     await Promise.race([prepared.promise,new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error('PDF preparation was blocked')),3000);})]);
     assert.ok(monitorActive && researchActive);
   }finally{clearTimeout(timer);gate.resolve();await app.close();}
+});
+
+test('research market context is authenticated and never adds portfolio membership',async()=>{
+ let calls=0;const request=client(()=>NOW,{market:async symbol=>{calls++;return {symbol,kind:'completed_eod',rows:[]};}});
+ assert.equal((await request('market')).code,401);assert.equal(calls,0);
+ await request('session','POST',{access_code:code});
+ assert.equal((await request('market')).code,400);assert.equal(calls,0);
+ // Exercise query parsing through the real HTTP API below using an isolated server.
+ const app=await startServer({db,files:{},accessCode:code,port:0,automatic:false});
+ try{const base=`http://127.0.0.1:${app.port}/api/app?resource=`;
+ const auth=await fetch(base+'session',{method:'POST',headers:{'X-Finn-Client':'web','Content-Type':'application/json'},body:JSON.stringify({access_code:code})});
+ const res=await fetch(base+'market&symbol=INVALID%2FPRIVATE',{headers:{cookie:auth.headers.get('set-cookie').split(';')[0]}});assert.equal(res.status,400);
+ assert.equal((await companies(db)).length,0);
+ }finally{await app.close();}
 });

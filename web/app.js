@@ -18,6 +18,15 @@ const state={authenticated:false,portfolio:null,settings:null,status:null,alerts
 let pollTimer,toastTimer,modalVersion=0;
 let paintedKey;
 const deletedResearch=new Set();
+const researchMarkets=new Map();
+let researchRange='3M',researchMarketTable=false;
+async function loadResearchMarket(symbol){
+ const old=researchMarkets.get(symbol);if(old?.loading||old&&Date.now()-old.at<300000)return;
+ researchMarkets.set(symbol,{...old,loading:true,at:Date.now()});
+ try{const data=await api('market',{params:{symbol}});researchMarkets.set(symbol,{data,at:Date.now()});}
+ catch(error){researchMarkets.set(symbol,{error:error.message,at:Date.now()});}
+ paint(true);
+}
 
 async function api(resource,{method='GET',body,params={}}={}) {
   const query=new URLSearchParams({resource,...params});
@@ -57,6 +66,7 @@ async function load({force=false}={}) {
   if(state.selectedDigest)state.selectedDigest=state.digests.find(d=>d.id===state.selectedDigest.id)||state.selectedDigest;
   state.error=failures.length?failures[0].reason.message:null;
   if(!failures.length)state.loadedAt=new Date();
+  if(state.job?.result&&state.selectedJob===selected)loadResearchMarket(state.job.nse_symbol);
   state.loading=false;paintChrome();paint();
   if(state.reloadNeeded){state.reloadNeeded=false;queueMicrotask(()=>load({force:true}));}
 }
@@ -135,6 +145,21 @@ function researchHistory(){return state.research.length?state.research.map(job=>
 function researchView(){const draft=state.draft;return heading('Go beyond the headline.','Ask about any NSE company. Read the fundamentals, with every conclusion tied to a primary source.')+
   `<div class="research-grid"><div class="research-left"><section class="panel"><div class="panel-head"><div><h2>Start a research brief</h2><p>Reports, earnings calls and primary disclosures</p></div><span aria-hidden="true">↗</span></div><div class="panel-body"><form id="research-form" class="research-form"><div><label for="research-symbol">Company ticker</label><input id="research-symbol" name="symbol" value="${esc(draft.symbol)}" placeholder="e.g. TCS" maxlength="40" autocomplete="off" autocapitalize="characters" required><p class="help">It doesn’t need to be in your watchlist.</p></div><div><label for="research-question">Optional focus or follow-up question</label><textarea id="research-question" name="question" maxlength="2000" placeholder="Leave blank for a broad company overview, or ask a specific follow-up.">${esc(draft.question)}</textarea><div class="presets"><button class="preset" type="button" data-action="preset" data-preset="business">Business overview</button><button class="preset" type="button" data-action="preset" data-preset="cash">Cash quality</button><button class="preset" type="button" data-action="preset" data-preset="guidance">Guidance vs. delivery</button></div></div><div><label for="source-policy">Research sources</label><select id="source-policy" name="source_policy"><option value="primary" ${draft.source_policy!=='assignment'?'selected':''}>Company primary disclosures</option><option value="assignment" ${draft.source_policy==='assignment'?'selected':''}>Annual reports + transcripts only</option></select><p class="help">Sources and reporting periods are selected as evidence is needed. A broad brief is saved first; additional documents can resolve important gaps.</p></div><button class="button primary" type="submit" ${state.starting?'disabled':''}>${state.starting?'<span class="spinner"></span> Queuing research…':'Research company <span aria-hidden="true">↗</span>'}</button></form></div></section>
   <section class="panel"><div class="panel-head"><h2>Research history</h2><span class="badge">${state.research.length}</span></div>${researchHistory()}</section></div><div id="research-output">${researchResult()}</div></div>`;}
+function researchMarket(job){
+ const tracked=state.portfolio?.some(c=>c.nse_symbol===job.nse_symbol),entry=researchMarkets.get(job.nse_symbol),data=entry?.data;
+ const add=`<button class="button ${tracked?'secondary':'primary'} compact" data-action="research-add-portfolio" data-symbol="${esc(job.nse_symbol)}" ${tracked?'disabled':''}>${tracked?'In your portfolio ✓':'Add to portfolio +'}</button>`;
+ const head=`<div class="exhibit-heading"><div><div class="eyebrow">MARKET PERSPECTIVE</div><h3>${esc(job.nse_symbol)} · completed EOD</h3></div>${add}</div>`;
+ if(!data?.rows?.length)return `<section class="research-market">${head}<p>${esc(entry?.error||'Loading market history independently of document analysis…')}</p>${entry?.error?`<button class="text-button" data-action="market-retry" data-symbol="${esc(job.nse_symbol)}">Retry market data</button>`:''}</section>`;
+ const all=data.rows,last=all.at(-1),prior=all.at(-2),cutoff=new Date(last.day+'T00:00:00Z');cutoff.setUTCMonth(cutoff.getUTCMonth()-({ '1M':1,'3M':3,'6M':6,'1Y':12}[researchRange]||3));
+ const rows=all.filter(r=>r.day>=cutoff.toISOString().slice(0,10)),first=rows[0],change=prior?(last.values.close/prior.values.close-1)*100:null;
+ const average=all.slice(-21,-1),avg=average.length?average.reduce((n,r)=>n+r.values.volume,0)/average.length:null;
+ const rangeReturn=first&&first.values.close>0?(last.values.close/first.values.close-1)*100:null;
+ const highs=rows.map(r=>r.values.high),lows=rows.map(r=>r.values.low),prices=rows.map(r=>r.values.close),min=Math.min(...prices),max=Math.max(...prices),span=max-min||1,maxVolume=Math.max(1,...rows.map(r=>r.values.volume));
+ const points=rows.map((r,i)=>`${20+i/Math.max(1,rows.length-1)*540},${150-(r.values.close-min)/span*125}`).join(' ');
+ const chart=`<svg class="chart market-chart" viewBox="0 0 580 240" role="img" aria-label="Completed daily closing prices with aligned daily volume bars"><path d="M20 160H560M20 230H560" stroke="#dce3d5"/><polyline points="${points}" fill="none" stroke="#315c43" stroke-width="2.5"/>${rows.map((r,i)=>`<rect x="${18+i/Math.max(1,rows.length-1)*540}" y="${230-r.values.volume/maxVolume*50}" width="${Math.max(1,Math.min(8,500/rows.length))}" height="${r.values.volume/maxVolume*50}" fill="#a4b98b"><title>${esc(r.day)} · Volume ${number(r.values.volume)}</title></rect>`).join('')}${rows.map((r,i)=>`<circle cx="${20+i/Math.max(1,rows.length-1)*540}" cy="${150-(r.values.close-min)/span*125}" r="5" fill="transparent" stroke="transparent" tabindex="0" role="button" data-action="market-point" data-index="${all.indexOf(r)}" aria-label="${esc(r.day)}, close ${esc(money(r.values.close))}, volume ${number(r.values.volume)}"><title>${esc(r.day)} · ${money(r.values.close)} · Volume ${number(r.values.volume)}</title></circle>`).join('')}<text x="20" y="15" font-size="11">${esc(money(max))}</text><text x="20" y="170" font-size="10">${esc(money(min))} · Volume below</text></svg>`;
+ const table=`<div class="table-wrap"><table><thead><tr><th>Date</th><th>Close</th><th>High / low</th><th>Volume</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${esc(r.day)}</td><td>${money(r.values.close)}</td><td>${money(r.values.high)} / ${money(r.values.low)}</td><td>${number(r.values.volume)}</td></tr>`).join('')}</tbody></table></div>`;
+ return `<section class="research-market">${head}<div class="market-tiles"><div><small>Last completed close</small><strong>${money(last.values.close)}</strong><span class="${sign(change)}">${percent(change)} vs prior session</span></div><div><small>Daily volume</small><strong>${compact(last.values.volume)}</strong><span>${avg>0?number(last.values.volume/avg)+'× prior '+average.length+'-session average':'Insufficient volume history'}</span></div><div><small>Selected-period price return</small><strong>${percent(rangeReturn)}</strong><span>High ${money(Math.max(...highs))} · Low ${money(Math.min(...lows))}</span></div></div><div class="market-controls">${['1M','3M','6M','1Y'].filter(range=>{const months={'1M':1,'3M':3,'6M':6,'1Y':12}[range];const boundary=new Date(last.day+'T00:00:00Z');boundary.setUTCMonth(boundary.getUTCMonth()-months);return Date.parse(all[0].day)<=+boundary+3*86400000;}).map(range=>`<button class="button secondary compact" data-action="market-range" data-range="${range}" aria-pressed="${range===researchRange}">${range}</button>`).join('')}<button class="text-button" data-action="market-table">${researchMarketTable?'Show chart':'Show table'}</button></div>${researchMarketTable?table:chart}<p id="market-point-detail" class="help" aria-live="polite">${esc(last.day)} · Close ${money(last.values.close)} · Volume ${number(last.values.volume)}</p>${!researchMarketTable?`<label for="market-session">Inspect a session</label><select id="market-session">${rows.map(r=>`<option value="${all.indexOf(r)}" ${r===last?'selected':''}>${esc(r.day)} · ${money(r.values.close)} · ${number(r.values.volume)} shares</option>`).join('')}</select>`:''}<p class="help">Available selection: ${esc(first.day)} → ${esc(last.day)} (${rows.length} sessions). Raw close price return excludes dividends and can be distorted by splits; it is not adjusted total return. Session ${esc(last.day)} · fetched ${when(data.fetched_at,true)} IST. ${sourceLink(data.source_url,'Yahoo Finance source ↗')}${data.stale?' · Cached data: refresh failed.':''}</p></section>`;
+}
 function observationButton(o){return `<button class="text-button" data-action="observation" data-index="${state.job.result.exhibits.observations.findIndex(v=>v.metric===o.metric&&v.value===o.value&&v.scope===o.scope&&v.unit===o.unit&&v.period_start===o.period_start&&v.period_end===o.period_end&&v.label===o.label)}">${number(o.value)} ${esc(o.unit)} ↗</button>`;}
 function researchExhibits(result){
  const x=result.exhibits;if(!x?.observations?.length)return '<p class="notice neutral">Financial exhibits need verified periods, units and scope. This report has no chart-ready observations; use the cited findings below.</p>';
@@ -164,7 +189,7 @@ function researchResult(){const job=state.job;
   const focused=job.options?.mode==='focused'||(job.options?.mode!=='full'&&(job.research_state?.mode||result?.coverage));
   const docs=job.documents?.map(d=>({...d,selected_pages:job.research_state?.coverage?.find(c=>c.document_id===d.id)?.selected_pages}));
   const header=`<div class="report-header"><div class="feed-meta"><strong>${esc(job.nse_symbol)}</strong>${researchBadge(job)}<span>Started ${when(job.created_at,true)} IST</span><button class="text-button negative" data-action="delete-research" data-id="${esc(job.id)}">Delete research</button></div><h2>${esc(result?.title||job.question)}</h2><p>${result?`${quotaPaused?'Saved brief · model request limit reached':refining?'Initial brief saved · additional evidence is being checked':'Completed '+when(job.completed_at,true)+' IST'} · ${job.data_as_of?.pages??'—'} pages with selected evidence`:'Your question is being checked against the company’s primary documents.'}</p></div>`;
-  if(result){return `<section class="panel">${header}<div class="report-body">${quotaPaused?`<p class="notice">${esc(quotaMessage)}</p><button class="button secondary" data-action="retry-research" data-id="${esc(job.id)}">Retry research</button>`:''}${job.status==='partial'?`<div class="notice">${['source_findings','source_excerpts'].includes(result.report_type)?'The model could not complete a validated brief. Saved source evidence is shown below.':'Some evidence could not be used. See the coverage limitations below.'}</div>`:''}
+  if(result){return `<section class="panel">${header}${researchMarket(job)}<div class="report-body">${quotaPaused?`<p class="notice">${esc(quotaMessage)}</p><button class="button secondary" data-action="retry-research" data-id="${esc(job.id)}">Retry research</button>`:''}${job.status==='partial'?`<div class="notice">${['source_findings','source_excerpts'].includes(result.report_type)?'The model could not complete a validated brief. Saved source evidence is shown below.':'Some evidence could not be used. See the coverage limitations below.'}</div>`:''}
     ${refining?'<p class="notice">Your initial brief is ready. Targeted research continues in the background.</p>':''}
     ${result.adaptive?`<p class="help">${result.adaptive.passes} evidence pass(es) · ${result.adaptive.added_findings} additional findings · ${esc(human(result.adaptive.stop_reason))}</p>`:''}
     ${result.adaptive?.unresolved_questions?.length?`<details class="routine"><summary>Questions still needing evidence</summary><ul>${result.adaptive.unresolved_questions.map((g,index)=>`<li>${esc(g.question||g.topic?.replaceAll('_',' ')||'Additional source evidence is needed')} <button class="text-button" data-action="research-followup" data-index="${index}">Explore this question ↗</button></li>`).join('')}</ul></details>`:''}
@@ -252,7 +277,7 @@ document.addEventListener('submit',async event=>{
   finally{state.starting=false;if(button?.isConnected)button.disabled=false;}
 });
 document.addEventListener('input',event=>{const e=event.target;if(e.id==='ticker')state.tickerDraft=e.value;if(e.closest('#research-form')&&e.name)state.draft[e.name]=e.value;});
-document.addEventListener('change',async event=>{const e=event.target;if(e.closest('#research-form')&&e.name)state.draft[e.name]=e.value;if(e.id==='digest-window'){state.window=Number(e.value);state.selectedDigest=null;await load({force:true});}});
+document.addEventListener('change',async event=>{const e=event.target;if(e.id==='market-session'){const data=researchMarkets.get(state.job?.nse_symbol)?.data,r=data?.rows[Number(e.value)];if(r)$('#market-point-detail').textContent=`${r.day} · Close ${money(r.values.close)} · High ${money(r.values.high)} · Low ${money(r.values.low)} · Volume ${number(r.values.volume)}`;}if(e.closest('#research-form')&&e.name)state.draft[e.name]=e.value;if(e.id==='digest-window'){state.window=Number(e.value);state.selectedDigest=null;await load({force:true});}});
 document.addEventListener('click',async event=>{
   if(event.target.closest('.skip-link')){event.preventDefault();$('#main').focus();return;}
   const button=event.target.closest('[data-action]');if(!button)return;const action=button.dataset.action;
@@ -261,6 +286,11 @@ document.addEventListener('click',async event=>{
     if(action==='settings'){openSettings();return;}
     if(action==='status'){statusDialog();return;}
     if(action==='company'){await companyDialog(button.dataset.symbol);return;}
+    if(action==='research-add-portfolio'){button.disabled=true;await api('portfolio',{method:'POST',body:{symbol:button.dataset.symbol}});toast('Company added to your portfolio.');await load({force:true});return;}
+    if(action==='market-retry'){researchMarkets.delete(button.dataset.symbol);await loadResearchMarket(button.dataset.symbol);return;}
+    if(action==='market-range'){researchRange=button.dataset.range;paint(true);return;}
+    if(action==='market-table'){researchMarketTable=!researchMarketTable;paint(true);return;}
+    if(action==='market-point'){const data=researchMarkets.get(state.job?.nse_symbol)?.data,row=data?.rows[Number(button.dataset.index)];if(row){$('#market-point-detail').textContent=`${row.day} · Close ${money(row.values.close)} · Volume ${number(row.values.volume)} · High ${money(row.values.high)} · Low ${money(row.values.low)}`;}return;}
     if(action==='exhibit-toggle'){const table=$('#research-table'),charts=$('#research-charts');table.hidden=!table.hidden;charts.hidden=!charts.hidden;return;}
     if(action==='report-section'){event.preventDefault();const section=document.getElementById('section-'+button.dataset.topic);if(section){section.open=true;section.scrollIntoView({behavior:'smooth',block:'start'});}return;}
     if(action==='observation'){
@@ -308,5 +338,6 @@ document.addEventListener('focusout',()=>{if(state.pendingPaint)setTimeout(()=>p
 window.addEventListener('hashchange',async()=>{readRoute();paintChrome();paint(true);window.scrollTo(0,0);if(state.authenticated)await load({force:true});
   if(state.view==='research'&&state.selectedJob&&matchMedia('(max-width:950px)').matches)$('#research-output')?.scrollIntoView({block:'start'});
 });
+document.addEventListener('keydown',event=>{if(['Enter',' '].includes(event.key)&&event.target.dataset?.action==='market-point'){event.preventDefault();event.target.dispatchEvent(new MouseEvent('click',{bubbles:true}));}});
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&state.authenticated)load();});
 checkSession();

@@ -1,3 +1,4 @@
+import {marketContext} from './research/market.js';
 import {randomBytes,createHash,timingSafeEqual} from 'node:crypto';
 import {z} from 'zod';
 import {openDatabase} from './db.js';
@@ -10,8 +11,8 @@ import {createResearch,researchJob,deleteResearch} from './research/jobs.js';
 const hash=token=>createHash('sha256').update(token).digest('hex');
 const id=value=>z.uuid().parse(value);
 const fail=(message,status=400)=>Object.assign(new Error(message),{status});
-export function createAppHandler({db:sharedDb,files:sharedFiles,accessCode=process.env.DEMO_ACCESS_CODE,clock=()=>new Date()}={}) {
-  const failures=new Map();
+export function createAppHandler({db:sharedDb,files:sharedFiles,accessCode=process.env.DEMO_ACCESS_CODE,clock=()=>new Date(),market:injectedMarket}={}) {
+  const failures=new Map(),market=injectedMarket||marketContext({clock});
   return async function handler(req,res) {
     res.setHeader('Cache-Control','no-store');res.setHeader('X-Content-Type-Options','nosniff');
     let db;
@@ -56,6 +57,8 @@ export function createAppHandler({db:sharedDb,files:sharedFiles,accessCode=proce
       if(resource==='portfolio' && req.method==='GET') result=await watchlist(db);
       else if(resource==='portfolio' && ['POST','DELETE'].includes(req.method)) {
         const {symbol}=z.object({symbol:z.string().min(1).max(40)}).strict().parse(req.body);result=await changeCompany(db,symbol,req.method==='DELETE',clock());
+      } else if(resource==='market' && req.method==='GET') {
+        const name=z.string().min(1).max(40).parse(req.query.symbol);result=await market(name);
       } else if(resource==='settings' && req.method==='GET') result=await settings(db);
       else if(resource==='settings' && req.method==='PATCH') result=await updateSettings(db,req.body,clock());
       else if(resource==='status' && req.method==='GET') result=await status(db);
