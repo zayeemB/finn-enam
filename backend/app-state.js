@@ -22,6 +22,8 @@ export async function settings(db) {
 }
 export async function watchlist(db) {
   const selected=await companies(db);
+  const marketStates=(await db.query(`SELECT s.* FROM collection_state s JOIN portfolio_companies p ON p.company_id=s.company_id
+    WHERE p.portfolio_id=$1 AND s.source='yahoo'`,[PORTFOLIO])).rows;
   const rows=(await db.query(`SELECT * FROM (SELECT o.*,row_number() OVER (PARTITION BY o.company_id,o.metric ORDER BY o.period_end DESC) AS rank
     FROM observations o JOIN portfolio_companies p ON p.company_id=o.company_id
     WHERE p.portfolio_id=$1 AND o.frequency='daily' AND o.scope='market' AND o.is_current AND o.metric IN ('close','volume')) latest
@@ -29,7 +31,9 @@ export async function watchlist(db) {
   return selected.map(company=>{
     const closes=rows.filter(r=>r.company_id===company.id && r.metric==='close'),current=closes[0],previous=closes[1];
     const volume=rows.find(r=>r.company_id===company.id && r.metric==='volume' && +new Date(r.period_end)===+new Date(current?.period_end));
-    return {...company,market:current?{close:Number(current.value),previous_close:previous?Number(previous.value):null,
+    const source=marketStates.find(s=>s.company_id===company.id);
+    return {...company,market_status:{state:source?.last_error?'failed':source?.lease_expires_at&&+new Date(source.lease_expires_at)>Date.now()?'collecting':current?'available':'pending',
+      last_attempt_at:source?.last_attempt_at||null,last_successful_fetch_at:source?.last_successful_fetch_at||null,error:source?.last_error||null},market:current?{close:Number(current.value),previous_close:previous?Number(previous.value):null,
       change_percent:previous && Number(previous.value)>0?(Number(current.value)/Number(previous.value)-1)*100:null,
       volume:volume?Number(volume.value):null,session_date:current.period_end,collected_at:current.collected_at,source_url:current.source_url}:null};
   });
@@ -71,5 +75,5 @@ export async function status(db) {
   state.collection=state.collection.map(({lease_token,...row})=>row);
   return {...state,monitor:(await db.query('SELECT * FROM monitoring_state WHERE portfolio_id=$1',[PORTFOLIO])).rows.map(({lease_token,...row})=>row)[0],
     research:(await db.query('SELECT status,count(*) AS count FROM research_jobs GROUP BY status')).rows,
-    scheduler_note:'Updates run while npm run dev is running locally, or when the protected tick endpoint is invoked by a deployed scheduler.'};
+    scheduler_note:'Updates run locally with npm run dev. On Vercel, an open signed-in app advances monitoring; a scheduler must invoke the protected tick endpoint to continue while the app is closed.'};
 }

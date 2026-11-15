@@ -1,4 +1,5 @@
 import {hostedResearchTrigger} from './research/hosted.js';
+import {hostedMonitoringTrigger} from './hosted-monitor.js';
 import {marketContext} from './research/market.js';
 import {randomBytes,createHash,timingSafeEqual} from 'node:crypto';
 import {z} from 'zod';
@@ -12,7 +13,7 @@ import {createResearch,researchJob,deleteResearch} from './research/jobs.js';
 const hash=token=>createHash('sha256').update(token).digest('hex');
 const id=value=>z.uuid().parse(value);
 const fail=(message,status=400)=>Object.assign(new Error(message),{status});
-export function createAppHandler({db:sharedDb,files:sharedFiles,accessCode=process.env.DEMO_ACCESS_CODE,clock=()=>new Date(),market:injectedMarket,databaseFactory=openDatabase,triggerResearch=hostedResearchTrigger()}={}) {
+export function createAppHandler({db:sharedDb,files:sharedFiles,accessCode=process.env.DEMO_ACCESS_CODE,clock=()=>new Date(),market:injectedMarket,databaseFactory=openDatabase,triggerResearch=hostedResearchTrigger(),triggerMonitoring=hostedMonitoringTrigger()}={}) {
   const failures=new Map(),market=injectedMarket||marketContext({clock});
   return async function handler(req,res) {
     res.setHeader('Cache-Control','no-store');res.setHeader('X-Content-Type-Options','nosniff');
@@ -120,6 +121,7 @@ export function createAppHandler({db:sharedDb,files:sharedFiles,accessCode=proce
         res.setHeader('Content-Type','image/png');return res.status(200).send(body);
       } else throw fail('Resource or method not supported',404);
       if(resource==='research'&&req.method==='GET'&&req.query.id)triggerResearch(result);
+      if(['portfolio','refresh','status','settings'].includes(resource))await triggerMonitoring(db);
       if(result===null) throw fail('Not found',404);
       return res.status(200).json(result);
     } catch(error) {

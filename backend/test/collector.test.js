@@ -10,6 +10,7 @@ import { setPortfolio, companies, snapshot, claimSource, jobInputIsCurrent } fro
 import { hash, parseDisclosures, parsePrices } from '../sources.js';
 import { validateSourceUrl } from '../http.js';
 import { authorised } from '../../api/collect.js';
+import {watchlist} from '../app-state.js';
 
 const NOW = new Date('2026-11-12T04:00:00Z');
 let db, directory, files, rows, body, fail, requests;
@@ -210,6 +211,29 @@ test('market data stores numbers directly with no LLM jobs, and preserves correc
   const values = (await db.query("SELECT value,is_current FROM observations WHERE metric='close' ORDER BY revision")).rows;
   assert.deepEqual(values.map(v => [Number(v.value), v.is_current]), [[100, false], [101, true]]);
   assert.equal((await snapshot(db)).counts.processing_jobs, 0);
+});
+
+test('all selected companies save prices before NSE discovery; an NSE lease or failure cannot block them',async()=>{
+  await setPortfolio(db,['TEST','OTHER']);
+  const selected=await companies(db),calls=[];
+  await claimSource(db,selected.find(c=>c.nse_symbol==='OTHER').id,'nse',NOW);
+  const result=await collect(db,files,options({prices:true,downloadLimit:0,
+    priceFeed:async(_client,name)=>{calls.push('price:'+name);return {url:'https://query2.finance.yahoo.com/test',corporateActions:{},rows:[
+      {day:'2026-11-10',values:{close:100,volume:900}},{day:'2026-11-11',values:{close:102,volume:1000}}]};},
+    disclosureFeed:async()=>{assert.equal(calls.length,2);throw Error('NSE timeout');}}));
+  assert.equal(result.status,'partial');
+  const list=await watchlist(db);assert.equal(list.length,2);
+  for(const c of list){assert.equal(c.market.close,102);assert.equal(c.market.volume,1000);assert.ok(Math.abs(c.market.change_percent-2)<1e-9);assert.equal(c.market_status.state,'available');}
+});
+
+test('watchlist exposes price-source failures instead of indefinite waiting and retains the last good price',async()=>{
+  rows=[];
+  await collect(db,files,options({prices:true,priceFeed:async()=>{throw Error('Yahoo HTTP 429');}}));
+  let row=(await watchlist(db))[0];assert.equal(row.market,null);assert.equal(row.market_status.state,'failed');assert.match(row.market_status.error,/429/);
+  await collect(db,files,options({prices:true,priceFeed:async()=>({url:'https://query2.finance.yahoo.com/test',rows:[{day:'2026-11-11',values:{close:101,volume:1000}}]})}));
+  row=(await watchlist(db))[0];assert.equal(row.market.close,101);assert.equal(row.market_status.state,'available');assert.equal(row.market_status.error,null);
+  await collect(db,files,options({now:new Date(+NOW+86400000),prices:true,priceFeed:async()=>{throw Error('Yahoo unavailable');}}));
+  row=(await watchlist(db))[0];assert.equal(row.market.close,101);assert.equal(row.market_status.state,'failed');
 });
 
 test('NSE parser preserves unknown fields and uses Indian publication timezone', () => {

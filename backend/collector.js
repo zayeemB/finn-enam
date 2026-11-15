@@ -87,23 +87,12 @@ export async function collect(db, files, options = {}) {
       }
     }
   };
-  // A slow/unavailable discovery feed must not indefinitely starve previously saved downloads.
-  await processDownloads(Math.min(2, downloadLimit));
-  for (const company of portfolio.slice(0, companyLimit)) {
-    if (Date.now() + 1000 >= deadline) break;
-    const state = await claimSource(db, company.id, 'nse', now);
-    if (!state) continue;
-    const item = { symbol: company.nse_symbol };
-    report.companies.push(item);
-    try {
-      const start = new Date(state.last_successful_fetch_at ? +new Date(state.last_successful_fetch_at) - overlapMinutes * 60000 : +now - bootstrapHours * 3600000);
-      const rows = await disclosureFeed(client, company.nse_symbol, start, now);
-      const saved = await saveDisclosures(db, company.id, state, rows, now);
-      item.disclosures = { status: 'ok', fetched: rows.length, ...saved, from: start.toISOString(), to: now.toISOString() };
-    } catch (error) {
-      await failSource(db, company.id, 'nse', state.lease_token, error);
-      item.disclosures = { status: 'failed', error: error.message }; report.status = 'partial';
-    }
+  const selected=portfolio.slice(0,companyLimit);
+  const items=new Map(selected.map(company=>[company.id,{symbol:company.nse_symbol}]));
+  report.companies=[...items.values()];
+  // Prices are independent of NSE discovery and PDF downloads. Never let those starve the watchlist.
+  for(const company of selected) {
+    const item=items.get(company.id);
     if (options.prices === false || Date.now() + 1000 >= deadline) continue;
     const previous = (await db.query("SELECT last_successful_fetch_at FROM collection_state WHERE company_id=$1 AND source='yahoo'", [company.id])).rows[0];
     const latest = (await db.query("SELECT max(period_end)::text AS day FROM observations WHERE company_id=$1 AND metric='close' AND is_current", [company.id])).rows[0].day;
@@ -112,12 +101,30 @@ export async function collect(db, files, options = {}) {
     if (!marketState) continue;
     try {
       const start = latest ? new Date(+new Date(`${latest}T00:00:00+05:30`) - 7 * 86400000) : new Date(+now - 120 * 86400000);
-      const data = await priceFeed(client, company.nse_symbol, start, now);
+      const marketClient=options.client || new SourceClient({deadline:Math.min(deadline,Date.now()+8000)});
+      const data = await priceFeed(marketClient, company.nse_symbol, start, now);
       await saveMarket(db, company, marketState, data, now);
       item.prices = { status: 'ok', sessions: data.rows.length };
     } catch (error) {
       await failSource(db, company.id, 'yahoo', marketState.lease_token, error);
       item.prices = { status: 'failed', error: error.message }; report.status = 'partial';
+    }
+  }
+  // A slow/unavailable discovery feed must not indefinitely starve previously saved downloads.
+  await processDownloads(Math.min(2, downloadLimit));
+  for (const company of selected) {
+    if (Date.now() + 1000 >= deadline) break;
+    const state = await claimSource(db, company.id, 'nse', now);
+    if (!state) continue;
+    const item = items.get(company.id);
+    try {
+      const start = new Date(state.last_successful_fetch_at ? +new Date(state.last_successful_fetch_at) - overlapMinutes * 60000 : +now - bootstrapHours * 3600000);
+      const rows = await disclosureFeed(client, company.nse_symbol, start, now);
+      const saved = await saveDisclosures(db, company.id, state, rows, now);
+      item.disclosures = { status: 'ok', fetched: rows.length, ...saved, from: start.toISOString(), to: now.toISOString() };
+    } catch (error) {
+      await failSource(db, company.id, 'nse', state.lease_token, error);
+      item.disclosures = { status: 'failed', error: error.message }; report.status = 'partial';
     }
   }
   await processDownloads(downloadLimit - report.downloads.length);

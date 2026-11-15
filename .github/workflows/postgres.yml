@@ -27,4 +27,4 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run test:postgres
-      - run: node --test backend/test/hosted-research.test.js
+      - run: node --test backend/test/hosted-research.test.js backend/test/hosted-monitor.test.js
