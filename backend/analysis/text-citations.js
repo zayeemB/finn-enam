@@ -1,4 +1,15 @@
 import {normalise} from './validation.js';
+import {RESPONSE_SCHEMA} from './schema.js';
+
+function citationBranch(block,modality,quotes){
+  return {type:'object',properties:{block_id:{type:block===null?'null':'string',enum:[block]},
+    modality:{type:'string',enum:[modality]},quote:{type:'string',...(quotes?{enum:quotes}:{})}},
+    required:['block_id','modality','quote'],additionalProperties:false};
+}
+function schemaWithCitations(branches){
+  const schema=structuredClone(RESPONSE_SCHEMA);
+  schema.properties.developments.items.properties.evidence.items={anyOf:branches};return schema;
+}
 
 // Like research passage references: the model chooses evidence; the server copies the exact text.
 export function textCitations(blocks) {
@@ -16,7 +27,18 @@ export function textCitations(blocks) {
     }
     text.set(block.id,chunks.length?chunks.join('\n\n'):raw);
   }
-  return {text,resolve(value){
+  return {text,schema({coveredIds,images,disclosure}){
+    const branches=[];
+    for(const block of coveredIds){
+      const ids=[...references].filter(([,r])=>r.block_id===block).map(([id])=>id);
+      if(ids.length)branches.push(citationBranch(block,'text',ids));
+    }
+    for(const image of images)branches.push(citationBranch(image.blockId,'visual'));
+    const leaves=value=>value&&typeof value==='object'?Object.values(value).flatMap(leaves):[String(value??'')];
+    const metadata=[...new Set([disclosure.title,...leaves(disclosure.raw_metadata)].filter(v=>typeof v==='string'&&v.trim()&&v.length<=3000))];
+    if(metadata.length)branches.push(citationBranch(null,'metadata',metadata));
+    return branches.length?schemaWithCitations(branches):RESPONSE_SCHEMA;
+  },resolve(value){
     const result=structuredClone(value);
     for(const development of result.developments||[])for(const citation of development.evidence||[]){
       if(citation.modality!=='text'||!String(citation.quote).trim().startsWith('finn-text:'))continue;
@@ -34,7 +56,12 @@ export function synthesisCitations(sources){
     const id=`finn-evidence:${references.size+1}`;
     references.set(id,{...citation});citation.quote=id;
   }
-  return {sources:encoded,resolve(value){
+  const groups=new Map();
+  for(const [id,citation] of references){
+    const key=JSON.stringify([citation.block_id,citation.modality]);
+    if(!groups.has(key))groups.set(key,{...citation,ids:[]});groups.get(key).ids.push(id);
+  }
+  return {sources:encoded,schema:groups.size?schemaWithCitations([...groups.values()].map(c=>citationBranch(c.block_id,c.modality,c.ids))):RESPONSE_SCHEMA,resolve(value){
     const result=structuredClone(value);
     for(const development of result.developments||[])for(const citation of development.evidence||[]){
       if(!String(citation.quote).trim().startsWith('finn-evidence:'))continue;

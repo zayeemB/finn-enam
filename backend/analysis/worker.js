@@ -53,6 +53,7 @@ export async function analyse(db,files,{ model, budgetMs=180000,requestTimeoutMs
         }
         const bound=sources?synthesisCitations(sources):null;
         const actualPrompt=typeof prompt==='function'?prompt(bound.sources):prompt;
+        const responseSchema=bound?.schema||textEvidence.schema({coveredIds,images,disclosure:input.disclosure});
         if (cache.has(key)) { const data=validateResult(cache.get(key),context);usedKeys.add(key);return data; }
         if (report.calls>=maxCalls || Date.now()+1000>=deadline) throw new Yield();
         const wait=model.routed?null:(await db.query("SELECT retry_after,reason FROM provider_backoff WHERE provider='gemini' AND retry_after>$1",[clock()])).rows[0];
@@ -64,13 +65,13 @@ export async function analyse(db,files,{ model, budgetMs=180000,requestTimeoutMs
           return Math.min(requestTimeoutMs,deadline-Date.now());
         };
         if (!model.routed) await onAttempt();
-        let response=await model.generate({stage,prompt:actualPrompt,images,timeoutMs:Math.min(requestTimeoutMs,deadline-Date.now()),onAttempt});
+        let response=await model.generate({stage,prompt:actualPrompt,images,responseSchema,timeoutMs:Math.min(requestTimeoutMs,deadline-Date.now()),onAttempt});
         let data;
         try { data=validateResult(bound?bound.resolve(response.data):stage==='page_extraction'?textEvidence.resolve(response.data):response.data,context); }
         catch(error) {
           if (!model.verifyExtraction || stage!=='page_extraction') throw new Error(`${stage}: ${error.message}`,{cause:error});
           // Re-read original pages with the reasoning model; never publish invalid Lite output.
-          response=await model.generate({stage:'page_verification',images,onAttempt,timeoutMs:Math.min(requestTimeoutMs,deadline-Date.now()),
+          response=await model.generate({stage:'page_verification',images,onAttempt,responseSchema,timeoutMs:Math.min(requestTimeoutMs,deadline-Date.now()),
             prompt:`A first reading failed validation (${error.message.replaceAll('\n',' ')}). Read the original supplied pages independently. Return replacement findings with exact citations. ${prompt}`});
           data=validateResult(textEvidence.resolve(response.data),context);
         }

@@ -722,3 +722,13 @@ test('synthesis reference IDs cannot invent or rebind validated evidence',async(
  const block=randomUUID(),other=randomUUID(),bound=synthesisCitations([{developments:[{evidence:[{block_id:block,modality:'text',quote:'Original validated quote'}]}]}]);
  assert.throws(()=>bound.resolve({developments:[{evidence:[{block_id:other,modality:'text',quote:'finn-evidence:1'}]}]}),/mismatched/);
 });
+
+test('monitoring provider grammar constrains text and synthesis quotes to supplied bound references',async()=>{
+ await seed({pages:1});const model=mockModel();
+ assert.equal((await run(model)).jobs[0].status,'completed');
+ const choices=call=>call.responseSchema.properties.developments.items.properties.evidence.items.anyOf;
+ const page=choices(model.calls[0]);
+ assert.ok(page.filter(b=>b.properties.modality.enum[0]==='text').every(b=>b.properties.quote.enum.every(q=>q.startsWith('finn-text:'))));
+ assert.ok(page.filter(b=>b.properties.modality.enum[0]==='visual').every(b=>model.calls[0].images.some(i=>i.blockId===b.properties.block_id.enum[0])));
+ assert.ok(choices(model.calls[1]).every(b=>b.properties.quote.enum.every(q=>q.startsWith('finn-evidence:'))));
+});
