@@ -54,7 +54,7 @@ Financial numbers require explicit units, reporting periods and consolidated/sta
 Use canonical metric identifiers revenue, ebitda, pbt, pat, debt, cash, operating_cash_flow and capex where applicable.
 Extract Revenue, EBITDA, PBT and PAT where reported, plus relevant other financial quantities. Never guess table columns.
 Do not treat bank EBITDA as mandatory, year-to-date figures as a quarter, ambitions as explicit guidance, or missing values as zero.
-Quotes of modality text must appear verbatim in the cited page text. Visual evidence may transcribe a table/chart but must cite its page block.
+When the supplied evidence has finn-text or finn-evidence reference IDs, put the exact reference ID (without brackets) in quote. The server restores the original quotation before validation; never paraphrase or reconstruct its text. Otherwise text quotes must appear verbatim in the cited page text. Visual evidence may transcribe an attached table/chart but must cite its page block.
 Metadata evidence uses block_id=null and must quote the supplied disclosure metadata. Every key fact and observation references its evidence indexes.
 Do not invent URLs, page numbers, block IDs, or prior-event IDs. covered_block_ids must account for EXACTLY all supplied page blocks.
 For management changes extract person, role, effective date, reason and incoming biography ONLY where supported by supplied evidence.

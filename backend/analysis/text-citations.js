@@ -27,3 +27,21 @@ export function textCitations(blocks) {
     return result;
   }};
 }
+
+export function synthesisCitations(sources){
+  const encoded=structuredClone(sources),references=new Map();
+  for(const source of encoded)for(const development of source.developments)for(const citation of development.evidence){
+    const id=`finn-evidence:${references.size+1}`;
+    references.set(id,{...citation});citation.quote=id;
+  }
+  return {sources:encoded,resolve(value){
+    const result=structuredClone(value);
+    for(const development of result.developments||[])for(const citation of development.evidence||[]){
+      if(!String(citation.quote).trim().startsWith('finn-evidence:'))continue;
+      const original=references.get(citation.quote.trim());
+      if(!original||original.block_id!==citation.block_id||original.modality!==citation.modality)throw Error('Unknown or mismatched validated-evidence reference');
+      citation.quote=original.quote;
+    }
+    return result;
+  }};
+}

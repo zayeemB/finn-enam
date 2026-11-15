@@ -1,7 +1,7 @@
 import {RenderSession} from '../extraction/renderer.js';
 import {hash} from '../sources.js';
 import {monitoringEvidence} from './selection.js';
-import {textCitations} from './text-citations.js';
+import {textCitations,synthesisCitations} from './text-citations.js';
 import { ModelError } from './gemini.js';
 import { monitoringModels } from './models.js';
 import { PROMPT_VERSION } from './schema.js';
@@ -51,6 +51,8 @@ export async function analyse(db,files,{ model, budgetMs=180000,requestTimeoutMs
           context.allowedCitations=new Set(sources.flatMap(s=>s.developments.flatMap(d=>d.evidence.map(citationKey))));
           context.allowedObservations=new Set(sources.flatMap(s=>s.developments.flatMap(d=>d.observations.map(observationKey))));
         }
+        const bound=sources?synthesisCitations(sources):null;
+        const actualPrompt=typeof prompt==='function'?prompt(bound.sources):prompt;
         if (cache.has(key)) { const data=validateResult(cache.get(key),context);usedKeys.add(key);return data; }
         if (report.calls>=maxCalls || Date.now()+1000>=deadline) throw new Yield();
         const wait=model.routed?null:(await db.query("SELECT retry_after,reason FROM provider_backoff WHERE provider='gemini' AND retry_after>$1",[clock()])).rows[0];
@@ -62,11 +64,11 @@ export async function analyse(db,files,{ model, budgetMs=180000,requestTimeoutMs
           return Math.min(requestTimeoutMs,deadline-Date.now());
         };
         if (!model.routed) await onAttempt();
-        let response=await model.generate({stage,prompt,images,timeoutMs:Math.min(requestTimeoutMs,deadline-Date.now()),onAttempt});
+        let response=await model.generate({stage,prompt:actualPrompt,images,timeoutMs:Math.min(requestTimeoutMs,deadline-Date.now()),onAttempt});
         let data;
-        try { data=validateResult(stage==='page_extraction'?textEvidence.resolve(response.data):response.data,context); }
+        try { data=validateResult(bound?bound.resolve(response.data):stage==='page_extraction'?textEvidence.resolve(response.data):response.data,context); }
         catch(error) {
-          if (!model.verifyExtraction || stage!=='page_extraction') throw error;
+          if (!model.verifyExtraction || stage!=='page_extraction') throw new Error(`${stage}: ${error.message}`,{cause:error});
           // Re-read original pages with the reasoning model; never publish invalid Lite output.
           response=await model.generate({stage:'page_verification',images,onAttempt,timeoutMs:Math.min(requestTimeoutMs,deadline-Date.now()),
             prompt:`A first reading failed validation (${error.message.replaceAll('\n',' ')}). Read the original supplied pages independently. Return replacement findings with exact citations. ${prompt}`});
@@ -126,7 +128,7 @@ export async function analyse(db,files,{ model, budgetMs=180000,requestTimeoutMs
           const coveredIds=unique(sources.flatMap(s=>s.covered_block_ids));
           const key=inputHash(['reduce',depth,model.cacheModel?.('combine_batches') || model.model,PROMPT_VERSION,job.input_hash,sources]);
           next.push(await request({stage:'combine_batches',key,coveredIds,sources,
-            prompt:`Combine validated findings, retaining every distinct development and its evidence. Previous events: [].\n${JSON.stringify(sources)}`}));
+            prompt:findings=>`Combine validated findings, retaining every distinct development and its evidence. Copy finn-evidence references as quote without retyping the underlying quotations. Previous events: [].\n${JSON.stringify(findings)}`}));
         }
         level=next;depth++;
       }
@@ -135,7 +137,7 @@ export async function analyse(db,files,{ model, budgetMs=180000,requestTimeoutMs
         summary:e.summary,key_facts:e.details.key_facts,observations:e.details.observations,management_change:e.details.management_change}));
       const key=inputHash(['final',model.cacheModel?.('final_synthesis') || model.model,PROMPT_VERSION,job.input_hash,level,priorEvents]);
       const result=await request({stage:'final_synthesis',key,coveredIds,priorEvents:input.priorEvents,sources:level,
-        prompt:`Combine these validated findings for ${input.disclosure.nse_symbol}. Match only genuine repetitions/updates to the supplied previous events. Preserve evidence; invent no new observations.\n${JSON.stringify({findings:level,previous_events:priorEvents,limitations:input.limitations})}`});
+        prompt:findings=>`Combine these validated findings for ${input.disclosure.nse_symbol}. Match only genuine repetitions/updates to the supplied previous events. Copy finn-evidence references as quote without retyping the underlying quotations. Preserve observations exactly; invent no new observations.\n${JSON.stringify({findings,previous_events:priorEvents,limitations:input.limitations})}`});
       const visualBlocks=unique(result.developments.flatMap(d=>d.evidence.filter(e=>e.modality==='visual').map(e=>e.block_id)));
       for (const id of visualBlocks) {
         const block=input.blocks.find(b=>b.id===id);

@@ -712,3 +712,13 @@ test('unknown or wrong-page text references cannot bypass grounding or publish a
  const a=randomUUID(),b=randomUUID(),refs=textCitations([{id:a,content:{text:'Original exact words'}},{id:b,content:{text:'Another page'}}]);
  assert.throws(()=>refs.resolve({developments:[{evidence:[{modality:'text',block_id:b,quote:`finn-text:${a}:1`}]}]}),/mismatched/);
 });
+
+test('synthesis reference IDs cannot invent or rebind validated evidence',async()=>{
+ await seed({pages:1});
+ const model=mockModel({transform(data,request){if(request.stage==='final_synthesis')data.developments[0].evidence[0].quote='finn-evidence:9999';return data;}});
+ const report=await run(model);assert.equal(report.jobs[0].status,'failed');assert.match(report.jobs[0].error,/validated-evidence reference/);
+ assert.equal((await db.query('SELECT * FROM events')).rows.length,0);assert.equal((await alerts(db)).length,0);
+ const {synthesisCitations}=await import('../analysis/text-citations.js');
+ const block=randomUUID(),other=randomUUID(),bound=synthesisCitations([{developments:[{evidence:[{block_id:block,modality:'text',quote:'Original validated quote'}]}]}]);
+ assert.throws(()=>bound.resolve({developments:[{evidence:[{block_id:other,modality:'text',quote:'finn-evidence:1'}]}]}),/mismatched/);
+});
