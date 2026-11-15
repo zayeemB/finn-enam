@@ -1,3 +1,4 @@
+import {migrateDatabase} from './migrations.js';
 import {createServer} from 'node:http';
 import {randomBytes} from 'node:crypto';
 import {pathToFileURL} from 'node:url';
@@ -33,6 +34,7 @@ export async function startServer({port=Number(process.env.PORT || 3001),accessC
   automatic=true,db:injectedDb,files:injectedFiles,tick=runTick,preparePages=extract,runResearch=research}={}) {
   if(!Number.isSafeInteger(port)||port<0||port>65535) throw new Error('Invalid PORT');
   const db=injectedDb || await openDatabase(),files=injectedFiles || await openFiles();
+  if(!injectedDb&&db.kind==='pglite')await migrateDatabase(db);
   await initialiseApp(db);
   if(!accessCode) {accessCode=randomBytes(12).toString('base64url');console.log(`Temporary demo access code: ${accessCode}`);}
   const handler=createAppHandler({db,files,accessCode});

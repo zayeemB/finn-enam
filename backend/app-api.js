@@ -1,17 +1,18 @@
+import {hostedResearchTrigger} from './research/hosted.js';
 import {marketContext} from './research/market.js';
 import {randomBytes,createHash,timingSafeEqual} from 'node:crypto';
 import {z} from 'zod';
 import {openDatabase} from './db.js';
 import {openFiles} from './files.js';
 import {PORTFOLIO,companies} from './repository.js';
-import {initialiseApp,settings,updateSettings,changeCompany,status,watchlist} from './app-state.js';
+import {settings,updateSettings,changeCompany,status,watchlist} from './app-state.js';
 import {digest,alerts} from './outputs.js';
 import {createResearch,researchJob,deleteResearch} from './research/jobs.js';
 
 const hash=token=>createHash('sha256').update(token).digest('hex');
 const id=value=>z.uuid().parse(value);
 const fail=(message,status=400)=>Object.assign(new Error(message),{status});
-export function createAppHandler({db:sharedDb,files:sharedFiles,accessCode=process.env.DEMO_ACCESS_CODE,clock=()=>new Date(),market:injectedMarket}={}) {
+export function createAppHandler({db:sharedDb,files:sharedFiles,accessCode=process.env.DEMO_ACCESS_CODE,clock=()=>new Date(),market:injectedMarket,databaseFactory=openDatabase,triggerResearch=hostedResearchTrigger()}={}) {
   const failures=new Map(),market=injectedMarket||marketContext({clock});
   return async function handler(req,res) {
     res.setHeader('Cache-Control','no-store');res.setHeader('X-Content-Type-Options','nosniff');
@@ -28,7 +29,7 @@ export function createAppHandler({db:sharedDb,files:sharedFiles,accessCode=proce
         const expected=process.env.APP_ORIGIN || `${process.env.VERCEL?'https':'http'}://${req.headers.host}`;
         if(req.headers.origin!==expected) throw fail('Cross-origin request denied',403);
       }
-      db=sharedDb || await openDatabase();await initialiseApp(db,clock());
+      db=sharedDb || await databaseFactory();
       const secure=!!process.env.VERCEL || process.env.APP_ORIGIN?.startsWith('https:');
       const cookie=value=>`finn_session=${value}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${value?43200:0}${secure?'; Secure':''}`;
       if(resource==='session' && req.method==='POST') {
@@ -91,7 +92,7 @@ export function createAppHandler({db:sharedDb,files:sharedFiles,accessCode=proce
             FROM event_evidence e JOIN events v ON v.id=e.event_id WHERE v.company_id=$1 ORDER BY v.updated_at DESC LIMIT 300`,[company.id])).rows};
       } else if(resource==='research' && req.method==='POST') {
         const body=z.object({symbol:z.string().min(1).max(40),question:z.string().trim().max(2000).optional(),source_policy:z.enum(['primary','assignment']).optional(),annual_reports:z.number().int().min(1).max(3).optional(),transcripts:z.number().int().min(1).max(4).optional()}).strict().parse(req.body);
-        result=await createResearch(db,body,clock());return res.status(202).json(result);
+        result=await createResearch(db,body,clock());triggerResearch(result);return res.status(202).json(result);
       } else if(resource==='research' && req.method==='GET') result=req.query.id?await researchJob(db,id(req.query.id)):
         (await db.query('SELECT r.id,c.nse_symbol,r.question,r.status,r.progress,r.created_at,r.completed_at,r.error,r.next_attempt_at FROM research_jobs r JOIN companies c ON c.id=r.company_id ORDER BY created_at DESC LIMIT 30')).rows;
       else if(resource==='research' && req.method==='DELETE') {
@@ -110,6 +111,7 @@ export function createAppHandler({db:sharedDb,files:sharedFiles,accessCode=proce
           return row;
         });
         if(!result) throw fail('Failed research job not found',404);
+        triggerResearch(result);
       } else if(resource==='evidence' && req.method==='GET') {
         const row=(await db.query(`SELECT retained_image_path AS image FROM event_evidence WHERE id=$1
           UNION ALL SELECT retained_image_path FROM research_evidence WHERE id=$1`,[id(req.query.id)])).rows[0];
@@ -117,6 +119,7 @@ export function createAppHandler({db:sharedDb,files:sharedFiles,accessCode=proce
         const body=await (sharedFiles || await openFiles()).get(row.image);
         res.setHeader('Content-Type','image/png');return res.status(200).send(body);
       } else throw fail('Resource or method not supported',404);
+      if(resource==='research'&&req.method==='GET'&&req.query.id)triggerResearch(result);
       if(result===null) throw fail('Not found',404);
       return res.status(200).json(result);
     } catch(error) {

@@ -16,3 +16,5 @@ npm run inspect
 ```
 
 See [NODE_COLLECTOR.md](NODE_COLLECTOR.md) for collection, [EXTRACTION_WORKER.md](EXTRACTION_WORKER.md) for page preparation, and [ANALYSIS_WORKER.md](ANALYSIS_WORKER.md) for Gemini analysis, alerts and digest outputs. Set `GEMINI_API_KEY` in a local ignored `.env` or server secrets to run analysis. No cloud deployment is activated.
+
+PostgreSQL deployments run `npm run migrate` before serving traffic (also configured as the Vercel build command). Routine API connections never run schema changes. See [migration and PostgreSQL concurrency checks](BACKEND_APP.md#database-migrations-and-concurrent-postgresql) and [hosted research triggering](BACKEND_APP.md#hosted-research-triggering-tested-separately).

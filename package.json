@@ -22,12 +22,15 @@
     "evaluate-alerts": "node --env-file-if-exists=.env backend/cli.js evaluate-alerts",
     "portfolio": "node --env-file-if-exists=.env backend/cli.js portfolio",
     "inspect": "node --env-file-if-exists=.env backend/cli.js inspect",
-    "test": "node --test --test-concurrency=1 backend/test/*.test.js"
+    "test": "node --test --test-concurrency=1 backend/test/*.test.js",
+    "migrate": "node --env-file-if-exists=.env backend/migrate.js",
+    "test:postgres": "node --test backend/test/postgres-concurrency.test.js"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.3.0",
     "@napi-rs/canvas": "^1.1.1",
     "@vercel/blob": "^2.0.0",
+    "@vercel/functions": "^3.11.3",
     "cheerio": "^1.2.0",
     "pdfjs-dist": "^6.5.438",
     "pg": "^8.16.0",
