@@ -5,7 +5,7 @@ import { PROCESSOR, PROMPT_VERSION } from './schema.js';
 export async function claimAnalysis(db, now, model) {
   return db.transaction(async tx => {
     const job = (await tx.query(`SELECT * FROM processing_jobs WHERE job_type='analyse'
-      AND (failure_count<5 OR error_kind='provider_transient') AND coalesce(error_kind,'')<>'configuration'
+      AND (failure_count<5 OR error_kind='provider_transient') AND coalesce(error_kind,'') NOT IN ('configuration','quota_limit')
       AND (next_attempt_at IS NULL OR next_attempt_at<=$1)
       AND (status IN ('queued','failed') OR (status='running' AND lease_expires_at<=$1))
       ORDER BY coalesce(started_at,created_at),id LIMIT 1 FOR UPDATE SKIP LOCKED`, [now])).rows[0];
@@ -67,11 +67,12 @@ export async function failAnalysis(db,job,error,now) {
     const failures=owned.current.failure_count+1;
     const transient=error.retryable===true;
     const configuration=error.configuration===true || [400,401,402,403,404].includes(error.status);
-    const kind=configuration?'configuration':transient?'provider_transient':'processing';
+    const quota=!configuration&&(error.quotaLimited||error.status===429);
+    const kind=quota?'quota_limit':configuration?'configuration':transient?'provider_transient':'processing';
     const jitter=transient?Math.floor(Math.random()*1000):0;
     const wait=Math.max(error.retryAfterMs || 0,Math.min(3600000,60000*2**Math.min(failures-1,6)+jitter));
     await tx.query(`UPDATE processing_jobs SET status='failed',error=$2,failure_count=$3,next_attempt_at=$4,error_kind=$5,
-      lease_token=NULL,lease_expires_at=NULL WHERE id=$1`,[job.id,error.message,failures,configuration?null:new Date(+now+wait),kind]);
+      lease_token=NULL,lease_expires_at=NULL WHERE id=$1`,[job.id,error.message,failures,configuration||quota?null:new Date(+now+wait),kind]);
     if (!configuration && !error.modelScoped && (transient || error.status===429)) await tx.query(`INSERT INTO provider_backoff VALUES ('gemini',$1,$2)
       ON CONFLICT(provider) DO UPDATE SET retry_after=greatest(provider_backoff.retry_after,excluded.retry_after),reason=excluded.reason`,
     [new Date(+now+wait),error.status===429?'Provider rate limit':'Provider temporarily unavailable']);

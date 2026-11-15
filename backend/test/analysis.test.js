@@ -443,7 +443,7 @@ test('incorrect page coverage and invented prior-event IDs cannot be accepted',a
   assert.equal((await run(foreign)).jobs[0].status,'failed');
 });
 
-test('quota failures back off globally and reuse previously completed batches',async()=>{
+test('quota failures require manual retry after the reset and reuse completed batches',async()=>{
   await seed();
   const model=mockModel();const generate=model.generate.bind(model);
   model.generate=async request=>{if(request.stage==='final_synthesis') throw new ModelError('Gemini request failed (HTTP 429)',{status:429,retryAfterMs:120000});return generate(request);};
@@ -451,6 +451,8 @@ test('quota failures back off globally and reuse previously completed batches',a
   const retry=mockModel();
   assert.equal((await run(retry,{clock:()=>new Date(+NOW+30000)})).status,'rate_limited');
   assert.equal(retry.calls.length,0);
+  assert.equal((await run(retry,{clock:()=>new Date(+NOW+121000)})).jobs.length,0);
+  await db.query("UPDATE processing_jobs SET error_kind=NULL,next_attempt_at=NULL,failure_count=0 WHERE error_kind='quota_limit'");
   assert.equal((await run(retry,{clock:()=>new Date(+NOW+121000)})).jobs[0].status,'completed');
   assert.deepEqual(retry.calls.map(c=>c.stage),['final_synthesis']);
 });

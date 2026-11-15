@@ -55,15 +55,17 @@ test('the default entry point indexes a whole PDF and produces a cited brief in 
   assert.equal(Number((await db.query('SELECT count(*) AS n FROM content_blocks')).rows[0].n),32);
 
 });
-test('provider outages preserve indexed sources and wait for an eligible retry without a raw report',async()=>{
+test('quota exhaustion preserves sources and requires a user retry even after reset time',async()=>{
   const {job,options}=await prepared();let calls=0;
   const result=await research(db,files,{...options,model:{generate(){calls++;throw new ModelError('Daily quota exceeded',{status:429,retryAfterMs:36000000});}}});
   const saved=await researchJob(db,job.id);
-  assert.equal(result.status,'waiting');assert.equal(calls,1);
+  assert.equal(result.status,'failed');assert.equal(calls,1);
   assert.equal(saved.result,null);
-  assert.ok(+new Date(saved.next_attempt_at)>Date.now()+35900000);
+  assert.equal(saved.next_attempt_at,null);
+  assert.equal(saved.error_kind,'quota_limit');
+  assert.ok(+new Date(saved.research_state.quota_retry_at)>Date.now()+35900000);
   assert.ok(saved.documents[0].prepared_pages>0);
-  assert.equal((await research(db,files,{...options,model:{generate(){throw new Error('must not run');}}})).status,'idle');
+  assert.equal((await research(db,files,{...options,clock:()=>new Date(Date.now()+72000000),model:{generate(){throw new Error('must not run');}}})).status,'idle');
 });
 test('invalid model replies consume only two corrective attempts before producing source excerpts',async()=>{
   const {job,options}=await prepared();let calls=0;
@@ -118,7 +120,7 @@ test('passage selection preserves exact quotations while spreading a fixed budge
   assert.ok(passages.reduce((n,p)=>n+p.text.length,0)<=profiles.balanced.characters);
   assert.ok(passages.every(p=>p.page.text.includes(p.text)));
 });
-for(const mode of ['success','outage','restart'])test('adaptive research saves initial work and handles expansion '+mode,async()=>{
+for(const mode of ['success','outage','restart','quota'])test('adaptive research saves initial work and handles expansion '+mode,async()=>{
   const pdf=await PDFDocument.create(),font=await pdf.embedFont(StandardFonts.Helvetica);
   for(let n=1;n<=40;n++){
     const text=n===40?'Cobalt settlement guarantees are disclosed in the lease note. ':('Company operations and services described for this financial period. ');
@@ -138,6 +140,7 @@ for(const mode of ['success','outage','restart'])test('adaptive research saves i
       assert.ok(input.prior_findings.length);assert.ok(!JSON.stringify(input.evidence).includes('"id":"p1.'));
     }
     if(expansion&&mode==='outage')throw new ModelError('Busy',{status:503});
+    if(expansion&&mode==='quota'&&requests.length===2)throw new ModelError('Daily quota exceeded',{status:429,retryAfterMs:36000000});
     if(expansion&&mode==='restart'&&requests.length===2){
       await db.query("UPDATE research_jobs SET lease_expires_at=$2 WHERE id=$1",[job.id,new Date(0)]);
       throw new Error('Research lease lost');
@@ -156,14 +159,23 @@ for(const mode of ['success','outage','restart'])test('adaptive research saves i
     assert.equal(requests.length,3);
     assert.equal(requests.filter(r=>!r.prior_findings).length,1);
   }else assert.equal(requests.length,2);
-  assert.equal(done.status,'completed',done.error);
+  assert.equal(done.status,mode==='quota'?'failed':'completed',done.error);
   const saved=await researchJob(db,job.id);
-  assert.equal(saved.result.adaptive.added_findings,mode==='outage'?0:1);
-  assert.equal(saved.result.adaptive.passes,mode==='outage'?1:2);
-  assert.equal(saved.result.sections.length,mode==='outage'?1:2);
+  const interrupted=mode==='outage'||mode==='quota';
+  assert.equal(saved.result.adaptive.added_findings,interrupted?0:1);
+  assert.equal(saved.result.adaptive.passes,interrupted?1:2);
+  assert.equal(saved.result.sections.length,interrupted?1:2);
   assert.ok(saved.result.limitations.find(l=>l.startsWith('Selected passages from')).includes(String(saved.result.coverage.selected_pages)));
   assert.ok(saved.result.coverage.selected_pages>8);
   assert.equal(saved.research_state.calls,mode==='restart'?3:2);
+  if(mode==='quota'){
+    assert.equal(saved.error_kind,'quota_limit');assert.equal(saved.next_attempt_at,null);
+    assert.ok(saved.research_state.quota_retry_at);
+    assert.equal((await research(db,files,{...options,model})).status,'idle');
+    await db.query("UPDATE research_jobs SET status='queued',error_kind=NULL,research_state=research_state - 'brief_started_at' - 'calls' WHERE id=$1",[job.id]);
+    assert.equal((await research(db,files,{...options,model})).status,'completed');
+    assert.equal(requests.filter(r=>!r.prior_findings).length,1);
+  }
 });
 test('research quality strips internal markers before numeric checks and classifies capital distributions',()=>{
   const page={id:'b',document:{title:'Annual'}};
@@ -196,4 +208,28 @@ test('GDP forecasts and commentary without numerical outcomes do not pass as com
  assert.equal(sectionQuality('guidance','GDP growth is expected to reach 6%.',[]).topic,undefined);
  assert.equal(sectionQuality('narrative_vs_numbers','Management expects demand in FY2025-26, which aligns with cash generation.',[]).topic,undefined);
  assert.equal(cleanStatement('A supported fact [p3.visual, p2.1].'),'A supported fact.');
+});
+test('Gemini quota fallback uses the secondary key with independent cooldowns for the same model',async()=>{
+ const {GeminiClient}=await import('../analysis/gemini.js'),{AnalysisModels}=await import('../analysis/models.js');
+ const calls=[];
+ const fetchImpl=async(_url,request)=>{
+   const key=request.headers['x-goog-api-key'];calls.push(key);
+   if(key==='fake-primary')return Response.json({error:{message:'Request limit reached. Please retry in 1h.'}},{status:429});
+   return Response.json({status:'completed',output_text:'{"ok":true}'});
+ };
+ const clients=[new GeminiClient({apiKey:'fake-primary',model:'test',fetchImpl}),new GeminiClient({apiKey:'fake-secondary',keySlot:'secondary',model:'test',fetchImpl})];
+ const router=new AnalysisModels(db,{clients});
+ assert.deepEqual((await router.generate({stage:'test',prompt:'test'})).data,{ok:true});
+ assert.deepEqual((await router.generate({stage:'test',prompt:'test'})).data,{ok:true});
+ assert.deepEqual(calls,['fake-primary','fake-secondary','fake-secondary']);
+ const rows=(await db.query('SELECT * FROM provider_backoff')).rows;
+ assert.equal(rows.length,1);assert.ok(!rows[0].provider.includes('fake-primary'));
+});
+test('secondary Gemini key is reserved for request limits',async()=>{
+ const {GeminiClient}=await import('../analysis/gemini.js'),{AnalysisModels}=await import('../analysis/models.js');
+ let secondaryCalls=0;
+ const primary=new GeminiClient({apiKey:'fake-primary',model:'test',fetchImpl:async()=>Response.json({error:{message:'Busy'}},{status:503})});
+ const secondary=new GeminiClient({apiKey:'fake-secondary',keySlot:'secondary',model:'test',fetchImpl:async()=>{secondaryCalls++;}});
+ await assert.rejects(()=>new AnalysisModels(db,{clients:[primary,secondary]}).generate({stage:'test',prompt:'test'}),/cooling down/);
+ assert.equal(secondaryCalls,0);
 });

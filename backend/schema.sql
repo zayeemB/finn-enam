@@ -193,3 +193,15 @@ CREATE TABLE IF NOT EXISTS research_batches (
   PRIMARY KEY(job_id,cache_key)
 );
 ALTER TABLE research_documents ADD COLUMN IF NOT EXISTS index_metadata JSONB NOT NULL DEFAULT '{}';
+
+UPDATE research_jobs SET status='failed',error_kind='quota_limit',next_attempt_at=NULL,
+  progress='Model request limit reached. Retry when quota is available.'
+WHERE status='waiting' AND error_kind='provider_transient'
+  AND error ~* '(HTTP 429|quota exceeded|quota,|requests per day limit)';
+UPDATE processing_jobs SET error_kind='quota_limit',next_attempt_at=NULL
+WHERE status='failed' AND error_kind='provider_transient'
+  AND error ~* '(HTTP 429|quota exceeded|quota,|requests per day limit)';
+UPDATE research_jobs SET research_state=research_state || jsonb_build_object(
+  'quota_retry_at',(SELECT min(retry_after) FROM provider_backoff WHERE retry_after>now() AND reason ~* '(rate limit|quota)'))
+WHERE error_kind='quota_limit' AND NOT (research_state ? 'quota_retry_at')
+  AND EXISTS(SELECT 1 FROM provider_backoff WHERE retry_after>now() AND reason ~* '(rate limit|quota)');

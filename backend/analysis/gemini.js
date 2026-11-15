@@ -1,3 +1,4 @@
+import {createHash} from 'node:crypto';
 import { RESPONSE_SCHEMA, SYSTEM } from './schema.js';
 
 export class ModelError extends Error {
@@ -29,12 +30,13 @@ export class GeminiClient {
   provider='gemini';
   constructor({ apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY,
     model = process.env.GEMINI_REASONING_MODEL || process.env.GEMINI_MODEL || 'gemini-3.6-flash', thinkingLevel = process.env.GEMINI_THINKING_LEVEL, fetchImpl = fetch,
-    transport='interactions' } = {}) {
+    transport='interactions',keySlot='primary' } = {}) {
     if (!apiKey) throw new Error('Set GEMINI_API_KEY in the backend environment or local .env; do not paste it into chat');
     if (!/^[a-zA-Z0-9._-]+$/.test(model)) throw new Error('Invalid Gemini model identifier');
     if (thinkingLevel && !['low','medium','high'].includes(thinkingLevel)) throw new Error('GEMINI_THINKING_LEVEL must be low, medium, or high');
     if(!['interactions','generateContent'].includes(transport))throw new Error('Invalid Gemini transport');
-    Object.assign(this, { apiKey, model, thinkingLevel, fetchImpl,transport });
+    Object.assign(this, { apiKey, model, thinkingLevel, fetchImpl,transport,keySlot });
+    this.credentialScope=createHash('sha256').update(apiKey).digest('hex').slice(0,16);
   }
   async generate({ stage, prompt, images = [], timeoutMs = 300000,responseSchema=RESPONSE_SCHEMA,systemInstruction=SYSTEM,
     maxOutputTokens=16000,thinkingLevel=this.thinkingLevel }) {

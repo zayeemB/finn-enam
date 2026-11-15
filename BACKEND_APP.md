@@ -146,8 +146,16 @@ Final source-coverage notes are rebuilt after expansion. Capital allocation is a
 
 ## Model quota waits
 
-Temporary model failures before the first validated brief now leave the job waiting with its prepared sources. The next eligible attempt uses the provider's retry window, including RetryInfo durations and daily-limit delays in error bodies. Cooldowns are shared by model across monitoring and research.
+Temporary provider outages before the first validated brief leave the job waiting with prepared sources. Request-limit failures pause the job until the user retries. The UI shows the provider retry time for request limits. Quota-paused jobs have no automatic next attempt, including after the reset time. Cooldowns are shared by model across monitoring and research.
 
 A resumed provider wait resets the per-attempt processing clock and call allowance while retaining PDFs, indexes and any validated adaptive checkpoint. Consecutive short outages use increasing delays. An already validated initial brief remains available if a later expansion fails.
 
 Historical source-excerpt fallbacks are suppressed in the research report UI and can be explicitly requeued. Their raw passages remain available in backend records rather than being shown as an AI financial snapshot.
+
+## Secondary Gemini credential
+
+Set GEMINI_API_KEY_SECONDARY in the ignored .env file or server secret configuration and restart the process. Each configured Gemini model tries the secondary credential when the primary reports HTTP 429 or has a saved quota cooldown. Temporary overload alone does not switch credentials. Cooldowns are keyed by model and an opaque credential fingerprint; secret keys are never stored in cooldown rows.
+
+If available model/key combinations are request-limited, research requires a user-triggered retry and shows the reset time. The initial validated brief survives an expansion quota failure and the expansion can be retried from its checkpoint. Monitoring analysis jobs also stop automatic retries after request-limit failures. Saved sources and indexes remain reusable.
+
+Google applies rate limits per project. Two keys in the same project share that project's quota. A secondary credential can only provide capacity within its project's permitted limits.

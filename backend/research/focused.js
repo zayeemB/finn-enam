@@ -2,7 +2,7 @@ import {randomUUID} from 'node:crypto';
 import {RenderSession} from '../extraction/renderer.js';
 import {hash} from '../sources.js';
 import {GeminiClient} from '../analysis/gemini.js';
-import {AnalysisModels} from '../analysis/models.js';
+import {AnalysisModels,geminiClients} from '../analysis/models.js';
 import {initialEvidence,expansionEvidence,evidenceGaps,mergeBriefs,passageKey} from './adaptive.js';
 import {GroqBrief} from './groq-brief.js';
 import {BRIEF_VERSION,INDEX_VERSION,limits,passagesFor,briefGrammar,BRIEF_SYSTEM,validateBrief} from './brief.js';
@@ -11,7 +11,7 @@ function researchModels(db){
   const primary=process.env.RESEARCH_MODEL || 'gemini-3.5-flash-lite';
   const fallback=process.env.RESEARCH_FALLBACK_MODEL || process.env.GEMINI_REASONING_MODEL || 'gemini-3.6-flash';
   const secondary=process.env.RESEARCH_FALLBACK_PROVIDER==='groq'?new GroqBrief():new GeminiClient({model:fallback,transport:'generateContent'});
-  return new AnalysisModels(db,{legacyCooldown:false,clients:[new GeminiClient({model:primary,transport:'generateContent'}),...(secondary.model===primary?[]:[secondary])]});
+  return new AnalysisModels(db,{legacyCooldown:false,clients:[...geminiClients({model:primary,transport:'generateContent'}),...(secondary.model===primary?[]:secondary.provider==='gemini'?geminiClients({model:fallback,transport:'generateContent'}):[secondary])]});
 }
 async function owner(tx,job,now){
   const row=(await tx.query("SELECT * FROM research_jobs WHERE id=$1 AND lease_token=$2 AND status='running' AND lease_expires_at>$3 FOR UPDATE",[job.id,job.lease_token,now])).rows[0];
@@ -133,6 +133,7 @@ export async function focusedResearch(db,files,job,documents,{clock,model:inject
   limitations.push('Selected passages from '+selected.length+' pages out of '+pages.length+' indexed pages. The model did not review all text on those pages or the remaining document.');
   const sparse=selected.filter(p=>p.text.trim().length<80);
   if(sparse.length)limitations.push('Some pages have little searchable text. Only the listed page images were available for visual review.');
+  let quotaFailure;
   let checked=checkpoint?.checked,responseModel=checkpoint?.model,providerError,modelFailure;
   let reviewed=checkpoint?selected.filter(p=>checkpoint.reviewed.includes(p.id)):selected;
   const models=new Set(checkpoint?.models || []);
@@ -243,9 +244,10 @@ export async function focusedResearch(db,files,job,documents,{clock,model:inject
         if(/lease lost/i.test(error.message))throw error;
         stopReason=/no findings with valid evidence/.test(error.message)?'no_new_findings':'expansion_unavailable';
         providerError=error.message;
+        if(error.quotaLimited||error.status===429)quotaFailure=error;
       }
     }
-    expanded=true;
+    expanded=!quotaFailure;
     await saveCheckpoint();
   }
   if(!checked&&modelFailure?.retryable){
@@ -253,13 +255,15 @@ export async function focusedResearch(db,files,job,documents,{clock,model:inject
     const wait=Math.max(modelFailure.retryAfterMs || 60000,Math.min(3600000,60000*2**Math.min(failures-1,6)));
     await db.transaction(async tx=>{
       await owner(tx,job,clock());
-      await tx.query(`UPDATE research_jobs SET status='waiting',progress='Sources prepared. Waiting for model availability.',
-        error=$3,error_kind='provider_transient',attempts=$4,next_attempt_at=$5,
-        research_state=research_state || '{"provider_wait":true}'::jsonb,
+      const quota=modelFailure.quotaLimited||modelFailure.status===429;
+      const retryAt=new Date(+clock()+(modelFailure.quotaRetryAfterMs || wait));
+      await tx.query(`UPDATE research_jobs SET status=$6,progress='Sources prepared. Waiting for model availability.',
+        error=$3,error_kind=$7,attempts=$4,next_attempt_at=CASE WHEN $8 THEN NULL ELSE $5::timestamptz END,
+        research_state=research_state || jsonb_build_object('provider_wait',true,'quota_retry_at',$5::timestamptz),
         lease_token=NULL,lease_expires_at=NULL WHERE id=$1 AND lease_token=$2`,
-        [job.id,job.lease_token,providerError,failures,new Date(+clock()+wait)]);
+        [job.id,job.lease_token,providerError,failures,retryAt,quota?'failed':'waiting',quota?'quota_limit':'provider_transient',quota]);
     });
-    return {status:'waiting',id:job.id,error:providerError};
+    return {status:modelFailure.quotaLimited||modelFailure.status===429?'failed':'waiting',id:job.id,error:providerError};
   }
   if(!checked){
     // A provider outage still leaves a readable, explicitly extractive evidence view.
@@ -308,12 +312,17 @@ export async function focusedResearch(db,files,job,documents,{clock,model:inject
       if(responseModel)await tx.query('INSERT INTO research_batches VALUES ($1,$2,$3,$4,$5) ON CONFLICT DO NOTHING',
         [job.id,BRIEF_VERSION+(finalizing?'-final':'-initial'),responseModel,JSON.stringify({covered_block_ids:reviewed.map(p=>p.id),findings:checked.facts,limitations:checked.limitations}),clock()]);
       status=reportType==='source_excerpts'||checked.dropped.length||coverage.some(d=>!d.total_pages)?'partial':'completed';
+      if(quotaFailure){
+        status='failed';
+        await tx.query("UPDATE research_jobs SET error_kind='quota_limit',research_state=research_state || $2::jsonb WHERE id=$1",
+          [job.id,JSON.stringify({quota_retry_at:new Date(+clock()+(quotaFailure.quotaRetryAfterMs||quotaFailure.retryAfterMs||60000))})]);
+      }
       if(!finalizing)status='running';
       await tx.query(`UPDATE research_jobs SET status=$3,progress=CASE WHEN $7 THEN 'Brief ready' ELSE 'Initial brief saved. Looking for useful additional evidence.' END,
         result=$4,data_as_of=$5,completed_at=CASE WHEN $7 THEN $6::timestamptz ELSE NULL END,
-        error=NULL,error_kind=NULL,lease_token=CASE WHEN $7 THEN NULL ELSE lease_token END,
+        error=CASE WHEN error_kind='quota_limit' THEN $8 ELSE NULL END,error_kind=CASE WHEN error_kind='quota_limit' THEN error_kind ELSE NULL END,lease_token=CASE WHEN $7 THEN NULL ELSE lease_token END,
         lease_expires_at=CASE WHEN $7 THEN NULL ELSE lease_expires_at END WHERE id=$1 AND lease_token=$2`,
-        [job.id,job.lease_token,status,JSON.stringify(result),JSON.stringify({collected_at:clock(),pages:responseModel?reviewed.length:0,all_prepared_pages_read:!!responseModel&&reviewed.length===pages.length,documents:coverage}),clock(),finalizing]);
+        [job.id,job.lease_token,status,JSON.stringify(result),JSON.stringify({collected_at:clock(),pages:responseModel?reviewed.length:0,all_prepared_pages_read:!!responseModel&&reviewed.length===pages.length,documents:coverage}),clock(),finalizing,providerError || null]);
     });
     return {status,id:job.id,report_type:reportType};
   }

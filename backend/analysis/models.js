@@ -6,23 +6,29 @@ const clientFor=provider=>{
   if (provider==='groq') return new GroqClient();
   throw new Error('Analysis provider must be gemini or groq');
 };
-const cooldownKey=client=>`${client.provider || 'gemini'}:${client.model}`;
+const cooldownKey=client=>`${client.provider || 'gemini'}:${client.model}${client.credentialScope?':'+client.credentialScope:''}`;
+export function geminiClients(options={}){
+  const primary=new GeminiClient(options),secondary=process.env.GEMINI_API_KEY_SECONDARY;
+  if(!secondary||secondary===primary.apiKey)return [primary];
+  return [primary,new GeminiClient({...options,apiKey:secondary,keySlot:'secondary'})];
+}
 
-// A single ordered pair, with durable per-model cooldowns shared by worker invocations.
+// At most two model choices, each with independently tracked credential cooldowns.
 export class AnalysisModels {
   constructor(db,{clients,clock=()=>new Date(),fallback=process.env.GEMINI_FALLBACK_MODEL || '',legacyCooldown=true}={}) {
     this.db=db;this.clock=clock;this.routed=true;this.legacyCooldown=legacyCooldown;
     const provider=process.env.ANALYSIS_PROVIDER || 'gemini';
     const fallbackProvider=process.env.ANALYSIS_FALLBACK_PROVIDER;
-    this.clients=clients || [clientFor(provider),...(fallbackProvider?[clientFor(fallbackProvider)]:
-      provider==='gemini' && fallback?[new GeminiClient({model:fallback})]:[])];
-    if (!this.clients.length || this.clients.length>2 || new Set(this.clients.map(c=>c.model)).size!==this.clients.length) throw new Error('Configure one primary and at most one distinct fallback model');
+    this.clients=clients || [...(provider==='gemini'?geminiClients():[clientFor(provider)]),...(fallbackProvider?(fallbackProvider==='gemini'?geminiClients():[clientFor(fallbackProvider)]):
+      provider==='gemini' && fallback?geminiClients({model:fallback}):[])];
+    if (!this.clients.length || this.clients.length>4 || new Set(this.clients.map(c=>c.model)).size>2 || new Set(this.clients.map(cooldownKey)).size!==this.clients.length) throw new Error('Configure one primary and at most one distinct fallback model');
     this.model=this.clients[0].model;
-    this.models=this.clients.map(c=>c.model);
+    this.models=[...new Set(this.clients.map(c=>c.model))];
   }
   async availability() {
     const rows=(await this.db.query('SELECT * FROM provider_backoff WHERE retry_after>$1',[this.clock()])).rows;
     return this.clients.map((client,index)=>({client,wait:rows.find(r=>r.provider===cooldownKey(client)) ||
+      (client.credentialScope&&client.keySlot!=='secondary'?rows.find(r=>r.provider===`${client.provider}:${client.model}`):null) ||
       (this.legacyCooldown && index===0 && (client.provider || 'gemini')==='gemini'?rows.find(r=>r.provider==='gemini'):null)}));
   }
   unavailable(entries,errors=[]) {
@@ -30,20 +36,35 @@ export class AnalysisModels {
     const error=new ModelError(`All configured analysis models are cooling down${errors.length?`: ${errors.join('; ')}`:''}`,{
       status:next?.reason==='Provider rate limit'?429:503,
       retryAfterMs:next?Math.max(1000,+new Date(next.retry_after)-+this.clock()):60000});
+    const quotas=entries.map(e=>e.wait).filter(w=>w&&/rate limit|quota/i.test(w.reason));
+    error.quotaLimited=quotas.length>0;
+    if(quotas.length)error.quotaRetryAfterMs=Math.max(1000,Math.min(...quotas.map(w=>+new Date(w.retry_after)))-+this.clock());
     error.modelScoped=true;
     return error;
   }
   async generate(request) {
     const entries=await this.availability(),errors=[];
+    const limited=new Set(entries.filter(e=>e.wait&&/rate limit|quota/i.test(e.wait.reason)).map(e=>e.client.model));
     for (const entry of entries) {
       if (entry.wait) continue;
+      if(entry.client.keySlot==='secondary'&&!limited.has(entry.client.model))continue;
       // The worker counts EVERY real request, including a failed primary attempt.
-      const timeoutMs=(await request.onAttempt?.(entry.client.model)) ?? request.timeoutMs;
+      let timeoutMs;
+      try{timeoutMs=(await request.onAttempt?.(entry.client.model)) ?? request.timeoutMs;}
+      catch(error){
+        const unavailable=this.unavailable(entries,errors);
+        if(unavailable.quotaLimited){
+          error.quotaLimited=true;error.retryable=true;
+          error.quotaRetryAfterMs=unavailable.quotaRetryAfterMs;
+        }
+        throw error;
+      }
       try {
         const response=await entry.client.generate({...request,timeoutMs});
         return {...response,model:entry.client.model};
       } catch(error) {
         if (error.retryable!==true) throw error;
+        if(error.status===429)limited.add(entry.client.model);
         errors.push(`${entry.client.model}: ${error.message}`);
         const prior=(await this.db.query('SELECT retry_after FROM provider_backoff WHERE provider=$1',[cooldownKey(entry.client)])).rows[0];
         // Persistent delay prevents other jobs/workers immediately repeating this failure.
@@ -65,8 +86,8 @@ export {AnalysisModels as GeminiModels};
 // Complementary stages, not a single interchangeable primary/fallback pair.
 export class GeminiStages {
   constructor(db,{clock=()=>new Date(),extraction,reasoning}={}) {
-    const router=(model,fallback)=>new AnalysisModels(db,{clock,legacyCooldown:false,clients:[new GeminiClient({model}),
-      ...(fallback?[new GeminiClient({model:fallback})]:[])]});
+    const router=(model,fallback)=>new AnalysisModels(db,{clock,legacyCooldown:false,clients:[...geminiClients({model}),
+      ...(fallback?geminiClients({model:fallback}):[])]});
     this.extraction=extraction || router(process.env.GEMINI_EXTRACTION_MODEL || 'gemini-3.1-flash-lite',process.env.GEMINI_EXTRACTION_FALLBACK_MODEL);
     this.reasoning=reasoning || router(process.env.GEMINI_REASONING_MODEL || 'gemini-3.6-flash',process.env.GEMINI_REASONING_FALLBACK_MODEL);
     this.routed=true;this.reuseValidatedPages=true;this.verifyExtraction=true;
