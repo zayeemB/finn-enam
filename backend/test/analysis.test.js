@@ -687,3 +687,28 @@ test('quota exhaustion at the call budget pauses analysis rather than yielding a
  const job=(await db.query("SELECT * FROM processing_jobs WHERE job_type='analyse'")).rows[0];
  assert.equal(job.error_kind,'quota_limit');assert.equal(job.next_attempt_at,null);assert.ok(job.output.quota_retry_at);
 });
+
+test('numbered text citations publish exact saved source text without model retyping and survive synthesis',async()=>{
+ await seed({pages:1});
+ const model=mockModel({transform(data,request){
+  if(request.stage==='page_extraction'){
+   const source=JSON.parse(request.prompt.slice(request.prompt.indexOf('\n')+1));
+   const reference=source.pages[0].text.match(/\[(finn-text:[^\]]+)\]/)[1];
+   data.developments[0].evidence[0].quote=reference;
+  }return data;
+ }});
+ const report=await run(model);assert.equal(report.jobs[0].status,'completed');assert.equal(report.calls,2);
+ const evidence=(await db.query('SELECT evidence_snapshot FROM event_evidence')).rows[0].evidence_snapshot;
+ assert.ok(JSON.stringify(evidence).includes('Revenue 1200 INR crore'));assert.ok(!JSON.stringify(evidence).includes('finn-text:'));
+ assert.equal((await alerts(db)).length,1);
+});
+
+test('unknown or wrong-page text references cannot bypass grounding or publish alerts',async()=>{
+ await seed({pages:1});
+ const model=mockModel({transform(data,request){if(request.stage==='page_extraction')data.developments[0].evidence[0].quote='finn-text:unknown:1';return data;}});
+ const report=await run(model);assert.equal(report.jobs[0].status,'failed');assert.match(report.jobs[0].error,/Unknown or mismatched/);
+ assert.equal((await db.query('SELECT * FROM analysis_batches')).rows.length,0);assert.equal((await alerts(db)).length,0);
+ const {textCitations}=await import('../analysis/text-citations.js');
+ const a=randomUUID(),b=randomUUID(),refs=textCitations([{id:a,content:{text:'Original exact words'}},{id:b,content:{text:'Another page'}}]);
+ assert.throws(()=>refs.resolve({developments:[{evidence:[{modality:'text',block_id:b,quote:`finn-text:${a}:1`}]}]}),/mismatched/);
+});
