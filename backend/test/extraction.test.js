@@ -228,3 +228,21 @@ test('HTTP extraction route rejects unauthorised calls before opening storage', 
   await extractHandler({ method: 'POST', headers: {} }, response);
   assert.equal(response.code, 401);
 });
+
+test('large PDFs index all text without rendering every page and can be loaded for selected analysis',async()=>{
+ const {loadInput}=await import('../analysis/input.js');
+ const data=await fixture({pages:30});
+ await seed(data);
+ const result=await extract(db,files,{clock:()=>NOW,budgetMs:45000,pageLimit:10});
+ assert.equal(result.jobs[0].status,'completed');
+ const pages=(await db.query('SELECT * FROM content_blocks')).rows;
+ assert.equal(pages.length,30);assert.ok(pages.every(p=>p.content.text_indexed));
+ assert.ok(pages.every(p=>!p.temporary_image_path));
+ const job=(await db.query("SELECT * FROM processing_jobs WHERE job_type='analyse'")).rows[0];
+ const input=await loadInput(db,job);assert.equal(input.blocks.length,30);
+ const {analyse}=await import('../analysis/worker.js');let calls=0;
+ const model={model:'mock',async generate(request){calls++;const source=JSON.parse(request.prompt.slice(request.prompt.indexOf('\n')+1));return {data:{covered_block_ids:request.stage==='page_extraction'?source.pages.map(p=>p.block_id):source.findings.flatMap(f=>f.covered_block_ids),developments:[],limitations:[]}};}};
+ const analysed=await analyse(db,files,{model,clock:()=>NOW,budgetMs:45000,callLimit:2});
+ assert.equal(analysed.jobs[0].status,'completed');assert.equal(calls,2);
+ assert.equal(Number((await db.query('SELECT count(*) AS n FROM content_blocks WHERE temporary_image_path IS NOT NULL')).rows[0].n),1);
+});

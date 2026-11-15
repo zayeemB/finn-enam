@@ -30,9 +30,9 @@ export async function saveDueDigest(db,now=new Date()) {
   // An initially incomplete window becomes useful when late analysis finishes.
   const pending=(await db.query(`SELECT * FROM digest_runs WHERE portfolio_id=$1 AND
     EXISTS(SELECT 1 FROM jsonb_array_elements(result->'items') i WHERE i->>'processing_status'<>'completed')
-    ORDER BY window_end DESC LIMIT 3`,[PORTFOLIO])).rows;
+    ORDER BY coalesce((result->>'refreshed_at')::timestamptz,created_at),window_end LIMIT 3`,[PORTFOLIO])).rows;
   for(const row of pending) await db.query('UPDATE digest_runs SET result=$2 WHERE id=$1',
-    [row.id,JSON.stringify(await digest(db,{start:row.window_start,end:row.window_end}))]);
+    [row.id,JSON.stringify({...await digest(db,{start:row.window_start,end:row.window_end}),refreshed_at:now})]);
   return {created:saved,refreshed:pending.length};
 }
 
@@ -71,7 +71,7 @@ export async function runTick(db,files,{budgetMs=45000,clock=()=>new Date(),serv
     else if(phase==='analyse') {
       const key=(process.env.ANALYSIS_PROVIDER || 'gemini')==='groq'?process.env.GROQ_API_KEY:process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
       if(!key && !services.analyse) result={status:'missing_model_key'};
-      else result=await (services.analyse || analyse)(db,files,{budgetMs,requestTimeoutMs:Math.min(budgetMs-1000,300000),untilDisclosureComplete:false,callLimit:2,jobLimit:1});
+      else result=await (services.analyse || analyse)(db,files,{budgetMs,requestTimeoutMs:Math.min(budgetMs-1000,30000),untilDisclosureComplete:false,callLimit:2,jobLimit:1});
     } else if(phase==='research') result=await (services.research || research)(db,files,{budgetMs});
     else result=await saveDueDigest(db,clock());
     await publishNotifications(db,clock());

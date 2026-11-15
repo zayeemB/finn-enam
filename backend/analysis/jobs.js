@@ -72,7 +72,7 @@ export async function failAnalysis(db,job,error,now) {
     const jitter=transient?Math.floor(Math.random()*1000):0;
     const wait=Math.max(error.retryAfterMs || 0,Math.min(3600000,60000*2**Math.min(failures-1,6)+jitter));
     await tx.query(`UPDATE processing_jobs SET status='failed',error=$2,failure_count=$3,next_attempt_at=$4,error_kind=$5,
-      lease_token=NULL,lease_expires_at=NULL WHERE id=$1`,[job.id,error.message,failures,configuration||quota?null:new Date(+now+wait),kind]);
+      lease_token=NULL,lease_expires_at=NULL,output=CASE WHEN $5='quota_limit' THEN coalesce(output,'{}'::jsonb)||jsonb_build_object('quota_retry_at',$6::timestamptz) ELSE output END WHERE id=$1`,[job.id,error.message,failures,configuration||quota?null:new Date(+now+wait),kind,new Date(+now+(error.quotaRetryAfterMs||wait))]);
     if (!configuration && !error.modelScoped && (transient || error.status===429)) await tx.query(`INSERT INTO provider_backoff VALUES ('gemini',$1,$2)
       ON CONFLICT(provider) DO UPDATE SET retry_after=greatest(provider_backoff.retry_after,excluded.retry_after),reason=excluded.reason`,
     [new Date(+now+wait),error.status===429?'Provider rate limit':'Provider temporarily unavailable']);

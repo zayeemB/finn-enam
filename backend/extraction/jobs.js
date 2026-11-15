@@ -37,12 +37,12 @@ async function owned(tx, job, now) {
 }
 
 export async function resumePage(db, files, job, now) {
-  const rows = (await db.query(`SELECT sequence,temporary_image_path,content->>'image_storage_backend' AS image_backend FROM content_blocks
+  const rows = (await db.query(`SELECT sequence,temporary_image_path,content->>'image_storage_backend' AS image_backend,content->>'text_indexed' AS text_indexed FROM content_blocks
     WHERE asset_id=$1 AND asset_content_hash=$2 AND processor_version=$3 ORDER BY sequence`,
   [job.asset_id, job.input_hash, PROCESSOR])).rows;
   let last = 0;
-  for (const row of rows) { if (row.sequence !== last + 1 || !row.temporary_image_path || row.image_backend !== files.backend) break; last++; }
-  if (last && !await files.exists(rows[last - 1].temporary_image_path)) {
+  for (const row of rows) { if (row.sequence !== last + 1 || (!row.temporary_image_path || row.image_backend !== files.backend)&&row.text_indexed!=='true') break; last++; }
+  if (last && rows[last-1].temporary_image_path && !await files.exists(rows[last - 1].temporary_image_path)) {
     // Source bytes survive; a lost derived cache can be rebuilt. Citation snapshots are independent.
     const cleared = await db.transaction(async tx => {
       if (!await owned(tx, job, now)) return false;

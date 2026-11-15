@@ -59,6 +59,9 @@ export function createAppHandler({db:sharedDb,files:sharedFiles,accessCode=proce
         const {symbol}=z.object({symbol:z.string().min(1).max(40)}).strict().parse(req.body);result=await changeCompany(db,symbol,req.method==='DELETE',clock());
       } else if(resource==='market' && req.method==='GET') {
         const name=z.string().min(1).max(40).parse(req.query.symbol);result=await market(name);
+      } else if(resource==='analysis-retry' && req.method==='POST'){
+        const body=z.object({id:z.uuid()}).strict().parse(req.body);
+        result=(await db.query("UPDATE processing_jobs SET status='queued',failure_count=0,next_attempt_at=NULL,error=NULL,error_kind=NULL WHERE id=$1 AND job_type='analyse' AND status='failed' RETURNING id,status",[body.id])).rows[0]||null;
       } else if(resource==='settings' && req.method==='GET') result=await settings(db);
       else if(resource==='settings' && req.method==='PATCH') result=await updateSettings(db,req.body,clock());
       else if(resource==='status' && req.method==='GET') result=await status(db);

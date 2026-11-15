@@ -210,3 +210,31 @@ test('research market context is authenticated and never adds portfolio membersh
  assert.equal((await companies(db)).length,0);
  }finally{await app.close();}
 });
+
+test('saved digests rotate refreshes so older pending windows are not starved',async()=>{
+ const request=client();await request('session','POST',{access_code:code});await request('portfolio','POST',{symbol:'TEST'});
+ const company=(await db.query("SELECT id FROM companies WHERE nse_symbol='TEST'")).rows[0].id;
+ for(let i=0;i<4;i++){
+  const published=new Date(+NOW-(i+1)*3600000),start=new Date(+published-600000),end=new Date(+published+600000);
+  await db.query("INSERT INTO disclosures(id,company_id,source,source_key,title,source_url,published_at,first_seen_at,raw_metadata,metadata_hash,updated_at) VALUES ($1,$2,'nse',$3,'Pending filing','https://nsearchives.nseindia.com/test.pdf',$4,$4,'{}','hash',$4)",[randomUUID(),company,String(i),published]);
+  await db.query("INSERT INTO digest_runs VALUES ($1,$2,$3,$4,$5,$6)",[randomUUID(),PORTFOLIO,start,end,JSON.stringify({items:[{processing_status:'queued'}]}),published]);
+ }
+ await saveDueDigest(db,NOW);await saveDueDigest(db,new Date(+NOW+1000));
+ const rows=(await db.query('SELECT result FROM digest_runs')).rows;
+ assert.equal(rows.length,4);assert.ok(rows.every(r=>r.result.refreshed_at));
+ assert.ok(rows.every(r=>r.result.items.length===1&&r.result.items[0].processing_status==='awaiting_extraction'));
+});
+
+test('manual analysis retry is authenticated and retains cached work',async()=>{
+ const request=client();assert.equal((await request('analysis-retry','POST',{id:randomUUID()})).code,401);
+ await request('session','POST',{access_code:code});assert.equal((await request('analysis-retry','POST',{id:'invalid'})).code,400);
+ assert.equal((await request('analysis-retry','POST',{id:randomUUID()})).code,404);
+ await request('portfolio','POST',{symbol:'TEST'});const company=(await db.query("SELECT id FROM companies WHERE nse_symbol='TEST'")).rows[0].id;
+ const disclosure=randomUUID(),job=randomUUID();
+ await db.query("INSERT INTO disclosures(id,company_id,source,source_key,title,source_url,published_at,first_seen_at,raw_metadata,metadata_hash,updated_at) VALUES ($1,$2,'nse','retry','Filing','https://nsearchives.nseindia.com/test.pdf',$3,$3,'{}','hash',$3)",[disclosure,company,NOW]);
+ await db.query("INSERT INTO processing_jobs(id,job_type,disclosure_id,input_hash,status,error_kind,error,created_at,output) VALUES ($1,'analyse',$2,'hash','failed','quota_limit','Daily limit',$3,'{\"stage\":\"cached\"}')",[job,disclosure,NOW]);
+ await db.query("INSERT INTO analysis_batches(id,job_id,cache_key,input_hash,stage,model,prompt_version,output,created_at) VALUES ($1,$2,'cached','hash','page_extraction','mock','v1','{}',$3)",[randomUUID(),job,NOW]);
+ assert.equal((await request('analysis-retry','POST',{id:job})).body.status,'queued');
+ assert.equal((await db.query('SELECT output FROM processing_jobs WHERE id=$1',[job])).rows[0].output.stage,'cached');
+ assert.equal(Number((await db.query('SELECT count(*) AS n FROM analysis_batches WHERE job_id=$1',[job])).rows[0].n),1);
+});

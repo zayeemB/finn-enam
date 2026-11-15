@@ -39,6 +39,22 @@ export async function extract(db, files, { budgetMs = 45000, pageLimit = 10, job
       const meta = await renderer.open(bytes, { scale, maxPixels }, Math.min(pageTimeoutMs, Math.max(1, deadline - Date.now())));
       let page = await resumePage(db, files, job, clock());
       if (page === null) { result.status = 'superseded_or_lease_lost'; continue; }
+      if(meta.totalPages>8&&typeof renderer.index==='function'){
+        const index=await renderer.index(Math.max(1,deadline-Date.now()));
+        if(index.pages.length!==meta.totalPages||index.pages.some((p,i)=>p.page!==i+1))throw new Error('Text index page coverage is incomplete');
+        let lost=false;
+        for(const item of index.pages.filter(p=>p.page>=page)){
+          if(Date.now()+500>=deadline)break;
+          const saved=await savePage(db,job,{page:item.page,totalPages:meta.totalPages,imageKey:null,
+            content:sanitise({text:item.text,text_status:item.textError?'failed':item.text.trim()?'available':'none',text_error:item.textError,text_indexed:true,requires_visual_analysis:true})},clock());
+          if(!saved){lost=true;break;}page=item.page+1;report.pagesSaved++;
+        }
+        if(lost){result.status='superseded_or_lease_lost';continue;}
+        const complete=page>meta.totalPages,embedded=(meta.embeddedAttachments||[]).length>0;
+        const committed=await finishExtraction(db,job,{processor:PROCESSOR,format:meta.format,totalPages:meta.totalPages,pagesPrepared:page-1,
+          complete:complete&&!embedded,yielded:!complete,text_indexed:true,visual_coverage:'Selected pages rendered by analyser',embeddedAttachments:meta.embeddedAttachments||[],error:embedded?'Embedded attachments require separate extraction':null},clock());
+        result.status=!committed?'superseded_or_lease_lost':complete?embedded?'partial':'completed':'yielded';if(embedded)report.status='partial';result.totalPages=meta.totalPages;continue;
+      }
       let lost = false;
       for (; page <= meta.totalPages && report.pagesSaved < pageLimit && Date.now() + 500 < deadline; page++) {
         const prepared = await renderer.page(page, Math.min(pageTimeoutMs, Math.max(1, deadline - Date.now())));

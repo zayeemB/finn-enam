@@ -119,10 +119,10 @@ test('local completion mode exits on failure or empty queue instead of retrying 
   assert.equal(calls,1);assert.equal(report.status,'provider_unavailable');assert.equal(report.jobs[0].status,'failed');
 });
 
-test('local options select completion mode and five-minute requests while hosted options remain bounded',()=>{
+test('local and hosted options both bound request duration and processing',()=>{
   const local=analysisOptions({});const hosted=analysisOptions({},{hosted:true});
-  assert.equal(local.untilDisclosureComplete,true);assert.equal(local.requestTimeoutMs,300000);
-  assert.equal(hosted.untilDisclosureComplete,false);assert.equal(hosted.requestTimeoutMs,40000);assert.equal(hosted.budgetMs,45000);
+  assert.equal(local.untilDisclosureComplete,false);assert.equal(local.requestTimeoutMs,30000);
+  assert.equal(hosted.untilDisclosureComplete,false);assert.equal(hosted.requestTimeoutMs,30000);assert.equal(hosted.budgetMs,45000);
 });
 
 function routed(primary,fallback,clock=()=>NOW) {
@@ -664,4 +664,26 @@ test('read and worker endpoints reject unauthorised requests before accessing da
     assert.equal(response.code,401);
   }
   await assert.rejects(()=>digest(db,{start:'2026-11-12T00:00:00',end:'2026-11-13T00:00:00'}),/timezone/);
+});
+
+test('large monitoring filings publish in two calls with explicit selected-page coverage',async()=>{
+ await seed({pages:40});const model=mockModel();
+ const result=await run(model,{callLimit:2,budgetMs:45000});
+ assert.equal(result.jobs[0].status,'completed');assert.equal(result.calls,2);
+ assert.equal(model.calls[0].images.length,1);
+ const saved=(await db.query("SELECT output FROM processing_jobs WHERE job_type='analyse'")).rows[0].output;
+ assert.equal(saved.coverage.indexed_pages,40);assert.equal(saved.coverage.analysed_all_prepared_pages,false);
+ assert.ok(saved.coverage.selected_pages<40);
+ const d=await digest(db,{start:new Date(+NOW-1000),end:new Date(+NOW+1000)});
+ assert.equal(d.items.length,1);assert.equal(d.items[0].analysis.coverage.indexed_pages,40);
+ assert.ok(d.items[0].limitations.some(l=>l.includes('Selected passages')));
+});
+
+test('quota exhaustion at the call budget pauses analysis rather than yielding an automatic retry',async()=>{
+ await seed();const {AnalysisModels}=await import('../analysis/models.js');
+ const clients=[{model:'primary',credentialScope:'a'},{model:'primary',credentialScope:'b',keySlot:'secondary'},{model:'fallback',credentialScope:'a'}].map(c=>({...c,provider:'gemini',generate:async()=>{throw new ModelError('Daily request limit',{status:429,retryAfterMs:3600000});}}));
+ const result=await run(new AnalysisModels(db,{clients,clock:()=>NOW}),{callLimit:2});
+ assert.equal(result.jobs[0].status,'failed');
+ const job=(await db.query("SELECT * FROM processing_jobs WHERE job_type='analyse'")).rows[0];
+ assert.equal(job.error_kind,'quota_limit');assert.equal(job.next_attempt_at,null);assert.ok(job.output.quota_retry_at);
 });

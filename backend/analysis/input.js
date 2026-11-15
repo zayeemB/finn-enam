@@ -11,10 +11,10 @@ export async function loadInput(db,job) {
     if (asset.download_status!=='downloaded' || asset.extraction_status!=='complete') throw new Error('Disclosure extraction is not complete');
     const pages=(await db.query(`SELECT id,asset_id,asset_content_hash,location,sequence,temporary_image_path,processor_version,
       jsonb_build_object('text',content->'text','text_status',content->'text_status','annotations',content->'annotations',
-        'image_storage_backend',content->'image_storage_backend','image_sha256',content->'image_sha256') AS content
+        'text_indexed',content->'text_indexed','image_storage_backend',content->'image_storage_backend','image_sha256',content->'image_sha256') AS content
       FROM content_blocks WHERE asset_id=$1 AND asset_content_hash=$2
       AND processor_version=$3 ORDER BY sequence`,[asset.id,asset.content_hash,asset.extraction_processor_version])).rows;
-    if (pages.length!==asset.extraction_metadata?.totalPages || pages.some((p,i)=>p.sequence!==i+1 || !p.temporary_image_path)) throw new Error('Page coverage is incomplete');
+    if (pages.length!==asset.extraction_metadata?.totalPages || pages.some((p,i)=>p.sequence!==i+1 || !p.temporary_image_path&&!p.content.text_indexed)) throw new Error('Page coverage is incomplete');
     blocks.push(...pages.map(block=>({...block,asset})));
   }
   const priorEvents=(await db.query(`SELECT * FROM events WHERE company_id=$1 AND updated_at>=$2 ORDER BY updated_at DESC LIMIT 50`,

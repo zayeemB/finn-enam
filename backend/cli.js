@@ -22,9 +22,9 @@ export function analysisOptions(env=process.env,{hosted=false}={}) {
     if (!Number.isSafeInteger(value)||value<1) throw new Error(`${key} must be a positive integer`);
     return value;
   };
-  return {budgetMs:Math.min(integer('ANALYSIS_BUDGET_MS',270000),hosted?45000:Infinity),
-    requestTimeoutMs:Math.min(integer('ANALYSIS_REQUEST_TIMEOUT_MS',300000),hosted?40000:Infinity),
-    untilDisclosureComplete:!hosted,
+  return {budgetMs:Math.min(integer('ANALYSIS_BUDGET_MS',180000),hosted?45000:180000),
+    requestTimeoutMs:Math.min(integer('ANALYSIS_REQUEST_TIMEOUT_MS',30000),30000),
+    untilDisclosureComplete:false,
     callLimit:integer('ANALYSIS_CALL_LIMIT',2),jobLimit:integer('ANALYSIS_JOB_LIMIT',1),
     pagesPerBatch:integer('ANALYSIS_PAGES_PER_BATCH',2),maxSynthesisChars:integer('ANALYSIS_SYNTHESIS_CHARS',180000)};
 }

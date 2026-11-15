@@ -105,3 +105,10 @@ export class GeminiStages {
 export function configuredModels(db,{clock=()=>new Date()}={}) {
   return (process.env.ANALYSIS_PROVIDER || 'gemini')==='gemini'?new GeminiStages(db,{clock}):new AnalysisModels(db,{clock});
 }
+
+// Monitoring shares research's low-latency Gemini pair and credential cooldowns.
+export function monitoringModels(db,{clock=()=>new Date()}={}){
+ if((process.env.ANALYSIS_PROVIDER||'gemini')!=='gemini')return configuredModels(db,{clock});
+ const primary=process.env.RESEARCH_MODEL||'gemini-3.5-flash-lite',fallback=process.env.RESEARCH_FALLBACK_MODEL||'gemini-3.6-flash';
+ return new AnalysisModels(db,{clock,legacyCooldown:false,clients:[...geminiClients({model:primary,transport:'generateContent'}),...(primary!==fallback?geminiClients({model:fallback,transport:'generateContent'}):[])]});
+}

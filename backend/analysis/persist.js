@@ -86,7 +86,7 @@ export async function persistAnalysis(db,job,input,result,now) {
       lease_expires_at=NULL,next_attempt_at=NULL,failure_count=0,error=NULL,error_kind=NULL WHERE id=$1`,
     [job.id,JSON.stringify({result:storedResult,links,alerts_created:alertCount,
       source:{title:input.disclosure.title,source_url:input.disclosure.source_url,published_at:input.disclosure.published_at,input_hash:job.input_hash},
-      coverage:{blocks:input.blocks.length,analysed_all_prepared_pages:true,complete:input.limitations.length===0},
+      coverage:{blocks:input.blocks.length,analysed_all_prepared_pages:true,...job.analysis_coverage,complete:input.limitations.length===0},
       ...(job.analysis_provenance || {model:job.model,models_used:[job.model]})}),now,job.analysis_provenance?.model || job.model]);
     return {events:links.length,alerts_created:alertCount};
   });

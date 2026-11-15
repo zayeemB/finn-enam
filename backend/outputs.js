@@ -115,7 +115,7 @@ export async function digest(db, { start, end = new Date(), hours = 24, portfoli
       analysis: {available:!!savedJob,analysed_at:savedJob?.completed_at || null,
         is_current:!!savedJob && savedJob.id===job?.id && job.status==='completed',
         model:savedJob?.output?.model || savedJob?.model || null,models_used:savedJob?.output?.models_used || (savedJob?[savedJob.model]:[]),
-        source:savedJob?.output?.source || null,
+        source:savedJob?.output?.source || null,coverage:savedJob?.output?.coverage||null,
         note:savedJob && (savedJob.id!==job?.id || job?.status!=='completed')
           ? 'Previously saved analysis; newer source data is awaiting analysis. Figures and conclusions may have changed.' : null},
       developments: links.map(link => ({ event_id: link.event_id, version: link.event_version,

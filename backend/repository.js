@@ -170,5 +170,5 @@ export async function snapshot(db) {
   return { counts, collection: (await db.query('SELECT c.nse_symbol,s.* FROM collection_state s JOIN companies c ON c.id=s.company_id ORDER BY c.nse_symbol,s.source')).rows,
     jobs: (await db.query('SELECT job_type,status,count(*) AS count FROM processing_jobs GROUP BY job_type,status')).rows,
     extraction: (await db.query('SELECT extraction_status,count(*) AS count FROM assets GROUP BY extraction_status')).rows,
-    processingErrors: (await db.query("SELECT id,job_type,status,error,error_kind,failure_count,next_attempt_at FROM processing_jobs WHERE error IS NOT NULL ORDER BY created_at DESC LIMIT 10")).rows };
+    processingErrors: (await db.query("SELECT id,job_type,status,error,error_kind,failure_count,next_attempt_at,output->>'quota_retry_at' AS quota_retry_at FROM processing_jobs WHERE error IS NOT NULL ORDER BY created_at DESC LIMIT 10")).rows };
 }
