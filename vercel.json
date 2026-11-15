@@ -1,15 +1,15 @@
 {
   "functions": {
     "api/app.js": { "maxDuration":60,"includeFiles":"backend/schema.sql" },
-    "api/tick.js": { "maxDuration":60,"memory":2048,"includeFiles":["backend/schema.sql","backend/extraction/**","node_modules/pdfjs-dist/**","node_modules/@napi-rs/**"] },
+    "api/tick.js": { "maxDuration":60,"memory":2048,"includeFiles":"{backend/schema.sql,backend/extraction/**,node_modules/pdfjs-dist/**,node_modules/@napi-rs/**}" },
     "api/collect.js": { "maxDuration": 60, "includeFiles": "backend/schema.sql" },
-    "api/analyse.js": { "maxDuration":60,"includeFiles":["backend/schema.sql","node_modules/@napi-rs/**"] },
+    "api/analyse.js": { "maxDuration":60,"includeFiles":"{backend/schema.sql,node_modules/@napi-rs/**}" },
     "api/digest.js": { "includeFiles":"backend/schema.sql" },
     "api/alerts.js": { "includeFiles":"backend/schema.sql" },
     "api/extract.js": {
       "maxDuration": 60,
       "memory": 2048,
-      "includeFiles": ["backend/schema.sql", "backend/extraction/**", "node_modules/pdfjs-dist/**", "node_modules/@napi-rs/**"]
+      "includeFiles": "{backend/schema.sql,backend/extraction/**,node_modules/pdfjs-dist/**,node_modules/@napi-rs/**}"
     }
   }
 }
