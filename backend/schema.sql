@@ -193,6 +193,16 @@ CREATE TABLE IF NOT EXISTS research_batches (
   PRIMARY KEY(job_id,cache_key)
 );
 ALTER TABLE research_documents ADD COLUMN IF NOT EXISTS index_metadata JSONB NOT NULL DEFAULT '{}';
+ALTER TABLE research_documents DROP CONSTRAINT IF EXISTS research_documents_kind_check;
+ALTER TABLE research_documents ADD CONSTRAINT research_documents_kind_check CHECK(kind IN
+  ('annual_report','transcript','quarterly_result','presentation','material_filing','ownership','governance','offer_document'));
+CREATE TABLE IF NOT EXISTS research_sources (
+  id UUID PRIMARY KEY,research_job_id UUID NOT NULL REFERENCES research_jobs(id),
+  kind TEXT NOT NULL,title TEXT NOT NULL,source_url TEXT NOT NULL,discovery_url TEXT NOT NULL,
+  metadata JSONB NOT NULL DEFAULT '{}',UNIQUE(research_job_id,source_url)
+);
+ALTER TABLE research_documents ADD COLUMN IF NOT EXISTS source_id UUID REFERENCES research_sources(id);
+ALTER TABLE research_documents ADD COLUMN IF NOT EXISTS metadata JSONB NOT NULL DEFAULT '{}';
 
 UPDATE research_jobs SET status='failed',error_kind='quota_limit',next_attempt_at=NULL,
   progress='Model request limit reached. Retry when quota is available.'

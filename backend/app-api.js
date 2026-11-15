@@ -84,7 +84,7 @@ export function createAppHandler({db:sharedDb,files:sharedFiles,accessCode=proce
           evidence:(await db.query(`SELECT e.id,e.event_id,e.event_version,e.source_url,e.location,e.evidence_snapshot,e.retained_image_path IS NOT NULL AS has_image
             FROM event_evidence e JOIN events v ON v.id=e.event_id WHERE v.company_id=$1 ORDER BY v.updated_at DESC LIMIT 300`,[company.id])).rows};
       } else if(resource==='research' && req.method==='POST') {
-        const body=z.object({symbol:z.string().min(1).max(40),question:z.string().trim().max(2000).optional(),annual_reports:z.number().int().min(1).max(3).optional(),transcripts:z.number().int().min(1).max(4).optional()}).strict().parse(req.body);
+        const body=z.object({symbol:z.string().min(1).max(40),question:z.string().trim().max(2000).optional(),source_policy:z.enum(['primary','assignment']).optional(),annual_reports:z.number().int().min(1).max(3).optional(),transcripts:z.number().int().min(1).max(4).optional()}).strict().parse(req.body);
         result=await createResearch(db,body,clock());return res.status(202).json(result);
       } else if(resource==='research' && req.method==='GET') result=req.query.id?await researchJob(db,id(req.query.id)):
         (await db.query('SELECT r.id,c.nse_symbol,r.question,r.status,r.progress,r.created_at,r.completed_at,r.error,r.next_attempt_at FROM research_jobs r JOIN companies c ON c.id=r.company_id ORDER BY created_at DESC LIMIT 30')).rows;

@@ -3,14 +3,17 @@ import {symbol} from '../sources.js';
 import {PROCESSOR} from '../extraction/jobs.js';
 import {INDEX_VERSION,OVERVIEW_QUESTION} from './brief.js';
 
-export async function createResearch(db,{symbol:name,question,annual_reports=1,transcripts=1},now=new Date()) {
+export async function createResearch(db,{symbol:name,question,source_policy='primary',annual_reports,transcripts},now=new Date()) {
   name=symbol(name);question=question?.trim() || OVERVIEW_QUESTION;
-  if(!question || question.length>2000 || !Number.isInteger(annual_reports)||annual_reports<1||annual_reports>3 || !Number.isInteger(transcripts)||transcripts<1||transcripts>4) throw Object.assign(new Error('Invalid research request'),{status:400});
+  if(!question || question.length>2000 || !['primary','assignment'].includes(source_policy) ||
+    (annual_reports!==undefined&&(!Number.isInteger(annual_reports)||annual_reports<1||annual_reports>3)) ||
+    (transcripts!==undefined&&(!Number.isInteger(transcripts)||transcripts<1||transcripts>4))) throw Object.assign(new Error('Invalid research request'),{status:400});
   return db.transaction(async tx=>{
     // Serialize admission, including requests for different companies.
     await tx.query("SELECT id FROM portfolios WHERE id='00000000-0000-4000-8000-000000000001' FOR UPDATE");
     const company=(await tx.query('INSERT INTO companies(id,nse_symbol,name) VALUES ($1,$2,$2) ON CONFLICT(nse_symbol) DO UPDATE SET nse_symbol=excluded.nse_symbol RETURNING *',[randomUUID(),name])).rows[0];
-    const options={annual_reports,transcripts};
+    // Legacy document counts are accepted but no longer constrain source discovery.
+    const options={source_policy,source_selection:'adaptive-v1'};
     const existing=(await tx.query("SELECT * FROM research_jobs WHERE company_id=$1 AND question=$2 AND options @> $3::jsonb AND status IN ('queued','running','waiting') ORDER BY created_at DESC LIMIT 1",[company.id,question,JSON.stringify(options)])).rows[0];
     if(existing) return {id:existing.id,status:existing.status};
     if(Number((await tx.query("SELECT count(*) AS n FROM research_jobs WHERE status IN ('queued','running','waiting')")).rows[0].n)>=3) throw Object.assign(new Error('Three research jobs are already active; let one finish first'),{status:409});
@@ -34,5 +37,7 @@ export async function researchJob(db,id) {
       LEFT JOIN reviewed ON reviewed.id=b.id
       WHERE b.asset_id=a.id AND b.asset_content_hash=a.content_hash AND b.processor_version IN ($2,$3)
     ) counts ON true WHERE rd.research_job_id=$1 ORDER BY rd.kind,rd.title`,[id,PROCESSOR,INDEX_VERSION])).rows,
+    sources:(await db.query(`SELECT s.*,d.status AS download_status,d.metadata->>'selection_reason' AS selection_reason
+      FROM research_sources s LEFT JOIN research_documents d ON d.source_id=s.id WHERE s.research_job_id=$1 ORDER BY s.kind,s.title DESC`,[id])).rows,
     evidence:(await db.query('SELECT id,source_url,location,evidence_snapshot,retained_image_path IS NOT NULL AS has_image FROM research_evidence WHERE research_job_id=$1',[id])).rows};
 }

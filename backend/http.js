@@ -1,6 +1,6 @@
 import {lookup} from 'node:dns/promises';
 import {BlockList,isIP} from 'node:net';
-const TRUSTED = ['nseindia.com', 'bseindia.com', 'finance.yahoo.com', 'screener.in'];
+const TRUSTED = ['nseindia.com', 'nseindia.in', 'bseindia.com', 'finance.yahoo.com', 'screener.in'];
 const privateNetworks=new BlockList();
 for(const [net,prefix] of [['0.0.0.0',8],['10.0.0.0',8],['100.64.0.0',10],['127.0.0.0',8],['169.254.0.0',16],['172.16.0.0',12],['192.168.0.0',16],['224.0.0.0',4],['240.0.0.0',4]])privateNetworks.addSubnet(net,prefix,'ipv4');
 for(const [net,prefix] of [['::',128],['::1',128],['fc00::',7],['fe80::',10],['ff00::',8],['::ffff:0:0',96]])privateNetworks.addSubnet(net,prefix,'ipv6');

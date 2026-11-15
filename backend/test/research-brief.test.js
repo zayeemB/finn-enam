@@ -123,7 +123,7 @@ test('passage selection preserves exact quotations while spreading a fixed budge
 for(const mode of ['success','outage','restart','quota'])test('adaptive research saves initial work and handles expansion '+mode,async()=>{
   const pdf=await PDFDocument.create(),font=await pdf.embedFont(StandardFonts.Helvetica);
   for(let n=1;n<=40;n++){
-    const text=n===40?'Cobalt settlement guarantees are disclosed in the lease note. ':('Company operations and services described for this financial period. ');
+    const text=n===40?'Cobalt settlement guarantees are disclosed in the lease note. ':(`Company operations and services for business unit ${n} described for this financial period. `);
     pdf.addPage([500,600]).drawText(text.repeat(18),{font,x:10,y:560,size:9,maxWidth:480});
   }
   const job=await createResearch(db,{symbol:'ADAPT',question:'Explain company services.'});

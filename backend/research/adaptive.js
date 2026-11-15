@@ -3,7 +3,24 @@ import {passagesFor,selectPages,limits,OVERVIEW_QUESTION} from './brief.js';
 import {evidenceRequirements} from './quality.js';
 import {topics} from './schema.js';
 
-export const passageKey=(page,text)=>hash([page.asset?.content_hash||page.document.id,page.sequence,text].join('|'));
+export const passageKey=(page,text)=>hash([
+  // Explicit dates in the passage survive deduplication. Undated passages retain document-period context.
+  /(?:FY\s*|\b)20\d{2}\b/i.test(text)?'':page.document.metadata?.period_end||page.document.metadata?.period_label||page.asset?.content_hash||page.document.id,
+  /consolidated/i.test(page.text)&&!/standalone/i.test(page.text)?'consolidated':
+    /standalone/i.test(page.text)&&!/consolidated/i.test(page.text)?'standalone':
+    page.document.metadata?.scope&&page.document.metadata.scope!=='unknown'?page.document.metadata.scope:
+    'unknown:'+ (page.asset?.content_hash||page.document.id),
+  text.replace(/\s+/g,' ').trim()].join('|'));
+export function uniquePassages(pages,seen=[]){
+  const used=new Set(seen);
+  return pages.flatMap(page=>{
+    if(page.text.trim().length<80)return [page];
+    const excerpts=passagesFor(page,'').filter(p=>{
+      const key=passageKey(page,p.text);if(used.has(key))return false;used.add(key);return true;
+    }).map(p=>p.text);
+    return excerpts.length?[{...page,excerpts}]:[];
+  });
+}
 export function initialEvidence(pages,question){
   let visualSlots=limits.images;
   const selected=selectPages(pages,question,{strategy:'adaptive',profile:{pages:Infinity,characters:limits.characters,images:limits.images}});
@@ -27,7 +44,7 @@ export function initialEvidence(pages,question){
     selected.splice(cash?1:0,0,item);
     while(selected.reduce((n,p)=>n+(p.excerpts?.join('').length??p.text.length),0)>limits.characters&&selected.length>2)selected.pop();
   }
-  return selected.filter(p=>p.text.trim().length>=80||visualSlots-->0);
+  return uniquePassages(selected.filter(p=>p.text.trim().length>=80||visualSlots-->0));
 }
 export function evidenceGaps(checked,question){
   const text=topic=>checked.facts.filter(f=>f.topic===topic).map(f=>f.fact).join(' ');
@@ -61,12 +78,12 @@ export function expansionEvidence(pages,gaps,seen){
     }
   }
   let characters=0;const selectedIds=new Set();
-  return scored.filter(page=>{
+  return uniquePassages(scored.filter(page=>{
     if(selectedIds.has(page.id))return false;
     const count=page.excerpts.join('').length;
     if(characters+count>limits.characters)return false;
     characters+=count;selectedIds.add(page.id);return true;
-  });
+  }),seen);
 }
 export function mergeBriefs(initial,extra){
   const facts=[...initial.facts],sections=initial.sections.map(s=>({...s,findings:[...s.findings]}));
