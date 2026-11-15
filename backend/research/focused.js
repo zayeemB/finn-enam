@@ -1,3 +1,4 @@
+import {buildExhibits} from './exhibits.js';
 import {randomUUID} from 'node:crypto';
 import {RenderSession} from '../extraction/renderer.js';
 import {hash} from '../sources.js';
@@ -330,7 +331,7 @@ export async function focusedResearch(db,files,job,documents,{clock,model:inject
           [id,job.id,p.document.disclosure_id,p.asset.id,p.id,p.document.source_url,JSON.stringify(p.location),JSON.stringify(snapshot),citation.modality==='visual'?p.temporary_image_path:null]);
         evidence.push({id,fact_index:index,source_url:p.document.source_url,page:p.sequence,quote:citation.quote,modality:citation.modality});
       }
-      const result={title:checked.title,sections:checked.sections,limitations:[...new Set([
+      const result={exhibits:buildExhibits(checked.observations,checked.commitments),observation_exclusions:checked.observation_exclusions||[],title:checked.title,sections:checked.sections,limitations:[...new Set([
           'Selected passages from '+selected.length+' pages out of '+pages.length+' indexed pages. Full-document AI coverage is incomplete.',
           ...limitations.filter(l=>!/^Selected passages from/.test(l)),
           ...checked.limitations.filter(l=>!/^Selected passages from/.test(l)),

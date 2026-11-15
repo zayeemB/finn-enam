@@ -98,6 +98,6 @@ export function mergeBriefs(initial,extra){
     const index=facts.length;facts.push(fact);section.findings.push({statement:fact.fact,evidence_indexes:[index]});
     seen.add(key);added++;
   }
-  return {...initial,sections,facts,dropped:[...initial.dropped,...extra.dropped],
+  return {...initial,sections,facts,observations:[...(initial.observations||[]),...(extra.observations||[])],commitments:[...(initial.commitments||[]),...(extra.commitments||[])],observation_exclusions:[...(initial.observation_exclusions||[]),...(extra.observation_exclusions||[])],dropped:[...initial.dropped,...extra.dropped],
     limitations:extra.limitations,gaps:extra.gaps,added};
 }
